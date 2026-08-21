@@ -1,0 +1,460 @@
+<title>What Lesko Members Actually Ask</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --ground:#F2F4F1;
+  --surface:#FFFFFF;
+  --surface-2:#E9EDE8;
+  --ink:#14201C;
+  --ink-soft:#3A4842;
+  --muted:#5C6862;
+  --line:#D3DAD4;
+  --line-soft:#E2E7E1;
+  --accent:#0E7C5A;
+  --accent-soft:#D3E8DE;
+  --gold:#8A6300;
+  --gold-soft:#EFE4C6;
+  --bar-track:#E2E7E1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#101512;
+    --surface:#171E1A;
+    --surface-2:#1E2721;
+    --ink:#E8EDE9;
+    --ink-soft:#C2CDC6;
+    --muted:#94A29B;
+    --line:#2C3831;
+    --line-soft:#232D27;
+    --accent:#4FBF92;
+    --accent-soft:#1D3830;
+    --gold:#D6A93A;
+    --gold-soft:#33291066;
+    --bar-track:#232D27;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#101512;
+  --surface:#171E1A;
+  --surface-2:#1E2721;
+  --ink:#E8EDE9;
+  --ink-soft:#C2CDC6;
+  --muted:#94A29B;
+  --line:#2C3831;
+  --line-soft:#232D27;
+  --accent:#4FBF92;
+  --accent-soft:#1D3830;
+  --gold:#D6A93A;
+  --gold-soft:#33291066;
+  --bar-track:#232D27;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:Karla,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 96px}
+
+/* ---------- masthead ---------- */
+.masthead{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 20px;
+}
+h1{
+  font-family:Newsreader,Georgia,serif;
+  font-weight:500;font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.04;
+  letter-spacing:-.015em;margin:0 0 20px;text-wrap:balance;
+}
+.standfirst{
+  font-family:Newsreader,Georgia,serif;
+  font-size:clamp(1.12rem,2.2vw,1.35rem);line-height:1.5;color:var(--ink-soft);
+  max-width:62ch;margin:0;
+}
+.scope{
+  margin-top:28px;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;
+  color:var(--muted);background:var(--surface-2);
+  border:1px solid var(--line-soft);border-radius:2px;padding:9px 14px;
+}
+.scope b{color:var(--ink);font-weight:600}
+
+/* ---------- stat band ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin:0 0 8px;
+}
+.stat{background:var(--surface);padding:24px 22px}
+.stat .n{
+  font-family:Newsreader,Georgia,serif;font-weight:500;
+  font-size:2.5rem;line-height:1;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;display:block;margin-bottom:8px;
+}
+.stat .n.hl{color:var(--accent)}
+.stat .l{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  line-height:1.5;
+}
+
+section{padding-top:64px}
+h2{
+  font-family:Newsreader,Georgia,serif;font-weight:500;
+  font-size:clamp(1.6rem,3.4vw,2.1rem);line-height:1.15;letter-spacing:-.01em;
+  margin:0 0 10px;text-wrap:balance;
+}
+.lede{color:var(--muted);max-width:64ch;margin:0 0 32px;font-size:16px}
+
+/* ---------- ranked list ---------- */
+.rank-head{
+  display:grid;grid-template-columns:38px 1fr 92px 74px 84px;gap:16px;
+  padding:0 0 10px;border-bottom:1px solid var(--line);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+.rank-head span:nth-child(n+3){text-align:right}
+.row{
+  display:grid;grid-template-columns:38px 1fr 92px 74px 84px;gap:16px;
+  align-items:center;padding:16px 0;border-bottom:1px solid var(--line-soft);
+}
+.rk{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;font-weight:600;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+}
+.row.top .rk{color:var(--gold)}
+.nm{font-weight:500;line-height:1.35}
+.nm small{
+  display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.04em;margin-top:4px;
+}
+.bar{height:9px;background:var(--bar-track);border-radius:1px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:1px}
+.row.top .bar i{background:var(--gold)}
+.num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:14px;
+  text-align:right;font-variant-numeric:tabular-nums;
+}
+.num.dim{color:var(--muted);font-size:13px}
+.rank-scroll{overflow-x:auto}
+.rank-scroll>*{min-width:600px}
+
+.callout{
+  margin-top:28px;border-left:3px solid var(--gold);
+  background:var(--gold-soft);padding:18px 22px;
+}
+.callout p{margin:0;font-family:Newsreader,Georgia,serif;font-size:1.18rem;line-height:1.45}
+.callout b{font-weight:600}
+
+/* ---------- quotes ---------- */
+.themes{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.theme{background:var(--surface);padding:26px 24px}
+.theme header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.theme h3{
+  font-family:Newsreader,Georgia,serif;font-weight:600;font-size:1.28rem;
+  margin:0;letter-spacing:-.005em;
+}
+.tag{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--accent);
+  background:var(--accent-soft);padding:3px 9px;border-radius:2px;white-space:nowrap;
+}
+.theme>p.ans{color:var(--ink-soft);margin:0 0 16px;font-size:15.5px;max-width:66ch}
+.qs{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.qs li{
+  font-family:Newsreader,Georgia,serif;font-size:1.03rem;line-height:1.45;
+  color:var(--ink-soft);padding-left:18px;position:relative;
+}
+.qs li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:7px;height:1px;background:var(--accent);
+}
+.qs li em{font-style:italic;color:var(--muted)}
+
+/* ---------- method ---------- */
+.method{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.method h4{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  margin:0 0 10px;font-weight:600;
+}
+.method p{margin:0;font-size:15px;color:var(--ink-soft)}
+.method ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink-soft)}
+.method li{margin-bottom:7px}
+
+footer{
+  margin-top:72px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--muted);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+@media (max-width:620px){
+  .rank-head,.row{grid-template-columns:30px 1fr 72px 60px 68px;gap:10px}
+  .masthead{padding-top:44px}
+}
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <p class="eyebrow">Lesko Help · Member FAQ Bot · Research</p>
+    <h1>What Lesko members actually ask</h1>
+    <p class="standfirst">Ninety percent of the Questions Channel is people looking for grants. This report is about the other ten percent — the practical, technical and subscription questions a bot could answer on its own, ranked by how often members really ask them.</p>
+    <div class="scope">Source: <b>Lesko Help MCP community only</b> · lesko-help-2 · 2022&ndash;2026</div>
+  </div>
+
+  <section>
+    <div class="stats">
+      <div class="stat"><span class="n">1,600</span><span class="l">posts sampled<br>Questions Channel</span></div>
+      <div class="stat"><span class="n hl">148</span><span class="l">practical questions<br>hand-labelled</span></div>
+      <div class="stat"><span class="n">9.6<span style="font-size:1.4rem">%</span></span><span class="l">of member posts<br>are not grant-seeking</span></div>
+      <div class="stat"><span class="n">~30</span><span class="l">practical questions<br>per month</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The ranking</h2>
+    <p class="lede">Fourteen themes, ordered by how many posts in the sample belong to each. Counts are from the 1,538 sampled posts with usable text; the monthly estimate scales that against the channel's measured rate of 10.3 new posts a day.</p>
+
+    <div class="rank-scroll">
+      <div class="rank-head">
+        <span>Rank</span><span>Question theme</span><span>Share</span><span>Posts</span><span>Est./month</span>
+      </div>
+
+      <div class="row top">
+        <div class="rk">01</div>
+        <div class="nm">Cancel my subscription or membership<small>How do I cancel? Where is the link? Stop billing me.</small></div>
+        <div><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="num">35</div>
+        <div class="num dim">~7</div>
+      </div>
+
+      <div class="row top">
+        <div class="rk">02</div>
+        <div class="nm">Refunds, charges and payment method<small>I was charged twice · how do I get a refund · update my card</small></div>
+        <div><div class="bar"><i style="width:66%"></i></div></div>
+        <div class="num">23</div>
+        <div class="num dim">~5</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">03</div>
+        <div class="nm">Live calls, Zoom links and replays<small>What's the link? Is there a call today? Where's the replay?</small></div>
+        <div><div class="bar"><i style="width:51%"></i></div></div>
+        <div class="num">18</div>
+        <div class="num dim">~4</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">04</div>
+        <div class="nm">Personal Report, mini-500 and books<small>Where is my report? Can you update it? I paid for the book.</small></div>
+        <div><div class="bar"><i style="width:51%"></i></div></div>
+        <div class="num">18</div>
+        <div class="num dim">~4</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">05</div>
+        <div class="nm">Navigating and finding things on the site<small>I can't find it · this site is confusing · where do I click</small></div>
+        <div><div class="bar"><i style="width:49%"></i></div></div>
+        <div class="num">17</div>
+        <div class="num dim">~4</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">06</div>
+        <div class="nm">Getting started &mdash; what do I do next<small>I just joined and I'm overwhelmed. What's step one?</small></div>
+        <div><div class="bar"><i style="width:20%"></i></div></div>
+        <div class="num">7</div>
+        <div class="num dim">~1&ndash;2</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">07</div>
+        <div class="nm">Reaching a human or 1-on-1 help<small>Is there a phone number? Can someone call me?</small></div>
+        <div><div class="bar"><i style="width:20%"></i></div></div>
+        <div class="num">7</div>
+        <div class="num dim">~1&ndash;2</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">08</div>
+        <div class="nm">The AI grant research tool<small>How do I use it · it isn't returning anything · where did my results go</small></div>
+        <div><div class="bar"><i style="width:14%"></i></div></div>
+        <div class="num">5</div>
+        <div class="num dim">~1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">09</div>
+        <div class="nm">Login and password<small>I can't log in · no reset email · it says no account found</small></div>
+        <div><div class="bar"><i style="width:11%"></i></div></div>
+        <div class="num">4</div>
+        <div class="num dim">~1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">10</div>
+        <div class="nm">The app and device problems<small>Which app is it? It won't download. I only have a phone.</small></div>
+        <div><div class="bar"><i style="width:11%"></i></div></div>
+        <div class="num">4</div>
+        <div class="num dim">~1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">11</div>
+        <div class="nm">Broken links, videos and errors<small>Nothing happens when I click · video won't play · page is down</small></div>
+        <div><div class="bar"><i style="width:11%"></i></div></div>
+        <div class="num">4</div>
+        <div class="num dim">~1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">12</div>
+        <div class="nm">Profile and account details<small>Change my email, my name, my profile info</small></div>
+        <div><div class="bar"><i style="width:6%"></i></div></div>
+        <div class="num">2</div>
+        <div class="num dim">&lt;1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">13</div>
+        <div class="nm">Email and notification volume<small>Too many emails · how do I clear notifications</small></div>
+        <div><div class="bar"><i style="width:6%"></i></div></div>
+        <div class="num">2</div>
+        <div class="num dim">&lt;1</div>
+      </div>
+
+      <div class="row">
+        <div class="rk">14</div>
+        <div class="nm">Pricing, trial and what's included<small>What does it cost? What do I get? When does the trial end?</small></div>
+        <div><div class="bar"><i style="width:6%"></i></div></div>
+        <div class="num">2</div>
+        <div class="num dim">&lt;1</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><b>Billing is the whole ballgame.</b> Cancelling and money questions together are 58 of 148 posts &mdash; <b>39% of every practical question asked</b>, more than the next three themes combined. A bot that answers only those two well already removes two of every five support posts.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>In members' own words</h2>
+    <p class="lede">Verbatim posts from the Questions Channel, one cluster per top theme. These are the phrasings the bot has to recognise &mdash; misspellings, all-caps frustration and one-line requests included.</p>
+
+    <div class="themes">
+
+      <div class="theme">
+        <header><h3>Cancel my subscription</h3><span class="tag">35 posts · rank 01</span></header>
+        <p class="ans">Almost never a complaint about content &mdash; it's people who cannot find the cancel control. Many have already tried email and got no reply, so they escalate publicly. The answer needs the exact click path, plus what happens to billing on the 5-day trial.</p>
+        <ul class="qs">
+          <li>"How do I cancel my subscription?"</li>
+          <li>"Where is the link to cancel before the 5-day window?"</li>
+          <li>"I'm Changing Banks, How Do I Cancel My Paid Membership?"</li>
+          <li>"Can anyone tell me how to cancel my paid membership? Who can I email or call?"</li>
+          <li>"I have been trying to cancel my membership for two months now and can't seem to get $19 and something quit getting taken out of my account."</li>
+          <li>"It is next to impossible to cancel this subscription or speak to someone on here!"</li>
+        </ul>
+      </div>
+
+      <div class="theme">
+        <header><h3>Refunds, charges and payment method</h3><span class="tag">23 posts · rank 02</span></header>
+        <p class="ans">Three recurring shapes: an unexpected renewal, a trial that converted, and a profile that says "Free Member" while the card is still being charged. Members also need a self-serve way to update an expired card.</p>
+        <ul class="qs">
+          <li>"How do I get a refund?"</li>
+          <li>"Hello there, my accont auto renewed. How can I request a refund?"</li>
+          <li>"I'm being charged a monthly subscription yet on this website it says my membership is free. Something is not adding up."</li>
+          <li>"I joined for your dollar special and not only did you get your dollar you got $19.95. I did not authorize this amount."</li>
+          <li>"How do I update my payment card onfile"</li>
+          <li>"what is the 60.00 charge"</li>
+        </ul>
+      </div>
+
+      <div class="theme">
+        <header><h3>Live calls, Zoom links and replays</h3><span class="tag">18 posts · rank 03</span></header>
+        <p class="ans">Time-critical and highly automatable: what's on today, the joining link, and where last week's recording lives. A recurring sub-case is Zoom itself failing &mdash; stuck in the waiting room, or no audio and video.</p>
+        <ul class="qs">
+          <li>"How do I join zoom?"</li>
+          <li>"is there a zoom meeting today?"</li>
+          <li>"would like to get in on the 7;30 zoom meeting I signed up for tonight where can I find the meeting Id or the invitation link?"</li>
+          <li>"Did I miss the 10 PM credit repair workshop? &hellip; And how can I replay a video?"</li>
+          <li>"Im trying to get into a zoom class for tonight but zoom says that we are waiting on the Host"</li>
+          <li>"Tried to do a call sheet today, but the link doesn't work. Where do I get the call sheet?"</li>
+        </ul>
+      </div>
+
+      <div class="theme">
+        <header><h3>Personal Report, mini-500 and books</h3><span class="tag">18 posts · rank 04</span></header>
+        <p class="ans">The Personal Report is a manual, staff-fulfilled item, so members chase it in public: how to request one, how to add topics, and whether theirs has been produced yet. Paid books and e-books that never arrived sit in the same cluster.</p>
+        <ul class="qs">
+          <li>"How and who do I ask to start my personal report?"</li>
+          <li>"Can someone tell me how to get to where my personal report is?"</li>
+          <li>"Can you please update my comprehensive personal report?"</li>
+          <li>"I submitted the information requested for my Lesko Personal Report on 6/16/23. Please let me know if I should have received it or not by now?"</li>
+          <li>"I bought the E Book for Texas&hellip;and i do not see an email with it&hellip; Where is the booK"</li>
+          <li>"During onboarding, I paid an additional fee to receive a book. When will I receive the book?"</li>
+        </ul>
+      </div>
+
+      <div class="theme">
+        <header><h3>Navigating and finding things</h3><span class="tag">17 posts · rank 05</span></header>
+        <p class="ans">The most emotionally loaded theme. Members describe the site as a maze of links that never resolve to the thing they were promised. This is the cluster where a bot that answers "where is X" in one hop replaces the most frustration.</p>
+        <ul class="qs">
+          <li>"I am having trouble navigating lesko help 2 can someone help me"</li>
+          <li>"I still don't know how to navigate through this place. How do I look for the help I need."</li>
+          <li>"I just joined yesterday I'm 54 disabled and I'm really getting lost trying to figure out how to navigate on this site"</li>
+          <li>"can I get help figuring out how to navigate this mass of information on my smart phone?"</li>
+          <li>"I am annoyed at trying to get to the actual giveaway applications for ANYTHING. All I see are several click here links."</li>
+          <li>"Where are the answers to my questions that I have been posting?"</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>How this was measured</h2>
+    <div class="method">
+      <div>
+        <h4>Sampling</h4>
+        <p>The Questions Channel feed cursor turned out to be a base64 unix timestamp, which made it possible to jump to any point in the community's history. The feed was sampled at roughly monthly intervals from October 2022 to August 2026, plus continuous pagination across the most recent five weeks &mdash; 1,600 unique posts across 22 monthly strata, rather than a recency-skewed slice.</p>
+      </div>
+      <div>
+        <h4>Labelling</h4>
+        <p>A deliberately high-precision pattern pass produced 212 candidates. Every one was then read and labelled by hand, because automated matching kept mistaking grant requests for support requests &mdash; "tax refund", "I'm new here", "my report". Two recall passes over the remaining 1,326 posts recovered 36 more the strict patterns had missed.</p>
+      </div>
+      <div>
+        <h4>Excluded</h4>
+        <ul>
+          <li>Grant and help-seeking questions &mdash; the other 90%</li>
+          <li>Posts by hosts, staff and community managers</li>
+          <li>Announcements, resource shares and social chat</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Read the numbers as</h4>
+        <ul>
+          <li>A sample, not a census &mdash; the <em>order</em> is solid, the monthly figures are estimates</li>
+          <li>Questions asked <em>publicly</em>; email and DM support are not visible here</li>
+          <li>Under-counting follow-ups, since comment threads aren't in the search index</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Lesko Help 2 &middot; lesko-help-2.mn.co</span>
+    <span>Sampled 2022-10 &rarr; 2026-08-21</span>
+  </footer>
+
+</div>
