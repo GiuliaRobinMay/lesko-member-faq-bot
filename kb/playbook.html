@@ -1,0 +1,311 @@
+<title>Lesko Member FAQ Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--ground:#F2F4F1;--surface:#FFF;--surface-2:#E9EDE8;--ink:#14201C;--ink-soft:#3A4842;--muted:#5C6862;
+--line:#D3DAD4;--line-soft:#E2E7E1;--accent:#0E7C5A;--accent-soft:#D3E8DE;--gold:#8A6300;--gold-soft:#F3E8CC;
+--red:#9B3B22;--red-soft:#F5DED6;--blue:#1F5A7A;--blue-soft:#D8E7EF;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#101512;--surface:#171E1A;--surface-2:#1E2721;
+--ink:#E8EDE9;--ink-soft:#C2CDC6;--muted:#94A29B;--line:#2C3831;--line-soft:#232D27;--accent:#4FBF92;--accent-soft:#1D3830;
+--gold:#D6A93A;--gold-soft:#2E2611;--red:#E08160;--red-soft:#33190F;--blue:#7FB8D6;--blue-soft:#132833;}}
+:root[data-theme="dark"]{--ground:#101512;--surface:#171E1A;--surface-2:#1E2721;--ink:#E8EDE9;--ink-soft:#C2CDC6;
+--muted:#94A29B;--line:#2C3831;--line-soft:#232D27;--accent:#4FBF92;--accent-soft:#1D3830;--gold:#D6A93A;
+--gold-soft:#2E2611;--red:#E08160;--red-soft:#33190F;--blue:#7FB8D6;--blue-soft:#132833;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:Karla,system-ui,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px 90px}
+header.top{padding:60px 0 32px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5.4vw,3.4rem);line-height:1.06;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+.stand{font-family:Newsreader,Georgia,serif;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--ink-soft);max-width:64ch;margin:0}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap}
+.pill.ok{background:var(--accent-soft);color:var(--accent)}
+.pill.warn{background:var(--gold-soft);color:var(--gold)}
+.cards{display:grid;gap:22px;padding-top:36px}
+.card{background:var(--surface);border:1px solid var(--line);padding:26px 24px}
+.cardhead{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+.rank{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--muted);padding-top:5px;font-variant-numeric:tabular-nums}
+.ttl{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ttl h3{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:1.35rem;margin:0;letter-spacing:-.005em}
+.short{margin:0 0 20px;color:var(--ink-soft);font-size:16px;max-width:72ch}
+.cols{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:26px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+.sub h4{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:600}
+ul.quotes{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+ul.quotes li{font-family:Newsreader,Georgia,serif;font-size:1rem;color:var(--muted);font-style:italic;line-height:1.4}
+ul.quotes li::before{content:"“"} ul.quotes li::after{content:"”"}
+ol.steps{margin:0;padding-left:20px;display:grid;gap:8px}
+ol.steps li{font-size:15.5px;color:var(--ink-soft)}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:5px}
+ul.plain li{font-size:14.5px;color:var(--ink-soft)}
+.sub+.sub{margin-top:18px}
+.note{margin-top:18px;padding:13px 16px;font-size:15px;border-left:3px solid}
+.note b{font-weight:700}
+.note.imp{border-color:var(--red);background:var(--red-soft);color:var(--ink)}
+.note.legacy{border-color:var(--blue);background:var(--blue-soft);color:var(--ink)}
+.note.esc{border-color:var(--muted);background:var(--surface-2);color:var(--ink-soft)}
+.note.ask{border-color:var(--gold);background:var(--gold-soft);color:var(--ink)}
+.foot{margin-top:20px;padding-top:14px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+section.close{margin-top:52px;padding-top:32px;border-top:1px solid var(--line)}
+section.close h2{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:1.8rem;margin:0 0 12px}
+section.close ol{padding-left:20px;display:grid;gap:9px;max-width:70ch}
+section.close li{color:var(--ink-soft)}
+</style>
+<div class="wrap">
+<header class="top">
+<p class="eyebrow">Lesko Help · Member FAQ Bot · Draft answers v1</p>
+<h1>The answer playbook</h1>
+<p class="stand">Fourteen mini-SOPs, one per question theme, drafted from what the team actually already replies inside the community — Mary, Misty, Tony, Rose and the Lesko Help Team. Nothing here is invented. Where the community had no clear answer, I've flagged it rather than filled the gap.</p>
+<div class="legend"><span class="pill ok">11 sourced from staff replies</span><span class="pill warn">3 need your confirmation</span></div>
+</header>
+<div class="cards">
+
+    <article class="card" id="cancel_subscription">
+      <div class="cardhead">
+        <span class="rank">01</span>
+        <div class="ttl"><h3>How do I cancel my subscription or membership?</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">There are two ways: cancel it yourself on the Lesko Support site, or email Customer Service and they will do it for you and confirm by reply.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I cancel my subscription?</li><li>Where is the link to cancel before the 5-day window?</li><li>I&#x27;m changing banks, how do I cancel my paid membership?</li><li>Cancel membership</li><li>It is next to impossible to cancel this subscription</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Self-serve: go to https://leskosupport.com/account-management and scroll to the bottom of the page — the cancellation instructions are there.</li><li>Or email LeskoHelp@gmail.com and ask to cancel. Mary Pacey in Customer Service handles cancellations and will reply to confirm it is done.</li><li>Before you cancel, download anything shared with you — Call Sheets, reports, spreadsheets. That material stays yours whether you stay or go.</li><li>On the $1 / 5-day trial: cancel before the 5 days are up to avoid the next charge.</li></ol></div>
+      </div>
+      <div class="note esc"><b>Hand to a human when.</b> Member says they already emailed and got no reply, or is still being charged after cancelling → hand to Customer Service with the member&#x27;s email address and dates.</div>
+      <div class="foot">
+        <span class="src">Sources: S1, S2, S3</span>
+        <span class="med">🎬 Screen recording: leskosupport.com → Account Management → scroll to cancellation section.</span>
+      </div>
+    </article>
+    <article class="card" id="refunds_billing">
+      <div class="cardhead">
+        <span class="rank">02</span>
+        <div class="ttl"><h3>Refunds, unexpected charges and updating my card</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">All billing — refunds, duplicate or unexpected charges, and payment method changes — is handled by Mary Pacey in Customer Service at LeskoHelp@gmail.com. Account details can also be managed on the Lesko Support site.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I get a refund?</li><li>My account auto renewed. How can I request a refund?</li><li>I&#x27;m being charged a monthly subscription yet the site says my membership is free</li><li>How do I update my payment card on file?</li><li>What is the $60 charge?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Email LeskoHelp@gmail.com with your account email and the charge date and amount.</li><li>For an auto-renewal you did not expect, ask to cancel the membership AND refund the auto-renewal in the same message.</li><li>To update a card or check what plan you are on, use https://leskosupport.com/account-management.</li><li>If your profile says &#x27;Free Member&#x27; but you are still being charged, say so explicitly — that mismatch needs Customer Service to look at the billing record.</li></ol></div>
+      </div>
+      <div class="note esc"><b>Hand to a human when.</b> Always route to Customer Service — the bot should never promise a refund, only explain how to request one.</div><div class="note ask"><b>I need your answer.</b> Is there a stated refund window or policy the bot may quote? Not published anywhere in-community.</div>
+      <div class="foot">
+        <span class="src">Sources: S1, S4, S5, S6</span>
+        <span class="med">🎬 Screen recording: where to find your plan and payment method on the account management page.</span>
+      </div>
+    </article>
+    <article class="card" id="calls_zoom_replays">
+      <div class="cardhead">
+        <span class="rank">03</span>
+        <div class="ttl"><h3>Live calls — what&#x27;s on, how to join, and where the replays are</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">There is a live session almost every day. Open the event in the community, click the pink &quot;Zoom Meeting&quot; link, and if you don&#x27;t have Zoom installed click &quot;Join Zoom from Browser&quot;. Replays go into the Class Replays space.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I join zoom?</li><li>Is there a zoom meeting today?</li><li>Where can I find the meeting ID or the invitation link?</li><li>Did I miss the workshop? How can I replay a video?</li><li>Zoom says we are waiting on the host</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Open the event post in the community, then click &#x27;Zoom Meeting&#x27; written in pink.</li><li>No Zoom account? Click &#x27;Join Zoom from Browser&#x27; instead — you do not need to install anything.</li><li>If you can&#x27;t be heard or seen: hover over the bottom of the Zoom window, click &#x27;Join Audio&#x27;, then the video button, and allow Zoom to use your microphone and camera.</li><li>&#x27;Waiting for the host&#x27; means the host has not opened the room yet — stay in the waiting room, it will start.</li><li>Missed it? Find the recording in Class Replays: https://lesko-help-2.mn.co/spaces/24487516</li><li>Struggling during a session — type the problem into the Zoom chat, a coach will help you there.</li></ol><div class="sub"><h4>Weekly schedule</h4><ul class="plain"><li>Daily — WELCOME TOUR (Daily Welcome Tour space)</li><li>Monday — Mid Mondays Member Q&amp;A; Monday&#x27;s OPEN OFFICE with Tony (navigating Lesko Help + grant-search basics)</li><li>Tuesday — MATTHEW MEETUP, live with Matthew</li><li>Wednesday — Pay My Debt &amp; Bills; AI User Skills with Roger; Business Growth with Amber</li><li>Thursday — Drop-In Clinic 10:00–18:00 ET, no appointment needed; Thursdays Member Q&amp;A with Tony</li><li>Friday — AI Workshop; Grant Application Workshop with Megan; Starting &amp; Re-Starting a Business</li><li>Saturday — Saturdays Member Q&amp;A with Tony; Business Series Saturdays</li><li>Sunday — Sundays Member Q&amp;A with Tony; Start a Nonprofit with Megan</li></ul></div></div>
+      </div>
+      <div class="note ask"><b>I need your answer.</b> Schedule captured 2026-08-21. Should the bot read the live event list dynamically instead of using a fixed schedule? Recommended — times shift.</div>
+      <div class="foot">
+        <span class="src">Sources: S14, S18, S21</span>
+        <span class="med">🎬 Screen recording: opening an event → clicking the pink Zoom link → Join from Browser → turning on audio/video.</span>
+      </div>
+    </article>
+    <article class="card" id="call_sheet_and_reports">
+      <div class="cardhead">
+        <span class="rank">04</span>
+        <div class="ttl"><h3>Call Sheets, Personal Reports and books I paid for</h3><span class="pill warn">Needs your confirmation</span></div>
+      </div>
+      <p class="short">The current deliverable is the Personalized Call Sheet, and there are three ways to get one: a Call Sheet Class, the Lesko AI Researcher, or by asking in the Questions Channel.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How and who do I ask to start my personal report?</li><li>Can you please update my comprehensive personal report?</li><li>Where is my report?</li><li>I bought the E Book for Texas and I do not see an email with it</li><li>I paid an additional fee to receive a book. When will I receive it?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Fastest: run the AI Grant Researcher yourself — pick your topic, enter your city and state or ZIP, and it builds your list.</li><li>Or attend a Call Sheet Class and the host will build one with you live.</li><li>Or post what you need in the Questions Channel and the team will reply with a Call Sheet under your post.</li><li>Delivered Call Sheets are posted for you in Personalized Class Answers — check your notification bell.</li><li>Paid book or e-book that hasn&#x27;t arrived: that&#x27;s a fulfilment question — email LeskoHelp@gmail.com.</li></ol></div>
+      </div>
+      <div class="note legacy"><b>Legacy process.</b> The older &quot;Lesko Personal Report&quot; was built by hand by Misty Fowlds and Sabrina Giesler from a list of 3–10 goals posted in the Partnership &amp; Accountability space. Members still ask for it by name.</div><div class="note ask"><b>I need your answer.</b> CONFIRMED BY YOU: the Mini-500 is no longer given out. The bot needs one agreed sentence for &#x27;the Mini-500 / state report is no longer offered — here is what replaces it&#x27;. Also: is the hand-built Personal Report still offered at all, or is the Call Sheet now the only route?</div>
+      <div class="foot">
+        <span class="src">Sources: S19, S20, S15</span>
+        <span class="med">🎬 Screen recording: requesting a Call Sheet in the Questions Channel, and where delivered Call Sheets appear.</span>
+      </div>
+    </article>
+    <article class="card" id="navigation">
+      <div class="cardhead">
+        <span class="rank">05</span>
+        <div class="ttl"><h3>I can&#x27;t find my way around the site</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Three places cover almost everything: Explore the Roadmap for the step-by-step path, the Quick Guide Library for your specific need, and the Questions Channel when you&#x27;re stuck.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>I am having trouble navigating lesko help 2, can someone help me</li><li>I still don&#x27;t know how to navigate through this place</li><li>I&#x27;m really getting lost trying to figure out how to navigate on this site</li><li>Where are the answers to my questions that I have been posting?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Start at Explore the Roadmap — it is the guided path through the community: https://lesko-help-2.mn.co/spaces/24365840</li><li>Then use the Quick Guide Library — one space per need (bills, housing, healthcare, business, cars, legal, veterans, seniors): https://lesko-help-2.mn.co/collections/2517908</li><li>Still stuck? Post in the Questions Channel and the team replies under your post.</li><li>Replies to your posts arrive in your notification bell — that&#x27;s where to look for answers.</li><li>Prefer to be walked through it live? Monday&#x27;s OPEN OFFICE with Tony is specifically about learning to navigate Lesko Help.</li></ol></div>
+      </div>
+      
+      <div class="foot">
+        <span class="src">Sources: S13, S17, S22, S23</span>
+        <span class="med">🎬 Screen recording: a guided tour — Roadmap → Quick Guide Library → Questions Channel → notification bell.</span>
+      </div>
+    </article>
+    <article class="card" id="getting_started">
+      <div class="cardhead">
+        <span class="rank">06</span>
+        <div class="ttl"><h3>I just joined — what do I do first?</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Start with Explore the Roadmap and its checklist, join a Welcome Tour (runs daily), then tell us in the Questions Channel what you actually need help with so we can point you at the right resources.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>May I please have help getting started</li><li>I&#x27;m new to the platform and I&#x27;m a bit overwhelmed</li><li>I am 88 and need assistance getting started</li><li>I need a tutorial how to use this site</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Work through Explore the Roadmap and complete the setup checklist — even long-time members are asked to do this.</li><li>Join the WELCOME TOUR — it runs every day and walks you around the community.</li><li>Post in the Questions Channel saying what kind of help you&#x27;re looking for. The team replies under your post with specific recommendations.</li><li>Next step after that is building your Call Sheet — via a Call Sheet Class, the AI Researcher, or the Questions Channel.</li><li>Then move into the Call and Application Classes, and keep using Q&amp;As, Group Coaching and Matthew&#x27;s Live sessions.</li></ol></div>
+      </div>
+      
+      <div class="foot">
+        <span class="src">Sources: S13, S19</span>
+        <span class="med">🎬 Screen recording: the roadmap checklist and joining the Welcome Tour.</span>
+      </div>
+    </article>
+    <article class="card" id="human_support">
+      <div class="cardhead">
+        <span class="rank">07</span>
+        <div class="ttl"><h3>Can I talk to a real person?</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Yes — live, on Zoom. There is no support phone line. Member Q&amp;As run six days a week, and the Thursday Drop-In Clinic is open all day with no appointment. Billing questions go to email.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>Customer Service number?</li><li>How do I contact support please?</li><li>Is there any way to get some 1 on 1 assistance?</li><li>Can someone call me?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>To speak to the team live, join any Member Q&amp;A — they run six days a week.</li><li>Thursday Drop-In Clinic: 10:00–18:00 ET, hop in any time, no appointment needed.</li><li>For anything about money — billing, refunds, cancelling — email LeskoHelp@gmail.com (Mary Pacey, Customer Service).</li><li>For grant help, post in the Questions Channel — the team answers in the comments under your post.</li></ol></div>
+      </div>
+      <div class="note ask"><b>I need your answer.</b> Confirm there is genuinely no member-facing phone number, so the bot can say so plainly.</div>
+      <div class="foot">
+        <span class="src">Sources: S14, S21, S5</span>
+        <span class="med">🎬 Screen recording: finding the next live event and joining the Drop-In Clinic.</span>
+      </div>
+    </article>
+    <article class="card" id="ai_grant_researcher">
+      <div class="cardhead">
+        <span class="rank">08</span>
+        <div class="ttl"><h3>How do I use the AI Grant Researcher?</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Pick your topic, enter your city and state or ZIP, and hit Run Research Tool. Results build up over several minutes, then you can open each one for contact details or export the whole list.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>Does the members AI tool work, I keep getting page not available</li><li>Your AI doesn&#x27;t work, I&#x27;ve been trying for a month</li><li>Where do I find the AI tool?</li><li>Where did my AI research results go?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Open the AI Grant Researcher: https://lesko-help-2.mn.co/spaces/24461105</li><li>Select your Topic, then enter your ZIP code or your city and state.</li><li>Hit &#x27;Run Research Tool&#x27;. Results arrive one or two at a time and a full search can take 10–15 minutes depending on your device and connection.</li><li>Click &#x27;2: Results&#x27; to see what it found in your area.</li><li>Hit &#x27;See Details&#x27; on any organisation for phone numbers, email addresses, eligibility, funding amounts, and a ready-made outreach message.</li><li>Click &#x27;3: Export&#x27; to download the list to your device as Excel or PDF.</li><li>Click &#x27;Clear Report&#x27; to run a fresh search for another topic or area.</li><li>Want to be taught it live? The AI Workshop runs Fridays, and AI User Skills with Roger runs Wednesdays.</li></ol></div>
+      </div>
+      <div class="note ask"><b>I need your answer.</b> Two URLs are in circulation (spaces/24461105 and spaces/23670974/page). Which is canonical?</div>
+      <div class="foot">
+        <span class="src">Sources: S15, S16, S21</span>
+        <span class="med">🎬 Screen recording: full run — topic → location → Run → Results → See Details → Export.</span>
+      </div>
+    </article>
+    <article class="card" id="login_password">
+      <div class="cardhead">
+        <span class="rank">09</span>
+        <div class="ttl"><h3>I can&#x27;t log in or I forgot my password</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Use &quot;Forgot password?&quot; on the login page — it resets by email, so you don&#x27;t need your old password. If that doesn&#x27;t arrive, the platform&#x27;s own support team can fix it directly.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>I can&#x27;t get in. My email and password not working</li><li>I didn&#x27;t receive email to reset my password</li><li>Trying to change password but do not know the current password</li><li>It says no account found with that email</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>On the login page click &#x27;Forgot password?&#x27; and follow the email link.</li><li>Check spam/junk if the reset email doesn&#x27;t appear.</li><li>Still stuck: click the &#x27;Need Help?&#x27; button at the bottom of any page in the community.</li><li>Or email help@mightynetworks.com — Lesko Help runs on Mighty Networks and their team can sort out account access directly.</li><li>&#x27;No account found&#x27; usually means a different email than the one you joined with — try any other addresses you use.</li></ol></div>
+      </div>
+      
+      <div class="foot">
+        <span class="src">Sources: S7</span>
+        <span class="med">🎬 Screen recording: the Forgot password flow and where the Need Help? button is.</span>
+      </div>
+    </article>
+    <article class="card" id="app_and_devices">
+      <div class="cardhead">
+        <span class="rank">10</span>
+        <div class="ttl"><h3>Which app is it and how do I install it?</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">The app is Mighty Networks, not a &quot;Lesko&quot; app — which is why searching the store for Lesko finds nothing. Get it via the QR code in your Personal Settings.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I download the app?</li><li>What is the name of the app that I need to download</li><li>I can&#x27;t find the Lesko app on Google Play</li><li>Can I have the app on my laptop?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Click your profile picture in the top right, then &#x27;Personal Settings&#x27;.</li><li>Scroll down and click &#x27;Download the app&#x27; — a QR code appears.</li><li>Scan the QR code, then use the button for Google Play or the App Store depending on your device.</li><li>Log in on your phone with the same email address and password you use on the computer.</li><li>Searching the store for &#x27;Lesko&#x27; will not find it — the app is called Mighty Networks.</li></ol></div>
+      </div>
+      
+      <div class="foot">
+        <span class="src">Sources: S8</span>
+        <span class="med">🎬 Screen recording: Personal Settings → Download the app → QR code → store → first login on phone.</span>
+      </div>
+    </article>
+    <article class="card" id="broken_links_errors">
+      <div class="cardhead">
+        <span class="rank">11</span>
+        <div class="ttl"><h3>A link, video or page isn&#x27;t working</h3><span class="pill warn">Needs your confirmation</span></div>
+      </div>
+      <p class="short">Post it in the Questions Channel with the page you were on and what you clicked — the team tests it and replies. Several reported breakages have turned out to be a renamed space.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>Nothing happens when I select the prompt</li><li>The link doesn&#x27;t work</li><li>Trying to watch videos but it keeps saying error will not play video</li><li>Lesko500.com appears to be down</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Post in the Questions Channel: the link or page name, what you clicked, and what you saw.</li><li>Say which device and browser you&#x27;re on — it helps the team reproduce it.</li><li>Try it once on a different device or browser first if you can — that tells the team whether it&#x27;s the page or the device.</li><li>Note: some &#x27;broken&#x27; links are spaces that were renamed in the 2026 roadmap rebuild — for example &#x27;Welcome and Set Up&#x27; is now &#x27;Explore the Roadmap&#x27;.</li></ol></div>
+      </div>
+      <div class="note ask"><b>I need your answer.</b> Is there a preferred place to report bugs, or is the Questions Channel correct?</div>
+      <div class="foot">
+        <span class="src">Sources: S23</span>
+        <span class="med">🎬 Nothing to record — this is a routing answer.</span>
+      </div>
+    </article>
+    <article class="card" id="profile_account">
+      <div class="cardhead">
+        <span class="rank">12</span>
+        <div class="ttl"><h3>Changing my name, email or profile details</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Profile picture → Personal Settings → edit whatever you need. Name, email, photo and timezone are all changed in the same place.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I change my email address?</li><li>How do I set up the profile?</li><li>Where is your personal profile edit area?</li><li>I signed up with the wrong email</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Click your profile picture (top right on computer, top or bottom right on phone).</li><li>Click &#x27;Personal Settings&#x27;.</li><li>Edit any field you need — name, email address, profile photo, timezone.</li><li>Save.</li></ol></div>
+      </div>
+      
+      <div class="foot">
+        <span class="src">Sources: S12</span>
+        <span class="med">🎬 Already has 3 official screenshots in post 97529812 — reuse those, or re-record for consistency.</span>
+      </div>
+    </article>
+    <article class="card" id="notifications_emails">
+      <div class="cardhead">
+        <span class="rank">13</span>
+        <div class="ttl"><h3>Too many emails and notifications</h3><span class="pill ok">Sourced from staff replies</span></div>
+      </div>
+      <p class="short">Emails and in-app notifications are controlled separately. Emails: unsubscribe at the bottom of the email. Notifications: profile picture → Personal Settings → Notifications.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How do I unsubscribe from the emails?</li><li>I don&#x27;t want to receive so many emails</li><li>How do I delete all previous notifications?</li><li>Is there a way to expand the notifications on full screen?</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>For emails: scroll to the bottom of any email you don&#x27;t want and click &#x27;Unsubscribe&#x27;. You may need to do this more than once — you can be signed up through more than one list.</li><li>For in-app notifications: click your profile picture → &#x27;Personal Settings&#x27; → &#x27;Notifications&#x27;, then choose the levels you want.</li><li>On a phone you can also turn notifications off for the app in your phone&#x27;s own settings.</li><li>Notifications cannot be deleted. Clicking one clears its unread dot, but the list stays.</li></ol></div>
+      </div>
+      <div class="note imp"><b>Watch out.</b> Unsubscribing from emails does NOT cancel your paid membership — those are separate. Members regularly confuse the two.</div>
+      <div class="foot">
+        <span class="src">Sources: S9, S10, S11</span>
+        <span class="med">🎬 Screen recording: Personal Settings → Notifications, and the unsubscribe link in an email.</span>
+      </div>
+    </article>
+    <article class="card" id="pricing_and_plan">
+      <div class="cardhead">
+        <span class="rank">14</span>
+        <div class="ttl"><h3>What does it cost and what am I paying for?</h3><span class="pill warn">Needs your confirmation</span></div>
+      </div>
+      <p class="short">Check what plan you are actually on at https://leskosupport.com/account-management — there is also a short video showing how to check your membership.</p>
+      <div class="cols">
+        <div class="sub"><h4>Members ask it like this</h4><ul class="quotes"><li>How much do you guys charge?</li><li>I want to renew my subscription. How do I renew and what is a recurly account?</li><li>I just joined with the 5 day trial — what happens when it ends?</li><li>My profile says Free Member but I&#x27;m being charged</li></ul></div>
+        <div class="sub"><h4>The answer — step by step</h4><ol class="steps"><li>Go to https://leskosupport.com/account-management to see your current plan and payment method.</li><li>There is a walkthrough video for checking your membership linked from the Manage Your Account post in Community Updates.</li><li>Billing runs through Recurly, which is the payment processor — a Recurly email about your subscription is expected, not a scam.</li><li>If your plan on screen doesn&#x27;t match what you&#x27;re being charged, email LeskoHelp@gmail.com.</li></ol></div>
+      </div>
+      <div class="note ask"><b>I need your answer.</b> I deliberately did NOT write prices into this answer. Members mention $1 5-day trial, $19.99/mo, $99.90/yr and a $59.99 resource book, but those are member reports, not anything published by the team. Please give me the official current prices, trial terms and what each tier includes.</div>
+      <div class="foot">
+        <span class="src">Sources: S6</span>
+        <span class="med">🎬 Screen recording: checking your plan on the account management page.</span>
+      </div>
+    </article>
+</div>
+<section class="close">
+<h2>What I need from you to finish these</h2>
+<ol>
+<li><b>The Mini-500 line.</b> You told me it's no longer given out — give me the one sentence you want members to hear, and what replaces it.</li>
+<li><b>Is the hand-built Personal Report still offered?</b> Or is the Personalized Call Sheet now the only route?</li>
+<li><b>Official pricing and trial terms.</b> I left every number out on purpose — the figures members quote are their own, not yours.</li>
+<li><b>Is there any phone number for members?</b> If not, the bot should say so plainly instead of leaving people hunting.</li>
+<li><b>Refund policy.</b> Is there a window the bot may state, or does everything go to Mary case by case?</li>
+<li><b>Which AI tool URL is canonical</b> — spaces/24461105 or spaces/23670974/page?</li>
+</ol>
+</section>
+<section class="close">
+<h2>Then the recordings</h2>
+<ol>
+<li>Ten of the fourteen need a screen recording. Each card carries a 🎬 line naming the exact flow to capture.</li>
+<li>Profile changes already have three official screenshots in the community — we can reuse them or re-record for a consistent look.</li>
+<li>Two need nothing: broken links and human support are routing answers, not walkthroughs.</li>
+<li>Once the recordings exist, the bot can answer with the steps, the video and the download in one reply.</li>
+</ol>
+</section>
+</div>
