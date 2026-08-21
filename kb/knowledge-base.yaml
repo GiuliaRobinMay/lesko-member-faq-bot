@@ -1,8 +1,3 @@
-# Lesko Help — Member FAQ Bot knowledge base (DRAFT v1, for review)
-# status: verified   = answer taken verbatim/near-verbatim from a staff reply in-community
-#         needs_check = drafted from community evidence but must be confirmed by the team
-# media:  what still needs a screen recording or screenshot
-
 meta:
   community: Lesko Help 2 (lesko-help-2.mn.co)
   drafted: 2026-08-21
@@ -19,330 +14,535 @@ meta:
     ask_lesko_ai_tool: https://lesko-help-2.mn.co/spaces/23670974/page
     class_replays: https://lesko-help-2.mn.co/spaces/24487516
     daily_welcome_tour: https://lesko-help-2.mn.co/spaces/24366161
-
 topics:
-
 - id: cancel_subscription
+  audience: both
   rank: 1
   title: How do I cancel my subscription or membership?
   status: verified
   asked_as:
-    - "How do I cancel my subscription?"
-    - "Where is the link to cancel before the 5-day window?"
-    - "I'm changing banks, how do I cancel my paid membership?"
-    - "Cancel membership"
-    - "It is next to impossible to cancel this subscription"
-  short_answer: >
-    There are two ways: cancel it yourself on the Lesko Support site, or email Customer Service
+  - How do I cancel my subscription?
+  - Where is the link to cancel before the 5-day window?
+  - I'm changing banks, how do I cancel my paid membership?
+  - Cancel membership
+  - It is next to impossible to cancel this subscription
+  short_answer: 'There are two ways: cancel it yourself on the Lesko Support site, or email Customer Service
     and they will do it for you and confirm by reply.
-  steps:
-    - "Self-serve: go to https://leskosupport.com/account-management and scroll to the bottom of the page — the cancellation instructions are there."
-    - "Or email LeskoHelp@gmail.com and ask to cancel. Mary Pacey in Customer Service handles cancellations and will reply to confirm it is done."
-    - "Before you cancel, download anything shared with you — Call Sheets, reports, spreadsheets. That material stays yours whether you stay or go."
-    - "On the $1 / 5-day trial: cancel before the 5 days are up to avoid the next charge."
-  escalate_when: "Member says they already emailed and got no reply, or is still being charged after cancelling → hand to Customer Service with the member's email address and dates."
-  sources: [S1, S2, S3]
-  media_needed: "Screen recording: leskosupport.com → Account Management → scroll to cancellation section."
 
+    '
+  steps:
+  - 'Self-serve: go to https://leskosupport.com/account-management and scroll to the bottom of the page
+    — the cancellation instructions are there.'
+  - Or email LeskoHelp@gmail.com and ask to cancel. Mary Pacey in Customer Service handles cancellations
+    and will reply to confirm it is done.
+  - Before you cancel, download anything shared with you — Call Sheets, reports, spreadsheets. That material
+    stays yours whether you stay or go.
+  - 'On the $1 / 5-day trial: cancel before the 5 days are up to avoid the next charge.'
+  escalate_when: Member says they already emailed and got no reply, or is still being charged after cancelling
+    → hand to Customer Service with the member's email address and dates.
+  sources:
+  - S1
+  - S2
+  - S3
+  media_needed: 'Screen recording: leskosupport.com → Account Management → scroll to cancellation section.'
+  outside_variant:
+    note: Outside the community, the Questions Channel route is unavailable — lead with self-serve, then
+      email.
+    steps:
+    - Go to https://leskosupport.com/account-management and scroll to the bottom for the cancellation
+      instructions.
+    - Or email LeskoHelp@gmail.com asking to cancel. Mary Pacey in Customer Service will reply to confirm.
+    - Include the email address on the account — that's what they need to find you.
+    - 'On the $1 / 5-day trial: cancel before day 5 to avoid the next charge.'
 - id: refunds_billing
+  audience: both
   rank: 2
   title: Refunds, unexpected charges and updating my card
   status: verified
   asked_as:
-    - "How do I get a refund?"
-    - "My account auto renewed. How can I request a refund?"
-    - "I'm being charged a monthly subscription yet the site says my membership is free"
-    - "How do I update my payment card on file?"
-    - "What is the $60 charge?"
-  short_answer: >
-    All billing — refunds, duplicate or unexpected charges, and payment method changes — is handled
-    by Mary Pacey in Customer Service at LeskoHelp@gmail.com. Account details can also be managed
+  - How do I get a refund?
+  - My account auto renewed. How can I request a refund?
+  - I'm being charged a monthly subscription yet the site says my membership is free
+  - How do I update my payment card on file?
+  - What is the $60 charge?
+  short_answer: 'All billing — refunds, duplicate or unexpected charges, and payment method changes —
+    is handled by Mary Pacey in Customer Service at LeskoHelp@gmail.com. Account details can also be managed
     on the Lesko Support site.
-  steps:
-    - "Email LeskoHelp@gmail.com with your account email and the charge date and amount."
-    - "For an auto-renewal you did not expect, ask to cancel the membership AND refund the auto-renewal in the same message."
-    - "To update a card or check what plan you are on, use https://leskosupport.com/account-management."
-    - "If your profile says 'Free Member' but you are still being charged, say so explicitly — that mismatch needs Customer Service to look at the billing record."
-  escalate_when: "Always route to Customer Service — the bot should never promise a refund, only explain how to request one."
-  sources: [S1, S4, S5, S6]
-  media_needed: "Screen recording: where to find your plan and payment method on the account management page."
-  open_question: "Is there a stated refund window or policy the bot may quote? Not published anywhere in-community."
 
+    '
+  steps:
+  - Email LeskoHelp@gmail.com with your account email and the charge date and amount.
+  - For an auto-renewal you did not expect, ask to cancel the membership AND refund the auto-renewal in
+    the same message.
+  - To update a card or check what plan you are on, use https://leskosupport.com/account-management.
+  - If your profile says 'Free Member' but you are still being charged, say so explicitly — that mismatch
+    needs Customer Service to look at the billing record.
+  escalate_when: Always route to Customer Service — the bot should never promise a refund, only explain
+    how to request one.
+  sources:
+  - S1
+  - S4
+  - S5
+  - S6
+  media_needed: 'Screen recording: where to find your plan and payment method on the account management
+    page.'
+  open_question: Is there a stated refund window or policy the bot may quote? Not published anywhere in-community.
 - id: calls_zoom_replays
+  audience: inside
   rank: 3
   title: Live calls — what's on, how to join, and where the replays are
   status: verified
   asked_as:
-    - "How do I join zoom?"
-    - "Is there a zoom meeting today?"
-    - "Where can I find the meeting ID or the invitation link?"
-    - "Did I miss the workshop? How can I replay a video?"
-    - "Zoom says we are waiting on the host"
-  short_answer: >
-    There is a live session almost every day. Open the event in the community, click the pink
-    "Zoom Meeting" link, and if you don't have Zoom installed click "Join Zoom from Browser".
-    Replays go into the Class Replays space.
-  steps:
-    - "Open the event post in the community, then click 'Zoom Meeting' written in pink."
-    - "No Zoom account? Click 'Join Zoom from Browser' instead — you do not need to install anything."
-    - "If you can't be heard or seen: hover over the bottom of the Zoom window, click 'Join Audio', then the video button, and allow Zoom to use your microphone and camera."
-    - "'Waiting for the host' means the host has not opened the room yet — stay in the waiting room, it will start."
-    - "Missed it? Find the recording in Class Replays: https://lesko-help-2.mn.co/spaces/24487516"
-    - "Struggling during a session — type the problem into the Zoom chat, a coach will help you there."
-  weekly_schedule:
-    - "Daily — WELCOME TOUR (Daily Welcome Tour space)"
-    - "Monday — Mid Mondays Member Q&A; Monday's OPEN OFFICE with Tony (navigating Lesko Help + grant-search basics)"
-    - "Tuesday — MATTHEW MEETUP, live with Matthew"
-    - "Wednesday — Pay My Debt & Bills; AI User Skills with Roger; Business Growth with Amber"
-    - "Thursday — Drop-In Clinic 10:00–18:00 ET, no appointment needed; Thursdays Member Q&A with Tony"
-    - "Friday — AI Workshop; Grant Application Workshop with Megan; Starting & Re-Starting a Business"
-    - "Saturday — Saturdays Member Q&A with Tony; Business Series Saturdays"
-    - "Sunday — Sundays Member Q&A with Tony; Start a Nonprofit with Megan"
-  sources: [S14, S18, S21]
-  media_needed: "Screen recording: opening an event → clicking the pink Zoom link → Join from Browser → turning on audio/video."
-  open_question: "Schedule captured 2026-08-21. Should the bot read the live event list dynamically instead of using a fixed schedule? Recommended — times shift."
+  - How do I join zoom?
+  - Is there a zoom meeting today?
+  - Where can I find the meeting ID or the invitation link?
+  - Did I miss the workshop? How can I replay a video?
+  - Zoom says we are waiting on the host
+  short_answer: 'There is a live session almost every day. Open the event in the community, click the
+    pink "Zoom Meeting" link, and if you don''t have Zoom installed click "Join Zoom from Browser". Replays
+    go into the Class Replays space.
 
+    '
+  steps:
+  - Open the event post in the community, then click 'Zoom Meeting' written in pink.
+  - No Zoom account? Click 'Join Zoom from Browser' instead — you do not need to install anything.
+  - 'If you can''t be heard or seen: hover over the bottom of the Zoom window, click ''Join Audio'', then
+    the video button, and allow Zoom to use your microphone and camera.'
+  - '''Waiting for the host'' means the host has not opened the room yet — stay in the waiting room, it
+    will start.'
+  - 'Missed it? Find the recording in Class Replays: https://lesko-help-2.mn.co/spaces/24487516'
+  - Struggling during a session — type the problem into the Zoom chat, a coach will help you there.
+  weekly_schedule:
+  - Daily — WELCOME TOUR (Daily Welcome Tour space)
+  - Monday — Mid Mondays Member Q&A; Monday's OPEN OFFICE with Tony (navigating Lesko Help + grant-search
+    basics)
+  - Tuesday — MATTHEW MEETUP, live with Matthew
+  - Wednesday — Pay My Debt & Bills; AI User Skills with Roger; Business Growth with Amber
+  - Thursday — Drop-In Clinic 10:00–18:00 ET, no appointment needed; Thursdays Member Q&A with Tony
+  - Friday — AI Workshop; Grant Application Workshop with Megan; Starting & Re-Starting a Business
+  - Saturday — Saturdays Member Q&A with Tony; Business Series Saturdays
+  - Sunday — Sundays Member Q&A with Tony; Start a Nonprofit with Megan
+  sources:
+  - S14
+  - S18
+  - S21
+  media_needed: 'Screen recording: opening an event → clicking the pink Zoom link → Join from Browser
+    → turning on audio/video.'
+  open_question: Schedule captured 2026-08-21. Should the bot read the live event list dynamically instead
+    of using a fixed schedule? Recommended — times shift.
 - id: call_sheet_and_reports
+  audience: inside
   rank: 4
   title: Call Sheets, Personal Reports and books I paid for
   status: needs_check
   asked_as:
-    - "How and who do I ask to start my personal report?"
-    - "Can you please update my comprehensive personal report?"
-    - "Where is my report?"
-    - "I bought the E Book for Texas and I do not see an email with it"
-    - "I paid an additional fee to receive a book. When will I receive it?"
-  short_answer: >
-    The current deliverable is the Personalized Call Sheet, and there are three ways to get one:
-    a Call Sheet Class, the Lesko AI Researcher, or by asking in the Questions Channel.
+  - How and who do I ask to start my personal report?
+  - Can you please update my comprehensive personal report?
+  - Where is my report?
+  - I bought the E Book for Texas and I do not see an email with it
+  - I paid an additional fee to receive a book. When will I receive it?
+  short_answer: 'The current deliverable is the Personalized Call Sheet, and there are three ways to get
+    one: a Call Sheet Class, the Lesko AI Researcher, or by asking in the Questions Channel.
+
+    '
   steps:
-    - "Fastest: run the AI Grant Researcher yourself — pick your topic, enter your city and state or ZIP, and it builds your list."
-    - "Or attend a Call Sheet Class and the host will build one with you live."
-    - "Or post what you need in the Questions Channel and the team will reply with a Call Sheet under your post."
-    - "Delivered Call Sheets are posted for you in Personalized Class Answers — check your notification bell."
-    - "Paid book or e-book that hasn't arrived: that's a fulfilment question — email LeskoHelp@gmail.com."
-  legacy_note: >
-    The older "Lesko Personal Report" was built by hand by Misty Fowlds and Sabrina Giesler from a list
-    of 3–10 goals posted in the Partnership & Accountability space. Members still ask for it by name.
-  sources: [S19, S20, S15]
-  media_needed: "Screen recording: requesting a Call Sheet in the Questions Channel, and where delivered Call Sheets appear."
-  open_question: >
-    CONFIRMED BY YOU: the Mini-500 is no longer given out. The bot needs one agreed sentence for
-    'the Mini-500 / state report is no longer offered — here is what replaces it'. Also: is the
+  - 'Fastest: run the AI Grant Researcher yourself — pick your topic, enter your city and state or ZIP,
+    and it builds your list.'
+  - Or attend a Call Sheet Class and the host will build one with you live.
+  - Or post what you need in the Questions Channel and the team will reply with a Call Sheet under your
+    post.
+  - Delivered Call Sheets are posted for you in Personalized Class Answers — check your notification bell.
+  - 'Paid book or e-book that hasn''t arrived: that''s a fulfilment question — email LeskoHelp@gmail.com.'
+  legacy_note: 'The older "Lesko Personal Report" was built by hand by Misty Fowlds and Sabrina Giesler
+    from a list of 3–10 goals posted in the Partnership & Accountability space. Members still ask for
+    it by name.
+
+    '
+  sources:
+  - S19
+  - S20
+  - S15
+  media_needed: 'Screen recording: requesting a Call Sheet in the Questions Channel, and where delivered
+    Call Sheets appear.'
+  open_question: 'CONFIRMED BY YOU: the Mini-500 is no longer given out. The bot needs one agreed sentence
+    for ''the Mini-500 / state report is no longer offered — here is what replaces it''. Also: is the
     hand-built Personal Report still offered at all, or is the Call Sheet now the only route?
 
+    '
 - id: navigation
+  audience: inside
   rank: 5
   title: I can't find my way around the site
   status: verified
   asked_as:
-    - "I am having trouble navigating lesko help 2, can someone help me"
-    - "I still don't know how to navigate through this place"
-    - "I'm really getting lost trying to figure out how to navigate on this site"
-    - "Where are the answers to my questions that I have been posting?"
-  short_answer: >
-    Three places cover almost everything: Explore the Roadmap for the step-by-step path,
-    the Quick Guide Library for your specific need, and the Questions Channel when you're stuck.
-  steps:
-    - "Start at Explore the Roadmap — it is the guided path through the community: https://lesko-help-2.mn.co/spaces/24365840"
-    - "Then use the Quick Guide Library — one space per need (bills, housing, healthcare, business, cars, legal, veterans, seniors): https://lesko-help-2.mn.co/collections/2517908"
-    - "Still stuck? Post in the Questions Channel and the team replies under your post."
-    - "Replies to your posts arrive in your notification bell — that's where to look for answers."
-    - "Prefer to be walked through it live? Monday's OPEN OFFICE with Tony is specifically about learning to navigate Lesko Help."
-  sources: [S13, S17, S22, S23]
-  media_needed: "Screen recording: a guided tour — Roadmap → Quick Guide Library → Questions Channel → notification bell."
+  - I am having trouble navigating lesko help 2, can someone help me
+  - I still don't know how to navigate through this place
+  - I'm really getting lost trying to figure out how to navigate on this site
+  - Where are the answers to my questions that I have been posting?
+  short_answer: 'Three places cover almost everything: Explore the Roadmap for the step-by-step path,
+    the Quick Guide Library for your specific need, and the Questions Channel when you''re stuck.
 
+    '
+  steps:
+  - 'Start at Explore the Roadmap — it is the guided path through the community: https://lesko-help-2.mn.co/spaces/24365840'
+  - 'Then use the Quick Guide Library — one space per need (bills, housing, healthcare, business, cars,
+    legal, veterans, seniors): https://lesko-help-2.mn.co/collections/2517908'
+  - Still stuck? Post in the Questions Channel and the team replies under your post.
+  - Replies to your posts arrive in your notification bell — that's where to look for answers.
+  - Prefer to be walked through it live? Monday's OPEN OFFICE with Tony is specifically about learning
+    to navigate Lesko Help.
+  sources:
+  - S13
+  - S17
+  - S22
+  - S23
+  media_needed: 'Screen recording: a guided tour — Roadmap → Quick Guide Library → Questions Channel →
+    notification bell.'
 - id: getting_started
+  audience: inside
   rank: 6
   title: I just joined — what do I do first?
   status: verified
   asked_as:
-    - "May I please have help getting started"
-    - "I'm new to the platform and I'm a bit overwhelmed"
-    - "I am 88 and need assistance getting started"
-    - "I need a tutorial how to use this site"
-  short_answer: >
-    Start with Explore the Roadmap and its checklist, join a Welcome Tour (runs daily), then tell us
-    in the Questions Channel what you actually need help with so we can point you at the right resources.
-  steps:
-    - "Work through Explore the Roadmap and complete the setup checklist — even long-time members are asked to do this."
-    - "Join the WELCOME TOUR — it runs every day and walks you around the community."
-    - "Post in the Questions Channel saying what kind of help you're looking for. The team replies under your post with specific recommendations."
-    - "Next step after that is building your Call Sheet — via a Call Sheet Class, the AI Researcher, or the Questions Channel."
-    - "Then move into the Call and Application Classes, and keep using Q&As, Group Coaching and Matthew's Live sessions."
-  sources: [S13, S19]
-  media_needed: "Screen recording: the roadmap checklist and joining the Welcome Tour."
+  - May I please have help getting started
+  - I'm new to the platform and I'm a bit overwhelmed
+  - I am 88 and need assistance getting started
+  - I need a tutorial how to use this site
+  short_answer: 'Start with Explore the Roadmap and its checklist, join a Welcome Tour (runs daily), then
+    tell us in the Questions Channel what you actually need help with so we can point you at the right
+    resources.
 
+    '
+  steps:
+  - Work through Explore the Roadmap and complete the setup checklist — even long-time members are asked
+    to do this.
+  - Join the WELCOME TOUR — it runs every day and walks you around the community.
+  - Post in the Questions Channel saying what kind of help you're looking for. The team replies under
+    your post with specific recommendations.
+  - Next step after that is building your Call Sheet — via a Call Sheet Class, the AI Researcher, or the
+    Questions Channel.
+  - Then move into the Call and Application Classes, and keep using Q&As, Group Coaching and Matthew's
+    Live sessions.
+  sources:
+  - S13
+  - S19
+  media_needed: 'Screen recording: the roadmap checklist and joining the Welcome Tour.'
 - id: human_support
+  audience: both
   rank: 7
   title: Can I talk to a real person?
   status: verified
   asked_as:
-    - "Customer Service number?"
-    - "How do I contact support please?"
-    - "Is there any way to get some 1 on 1 assistance?"
-    - "Can someone call me?"
-  short_answer: >
-    Yes — live, on Zoom. There is no support phone line. Member Q&As run six days a week, and the
-    Thursday Drop-In Clinic is open all day with no appointment. Billing questions go to email.
-  steps:
-    - "To speak to the team live, join any Member Q&A — they run six days a week."
-    - "Thursday Drop-In Clinic: 10:00–18:00 ET, hop in any time, no appointment needed."
-    - "For anything about money — billing, refunds, cancelling — email LeskoHelp@gmail.com (Mary Pacey, Customer Service)."
-    - "For grant help, post in the Questions Channel — the team answers in the comments under your post."
-  sources: [S14, S21, S5]
-  media_needed: "Screen recording: finding the next live event and joining the Drop-In Clinic."
-  open_question: "Confirm there is genuinely no member-facing phone number, so the bot can say so plainly."
+  - Customer Service number?
+  - How do I contact support please?
+  - Is there any way to get some 1 on 1 assistance?
+  - Can someone call me?
+  short_answer: 'Yes — live, on Zoom. There is no support phone line. Member Q&As run six days a week,
+    and the Thursday Drop-In Clinic is open all day with no appointment. Billing questions go to email.
 
+    '
+  steps:
+  - To speak to the team live, join any Member Q&A — they run six days a week.
+  - 'Thursday Drop-In Clinic: 10:00–18:00 ET, hop in any time, no appointment needed.'
+  - For anything about money — billing, refunds, cancelling — email LeskoHelp@gmail.com (Mary Pacey, Customer
+    Service).
+  - For grant help, post in the Questions Channel — the team answers in the comments under your post.
+  sources:
+  - S14
+  - S21
+  - S5
+  media_needed: 'Screen recording: finding the next live event and joining the Drop-In Clinic.'
+  open_question: Confirm there is genuinely no member-facing phone number, so the bot can say so plainly.
+  outside_variant:
+    note: Outside the community you cannot join a Q&A or the Drop-In Clinic — so email is the only route,
+      and the bot must not send people to live events they cannot reach.
+    steps:
+    - Email LeskoHelp@gmail.com — Mary Pacey in Customer Service handles billing, refunds, cancellations
+      and account access.
+    - Include the email address you signed up with, and the date and amount of any charge you're asking
+      about.
+    - There is no member support phone line.
+    - Live Q&As and the Thursday Drop-In Clinic are inside the community — you'll need access restored
+      first.
 - id: ai_grant_researcher
+  audience: inside
   rank: 8
   title: How do I use the AI Grant Researcher?
   status: verified
   asked_as:
-    - "Does the members AI tool work, I keep getting page not available"
-    - "Your AI doesn't work, I've been trying for a month"
-    - "Where do I find the AI tool?"
-    - "Where did my AI research results go?"
-  short_answer: >
-    Pick your topic, enter your city and state or ZIP, and hit Run Research Tool. Results build up
-    over several minutes, then you can open each one for contact details or export the whole list.
-  steps:
-    - "Open the AI Grant Researcher: https://lesko-help-2.mn.co/spaces/24461105"
-    - "Select your Topic, then enter your ZIP code or your city and state."
-    - "Hit 'Run Research Tool'. Results arrive one or two at a time and a full search can take 10–15 minutes depending on your device and connection."
-    - "Click '2: Results' to see what it found in your area."
-    - "Hit 'See Details' on any organisation for phone numbers, email addresses, eligibility, funding amounts, and a ready-made outreach message."
-    - "Click '3: Export' to download the list to your device as Excel or PDF."
-    - "Click 'Clear Report' to run a fresh search for another topic or area."
-    - "Want to be taught it live? The AI Workshop runs Fridays, and AI User Skills with Roger runs Wednesdays."
-  sources: [S15, S16, S21]
-  media_needed: "Screen recording: full run — topic → location → Run → Results → See Details → Export."
-  open_question: "Two URLs are in circulation (spaces/24461105 and spaces/23670974/page). Which is canonical?"
+  - Does the members AI tool work, I keep getting page not available
+  - Your AI doesn't work, I've been trying for a month
+  - Where do I find the AI tool?
+  - Where did my AI research results go?
+  short_answer: 'Pick your topic, enter your city and state or ZIP, and hit Run Research Tool. Results
+    build up over several minutes, then you can open each one for contact details or export the whole
+    list.
 
+    '
+  steps:
+  - 'Open the AI Grant Researcher: https://lesko-help-2.mn.co/spaces/24461105'
+  - Select your Topic, then enter your ZIP code or your city and state.
+  - Hit 'Run Research Tool'. Results arrive one or two at a time and a full search can take 10–15 minutes
+    depending on your device and connection.
+  - 'Click ''2: Results'' to see what it found in your area.'
+  - Hit 'See Details' on any organisation for phone numbers, email addresses, eligibility, funding amounts,
+    and a ready-made outreach message.
+  - 'Click ''3: Export'' to download the list to your device as Excel or PDF.'
+  - Click 'Clear Report' to run a fresh search for another topic or area.
+  - Want to be taught it live? The AI Workshop runs Fridays, and AI User Skills with Roger runs Wednesdays.
+  sources:
+  - S15
+  - S16
+  - S21
+  media_needed: 'Screen recording: full run — topic → location → Run → Results → See Details → Export.'
+  open_question: Two URLs are in circulation (spaces/24461105 and spaces/23670974/page). Which is canonical?
 - id: login_password
+  audience: both
   rank: 9
   title: I can't log in or I forgot my password
   status: verified
   asked_as:
-    - "I can't get in. My email and password not working"
-    - "I didn't receive email to reset my password"
-    - "Trying to change password but do not know the current password"
-    - "It says no account found with that email"
-  short_answer: >
-    Use "Forgot password?" on the login page — it resets by email, so you don't need your old password.
-    If that doesn't arrive, the platform's own support team can fix it directly.
-  steps:
-    - "On the login page click 'Forgot password?' and follow the email link."
-    - "Check spam/junk if the reset email doesn't appear."
-    - "Still stuck: click the 'Need Help?' button at the bottom of any page in the community."
-    - "Or email help@mightynetworks.com — Lesko Help runs on Mighty Networks and their team can sort out account access directly."
-    - "'No account found' usually means a different email than the one you joined with — try any other addresses you use."
-  sources: [S7]
-  media_needed: "Screen recording: the Forgot password flow and where the Need Help? button is."
+  - I can't get in. My email and password not working
+  - I didn't receive email to reset my password
+  - Trying to change password but do not know the current password
+  - It says no account found with that email
+  short_answer: 'Use "Forgot password?" on the login page — it resets by email, so you don''t need your
+    old password. If that doesn''t arrive, the platform''s own support team can fix it directly.
 
+    '
+  steps:
+  - On the login page click 'Forgot password?' and follow the email link.
+  - Check spam/junk if the reset email doesn't appear.
+  - 'Still stuck: click the ''Need Help?'' button at the bottom of any page in the community.'
+  - Or email help@mightynetworks.com — Lesko Help runs on Mighty Networks and their team can sort out
+    account access directly.
+  - '''No account found'' usually means a different email than the one you joined with — try any other
+    addresses you use.'
+  sources:
+  - S7
+  media_needed: 'Screen recording: the Forgot password flow and where the Need Help? button is.'
+  outside_variant:
+    note: Inside the community the member can already reach the login page. Outside, they often cannot
+      — different first step.
+    steps:
+    - 'Go to the community directly: https://lesko-help-2.mn.co — don''t rely on an old link from an email,
+      several of those now land on dead pages.'
+    - On the login screen click 'Forgot password?' and follow the emailed link. You do not need your old
+      password.
+    - No reset email? Check spam, then try any other email addresses you might have signed up with — 'no
+      account found' almost always means a different address.
+    - 'Account, billing and cancellation are on a different site: https://leskosupport.com/account-management'
+    - 'Still locked out: email LeskoHelp@gmail.com with the email address you signed up with, or help@mightynetworks.com
+      for account access.'
 - id: app_and_devices
+  audience: both
   rank: 10
   title: Which app is it and how do I install it?
   status: verified
   asked_as:
-    - "How do I download the app?"
-    - "What is the name of the app that I need to download"
-    - "I can't find the Lesko app on Google Play"
-    - "Can I have the app on my laptop?"
-  short_answer: >
-    The app is Mighty Networks, not a "Lesko" app — which is why searching the store for Lesko finds
-    nothing. Get it via the QR code in your Personal Settings.
-  steps:
-    - "Click your profile picture in the top right, then 'Personal Settings'."
-    - "Scroll down and click 'Download the app' — a QR code appears."
-    - "Scan the QR code, then use the button for Google Play or the App Store depending on your device."
-    - "Log in on your phone with the same email address and password you use on the computer."
-    - "Searching the store for 'Lesko' will not find it — the app is called Mighty Networks."
-  sources: [S8]
-  media_needed: "Screen recording: Personal Settings → Download the app → QR code → store → first login on phone."
+  - How do I download the app?
+  - What is the name of the app that I need to download
+  - I can't find the Lesko app on Google Play
+  - Can I have the app on my laptop?
+  short_answer: 'The app is Mighty Networks, not a "Lesko" app — which is why searching the store for
+    Lesko finds nothing. Get it via the QR code in your Personal Settings.
 
+    '
+  steps:
+  - Click your profile picture in the top right, then 'Personal Settings'.
+  - Scroll down and click 'Download the app' — a QR code appears.
+  - Scan the QR code, then use the button for Google Play or the App Store depending on your device.
+  - Log in on your phone with the same email address and password you use on the computer.
+  - Searching the store for 'Lesko' will not find it — the app is called Mighty Networks.
+  sources:
+  - S8
+  media_needed: 'Screen recording: Personal Settings → Download the app → QR code → store → first login
+    on phone.'
+  outside_variant:
+    note: Outside, the QR-code route needs a login first — so name the app plainly.
+    steps:
+    - The app is called Mighty Networks. Searching your app store for 'Lesko' will not find it.
+    - Install Mighty Networks from Google Play or the App Store, then log in with the email and password
+      you used to join.
+    - Once you're in, you can also get a QR code under your profile picture → Personal Settings → Download
+      the app.
 - id: broken_links_errors
+  audience: inside
   rank: 11
   title: A link, video or page isn't working
   status: needs_check
   asked_as:
-    - "Nothing happens when I select the prompt"
-    - "The link doesn't work"
-    - "Trying to watch videos but it keeps saying error will not play video"
-    - "Lesko500.com appears to be down"
-  short_answer: >
-    Post it in the Questions Channel with the page you were on and what you clicked — the team tests
-    it and replies. Several reported breakages have turned out to be a renamed space.
-  steps:
-    - "Post in the Questions Channel: the link or page name, what you clicked, and what you saw."
-    - "Say which device and browser you're on — it helps the team reproduce it."
-    - "Try it once on a different device or browser first if you can — that tells the team whether it's the page or the device."
-    - "Note: some 'broken' links are spaces that were renamed in the 2026 roadmap rebuild — for example 'Welcome and Set Up' is now 'Explore the Roadmap'."
-  sources: [S23]
-  media_needed: "Nothing to record — this is a routing answer."
-  open_question: "Is there a preferred place to report bugs, or is the Questions Channel correct?"
+  - Nothing happens when I select the prompt
+  - The link doesn't work
+  - Trying to watch videos but it keeps saying error will not play video
+  - Lesko500.com appears to be down
+  short_answer: 'Post it in the Questions Channel with the page you were on and what you clicked — the
+    team tests it and replies. Several reported breakages have turned out to be a renamed space.
 
+    '
+  steps:
+  - 'Post in the Questions Channel: the link or page name, what you clicked, and what you saw.'
+  - Say which device and browser you're on — it helps the team reproduce it.
+  - Try it once on a different device or browser first if you can — that tells the team whether it's the
+    page or the device.
+  - 'Note: some ''broken'' links are spaces that were renamed in the 2026 roadmap rebuild — for example
+    ''Welcome and Set Up'' is now ''Explore the Roadmap''.'
+  sources:
+  - S23
+  media_needed: Nothing to record — this is a routing answer.
+  open_question: Is there a preferred place to report bugs, or is the Questions Channel correct?
 - id: profile_account
+  audience: inside
   rank: 12
   title: Changing my name, email or profile details
   status: verified
   asked_as:
-    - "How do I change my email address?"
-    - "How do I set up the profile?"
-    - "Where is your personal profile edit area?"
-    - "I signed up with the wrong email"
-  short_answer: >
-    Profile picture → Personal Settings → edit whatever you need. Name, email, photo and timezone
-    are all changed in the same place.
-  steps:
-    - "Click your profile picture (top right on computer, top or bottom right on phone)."
-    - "Click 'Personal Settings'."
-    - "Edit any field you need — name, email address, profile photo, timezone."
-    - "Save."
-  sources: [S12]
-  media_needed: "Already has 3 official screenshots in post 97529812 — reuse those, or re-record for consistency."
+  - How do I change my email address?
+  - How do I set up the profile?
+  - Where is your personal profile edit area?
+  - I signed up with the wrong email
+  short_answer: 'Profile picture → Personal Settings → edit whatever you need. Name, email, photo and
+    timezone are all changed in the same place.
 
+    '
+  steps:
+  - Click your profile picture (top right on computer, top or bottom right on phone).
+  - Click 'Personal Settings'.
+  - Edit any field you need — name, email address, profile photo, timezone.
+  - Save.
+  sources:
+  - S12
+  media_needed: Already has 3 official screenshots in post 97529812 — reuse those, or re-record for consistency.
 - id: notifications_emails
+  audience: both
   rank: 13
   title: Too many emails and notifications
   status: verified
   asked_as:
-    - "How do I unsubscribe from the emails?"
-    - "I don't want to receive so many emails"
-    - "How do I delete all previous notifications?"
-    - "Is there a way to expand the notifications on full screen?"
-  short_answer: >
-    Emails and in-app notifications are controlled separately. Emails: unsubscribe at the bottom of
-    the email. Notifications: profile picture → Personal Settings → Notifications.
-  steps:
-    - "For emails: scroll to the bottom of any email you don't want and click 'Unsubscribe'. You may need to do this more than once — you can be signed up through more than one list."
-    - "For in-app notifications: click your profile picture → 'Personal Settings' → 'Notifications', then choose the levels you want."
-    - "On a phone you can also turn notifications off for the app in your phone's own settings."
-    - "Notifications cannot be deleted. Clicking one clears its unread dot, but the list stays."
-  important: "Unsubscribing from emails does NOT cancel your paid membership — those are separate. Members regularly confuse the two."
-  sources: [S9, S10, S11]
-  media_needed: "Screen recording: Personal Settings → Notifications, and the unsubscribe link in an email."
+  - How do I unsubscribe from the emails?
+  - I don't want to receive so many emails
+  - How do I delete all previous notifications?
+  - Is there a way to expand the notifications on full screen?
+  short_answer: 'Emails and in-app notifications are controlled separately. Emails: unsubscribe at the
+    bottom of the email. Notifications: profile picture → Personal Settings → Notifications.
 
+    '
+  steps:
+  - 'For emails: scroll to the bottom of any email you don''t want and click ''Unsubscribe''. You may
+    need to do this more than once — you can be signed up through more than one list.'
+  - 'For in-app notifications: click your profile picture → ''Personal Settings'' → ''Notifications'',
+    then choose the levels you want.'
+  - On a phone you can also turn notifications off for the app in your phone's own settings.
+  - Notifications cannot be deleted. Clicking one clears its unread dot, but the list stays.
+  important: Unsubscribing from emails does NOT cancel your paid membership — those are separate. Members
+    regularly confuse the two.
+  sources:
+  - S9
+  - S10
+  - S11
+  media_needed: 'Screen recording: Personal Settings → Notifications, and the unsubscribe link in an email.'
+  outside_variant:
+    note: Outside the community, only the email half applies — there are no in-app notification settings
+      to reach.
+    steps:
+    - Scroll to the bottom of any Lesko email and click 'Unsubscribe'. You may need to do it more than
+      once — you can be on more than one list.
+    - Unsubscribing from emails does NOT cancel a paid membership. If you're still being charged, that's
+      a separate step.
+    - To stop the charges as well, cancel at https://leskosupport.com/account-management or email LeskoHelp@gmail.com.
 - id: pricing_and_plan
+  audience: both
   rank: 14
   title: What does it cost and what am I paying for?
   status: needs_check
   asked_as:
-    - "How much do you guys charge?"
-    - "I want to renew my subscription. How do I renew and what is a recurly account?"
-    - "I just joined with the 5 day trial — what happens when it ends?"
-    - "My profile says Free Member but I'm being charged"
-  short_answer: >
-    Check what plan you are actually on at https://leskosupport.com/account-management — there is
-    also a short video showing how to check your membership.
+  - How much do you guys charge?
+  - I want to renew my subscription. How do I renew and what is a recurly account?
+  - I just joined with the 5 day trial — what happens when it ends?
+  - My profile says Free Member but I'm being charged
+  short_answer: 'Check what plan you are actually on at https://leskosupport.com/account-management —
+    there is also a short video showing how to check your membership.
+
+    '
   steps:
-    - "Go to https://leskosupport.com/account-management to see your current plan and payment method."
-    - "There is a walkthrough video for checking your membership linked from the Manage Your Account post in Community Updates."
-    - "Billing runs through Recurly, which is the payment processor — a Recurly email about your subscription is expected, not a scam."
-    - "If your plan on screen doesn't match what you're being charged, email LeskoHelp@gmail.com."
-  sources: [S6]
-  media_needed: "Screen recording: checking your plan on the account management page."
-  open_question: >
-    I deliberately did NOT write prices into this answer. Members mention $1 5-day trial, $19.99/mo,
-    $99.90/yr and a $59.99 resource book, but those are member reports, not anything published by the
-    team. Please give me the official current prices, trial terms and what each tier includes.
+  - Go to https://leskosupport.com/account-management to see your current plan and payment method.
+  - There is a walkthrough video for checking your membership linked from the Manage Your Account post
+    in Community Updates.
+  - Billing runs through Recurly, which is the payment processor — a Recurly email about your subscription
+    is expected, not a scam.
+  - If your plan on screen doesn't match what you're being charged, email LeskoHelp@gmail.com.
+  sources:
+  - S6
+  media_needed: 'Screen recording: checking your plan on the account management page.'
+  open_question: 'I deliberately did NOT write prices into this answer. Members mention $1 5-day trial,
+    $19.99/mo, $99.90/yr and a $59.99 resource book, but those are member reports, not anything published
+    by the team. Please give me the official current prices, trial terms and what each tier includes.
+
+    '
+- id: membership_status_renew
+  audience: both
+  rank: 15
+  title: Am I still a member? How do I renew or rejoin?
+  status: needs_check
+  asked_as:
+  - Did my membership expire?
+  - Am I no longer a member?
+  - How do I renew my membership without having to start a new one?
+  - Where do I go to re-up my membership?
+  - As a current member must I rejoin each year or does my membership continue until I cancel?
+  - I rejoined only to find out it's not expired — I don't think paying twice is the goal
+  short_answer: 'Check your current status and plan at https://leskosupport.com/account-management before
+    you pay for anything. Renewing an existing membership is not the same as signing up again — signing
+    up again can create a second subscription and a second charge.
+
+    '
+  steps:
+  - Go to https://leskosupport.com/account-management and check whether your membership is active and
+    what plan you're on.
+  - There is also a short walkthrough video showing how to check your membership.
+  - Do NOT sign up again from a marketing email if you think you're still active — that is how members
+    end up paying twice.
+  - If you are unsure, or the page and your bank statement disagree, email LeskoHelp@gmail.com before
+    paying anything.
+  escalate_when: Member believes they have two active subscriptions, or has been charged after their membership
+    supposedly lapsed → Customer Service.
+  sources:
+  - S6
+  media_needed: 'Screen recording: checking membership status and plan, and what ''active'' looks like.'
+  open_question: 'Two things I could not answer from inside the community: (a) does a membership auto-renew
+    until cancelled, or does it lapse and need renewing? (b) what is the correct route to reactivate a
+    lapsed membership without creating a duplicate subscription?
+
+    '
+- id: which_site_to_use
+  audience: outside
+  rank: 16
+  title: Which Lesko site am I supposed to log into?
+  status: needs_check
+  asked_as:
+  - Where is the site to log in and manage lesko help membership? Not lesko 2, but the paid Lesko membership
+  - www.LeskoHelpMember.com is not working for me
+  - I am having trouble signing in to the members area at LeskoHelp.com
+  - I click the sign in link and I am redirected to a dead page
+  - have been asking how to login to lesko web sight, havent found it yet
+  short_answer: 'There is more than one Lesko web address in circulation, and members regularly try to
+    log in at the wrong one. The community itself is Lesko Help 2 at lesko-help-2.mn.co; account, billing
+    and cancellation live at leskosupport.com.
+
+    '
+  steps:
+  - The community — classes, Q&As, the AI tool, the Questions Channel — is at https://lesko-help-2.mn.co
+  - Your account, plan, payment method and cancellation are at https://leskosupport.com/account-management
+  - On a phone, the community is the Mighty Networks app — not a 'Lesko' app.
+  - If a link from an old email lands on a dead page or bounces you to a sign-up page, ignore it and go
+    to the addresses above directly.
+  - Still can't get in? Email LeskoHelp@gmail.com with the email address you signed up with.
+  sources: []
+  media_needed: 'Short screen recording: the two addresses, what each one is for, and what the right login
+    screen looks like.'
+  open_question: 'THIS IS THE BIGGEST GAP. I found members trying to log in at LeskoHelpMember.com, LeskoHelp.com,
+    Lesko500.com and leskosupport.com. Please give me the definitive list: which domains are live, which
+    are retired, and which one a locked-out person should use. Until you confirm this, the bot should
+    not answer this question at all.
+
+    '

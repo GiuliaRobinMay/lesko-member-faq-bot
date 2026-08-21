@@ -4,6 +4,7 @@
   "id": "cancel_subscription",
   "title": "How do I cancel my subscription or membership?",
   "status": "verified",
+  "audience": "both",
   "short": "There are two ways: cancel it yourself on the Lesko Support site, or email Customer Service and they will do it for you and confirm by reply.",
   "steps": [
    "Self-serve: go to https://leskosupport.com/account-management and scroll to the bottom of the page \u2014 the cancellation instructions are there.",
@@ -28,13 +29,23 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": "Member says they already emailed and got no reply, or is still being charged after cancelling \u2192 hand to Customer Service with the member's email address and dates."
+  "escalate": "Member says they already emailed and got no reply, or is still being charged after cancelling \u2192 hand to Customer Service with the member's email address and dates.",
+  "variant": {
+   "note": "Outside the community, the Questions Channel route is unavailable \u2014 lead with self-serve, then email.",
+   "steps": [
+    "Go to https://leskosupport.com/account-management and scroll to the bottom for the cancellation instructions.",
+    "Or email LeskoHelp@gmail.com asking to cancel. Mary Pacey in Customer Service will reply to confirm.",
+    "Include the email address on the account \u2014 that's what they need to find you.",
+    "On the $1 / 5-day trial: cancel before day 5 to avoid the next charge."
+   ]
+  }
  },
  {
   "rank": 2,
   "id": "refunds_billing",
   "title": "Refunds, unexpected charges and updating my card",
   "status": "verified",
+  "audience": "both",
   "short": "All billing \u2014 refunds, duplicate or unexpected charges, and payment method changes \u2014 is handled by Mary Pacey in Customer Service at LeskoHelp@gmail.com. Account details can also be managed on the Lesko Support site.",
   "steps": [
    "Email LeskoHelp@gmail.com with your account email and the charge date and amount.",
@@ -60,13 +71,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": "Always route to Customer Service \u2014 the bot should never promise a refund, only explain how to request one."
+  "escalate": "Always route to Customer Service \u2014 the bot should never promise a refund, only explain how to request one.",
+  "variant": null
  },
  {
   "rank": 3,
   "id": "calls_zoom_replays",
   "title": "Live calls \u2014 what's on, how to join, and where the replays are",
   "status": "verified",
+  "audience": "inside",
   "short": "There is a live session almost every day. Open the event in the community, click the pink \"Zoom Meeting\" link, and if you don't have Zoom installed click \"Join Zoom from Browser\". Replays go into the Class Replays space.",
   "steps": [
    "Open the event post in the community, then click 'Zoom Meeting' written in pink.",
@@ -102,13 +115,15 @@
    "Saturday \u2014 Saturdays Member Q&A with Tony; Business Series Saturdays",
    "Sunday \u2014 Sundays Member Q&A with Tony; Start a Nonprofit with Megan"
   ],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 4,
   "id": "call_sheet_and_reports",
   "title": "Call Sheets, Personal Reports and books I paid for",
   "status": "needs_check",
+  "audience": "inside",
   "short": "The current deliverable is the Personalized Call Sheet, and there are three ways to get one: a Call Sheet Class, the Lesko AI Researcher, or by asking in the Questions Channel.",
   "steps": [
    "Fastest: run the AI Grant Researcher yourself \u2014 pick your topic, enter your city and state or ZIP, and it builds your list.",
@@ -134,13 +149,15 @@
   "important": "",
   "legacy": "The older \"Lesko Personal Report\" was built by hand by Misty Fowlds and Sabrina Giesler from a list of 3\u201310 goals posted in the Partnership & Accountability space. Members still ask for it by name.",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 5,
   "id": "navigation",
   "title": "I can't find my way around the site",
   "status": "verified",
+  "audience": "inside",
   "short": "Three places cover almost everything: Explore the Roadmap for the step-by-step path, the Quick Guide Library for your specific need, and the Questions Channel when you're stuck.",
   "steps": [
    "Start at Explore the Roadmap \u2014 it is the guided path through the community: https://lesko-help-2.mn.co/spaces/24365840",
@@ -166,13 +183,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 6,
   "id": "getting_started",
   "title": "I just joined \u2014 what do I do first?",
   "status": "verified",
+  "audience": "inside",
   "short": "Start with Explore the Roadmap and its checklist, join a Welcome Tour (runs daily), then tell us in the Questions Channel what you actually need help with so we can point you at the right resources.",
   "steps": [
    "Work through Explore the Roadmap and complete the setup checklist \u2014 even long-time members are asked to do this.",
@@ -196,13 +215,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 7,
   "id": "human_support",
   "title": "Can I talk to a real person?",
   "status": "verified",
+  "audience": "both",
   "short": "Yes \u2014 live, on Zoom. There is no support phone line. Member Q&As run six days a week, and the Thursday Drop-In Clinic is open all day with no appointment. Billing questions go to email.",
   "steps": [
    "To speak to the team live, join any Member Q&A \u2014 they run six days a week.",
@@ -226,13 +247,23 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": {
+   "note": "Outside the community you cannot join a Q&A or the Drop-In Clinic \u2014 so email is the only route, and the bot must not send people to live events they cannot reach.",
+   "steps": [
+    "Email LeskoHelp@gmail.com \u2014 Mary Pacey in Customer Service handles billing, refunds, cancellations and account access.",
+    "Include the email address you signed up with, and the date and amount of any charge you're asking about.",
+    "There is no member support phone line.",
+    "Live Q&As and the Thursday Drop-In Clinic are inside the community \u2014 you'll need access restored first."
+   ]
+  }
  },
  {
   "rank": 8,
   "id": "ai_grant_researcher",
   "title": "How do I use the AI Grant Researcher?",
   "status": "verified",
+  "audience": "inside",
   "short": "Pick your topic, enter your city and state or ZIP, and hit Run Research Tool. Results build up over several minutes, then you can open each one for contact details or export the whole list.",
   "steps": [
    "Open the AI Grant Researcher: https://lesko-help-2.mn.co/spaces/24461105",
@@ -260,13 +291,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 9,
   "id": "login_password",
   "title": "I can't log in or I forgot my password",
   "status": "verified",
+  "audience": "both",
   "short": "Use \"Forgot password?\" on the login page \u2014 it resets by email, so you don't need your old password. If that doesn't arrive, the platform's own support team can fix it directly.",
   "steps": [
    "On the login page click 'Forgot password?' and follow the email link.",
@@ -289,13 +322,24 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": {
+   "note": "Inside the community the member can already reach the login page. Outside, they often cannot \u2014 different first step.",
+   "steps": [
+    "Go to the community directly: https://lesko-help-2.mn.co \u2014 don't rely on an old link from an email, several of those now land on dead pages.",
+    "On the login screen click 'Forgot password?' and follow the emailed link. You do not need your old password.",
+    "No reset email? Check spam, then try any other email addresses you might have signed up with \u2014 'no account found' almost always means a different address.",
+    "Account, billing and cancellation are on a different site: https://leskosupport.com/account-management",
+    "Still locked out: email LeskoHelp@gmail.com with the email address you signed up with, or help@mightynetworks.com for account access."
+   ]
+  }
  },
  {
   "rank": 10,
   "id": "app_and_devices",
   "title": "Which app is it and how do I install it?",
   "status": "verified",
+  "audience": "both",
   "short": "The app is Mighty Networks, not a \"Lesko\" app \u2014 which is why searching the store for Lesko finds nothing. Get it via the QR code in your Personal Settings.",
   "steps": [
    "Click your profile picture in the top right, then 'Personal Settings'.",
@@ -318,13 +362,22 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": {
+   "note": "Outside, the QR-code route needs a login first \u2014 so name the app plainly.",
+   "steps": [
+    "The app is called Mighty Networks. Searching your app store for 'Lesko' will not find it.",
+    "Install Mighty Networks from Google Play or the App Store, then log in with the email and password you used to join.",
+    "Once you're in, you can also get a QR code under your profile picture \u2192 Personal Settings \u2192 Download the app."
+   ]
+  }
  },
  {
   "rank": 11,
   "id": "broken_links_errors",
   "title": "A link, video or page isn't working",
   "status": "needs_check",
+  "audience": "inside",
   "short": "Post it in the Questions Channel with the page you were on and what you clicked \u2014 the team tests it and replies. Several reported breakages have turned out to be a renamed space.",
   "steps": [
    "Post in the Questions Channel: the link or page name, what you clicked, and what you saw.",
@@ -346,13 +399,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 12,
   "id": "profile_account",
   "title": "Changing my name, email or profile details",
   "status": "verified",
+  "audience": "inside",
   "short": "Profile picture \u2192 Personal Settings \u2192 edit whatever you need. Name, email, photo and timezone are all changed in the same place.",
   "steps": [
    "Click your profile picture (top right on computer, top or bottom right on phone).",
@@ -374,13 +429,15 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
  },
  {
   "rank": 13,
   "id": "notifications_emails",
   "title": "Too many emails and notifications",
   "status": "verified",
+  "audience": "both",
   "short": "Emails and in-app notifications are controlled separately. Emails: unsubscribe at the bottom of the email. Notifications: profile picture \u2192 Personal Settings \u2192 Notifications.",
   "steps": [
    "For emails: scroll to the bottom of any email you don't want and click 'Unsubscribe'. You may need to do this more than once \u2014 you can be signed up through more than one list.",
@@ -404,13 +461,22 @@
   "important": "Unsubscribing from emails does NOT cancel your paid membership \u2014 those are separate. Members regularly confuse the two.",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": {
+   "note": "Outside the community, only the email half applies \u2014 there are no in-app notification settings to reach.",
+   "steps": [
+    "Scroll to the bottom of any Lesko email and click 'Unsubscribe'. You may need to do it more than once \u2014 you can be on more than one list.",
+    "Unsubscribing from emails does NOT cancel a paid membership. If you're still being charged, that's a separate step.",
+    "To stop the charges as well, cancel at https://leskosupport.com/account-management or email LeskoHelp@gmail.com."
+   ]
+  }
  },
  {
   "rank": 14,
   "id": "pricing_and_plan",
   "title": "What does it cost and what am I paying for?",
   "status": "needs_check",
+  "audience": "both",
   "short": "Check what plan you are actually on at https://leskosupport.com/account-management \u2014 there is also a short video showing how to check your membership.",
   "steps": [
    "Go to https://leskosupport.com/account-management to see your current plan and payment method.",
@@ -432,6 +498,69 @@
   "important": "",
   "legacy": "",
   "sched": [],
-  "escalate": ""
+  "escalate": "",
+  "variant": null
+ },
+ {
+  "rank": 15,
+  "id": "membership_status_renew",
+  "title": "Am I still a member? How do I renew or rejoin?",
+  "status": "needs_check",
+  "audience": "both",
+  "short": "Check your current status and plan at https://leskosupport.com/account-management before you pay for anything. Renewing an existing membership is not the same as signing up again \u2014 signing up again can create a second subscription and a second charge.",
+  "steps": [
+   "Go to https://leskosupport.com/account-management and check whether your membership is active and what plan you're on.",
+   "There is also a short walkthrough video showing how to check your membership.",
+   "Do NOT sign up again from a marketing email if you think you're still active \u2014 that is how members end up paying twice.",
+   "If you are unsure, or the page and your bank statement disagree, email LeskoHelp@gmail.com before paying anything."
+  ],
+  "asked": [
+   "Did my membership expire?",
+   "Am I no longer a member?",
+   "How do I renew my membership without having to start a new one?",
+   "Where do I go to re-up my membership?",
+   "As a current member must I rejoin each year or does my membership continue until I cancel?",
+   "I rejoined only to find out it's not expired \u2014 I don't think paying twice is the goal"
+  ],
+  "sources": [
+   "S6"
+  ],
+  "media": "Screen recording: checking membership status and plan, and what 'active' looks like.",
+  "open": "Two things I could not answer from inside the community: (a) does a membership auto-renew until cancelled, or does it lapse and need renewing? (b) what is the correct route to reactivate a lapsed membership without creating a duplicate subscription?",
+  "important": "",
+  "legacy": "",
+  "sched": [],
+  "escalate": "Member believes they have two active subscriptions, or has been charged after their membership supposedly lapsed \u2192 Customer Service.",
+  "variant": null
+ },
+ {
+  "rank": 16,
+  "id": "which_site_to_use",
+  "title": "Which Lesko site am I supposed to log into?",
+  "status": "needs_check",
+  "audience": "outside",
+  "short": "There is more than one Lesko web address in circulation, and members regularly try to log in at the wrong one. The community itself is Lesko Help 2 at lesko-help-2.mn.co; account, billing and cancellation live at leskosupport.com.",
+  "steps": [
+   "The community \u2014 classes, Q&As, the AI tool, the Questions Channel \u2014 is at https://lesko-help-2.mn.co",
+   "Your account, plan, payment method and cancellation are at https://leskosupport.com/account-management",
+   "On a phone, the community is the Mighty Networks app \u2014 not a 'Lesko' app.",
+   "If a link from an old email lands on a dead page or bounces you to a sign-up page, ignore it and go to the addresses above directly.",
+   "Still can't get in? Email LeskoHelp@gmail.com with the email address you signed up with."
+  ],
+  "asked": [
+   "Where is the site to log in and manage lesko help membership? Not lesko 2, but the paid Lesko membership",
+   "www.LeskoHelpMember.com is not working for me",
+   "I am having trouble signing in to the members area at LeskoHelp.com",
+   "I click the sign in link and I am redirected to a dead page",
+   "have been asking how to login to lesko web sight, havent found it yet"
+  ],
+  "sources": [],
+  "media": "Short screen recording: the two addresses, what each one is for, and what the right login screen looks like.",
+  "open": "THIS IS THE BIGGEST GAP. I found members trying to log in at LeskoHelpMember.com, LeskoHelp.com, Lesko500.com and leskosupport.com. Please give me the definitive list: which domains are live, which are retired, and which one a locked-out person should use. Until you confirm this, the bot should not answer this question at all.",
+  "important": "",
+  "legacy": "",
+  "sched": [],
+  "escalate": "",
+  "variant": null
  }
 ]
