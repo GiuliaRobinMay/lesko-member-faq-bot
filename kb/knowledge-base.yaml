@@ -546,3 +546,20 @@ topics:
     not answer this question at all.
 
     '
+
+- id: switch_plan
+  audience: both
+  rank: 17
+  title: Can I switch from monthly to 6-month or annual?
+  status: needs_check
+  asked_as:
+    - "I want to switch from monthly to annual"
+    - "Can I change to the six month plan?"
+  short_answer: >
+    PLACEHOLDER — route to leskohelp@gmail.com until the switch path is confirmed.
+  open_question: >
+    Giulia wants this to be possible. Unknown: can a member self-switch in Recurly/PayPal, or must
+    Customer Service do it? What happens to the remaining paid time — prorated, credited, or lost?
+    Does switching create a duplicate subscription?
+  sources: []
+  media_needed: "TBD once the path exists."

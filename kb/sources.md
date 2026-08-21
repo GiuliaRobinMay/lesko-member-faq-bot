@@ -27,3 +27,15 @@ All sources are posts/comments inside the Lesko Help MCP community (`lesko-help-
 | S21 | `list_events` UPCOMING — live schedule | MCP | 2026-08-21 |
 | S22 | Post 84164472 "START HERE | Unlock Your Goals" → Quick Guide Library | Giulia May | 2025-06-18 |
 | S23 | Comment on post 106018035 — "Welcome and Set Up" renamed to Explore the Roadmap | Tony Woodworth | 2026-08-17 |
+
+## leskosupport.com — confirmed 2026-08-21 (pasted by Giulia)
+- Plans: monthly, bi-annual (6mo), annual. $1 trial = 5 days, then **$19.95/month** on day 6.
+- All plans auto-renew until cancelled.
+- **"Plan says Free" is just a system label, not a bug.**
+- **Root cause of the login cluster:** paying and creating the Mighty Networks account are two
+  separate steps. Many pay and never create the account.
+- Support is **email only** (leskohelp@gmail.com). No phone number. Grant help is community-only.
+- Domains: leskohelp.com = join/sales · lesko-help-2.mn.co = community · leskosupport.com = support.
+- Free/non-member resources: free.lesko.com/free-training, findhelp.org, 211.org, needymeds.org
+- Existing videos: "Find Your Welcome Email" (youtu.be/0dXmCOfBDTg), "Create & Manage Your Billing Account"
+- OUT OF DATE on that page: it still says deactivating Mighty Networks doesn't stop billing.
