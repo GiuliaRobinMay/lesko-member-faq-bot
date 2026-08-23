@@ -322,6 +322,107 @@
         related: ["How do I stop the emails?", "How do I get a refund?", "Can I talk to a real person?"]
       }); } },
 
+    { id: "local_vs_federal",
+      test: function (q) { return /difference between .{0,30}(call ?sheet|quick guide)|local (or|vs|versus) federal|federal (or|vs|versus) local|why.{0,20}two (lists|layers)|call ?sheet.{0,20}(vs|versus|or) .{0,20}quick guide/i.test(q); },
+      render: function () { return card({
+        title: "Two layers: local and federal",
+        lead: "Your call sheets and the quick guides do different jobs. You want both.",
+        sections: [
+          { table: { head: ["", "What it is", "Where it comes from"], rows: [
+            ["<b>Your call sheet</b>", "A list built for <b>you</b> &mdash; your ZIP code, your city and state, your one problem.", "Local help. Most of this money is handed out county by county."],
+            ["<b>Quick guides</b>", "Ready-made lists in the Quick Guide Library, with a checklist you can print.", "Federal help &mdash; the same national programmes for everyone."] ] } },
+          { call: "Use both and you cover a very large, very complete set of organisations. Download the guides that fit you, print them, and work through the checklist.", kind: "key" }
+        ],
+        buttons: [ { label: "Quick Guide Library", url: "https://lesko-help-2.mn.co/collections/2517908", kind: "primary", icon: "📚" },
+                   { label: "Build a call sheet", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" } ],
+        source: "Welcome Tour",
+        related: ["How do I create my call sheet?", "Where do I start?"] }); } },
+
+    { id: "login_computer",
+      test: function (q) { return /(log ?in|sign ?in|get in).{0,30}(computer|laptop|desktop|pc)|computer.{0,20}(log ?in|sign ?in)|sign ?in with a code|only on my phone/i.test(q); },
+      render: function () { return card({
+        title: "Signing in on your computer",
+        lead: "The community works best on a computer &mdash; more room to read, download and print. The sign-in screen has one confusing step.",
+        sections: [
+          { steps: [
+            'Go to <a href="https://lesko-help-2.mn.co" target="_blank" rel="noopener">lesko-help-2.mn.co</a>.',
+            "Click <b>Sign in</b> at the top right.",
+            "It will offer to <b>sign in with a code</b>. You do not have to. Look <b>three buttons below</b> that &mdash; there is an option to sign in with your password.",
+            "Use the <b>same email address and password</b> you use on your phone." ] },
+          { call: "The community runs on a platform called <b>Mighty Networks</b>. That is why the sign-in screen looks the way it does &mdash; and why the phone app is called Mighty Networks, not Lesko.", kind: "key" }
+        ],
+        buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "💻" } ],
+        source: "Welcome Tour",
+        related: ["How do I download the app?", "Where do I start?"] }); } },
+
+    { id: "bookmarks",
+      test: function (q) { return /bookmark|keep track of (my )?(question|post)|find my (question|post)s?|where are my questions/i.test(q); },
+      render: function () { return card({
+        title: "Keeping track of your questions",
+        lead: "Bookmark every question you post &mdash; then they all sit in one place.",
+        sections: [
+          { steps: [
+            "When you post a question, click the little <b>bookmark</b> icon on your post.",
+            "Click your <b>profile picture</b>, then open <b>Bookmarks</b>.",
+            "Every question you bookmarked is there &mdash; easy to follow up when a coach answers." ] },
+          { call: "Answers usually come within a few hours, and at the latest within 12 to 24 hours depending on when you posted." }
+        ],
+        buttons: [ { label: "Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" } ],
+        source: "Welcome Tour",
+        related: ["How do I ask a good question?", "How do I create my call sheet?"] }); } },
+
+    { id: "ask_question_how",
+      test: function (q) { return /how (do i|to) (ask|post)|ask a (good )?question|where (do i|to) (ask|post)|post a question/i.test(q); },
+      render: function () { return card({
+        title: "How to ask so you get a good answer",
+        lead: "Post in the Questions Channel &mdash; not in the member chat. There is an instruction page in that space worth reading.",
+        sections: [
+          { h: "Always include", bullets: [
+            "Your <b>ZIP code</b>",
+            "Your <b>state</b>",
+            "A short description of <b>your problem or question</b>" ] },
+          { h: "One post, one question", p: "Keep each problem in its own post. That lets the coaches give you a precise answer instead of a vague one." },
+          { call: "<b>Never post your phone number or email address.</b> This is a safe space, but keep those private." },
+          { call: "Do not post questions in <b>Say Hi &amp; Member Chat</b> &mdash; that is for saying hello to other members. Questions get missed there.", kind: "key" }
+        ],
+        buttons: [ { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" } ],
+        source: "Welcome Tour · Questions Channel instructions",
+        related: ["How do I keep track of my questions?", "How do I create my call sheet?"] }); } },
+
+    { id: "twenty_calls",
+      test: function (q) { return /20 (phone )?calls?|twenty calls?|how many calls|call rule|no (luck|results?)|nobody (is )?help|keep getting (the same|no)/i.test(q); },
+      render: function () { return card({
+        title: "The 20 phone call rule",
+        lead: "Our own numbers say it plainly: on average, about one good result for every 20 calls. Calls that go nowhere are part of the process, not a sign you are doing it wrong.",
+        sections: [
+          { bullets: [
+            "Sit down and work through your call sheet in one go.",
+            "Tick off each call as you make it, so you can see your progress.",
+            "There is a <b>call script</b> and a <b>smart moves</b> page in the Application Classes space &mdash; read them before you start." ] },
+          { call: "Getting the same answer again and again? Bring your actual list to a class and say so. Show them what you tried &mdash; the coaches can then improve your call sheet instead of guessing.", kind: "key" }
+        ],
+        buttons: [ { label: "Application Classes", url: SPACE.applicationClass, kind: "primary", icon: "📝" },
+                   { label: "Bring it to a Q&A", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
+        source: "Welcome Tour · Application Classes",
+        related: ["What do I do after I apply?", "Can I talk to a real person?"] }); } },
+
+    { id: "many_problems",
+      test: function (q) { return /(so |too )?many (problems|things|issues)|everything at once|overwhelmed|where do i begin|which (one )?first|priorit/i.test(q); },
+      render: function () { return card({
+        title: "When everything needs fixing at once",
+        lead: "That is normal, and it is why we say one problem, one call sheet. Do not try to solve it all in one list.",
+        sections: [
+          { steps: [
+            "Write down everything you need help with.",
+            "Put them in order &mdash; what is most urgent right now? Facing eviction in a few weeks beats everything else.",
+            "Make a call sheet for the <b>top two or three</b> and start there.",
+            "Come back for the rest once those are moving. There is no limit on how many call sheets you can have." ] }
+        ],
+        buttons: [ { label: "Build your first call sheet", url: SPACE.aiResearcher, kind: "primary", icon: "🤖" },
+                   { label: "Ask a coach", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
+        source: "Welcome Tour",
+        related: ["How do I create my call sheet?", "Where do I start?"] }); } },
+
     { id: "call_sheet_locate",
       test: function (q) { return /call ?sheet|callsheet/i.test(q) && SITU.locate.test(q) && !SITU.make.test(q); },
       render: function () { return card({

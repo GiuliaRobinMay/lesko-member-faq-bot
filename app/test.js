@@ -76,3 +76,17 @@ var c=out.join(' ');
   var want=p[0].indexOf('no ')===0 ? !found : found;
   console.log((want?'PASS':'FAIL'),'|',p[0]);
 });
+
+console.log('\n--- from the welcome tour transcripts ---');
+[["What is the difference between a call sheet and a quick guide?","local and federal"],
+ ["I can only get in on my phone, how do I log in on my computer?","computer"],
+ ["How do I keep track of my questions?","track of your questions"],
+ ["How do I ask a good question?","good answer"],
+ ["I keep calling and getting no results","20 phone call"],
+ ["I have so many problems I am overwhelmed","needs fixing at once"]].forEach(function(p){
+  out.length=0; window.__answer(p[0]);
+  var html=out.join(' ');
+  var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'(none)'])[1].replace(/<[^>]+>/g,'');
+  var ok=new RegExp(p[1],'i').test(html);
+  console.log((ok?'PASS':'FAIL'),'|',p[0].slice(0,46).padEnd(48),'=>',h3.slice(0,40));
+});
