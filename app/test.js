@@ -21,9 +21,9 @@ var Qs = [
  ["Where do I start?","roadmap"],
  ["What classes are on this week?","Live this week"],
  ["Where do I find the replays?","Class Replays"],
- ["I need help with car repair","where to find"],
+ ["I need help with car repair","Where this is covered in the community"],
  ["How do I cancel my subscription?","cancel"],
- ["banana",""]
+ ["banana","Bring it to Matthew"]
 ];
 var pass = 0;
 Qs.forEach(function(p){
@@ -150,4 +150,62 @@ console.log('\n--- talking to Matthew ---');
   var html=out.join(' ');
   var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'?'])[1].replace(/<[^>]+>/g,'');
   console.log((new RegExp(p[1],'i').test(html)?'PASS':'FAIL'),'|',p[0].padEnd(32),'=>',h3.slice(0,32));
+});
+
+/* ---------------------------------------------------------------
+   We are not the results AI. A subject question must never come
+   back with an outside agency, phone number, email or website.
+   Answer it by naming the class and the place in the community. */
+console.log('\n--- no outside contacts on subject questions ---');
+var SUBJECT_QS = [
+  "how do I start a business", "where do I start a nonprofit",
+  "I need help with car repair", "help with rent", "help with medical bills",
+  "I need help paying my debt", "help with food", "help for seniors",
+  "I have a question about my grant", "how do I get free money",
+  "I have a question about AI", "help with childcare", "help with utilities",
+  "I am a veteran and need help", "help with school fees", "help with my pet"
+];
+var OUTSIDE = /\b2-?1-?1\b|\b1[-.\s]?8\d\d[-.\s]?\d{3}[-.\s]?\d{4}\b|\(\d{3}\)\s?\d{3}-\d{4}|\.gov\b|\.org\b|grants\.gov|mailto:/i;
+var leaks = 0;
+SUBJECT_QS.forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  var html = out.join(' ');
+  var bad = OUTSIDE.test(html);
+  if (bad) leaks++;
+  console.log((bad ? 'FAIL' : 'PASS'), '|', q.padEnd(34), bad ? (html.match(OUTSIDE) || [''])[0] : 'community only');
+});
+console.log(leaks === 0 ? 'PASS | no outside contacts anywhere' : 'FAIL | ' + leaks + ' answers leaked outside contacts');
+
+console.log('\n--- signposting routes ---');
+[["where can I ask a question","Questions Channel"],
+ ["can I talk to someone","Go to a Q&amp;A"],
+ ["who can help me","Go to a Q&amp;A"],
+ ["how do I orient myself in the community","Welcome Tour or an Open Office"],
+ ["how do I find my way around","Welcome Tour or an Open Office"],
+ ["where do I talk about my subscription problems","Bring subscription questions here"],
+ ["I have a problem with my membership","Bring subscription questions here"],
+ ["I have a question about my grant","Take your grant question to a coach"],
+ ["I have a question about AI","Roger teaches the AI side"],
+ ["how do I use chatgpt for this","Roger teaches the AI side"],
+ ["how do I start a business","three business classes"],
+ ["I want to be self employed","three business classes"],
+ ["how do I start a nonprofit","Nonprofit"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var html = out.join(' ');
+  console.log((html.indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(40), '=>', p[1]);
+});
+
+console.log('\n--- routes must not steal answered questions ---');
+[["How do I cancel my subscription?","How to cancel"],
+ ["How do I get a refund?","Refunds"],
+ ["I can't log in","Signing in"],
+ ["How do I create my call sheet?","Three ways"],
+ ["when is the AI workshop","AI Workshop"],
+ ["when is start a nonprofit","Start a Nonprofit with Megan"],
+ ["What classes are on this week?","Live this week"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var html = out.join(' ');
+  console.log((html.indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(34), '=>', p[1]);
 });

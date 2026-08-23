@@ -242,31 +242,39 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
   }
 
 
-  function guideCard(hits) {
+  /* We are not a results engine. The quick guides already hold the agencies,
+     the phone numbers and the websites. The bot's job is to hand you the right
+     guide, the right class and the AI Search - never to read a guide out loud
+     in the chat, and never to send anyone to an outside number or website. */
+  function guideCard(hits, q) {
     var first = hits[0];
-    var secs = [];
-    hits.forEach(function (h) {
-      var rows = h.g.resources.filter(function (r) { return r.n && r.u; }).slice(0, 5).map(function (r) {
-        var u = /^https?:/.test(r.u) ? r.u : "https://" + r.u;
-        return ["<b>" + esc(r.n) + "</b>", '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(r.u) + "</a>"];
-      });
-      secs.push({ h: h.g.title + " · " + h.cat, table: { head: ["Who to contact", "Where"], rows: rows } });
-      if (h.g.tip) secs.push({ call: "<b>A tip that helps.</b> " + esc(h.g.tip), kind: "key" });
-    });
+    var secs = [
+      { h: "The quick guide that covers this",
+        bullets: hits.map(function (h) {
+          return "<b>" + esc(h.g.title) + "</b> &mdash; in <b>" + esc(h.cat) + "</b>. " +
+                 "Open it there and download the PDF; it lists who to contact and what to ask for.";
+        }) },
+      { h: "Then build your call sheet",
+        p: "Put the same thing into the <b>AI Search</b>. It builds you a call sheet of who to ring in your own area, so you are not working from a general list." }
+    ];
+    var cls = classesFor(q);
+    if (cls.length) secs.push({ h: "The class for this", table: evTable(cls) });
+    secs.push({ h: "If you get stuck",
+      p: "Bring it to a <b>Member Q&amp;A</b>, or drop into the <b>Thursday Drop-In Clinic</b> &mdash; 10:00&ndash;18:00 ET, all day, no appointment. You can also post it in the <b>Questions Channel</b>." });
+
     var space = D.spaces[first.cat];
     var btns = [];
-    if (space) btns.push({ label: "Open " + first.cat, url: space, kind: "primary", icon: "📂" });
-    btns.push({ label: "Build your call sheet for this", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" });
-    btns.push({ label: "Ask about it", url: SPACE.questions, kind: "ghost", icon: "💬" });
+    if (space) btns.push({ label: "Open " + first.cat, url: space, kind: "primary", icon: "\ud83d\udcc2" });
+    btns.push({ label: "Build your call sheet", url: SPACE.aiResearcher, kind: "solid", icon: "\ud83e\udd16" });
+    btns.push({ label: "Q&A times", url: SPACE.groupCoaching, kind: "ghost", icon: "\ud83d\udcc5" });
+    btns.push({ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "\ud83d\udcac" });
     return card({
-      title: "Where to find help with this",
-      lead: "These quick guides list the organisations that do exactly this, with what to ask for.",
+      title: "Where this is covered in the community",
+      lead: "Everything you need for this is inside Lesko Help. Here is where it lives.",
       sections: secs, buttons: btns,
-      source: "Lesko Quick Guide Library",
-      related: ["How do I create my call sheet?"]
+      source: "Quick Guide Library \u00b7 community events"
     });
   }
-
 
   /* ---------- feedback ---------- */
   function logFeedback(q, helpful) {
@@ -349,19 +357,6 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     return '<div class="linkrow">' + links.map(function (l) {
       return '<a href="' + esc(l.u) + '" target="_blank" rel="noopener">' + esc(l.n) + " →</a>";
     }).join("") + "</div>";
-  }
-  function guideBlock(hits) {
-    return hits.map(function (h) {
-      var rs = h.g.resources.filter(function (r) { return r.n; }).slice(0, 4).map(function (r) {
-        var u = /^https?:/.test(r.u) ? r.u : "https://" + r.u.replace(/^www\./, "www.");
-        return "<li>" + esc(r.n) + ' — <a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(r.u) + "</a></li>";
-      }).join("");
-      var sp = D.spaces[h.cat] || null;
-      return '<div class="sub"><h4>Quick guide · ' + esc(h.cat) + "</h4>" +
-             "<p><b>" + esc(h.g.title) + "</b></p><ul class='res'>" + rs + "</ul>" +
-             (h.g.tip ? "<p style='font-size:15px;color:var(--ink-mid);margin-top:8px'><b>Tip.</b> " + esc(h.g.tip) + "</p>" : "") +
-             (sp ? linkRow([{ n: "Open " + h.cat + " in the community", u: sp }]) : "") + "</div>";
-    }).join("");
   }
   function eventBlock() {
     var evs = D.events;
@@ -678,11 +673,13 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
             "A short description of <b>your problem or question</b>" ] },
           { h: "One post, one question", p: "Keep each problem in its own post. That lets the coaches give you a precise answer instead of a vague one." },
           { call: "<b>Never post your phone number or email address.</b> This is a safe space, but keep those private." },
-          { call: "Do not post questions in <b>Say Hi &amp; Member Chat</b> &mdash; that is for saying hello to other members. Questions get missed there.", kind: "key" }
+          { call: "Do not post questions in <b>Say Hi &amp; Member Chat</b> &mdash; that is for saying hello to other members. Questions get missed there.", kind: "key" },
+          { h: "Or ask it out loud at a Q&A", table: evTable(QA_CLASSES.concat([CLINIC])) }
         ],
-        buttons: [ { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" } ],
+        buttons: [ { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" },
+                   { label: "See Q&A times", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
         source: "Welcome Tour · Questions Channel instructions",
-        related: ["How do I keep track of my questions?"] }); } },
+        related: ["Can I talk to a real person?", "How do I keep track of my questions?"] }); } },
 
     { id: "twenty_calls",
       test: function (q) { return /20 (phone )?calls?|twenty calls?|how many calls|call rule|no (luck|results?)|nobody (is )?help|keep getting (the same|no)/i.test(q); },
@@ -867,6 +864,166 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       }); } }
   ];
 
+  /* ---------- signposting ----------
+     The rule for every subject question: we do not answer it ourselves and we
+     never hand out an outside phone number, email or website. We name the
+     event to attend and the place inside the community that covers it.
+     Finding the actual grants is the AI Grant Researcher's job, not ours. */
+
+  function evAll(name) {
+    return D.events.filter(function (e) { return e.name === name; });
+  }
+  function evTable(names) {
+    var rows = [];
+    names.forEach(function (n) {
+      evAll(n).forEach(function (e) {
+        rows.push(['<a href="' + esc(e.url) + '" target="_blank" rel="noopener"><b>' + esc(e.name) + "</b></a>",
+                   esc(e.day),
+                   '<b style="color:var(--red)">' + esc(e.time) + "</b>",
+                   esc(e.about)]);
+      });
+    });
+    return { head: ["Class", "Day", "Time (ET)", "What it is for"], rows: rows };
+  }
+  function evButton(name, kind) {
+    var e = evAll(name)[0];
+    if (!e) return null;
+    return { label: e.name, url: e.url, kind: kind || "ghost", icon: "📅" };
+  }
+
+  var QA_CLASSES    = ["Member Q&A with Tony", "Mid Mondays Member Q&A"];
+  var CLINIC        = "Drop-In Clinic";
+  var BUSINESS      = ["Starting & Re-Starting a Business", "Business Series Saturdays", "Business Growth with Amber"];
+  var AI_CLASSES    = ["AI User Skills with Roger", "AI Workshop"];
+
+  /* Subject -> the class that teaches it. Used by the quick-guide card too, so
+     a subject question always arrives with the class that goes with it. */
+  function classesFor(q) {
+    if (/\bnon.?profit|501.?\(?c.?\)?.?3|charit/i.test(q)) return ["Start a Nonprofit with Megan"];
+    if (/\bbusiness|self.?employ|entrepreneur|start.?up\b/i.test(q)) return BUSINESS;
+    if (/\bdebt|bills?|credit card|collection|behind on\b/i.test(q)) return ["Pay My Debt & Bills"];
+    if (/\bai\b|artificial intelligence|chat ?gpt|prompt/i.test(q)) return AI_CLASSES;
+    return [];
+  }
+
+  /* A named life subject belongs with its quick guide, not with the generic
+     "questions about grants" route. */
+  var SUBJECT = /\b(rent|renting|housing|mortgage|evict\w*|homeless|car|cars|vehicle|auto|repair|medical|dental|health|hospital|prescription|utilit\w*|energy|heat|heating|water|food|groceries|school|college|tuition|student|child|children|kids?|senior|seniors|disab\w*|veteran|farm|farming|pet|pets|legal|lawyer|internet|phone|clothing|furniture|moving|funeral|burial|women|minority|felon|roof|home repair|childcare|daycare|adopt\w*|foster|taxes?)\b/i;
+
+  function routeCard(c) {
+    return card({
+      title: c.title,
+      lead: c.lead,
+      sections: (c.before || []).concat(
+        c.events && c.events.length ? [{ h: c.evHead || "Go to one of these", table: evTable(c.events) }] : [],
+        c.after || []),
+      buttons: c.buttons || [],
+      source: c.source || "Community events calendar",
+      related: c.related || []
+    });
+  }
+
+  var ROUTES = [
+    /* "Where can I ask a question / talk to someone" -> a Q&A. */
+    { id: "route_ask_live",
+      test: function (q) {
+        return /\b(talk|speak|chat)\b.*\b(someone|somebody|a ?person|real person|coach|team|expert|human|advisor|adviser)\b/i.test(q) ||
+               /\b(who|where)\b.*\b(can|do i)\b.*\b(help|answer|ask)\b/i.test(q) ||
+               /\bask (a coach|the team|someone|an expert)\b/i.test(q) ||
+               /\bneed (to talk|help from) (to )?(someone|a person|a coach)\b/i.test(q);
+      },
+      render: function () { return routeCard({
+        title: "Go to a Q&A",
+        lead: "You ask live and a coach answers you there and then. Q&As run six days a week, and Thursday is open all day.",
+        events: QA_CLASSES.concat([CLINIC]),
+        after: [{ call: "Cannot make one live? Post it in the <b>Questions Channel</b> instead &mdash; the team replies under your post.", kind: "key" }],
+        buttons: [{ label: "See all Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "📅" },
+                  { label: "Questions Channel", url: SPACE.questions, kind: "ghost", icon: "💬" }],
+        related: ["How do I ask a good question?", "How do I join the Zoom?"] }); } },
+
+    /* "How do I find my way around" -> Welcome Tour or Open Office. */
+    { id: "route_orient",
+      test: function (q) {
+        return /\b(orient\w*|find my way|get my bearings|navigate|get around|know my way)\b/i.test(q) ||
+               (/\bhow (do|does) (this|it|the community|everything)\b/i.test(q) && /\bwork|works\b/i.test(q)) ||
+               /\bnew here\b|\bwhere do i even start\b|\blost\b.*\bcommunity\b/i.test(q);
+      },
+      render: function () { return routeCard({
+        title: "Come to a Welcome Tour or an Open Office",
+        lead: "Both are live walkthroughs of the community. Someone shows you where everything is and you can ask as you go.",
+        events: ["Welcome Tour", "Open Office with Tony"],
+        after: [{ call: "The Welcome Tour runs <b>every single day</b>, so you never have to wait for one.", kind: "key" }],
+        buttons: [{ label: "Open the Welcome Tour", url: SPACE.welcomeTour, kind: "primary", icon: "👋" }],
+        related: ["Where do I start?", "What are the roadmap steps?"] }); } },
+
+    /* Subscription/account trouble -> Questions Channel or Open Office.
+       (Cancelling, refunds and sign-in are answered outright, earlier.) */
+    { id: "route_subscription_help",
+      test: function (q) {
+        if (/\bcancel|refund|charge|charged|billing|card\b/i.test(q)) return false;   // answered outright
+        return /\b(subscription|membership|my account|my plan)\b/i.test(q) &&
+               (/\bproblem|issue|trouble|question|wrong|help|who do i|where do i|talk|ask\b/i.test(q));
+      },
+      render: function () { return routeCard({
+        title: "Bring subscription questions here",
+        lead: "Two places, and both get you a real answer from the team.",
+        before: [{ steps: [
+          "<b>Post in the Questions Channel</b> &mdash; the team replies under your post. Include the email address on your account.",
+          "<b>Or come to Open Office</b> &mdash; Monday evening, live, and you can talk it through." ] }],
+        events: ["Open Office with Tony"],
+        buttons: [{ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" }],
+        related: ["Am I still a member?"] }); } },
+
+    /* Questions about grants themselves -> Q&A or the Thursday clinic. */
+    { id: "route_grants",
+      test: function (q) {
+        if (!/\bgrant|grants|funding|free money\b/i.test(q)) return false;
+        return !SUBJECT.test(q);
+      },
+      render: function () { return routeCard({
+        title: "Take your grant question to a coach",
+        lead: "Grant questions are answered live. Two ways in, and neither needs an appointment.",
+        events: QA_CLASSES.concat([CLINIC]),
+        after: [{ call: "The <b>Thursday Drop-In Clinic runs all day</b>, 10:00&ndash;18:00 ET. Hop in whenever you are free, ask, and leave.", kind: "key" }],
+        buttons: [{ label: "See all Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "📅" },
+                  { label: "Questions Channel", url: SPACE.questions, kind: "ghost", icon: "💬" }],
+        related: ["How do I create my call sheet?", "How do I ask a good question?"] }); } },
+
+    /* Anything about AI -> Roger's class. */
+    { id: "route_ai",
+      test: function (q) {
+        if (/\bwhere\b|\bfind\b|\bopen\b|\blink\b/i.test(q) && /\b(tool|search|researcher)\b/i.test(q)) return false;
+        return /\bai\b|\ba\.i\.\b|artificial intelligence|chat ?gpt|\bclaude\b|\bgemini\b|copilot|\bprompts?\b/i.test(q);
+      },
+      render: function () { return routeCard({
+        title: "Roger teaches the AI side",
+        lead: "Roger runs the AI classes. He shares the prompts he uses and shows you what he is doing on screen, live.",
+        events: AI_CLASSES,
+        after: [{ call: "Start with <b>AI User Skills with Roger</b> on Wednesday. The Friday workshop is the hands-on one where you build your call sheet with him.", kind: "key" }],
+        buttons: [{ label: "Open Call Sheet Classes", url: SPACE.callSheetClasses, kind: "primary", icon: "🤖" }],
+        related: ["How do I create my call sheet?"] }); } },
+
+    /* Nonprofit -> Megan's class. */
+    { id: "route_nonprofit",
+      test: function (q) { return /\bnon.?profit|501.?\(?c.?\)?.?3|charit\w*\b/i.test(q); },
+      render: function () { return routeCard({
+        title: "Start a Nonprofit is a class of its own",
+        lead: "Megan runs it live every Sunday. That is the place to bring this &mdash; she takes you through it step by step.",
+        events: ["Start a Nonprofit with Megan"],
+        after: [{ call: "Bring your questions to the class. If you cannot make Sunday, ask in a <b>Member Q&amp;A</b> or the <b>Thursday Drop-In Clinic</b>.", kind: "key" }],
+        related: ["What classes are on this week?", "Where do I find the replays?"] }); } },
+
+    /* Business -> the business classes. */
+    { id: "route_business",
+      test: function (q) { return /\bbusiness|self.?employ\w*|entrepreneur\w*|start.?up|my own company|\bllc\b|sole proprietor/i.test(q); },
+      render: function () { return routeCard({
+        title: "We have three business classes",
+        lead: "This is taught live, week in week out. Pick the one that matches where you are.",
+        events: BUSINESS,
+        after: [{ call: "New to it? Start with <b>Starting &amp; Re-Starting a Business</b> on Friday. Already trading? <b>Business Series Saturdays</b> and <b>Business Growth with Amber</b> go further.", kind: "key" }],
+        related: ["What classes are on this week?", "Where do I find the replays?"] }); } }
+  ];
+
   /* Never suggest a way out of the community as a "related" question.
      Cancelling and refunds are answered when asked for, never proposed. */
   var NEVER_SUGGEST = ["cancel_subscription", "refunds_billing", "switch_plan", "membership_status_renew"];
@@ -913,6 +1070,11 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       var hit = (typeof t === "function") ? t(q) : t.test(q);
       if (hit) return bubble("bot", INTENTS[i].render(q), true);
     }
+    /* Signposting routes run before scoring, so a subject question is sent to
+       its class instead of being answered with a list of outside contacts. */
+    for (var r = 0; r < ROUTES.length; r++) {
+      if (ROUTES[r].test(q)) return bubble("bot", ROUTES[r].render(q), true);
+    }
     /* Account/how-to topics and subject guides compete on score; the stronger wins. */
     var best = D.topics.map(function (t) { return { t: t, s: scoreTopic(t, q) }; })
                        .sort(function (a, b) { return b.s - a.s; })[0];
@@ -921,12 +1083,17 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     var guideScore = gh.length ? gh[0].s : 0;
 
     if (guideScore >= 4 && guideScore >= topScore) {
-      return bubble("bot", guideCard(gh.slice(0, 2)), true);
+      return bubble("bot", guideCard(gh.slice(0, 2), q), true);
     }
     if (best && topScore >= 4) return bubble("bot", answerTopic(best.t), true);
-    bubble("bot", "<h3>I'm not sure what you need yet</h3>" +
-      "<p>I can help you find your way around the community. Try naming the thing you're after — for example <i>call sheet</i>, <i>rent help</i>, <i>car repair</i>, <i>this week's classes</i>, or <i>cancel my subscription</i>.</p>" +
-      linkRow([{ n: "Or ask the team in the Questions Channel", u: "https://lesko-help-2.mn.co/spaces/11054387" }]), true);
+    /* A general question we cannot place goes to Matthew's own class. */
+    bubble("bot", routeCard({
+      title: "Bring it to Matthew",
+      lead: "I could not place that one. For a general question the best place is Matthew's own live session \u2014 ask him in the chat and he answers on the call.",
+      events: ["Matthew Meetup"],
+      after: [{ call: "Or post it in the <b>Questions Channel</b> and the team will reply under your post. It also helps to name the thing you are after \u2014 for example <i>call sheet</i>, <i>rent help</i>, <i>this week\u2019s classes</i>.", kind: "key" }],
+      buttons: [{ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "\ud83d\udcac" }]
+    }), true);
   }
 
   /* ---------- wiring ---------- */

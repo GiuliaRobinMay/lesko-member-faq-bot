@@ -4,11 +4,33 @@ Signposting bot: points members to the right lesson, quick guide, PDF or live
 event, and shows a summary inline. It does NOT generate grant lists — that is
 the AI Grant Researcher's job, and the bot links to it.
 
+## The one rule
+The bot never hands out an outside phone number, email or website — no 211, no
+agency contact lists. Every subject question is answered by naming the **event
+to attend** and the **place inside the community** that covers it. The quick
+guides and the AI Search hold the contacts; the bot hands you the guide.
+
+Routing (`ROUTES` in `app.js`, confirmed by Giulia):
+
+| Member asks about | Sent to |
+|---|---|
+| Where can I ask / talk to someone | Member Q&A · Mid Mondays Q&A · Thursday Drop-In Clinic |
+| Finding their way around | Welcome Tour (daily) · Open Office with Tony |
+| Subscription problems | Questions Channel · Open Office with Tony |
+| Their grants | Member Q&A · Thursday Drop-In Clinic (all day) |
+| AI | AI User Skills with Roger · AI Workshop |
+| Business | Starting & Re-Starting a Business · Business Series Saturdays · Business Growth with Amber |
+| Nonprofit | Start a Nonprofit with Megan |
+| Anything general / unplaceable | Matthew Meetup |
+
+`node test.js` enforces this — the "no outside contacts" suite fails the build
+if any subject answer leaks a `.gov`/`.org` address, a phone number or a mailto.
+
 ## Files
 - `index.html` + `data.js` + `app.js` — the working app (dev version)
 - `lesko-navigator.html` — single-file build, this is what gets published
-- rebuild the single file after editing:
-  `python3 -c "..."` — see repo history, or just re-inline data.js/app.js
+- rebuild the single file after editing: `node build.js`
+- `node test.js` — regression suite (run from this directory)
 
 ## Data sources (all generated, not hand-written)
 - `kb/knowledge-base.yaml` — 17 FAQ answers, with inside/outside variants
