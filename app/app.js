@@ -348,7 +348,7 @@
             'Go to <a href="https://lesko-help-2.mn.co" target="_blank" rel="noopener">lesko-help-2.mn.co</a>.',
             "Click <b>Sign in</b> at the top right.",
             "It will offer to <b>sign in with a code</b>. You do not have to. Look <b>three buttons below</b> that &mdash; there is an option to sign in with your password.",
-            "Use the <b>same email address and password</b> you use on your phone." ] },
+            "Use the <b>same email address and password</b> you use on your phone &mdash; or however you signed up. If you joined with <b>Google</b> or <b>Facebook</b>, use that button instead." ] },
           { call: "The community runs on a platform called <b>Mighty Networks</b>. That is why the sign-in screen looks the way it does &mdash; and why the phone app is called Mighty Networks, not Lesko.", kind: "key" }
         ],
         buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "💻" } ],
@@ -362,7 +362,7 @@
         lead: "Bookmark every question you post &mdash; then they all sit in one place.",
         sections: [
           { steps: [
-            "When you post a question, click the little <b>bookmark</b> icon on your post.",
+            "On your post, click the <b>three dots</b>, then <b>Bookmark Post</b>.",
             "Click your <b>profile picture</b>, then open <b>Bookmarks</b>.",
             "Every question you bookmarked is there &mdash; easy to follow up when a coach answers." ] },
           { call: "Answers usually come within a few hours, and at the latest within 12 to 24 hours depending on when you posted." }

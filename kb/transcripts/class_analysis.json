@@ -1,0 +1,58 @@
+[
+ {
+  "topic": "\ud83c\udf89 WELCOME TOUR | Start Here and Take a Tour of Lesko Help",
+  "sessions": 22,
+  "words": 163564,
+  "nav_per_1k": 13.7,
+  "grant_per_1k": 3.4,
+  "ratio": 3.97
+ },
+ {
+  "topic": "\ud83d\ude80 START A BUSINESS | A Beginner Class to Business Grants for Small Businesses",
+  "sessions": 2,
+  "words": 12192,
+  "nav_per_1k": 9.9,
+  "grant_per_1k": 8.4,
+  "ratio": 1.19
+ },
+ {
+  "topic": "\u26a1\ufe0f Mid Mondays MEMBER Q&A | Get Your Grant Search Questions Answered by Our Team Experts",
+  "sessions": 3,
+  "words": 20544,
+  "nav_per_1k": 9.8,
+  "grant_per_1k": 5.4,
+  "ratio": 1.83
+ },
+ {
+  "topic": "\ud83d\ude80 SATURDAY'S START A BUSINESS | A Beginner Class to Business Grants for Small Businesses",
+  "sessions": 3,
+  "words": 29596,
+  "nav_per_1k": 7.1,
+  "grant_per_1k": 5.3,
+  "ratio": 1.33
+ },
+ {
+  "topic": "\ud83e\udd16 AI WORKSHOP | Learn How to Use the AI Tool, Build the Excel List, and Call Prep",
+  "sessions": 1,
+  "words": 4466,
+  "nav_per_1k": 5.8,
+  "grant_per_1k": 0.4,
+  "ratio": 13.0
+ },
+ {
+  "topic": "\ud83d\udcb0 PAY MY DEBT & BILLS | Learn How to Find Grants to Pay Your Debt and Bills",
+  "sessions": 1,
+  "words": 13538,
+  "nav_per_1k": 1.8,
+  "grant_per_1k": 2.4,
+  "ratio": 0.78
+ },
+ {
+  "topic": "\ud83e\udd16 AI USER SKILLS | Practical AI Tips With Roger for Grant Beginners Our Team Experts",
+  "sessions": 5,
+  "words": 65389,
+  "nav_per_1k": 1.7,
+  "grant_per_1k": 2.3,
+  "ratio": 0.72
+ }
+]
