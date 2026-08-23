@@ -1,0 +1,1181 @@
+# 🤖 AI USER SKILLS | Practical AI Tips With Roger for Grant Beginners Our Team Experts
+# 2026-07-15T19:46:07Z
+
+Roger White: Resume recording.
+Roger White: Okay.
+Roger White: I'm using scale.
+Roger White: participants.
+Roger White: Chat, okay.
+Roger White: I've been fighting with with Chat Gvt.
+Roger White: For the past hour.
+Roger White: It's… it's been screwing up my… Introduction.
+Roger White: With every time… Hold on… Okay.
+Roger White: There we go.
+Roger White: Every time there's an upgrade in Chat Gpt.
+Roger White: The…
+Roger White: script that I have for a minute. Let's see, let's see what it is. I, I, it, it's, it messes stuff up, but we'll, we'll see how it goes. Here, let me run it, let me run it.
+Roger White: Oh.
+Roger White: And now let me turn this over to our announcer, ChatGPT Voice.
+Roger White: Nothing happened.
+Roger White: Let me start it again. And now let me turn this over to our announcer, ChatGPT Voice.
+Roger White: Okay, well, it's not gonna it's not going to.
+Roger White: Oh.
+Roger White: It's not going to… Cooperate, I gotta do something else here.
+Roger White: Gotta do something else.
+Roger White: Hang on for a second Hold on for a second.
+Roger White: 4, okay.
+Roger White: This is painful, very painful, painful.
+Roger White: Stop.
+Roger White: new chat.
+Roger White: Okay, just a second.
+Roger White: Let's see how it does now.
+Roger White: Oh.
+Roger White: And now let me turn this over to our announcer, ChatGPT Voice.
+Roger White: It's still… still not… Doing anything.
+Roger White: Okay, well, I guess we're… our announcer is just going on vacation.
+Roger White: Very well.
+Roger White: Let me get back here.
+Roger White: All right, well, I've been fighting with it over this.
+Roger White: page, which it… AI voice is just supposed to read a script.
+Roger White: Which is the announcement.
+Roger White: With every upgrade, it does a worse job.
+Roger White: With the same script. And so I have to keep tweaking the script, so I'm gonna have to rewrite the script.
+Roger White: And I might not even use ChatGPT. I might use Claude next week.
+Roger White: But anyhow… Welcome.
+Roger White: I'm Roger White I… joined Lesco to find funding for my martial arts
+Roger White: school operation, which involves a YouTube channel, online course.
+Roger White: building a physical dojo, a bunch of other stuff. That's still ongoing, doesn't exist yet, except for the scripts
+Roger White: For the YouTube… videos, and for in the lessons for the online course.
+Roger White: Pretty much.
+Roger White: here we have… today we have an interesting dilemma.
+Roger White: is that Matthew…
+Roger White: Matthew is kind of oblivious to many things, and he just decides he's gonna do a program.
+Roger White: So he decided to I have this one day a week and he knows I have this one day a week on Wednesday AI class and he he decides that he's going to do his do a live today at this time. So we may go visit him.
+Roger White: And leave a message.
+Roger White: In his, in his program.
+Roger White: In fact, why don't we just do that now, just for fun. I'll share my screen.
+Roger White: We'll go to… Matthews Live.
+Roger White: Let's see, Matthew is live in Here, Matthew's live here.
+Roger White: Matthew's meeting up, we're gonna go visit him.
+Roger White: His livestream.
+Roger White: I wanted to. Everybody hear that? We want to be ourselves, right? We want to be ourselves. And if people like us.
+Roger White: Most structures don't encourage that. That's understandable. And you have to play the game, feed yourself and whatever. To me, the ultimate is that where you can grow the most. I mean, if you're a plant, there's certain plants that'll grow in small pots. There's other plants that grow in dry pots.
+Roger White: other plants are growing, this kind of pot, or this kind of… all that kind of stuff. So that's what we're all… we're all organic things that we have to grow in a society, but society…
+Roger White: It beats us up a bit to fit in. And that's important too. But that's a community. So you want to be pointing to something that helps each other.
+Roger White: That's the most important thing. And that's why I'll do this. Looking at you for a few seconds.
+Roger White: Wonderful. Then back to AI. There's so many fun things to do, but you have to take the initiative. Nobody's going to come in. Let's see what he has to say about that.
+Roger White: party every day. If he gets to it. I'm throwing a party, because I want to have fun in life. Life is terrible, life is boring, but if it's boring, you have to throw a party.
+Roger White: No one's gonna throw a party for you. So go out there and do something you like doing, and then that's almost throwing a party, because you wanted to do that. And that's why I hope… let's go ahead… Pardon this pause.
+Roger White: Hopefully, he'll see this. While we're still here. If he doesn't, we'll just get out of here. Like, now, I was just writing up another video of,
+Roger White: You ever hear of Tony Robbins? Yeah, he's this guy. He's not gonna he's not gonna check the he's not gonna check the
+Roger White: He charges, well, he, if you want him, he'll charge you a million dollars. We'll leave with life. People will pay a million dollars a year. Leave. We're leaving. Okay.
+Isabel C: No.
+Roger White: Take a while before he sees the.
+Roger White: the message.
+Roger White: It'll be a while before he sees that message. Okay, before we get started, does anybody have any questions?
+Roger White: We're going to… I'm going to show you where we're temporarily keeping The…
+Roger White: the template that we use here. Matthew has a utility that uses AI.
+Roger White: I'm sure he doesn't know what this… the prompt is that is being used behind the scene. He's got a programmer doing that. I've given my input on some of the things that should go into it.
+Roger White: But, he basically just has them, tweak…
+Roger White: The prompts so that it aims its attention toward a certain.
+Roger White: Kind of subject matter.
+Roger White: And it's very general, so… Basically, when we're looking for
+Roger White: for grants. We're not really looking for grants. We're looking for assistance. We Matthew calls them grants, and there's
+Roger White: If you consider a grant, Free money that you apply for.
+Roger White: Or any kind of… other kind of help.
+Roger White: then you could call it a grant. But in the grant world.
+Roger White: And if anybody takes Megan Pater's classes, she is a grant writer and she hunts down grants and she's got spreadsheets that tell her when she needs to start writing a grant.
+Roger White: application, because grants have seasons. Some of them are year-round, but Like, the banking industry, is, like.
+Roger White: There's, like, a month early in the year, I think it's March, something like that.
+Roger White: Maybe it's earlier than that where they give out grants. The financial industry gives out grants, but only during that time of year they give them out every year. But if you don't, if you aren't preparing your your application in December.
+Roger White: When it comes time for you to submit the application and do all that stuff, Yeah,
+Roger White: it rolls around at the beginning of the year, and then, once they cut off, you can't apply. I mean, you can apply, but it just goes in the circular file, and it won't be kept for next year. You know, so there's seasons, and she's got, like, a calendar and a spreadsheet of when…
+Roger White: when to apply to all these things which you can apply every year, you know. So it's like a circular thing. It's a never ending thing where you can apply and reapply. And there's a lot of different situations in the real
+Roger White: grant world, and the real grant world is much more complicated than what we're looking for.
+Roger White: We're looking for assistance, basically financial assistance. The government and nonprofit organizations, independently and together.
+Roger White: Come up with funding for various.
+Roger White: general concepts.
+Roger White: For example, the government may, if the government needs to like upgrade an Air Force base, it will send out a request for proposal, RFP.
+Roger White: And it will only send that to… to,
+Roger White: Contractors, government contractors, that they believe
+Roger White: have the capability of doing it, or have done it in the past. And then from that, then they all find out what the project is, and they send in a proposal.
+Roger White: to do it all. And sometimes these these these bids, these Rfps are for for contracts totaling like 200 million dollars, you know. Not one per one organization is not going to get all of that 200 million dollars worth of of work.
+Roger White: What the government does is they will take the top 5.
+Roger White: applicants after they send in their proposals.
+Roger White: and then they will allow only those 5 to bid on the actual work. That totals $200,000. So, you know, when they bid on it, when they bid on something like that, it's not guaranteed money, but it's almost guaranteed that they'll get a huge chunk
+Roger White: Of money, they don't know what it is because you know they they they're just going to be narrowed down to the.
+Roger White: acceptable contractors to bid on this project of renovating the entire Air Force Base. And, you know, once… if their award… if they win their proposal, that doesn't mean they have any work at all, yet.
+Roger White: This is… sometimes it does, but on a huge one, like a $200 million one, it does not. It means that they're… they have been awarded the right to bid on… on work associated with this problem, because of their… their successful
+Roger White: proposal, and then the government will send out a request for proposal just to those 5 or 6
+Roger White: contractors to do specific work. Okay, we need… we need the runway rebuilt, or something, you know, whatever it is, or the administrative building needs to be, you know, replaced, or whatever the hell it is that they need done. They'll put the proposal out there, and then only those five or six
+Roger White: Successful.
+Roger White: bidders from before will be allowed to bid on that project, you know. So the 1st one is just, you know, out of that 200 million dollars who's going to be allowed to bid on that, on the projects that actually get that 200 million dollars. And you know.
+Roger White: If you're one of five, you've got a lot of money coming toward you. It may not be the lion's share, but even if it's just the tail of the lion, it's a lot of money for your company. So that's an RFP, and a government contract is very similar
+Roger White: Because you can imagine on that RFP, as you're doing the work, you have responsibility to report to the government what you're doing so far, any changes, all sorts of different stuff, reporting.
+Roger White: And keeping them up to speed on all the stuff that you're doing. A lot of responsibilities associated with that. There's good money in it, but there's a lot of responsibilities. And it's the same thing, kind of thing.
+Roger White: with a government grant, although it's more relaxed, because the government hasn't asked you to do a very specific job, necessarily. Now, they may say… it may be a government
+Roger White: grant for… Finding a solution to…
+Roger White: The COVID problem, I'm sure there was like tons of this going on in in 2020, you know.
+Roger White: You know, and, and so the government doesn't know exactly what task it is. It's not like rebuilding an Air Force base. It's like
+Roger White: this pandemic, we need people on it, you know. And so, when you apply for that kind of grant, you have to show expertise in a certain… in that area, and you can sort of choose what you want to do
+Roger White: To help… Solve that problem.
+Roger White: So you know, you're still trying to solve a particular problem, and you still have responsibilities to report. If you are awarded a grant to do that, then you still have responsibilities to report your progress.
+Roger White: And there's like, if you don't satisfy your responsibilities, the government can pull the plug. And there's all sorts of stuff. It's complex.
+Roger White: the kind of stuff that Matthew calls grants.
+Roger White: It's not complex. You, the, the, the government, you know, if you qualify, and that's where, you know, you have to figure out if you qualify. Maybe it's only for single, single parents.
+Roger White: Or maybe it's only for single mothers. And if you're a guy, you're SOL on that particular opportunity. But you need to find the right trees to bark up.
+Roger White: So… in so doing,
+Roger White: you find… you end up finding your opportunities to do that. So, what Matthew does with his utility, his AI utility.
+Roger White: Is out of all the different kinds of free money that there is out there.
+Roger White: He wants to narrow it down to these major categories like pay your bills, or
+Roger White: You fix your car or whatever it is, you know, and that that gets you in a certain ballpark, but it doesn't get you to.
+Roger White: the place where the ball's gonna land when you smack it, right? And maybe it's not even in the ballpark, maybe it's in the same town where the ballpark is. So there's a lot of…
+Roger White: out of this huge forest or collection of forests, you know, you want a grove of trees that you can bark up and each one is a tree you should be barking up because they can help you.
+Roger White: And so that's why doing an AI search
+Roger White: is helpful, because you're gonna tell AI, you know, where you are, what kind of a person you are, like, are you an individual, or are you small business, or something. So we gotta tell them that you're an individual, otherwise then they give you the answer back.
+Roger White: They may list a half a dozen places that are only, you have to be a small business to be eligible because why do they give that answer? You didn't tell them.
+Roger White: You are an individual. So there's there's a lot of
+Roger White: more trees to bark up that are not the ones that you should be barking up the wrong tree. So here, with this custom
+Roger White: template, this custom prompt that you'll be using in your own AI application.
+Roger White: ChatGPT, Gemini, Perplexity, Claude, Grok, whatever you're using.
+Roger White: You would enter that into the chatbot space and… and send it.
+Roger White: And that will tell whichever AI utility you're using.
+Roger White: To build you a list.
+Roger White: For this particular purpose. And, and so in the prompt that we're, that I'm going to show you where it is, where it's living right now.
+Roger White: And it'll be moved, it's gonna be moved.
+Roger White: But where it's living right now.
+Roger White: Oh.
+Roger White: you take that and you customize it, and I have a section at the very top, we'll look at that.
+Roger White: momentarily. Let me let me share my screen. First, st let me mute everybody.
+Roger White: Who's that?
+Roger White: Who's this? Who's that? Okay.
+Roger White: Am I pinned?
+Roger White: There we go.
+Roger White: I should have been pinned Yeah, I'm good.
+Roger White: Right, so we're gonna go look… at where to find
+Roger White: The, the template, as soon as I find out what is on Blah, say, blah, Angie Pittman's
+Roger White: Mind right now, on her silhouette's mind.
+Roger White: What's up?
+Roger White: Vlase Bly, Andrew Pittman.
+BLA*SAY*BLA=ANGIE PITTMAN: Yes, sir. How are you today?
+Roger White: Oh, I'm pretty good. I've been fighting with AI for an hour, but.
+BLA*SAY*BLA=ANGIE PITTMAN: Yeah, hers.
+Roger White: Mmhm Anyway…
+BLA*SAY*BLA=ANGIE PITTMAN: I'm s.
+Roger White: I'm sick of it.
+BLA*SAY*BLA=ANGIE PITTMAN: I'm sorry, go ahead.
+Roger White: Oh, I'm sick of fighting with AI
+Roger White: I, I do, I do that a, a, a lot.
+Roger White: Umm.
+Roger White: I don't fight with it a lot, I dispute it
+Roger White: Right now, I was fighting it because it's not following instructions.
+Roger White: I gave it explicit instructions.
+Roger White: And it's telling me, well…
+Roger White: Those are more like guidelines. No, they're not supposed to be guidelines when I say.
+Roger White: This and I say no, no, do not add any verbiage whatsoever and it adds verbiage and said well.
+Roger White: The instructions say not to add any verbiage, and you just did. Why? You know, so I'm doing that for an hour. But most of the time…
+BLA*SAY*BLA=ANGIE PITTMAN: Trying to get it to talk.
+Roger White: A lot of time when I argue with AI, it's because AI already thinks that if it finds something, that it's the truth.
+Roger White: And in the martial arts world, so many things about martial arts
+Roger White: Is not true, that has been written.
+Roger White: Because it was passed down for centuries, just by…
+BLA*SAY*BLA=ANGIE PITTMAN: Word of mouth.
+BLA*SAY*BLA=ANGIE PITTMAN: Did you see my question in the chat?
+Roger White: Oh, no, I don't follow the chat. When I have an assistant, they follow the chat and tell me. Following the chat is very difficult if you… you raised your hand, which is why I called on you, because I can see your hand. I can't see anything in the chat, but let me go back. Hello?
+Roger White: I'm interested in using AI to help me with emerge emergency funds.
+BLA*SAY*BLA=ANGIE PITTMAN: For individual, because you stated that we had to set.
+Roger White: Yeah, yeah, okay, so that's what you would put in the template. When we get to the template, there's a place for you to tell it. Basically, you gotta tell it where you are.
+Roger White: So it knows where to concentrate its search at. Then you gotta tell it, you know… well, first of all, you're telling it it's a… you're an individual, so it's not looking for stuff for…
+Roger White: a non-profit or a small business, and then there's a place where you tell it what the problem is that you've got.
+Roger White: And then, so then it's gotta go, hmm
+Roger White: Which offices deal with that kind of thing?
+Roger White: And then it goes looking for those offices specifically.
+Roger White: And, you know, that's sort of how this differs from the Matthews utilities, is because
+Roger White: If it just sends you to the car section, it doesn't know if you need…
+Roger White: a new free car, if there are any available, or how to repair your car, cheap or free. It doesn't know anything about that, it's just kind of automotive related, so it gives you automotive related
+Roger White: answers, and you have to pick through that. That's another haystack that you're looking for. You're still looking for your needle, but it's a smaller haystack than the gigantic field, you know.
+BLA*SAY*BLA=ANGIE PITTMAN: Okay, question. Would you say that we have to be more specific when we're searching?
+Roger White: Yep.
+BLA*SAY*BLA=ANGIE PITTMAN: Understand?
+Roger White: Yeah, you need to be, you need to be specific, and you, and you let AI
+Roger White: Figure out whether or not certain offices.
+Roger White: Undertake that type of thing.
+BLA*SAY*BLA=ANGIE PITTMAN: Right.
+Roger White: otherwise…
+Roger White: Then you're not getting AI to do that filtering for you. You have to filter it yourself manually, and that's what happens when you use Matthew's AI utility. It reduces that forest to a gigantic woods of which only a small section of trees are ones you want to bark up.
+Roger White: This…
+Roger White: This template helps you narrow that woods down into a smaller woods and maybe a grove of trees and and if you're lucky.
+Roger White: All of the trees, all of the offices it gives you, are ones that could help you. And in fact, sometimes the
+Roger White: the help that you need requires more funding than one of those offices individually can help you with, so it pays to have applied at several different places. But you want to find out… you don't want to have to call everybody that is not
+Roger White: in the fields that you need. So by getting a list of
+Roger White: More likely offices, then when you call them, then you're getting a higher percentage of offices that actually apply to your
+Roger White: Situation.
+Roger White: And so, let's say you use my template that gives you 25. Well, maybe 23 apply, and maybe 2, yeah, they didn't. Whereas with Matthew's 100, maybe you get
+Roger White: 15 that… that,
+Roger White: are in your… up your alley, and all the rest aren't, but you… you… finding those 15 is very difficult. It's almost the same
+Roger White: not quite, as using what Matthew calls Google, when he's talking about regular Google search, because there's so many Google products right now. Google's a big player in AI, and Google has an AI LLM called Gemini that you could use, but Matthew's just so…
+Roger White: So, hell-bent on bad-mouthing Google.
+Roger White: He's referring to the, like, the original Google product that used to be your friend. You used to do a search on Google, and it used to just only give you the stuff that you wanted, and if you… and you could actually give it signals to say, okay, don't give me this. You could put a minus sign and say something that…
+Roger White: It was in a related field. Don't give anything that has to do with that, you know.
+Roger White: You know, you're looking for love, you know, and then say, minus tennis, I don't want any, I don't want anything about tennis, you know.
+Roger White: And so you could tell it that, and it wouldn't give you that. You can't do that now, and so what happens is, when you do a search for help on Google Search.
+Roger White: It's going to it always. 1st of all, it doesn't help you by maintenance. It doesn't allow you. It's it's
+Roger White: It's customers, Google's customers, it's paying customers.
+Roger White: Do not like it when you can eliminate them.
+Roger White: So, in that… That has to be the reason why they took away your ability to actually
+Roger White: Demand that they give you answers only to this narrow area.
+Roger White: Its investors and customers don't want you to do that. They want you to accidentally fall in their lap.
+Roger White: Give them a chance to sell you something.
+Roger White: And it's basically anything that you're looking for that you can find here with AI, you could probably find on Google search. But it's buried in Google search.
+Roger White: Google Search is a huge haystack, I mean, it's an enormous haystack, enormous, and you're looking for one needle or a handful of needles in this enormous haystack, you'll never find them, because Google is shoving its customers up front.
+Roger White: And so you find the customers, and you know, and if you, has anyone ever counted to a million?
+Roger White: You know, so you've got 3 million,
+Robert Tee - Atlanta: Roger It's, it's Robert. Can we, can we do an example of, of,
+Roger White: Sure. We'll do that in just a second. I'll show you where it is, and then.
+Robert Tee - Atlanta: Yeah.
+Roger White: Somebody wants me to take that and fill it out and we'll send it out to AI, then we'll see what happens when that comes back.
+Roger White: Right now, hopefully, Angie, that…
+Roger White: Answered your question, and we'll go moving toward…
+Roger White: Finding the template. So let's look for the template.
+Roger White: I have to sign in to ChatGPT.
+Roger White: Well…
+BLA*SAY*BLA=ANGIE PITTMAN: I have a question. I have a question. And my question is, can we use the tools that's in the Mighty app?
+BLA*SAY*BLA=ANGIE PITTMAN: To go to Anaheim from there?
+Roger White: No, you know.
+Roger White: You, if you use the tools that Matthew.
+Roger White: I can't be doing this right now.
+Roger White: Open chat. Gpt.
+Roger White: I want Chat Gpt. Excuse me for a second. I'm getting this interference from Chat Gpt. Okay.
+Roger White: Am I sharing my screen or not? No.
+Roger White: Okay.
+BLA*SAY*BLA=ANGIE PITTMAN: No, you're not sharing.
+Roger White: No, you can't. You, you, you can't. Basically, if you want.
+Roger White: to use Chat Gpt yourself. You have to go to like chatgpt.com and open up a… a chat bot.
+Roger White: You can also download the application.
+Roger White: and put it on your desktop. That's better. The application usually is more effective, but you don't really need to do that for this. You could just use its web-based one, and just go to the website. In the case of ChatGPT, you just go to, like, ChatGPT.com.
+Roger White: Or you could go to OpenAI.
+Roger White: Come and find it. There's a few different ways to find it, but you go to chatgpt.com and that should open up a window for you to use the utility. But you need to be able to give it a good prompt. You could say in the prompt.
+Roger White: What Matthew used to like to say, and he likes to say, he likes to be able to tell
+Roger White: To have, like, a human chat
+Roger White: With AI and and you can do that and you can get results. It's just that they're often bad results because AI makes stuff up.
+Roger White: It can give you bad phone numbers, it can give you a lot of different stuff that you don't want, and so it helps to do prompt engineering, and that what we're going to look at momentarily as we go where to show you where to find it.
+Roger White: Okay.
+Roger White: Clear. Clear that. Go back up to the top.
+Roger White: Okay, you can see I'm here on the…
+Roger White: On the Let's Go Help site. So I'm gonna go down
+Roger White: to where I'm live here. Join a join a coaching call.
+Roger White: It should be in class materials, But it's not.
+Roger White: the template.
+Roger White: And this should be fixed by…
+Roger White: next week on Friday. I'll be working on on fixing this may not get fixed till next week, but right now at least it's here.
+Roger White: You go to replays.
+Roger White: which is where you would go to see this again, you know, if we discussed something, and you didn't take the notes, and you want to see it again. You go back to replays, or if you, if there was something going on a specific theme we were going to discuss.
+Roger White: And you missed it, you got it replaced.
+Roger White: I'm not sure how fast they do the replacement.
+Roger White: I never look at them.
+Roger White: But here you could go down. If you go down to way back when I
+Roger White: Put them here, here, here they are. Here's, here's the… we want to copy this one, if you want a script, a calling script.
+Roger White: I don't think people should be using a calling script.
+Roger White: Add-on.
+Roger White: I think they should be learning the basics of, Calling somebody.
+Roger White: That's useful for… every single prompt, you know, and and I'm encouraging
+Roger White: the admins at Lesco to do that, you know. But anyway, you can attach a calling script to
+Roger White: The template… That's right underneath it. The AI Grant Prospecting
+Roger White: prompt template. This is what you want to Copy.
+Roger White: And I would recommend that you copy it to a blank.
+Roger White: notepad file. Here's a blank notepad. Here's a blank notepad.
+Roger White: This is Notepad in Windows. I'm not sure if they have Notepad in…
+Roger White: on apple products, and I don't know what you have on your phone, but whatever it is.
+Roger White: You're going to want to copy the template and paste it someplace where you can modify it.
+Roger White: Now, you could paste it right… you could paste it directly
+Roger White: You can paste it directly into AI,
+Roger White: Not the one, not Matthew's little utility. I'm talking about ChatGPT or Claude or… They're all chatbots. All of those utilities that we use are chatbots that have a text box that we can put
+Roger White: whatever we want to ask AI in it. That's… that's the chatbot, and then it's a chat, because once you start a chat, you can go back and forth on the same subject.
+Roger White: It's going to know what you're talking about. It's going to keep that in its memory. If you start a new chat, it's going to forget everything. It's going to have no idea what you're just talking about. If you continue the chat, because as soon as you hit enter, it's going to open up a new box for you to enter more stuff.
+Roger White: you know, a response to their response. And so you can get that going for ages, you know, pretty soon. And that's another thing. If you, if you keep it up too long, it starts to
+Roger White: Fatigue, and it's the quality of its answers.
+Roger White: Are not that good, so you're probably not gonna wear it out.
+Roger White: that long. If you use AI as an assistant, you can wear it out. But for making lists, you know.
+Roger White: and what you're probably going to do for it, especially if you're going to use the free versions. You're not that into AI yet. You should be. Everybody should be.
+Roger White: But if you've got the free version and you're just looking to make a list, a few lists and stuff like that, then you won't have to worry about
+Roger White: making it too long to where it gets less effective.
+Roger White: but this is the this is the template. Let's let's open this up.
+Roger White: Mmhm.
+Roger White: here, and it's a… it's a text file. When you look at this, it's going to be a gigantic thing. You know, all you want to do is ask it
+Roger White: Let's say to get help paying bills.
+Roger White: Oh!
+Roger White: You wouldn't think that you'd have to have…
+Roger White: a prompt this long, but I'll show you When I copy this down.
+Roger White: Control-A, Control-C.
+Roger White: Close this, open up my… little blank thing here. I'm going to paste it in here.
+Roger White: Now.
+Roger White: This is more manageable. Let me.
+Roger White: Make the text a little bigger.
+Roger White: Okay.
+Roger White: This is… this is the… the prompt.
+Roger White: In fact, let me make another copy of it underneath.
+Roger White: In case I need to reuse it.
+Roger White: Down to the bottom.
+Roger White: Space, space, space, space, space, divider, oops.
+Roger White: Angelique Romano.
+Roger White: Okay, there's another copy of it. So I can mess with this copy.
+Roger White: Okay, when… when you…
+Roger White: fill this out. The way I have it set up is all the stuff that you need to input is up at the top. So you don't have to be going down to where to where AI needs it. It's just going to refer down here to A, BCD. And E. And stuff like that, and then take that information from here.
+Roger White: So the 1st thing is, you want to know if you're going to look for government offices or nonprofit organizations.
+Roger White: And… I recommend you do one, then the next.
+Roger White: Because all you have to do to switch is, if you're looking for all government… well, here's what if you… if you don't, if you use them both at the same time, just as is, government officer, nonprofit organization, it's just going to find one or the other, and then list it. And then, so you might have a list of 25 results where
+Roger White: All 25 are government offices. Maybe it didn't get in, didn't cross paths yet.
+Roger White: the nonprofit organization. So you have no nonprofits, maybe, or maybe you have six nonprofits and
+Roger White: And all the rest.
+Roger White: 19, our government
+Roger White: offices. So if you want to have some control of that, and I prefer to do that, because when you're talking to somebody that works in a government office, there are certain kind of personality
+Roger White: And the government has beaten them down.
+Roger White: They're just sat. They're doing a job. Yes, they may not be happy doing it.
+Roger White: But they're there doing it.
+Roger White: Anyway, government office employee is
+Roger White: tends to be different from a nonprofit organization employee. The nonprofit organization employee or volunteer may have a particular interest in
+Roger White: people that have the problems that you have, you know, and you know, and they're more personable.
+Roger White: you know, this is not true for everything, but, you know, if you want to separate… I would… I tend to separate my
+Roger White: lists into government offices and then do a different one for nonprofit organizations. The way you do that with this is, you delete one or the other. Maybe I want to start with government offices, so I would delete the rest of this, or maybe I want to start with nonprofits. So I would delete this. So I'm only looking for one or the other.
+Roger White: When I'm finished with one, let's say I've done government offices and I got a hundred government offices to call, and then I'll, I can tell AI in the chat box.
+Roger White: Can't do this on Matthew's thing.
+Roger White: But I can, on the chat, on the, in the chat bot version, the one ChatGPT that you, that you opened up, or Claude, or whatever you're using, then you can tell it, okay, now, in the same chat, you have to do this in the same chat, you just say, now, find me non-profit organizations.
+Roger White: And so it remembers all the rest of the stuff, it just starts and stops looking for government offices, and it starts looking for non-profit organizations, and it gives you those.
+Roger White: Umm.
+Roger White: So that's how you fill out the first one. Applicant type, individual, if you're an individual or if you're a single mother, you're a disabled veteran or just a veteran, you know, there's different ways to say individual besides saying individual and you can say, you can literally say individual.
+Roger White: And all of that is better than not saying anything, because I don't want to get
+Roger White: I don't want to get, re…
+Roger White: Listings for places that only serve small businesses, because if I didn't tell her I was not a small business.
+Roger White: And it… assumes that I just need this kind of help.
+Roger White: And this kind of help is available for.
+Roger White: But it happens to be for a small business now, so that's why I have to tell it the applicant type, individual. City and state.
+Roger White: That is really only necessary if you don't know the zip code of where you're… if it's your own zip code, you probably know that. You don't even have to put city and state. Your zip code is more of a pinpoint of where you are.
+Roger White: than the city and state, but let's say you're looking for your grandmother in Houston.
+Roger White: or something, and you know she's Houston, Texas, but what the hell's her zip code? I have no idea. So you put city and state, and it'll do, you know, Houston's pretty big.
+Roger White: imagine Los Angeles, one of the most spread out, largest cities in the country, and it's spread out. So, can you imagine how many zip codes
+Roger White: There are in Los Angeles, so narrowing it down.
+Roger White: pinpointing a place in which may not necessarily in your with your problem may not be.
+Roger White: that necessary, but it helps because a lot of cases it finds you help closer to you first.
+Roger White: So anyway, so that's… you fill out city and state and zip code, and actually, if you put both city and state and zip code, it's going to ignore city and state and go for the zip code.
+Roger White: Umm.
+Roger White: If if you if you miss.
+Roger White: If one doesn't match the other, then there's a little bit of a problem. It's gonna go for the zip code, but let's say you put city and state Houston, Texas, but you accidentally gave them
+Roger White: the the Zip code for Birmingham, someplace in Birmingham, Alabama, by mistake. Well, it's going to be looking around for Birmingham, Alabama stuff. So when you get your results, you're going to go. Why is it giving me Birmingham, Alabama, when I need Houston, Texas now. So
+Roger White: It's going to follow the zip code. Make sure you get that part right if you use it. Describe the help you need. This is the biggie.
+Roger White: This is where you tell AI.
+Roger White: What your problem is.
+Roger White: So it knows what kind of offices.
+Roger White: For nonprofits, it should be seeking out. And this is the key to to
+Roger White: finding the right trees that you want to bark up. This is the you know. This is where you say I need
+Roger White: A free, I need a free car, you know, and so.
+Roger White: you know, if you go to Matthews.
+Roger White: It's gonna and you go to the the car section, it's gonna.
+Roger White: Look for it, it may include some of these, but it's going to include car repair, anything have to do with automotive, because, you know, he doesn't know what your problem is, so he has to open that.
+Roger White: category up to the widest possible, which means that the wider you open that up, the less likely an individual reply on the list is going to apply to you. And so you may have to go
+Roger White: through 100 to find a handful. Whereas here, you could find maybe more than a handful just asking for 25, because you told it exactly what you needed.
+Roger White: And so this is where you want to, as succinctly as possible, you don't want AI to have to read, like, 3 paragraphs of what you need.
+Roger White: You're you're you're going to want to give it a couple sentences at most about
+Roger White: the exact problem that you need to find. And it's going to go. Okay, okay, okay, okay. So then it's going to be looking for offices or nonprofits that help that.
+Roger White: One caveat. Don't put all your eggs in the same basket. If you have
+Roger White: if you're like me, I've got
+Roger White: Half a dozen or more different things that I would like help with.
+Roger White: So but but if you put them all in the same.
+Roger White: search, you're not going to find anything you need. If I if I have a tree that's overhanging my neighbor's house, and I'm pretty sure it's going to fall.
+Roger White: I need a landscaper that's gonna take down that tree and deal with it.
+Roger White: And if I got a… a citation from the city that condemned my back porch.
+Roger White: And I have to have that replaced.
+Roger White: Well, that's another thing. My roof is leaking. That's similar, but it's a different kind of construction, and usually, you know, you want an expert in roofs and not a handyman that could fix your back porch.
+Roger White: And then maybe I need dental work. So you don't want to put all your problems in the same place.
+Roger White: You want to separate them and do separate searches for each one.
+Roger White: In the case of the roof replacement and the back porch, you might have a big overlap of the same places that can help you do either of those problems, but you're not going to find one that does that kind of construction and fix your teeth.
+Roger White: and do the landscaping, you know. So if you put it all in the same search, it's going to be looking for offices, mainly.
+Roger White: That do all of those things, so it's going to look for a government office that will fix your teeth, remove the tree, rebuild your back porch, and
+Roger White: and do your roof. How many do you think it's going to find?
+Roger White: It may find more than it would find if you ask it to help you buy lottery tickets.
+Roger White: You might as well ask it. I've asked it, you know.
+Roger White: there's none there's none as you would expect there's none
+Roger White: It will help you buy your lottery tickets.
+Roger White: But you know, that's the same. That's the same kind of results you'd expect if you put too many problems, especially differing problems in describing the help you need. So that's why it pays to just copy this template off to a notepad.
+Roger White: And then copy it several more times. And before you, when you copy it to your notepad, you should fill out something, these things about where you are, your applicant type. I'm an individual, I'm in Houston, Texas, or Gaithersburg, Maryland, or my zip code is this.
+Roger White: And maybe you… you could just block these… the government office out, non-profit organization, you could delete one or the other each time.
+Roger White: Or maybe you always want to start with nonprofits. If so, then delete the other, knowing that the next thing you're going to do is, after you finish all those, say, okay, now give me whatever the other one was.
+Roger White: and, you know, so that's already preloaded. Then the only thing that you need to do is, describe your problem, and you have several different problems. You know, so, you know, you just do one problem for each one and do searches for that. This includes Spanish calling script.
+Roger White: If… If you now, I showed you back here.
+Roger White: Let me get rid of this.
+Roger White: I showed you back here, The calling script add-on.
+Roger White: Now, this file, it's a much smaller script, look, look at this, see, see, it doesn't even go, doesn't even go past the bottom of this page. But basically, this just tells it
+Roger White: To write a script, for calling
+Roger White: whatever the list is that you already just did. So you would use the you would use the
+Roger White: The main prompt
+Roger White: And then, after you've gotten your list of like, say, you, you asked it to do
+Roger White: 25, and say, Give me another 25. Give me another 25. Give me another 25. Now you have a hundred answers.
+Roger White: And then you would you could put
+Roger White: At the end, the next one, instead of saying another 25, you just, you just place that, that
+Roger White: That calling script add-on prompt right in there, and then when it gives you the, the, it'll give you a calling script to use for that type of thing. And it usually takes into consideration the type of problem that you're looking at.
+Roger White: but really.
+Roger White: I don't think that's the way to go. I think you just need to to have an idea, and you can get that idea from just the script prompt itself. You know you can. You can look here what it's going to ask for.
+Roger White: Oh!
+Roger White: Let's see.
+Roger White: Things to remember during call. No, no, no script script.
+Roger White: tone and style. Write a warm thing. Script contents.
+Roger White: Material. Thanks for remembering to call.
+Roger White: Speak slowly…
+Roger White: write down the name of the person you spoke with. What documents or information will I need? Is there an application I fill out online or need to come in person? These these things that you that you can talk to.
+Roger White: The person about, you know, he's… And that's kind of like.
+Roger White: it's going to apply to every one of them. It doesn't really have to be customized for this particular thing. You should be able to do that, no matter what kind of search you're doing, or any kind of call that you're making to look
+Roger White: for help at all, so I think it should be completely separate, but you can attach this and have it generated for you in the same
+Roger White: Oh.
+Roger White: session with AI. You can use that one right now, while we have this other script up. Why don't we go back to? Who was that Robert that wanted a sample?
+Roger White: let's fill this out and see what what we get. Okay. What type of generally, what kind of help do you need? So we know what we we want to start with government officer, nonprofit organizations.
+Robert Tee - Atlanta: Yeah.
+Robert Tee - Atlanta: I've By the way, I was going to use this class for dental, to look up dental, and then.
+Robert Tee - Atlanta: Behold, Matthew did a little video about four days ago and he gave an unbelievable website and I used that and I've made just incredible progress.
+Roger White: Well, that's fantastic. I mean, and there, there's, there's one, there's one of his.
+Roger White: Partners in here that's… dental all smiles, too, so if there's somebody that's.
+Robert Tee - Atlanta: I've seen, I've seen that guy, yeah, yeah, and I've, I've, I've copied his address. I need to reach out to him. But, so I, I would say I'm, I, I had to stop, driving, you know, with Uber and Lyft.
+Robert Tee - Atlanta: And so right now it's, I'm just hurting for paying bills and, you know, looking for, looking for help. You know, he always says, just say, looking for help. Don't ask for money, but I'm looking for help now.
+Roger White: No, because if you, and there's two reasons for that. If you, if you ask for money, even if that's all they give out, they're going.
+Roger White: Well, what's this guy asking for money for? And that's all they give out, you know, this is stupid, you know, but it sounds greedy in a way. Sure. But if you ask for help.
+Roger White: For somebody that only has the ability to help people by giving money.
+Robert Tee - Atlanta: Gotch.
+Roger White: You just ask for help, and then you get the money. And so help in that case to them means money. But you didn't say money. You said help.
+Robert Tee - Atlanta: But yeah.
+Roger White: The other thing is, the other thing is, a lot of times, if you say, if you ask for a grant.
+Roger White: Right. And they, especially since Matthew's definition of grant is not like the technical definition, it's like assistance. You know, if you ask for a grant, they may say, well, we don't have grants here.
+Roger White: But they may be giving out money!
+Roger White: You just called it a grant, and they don't have grants, you know, so you go someplace else.
+Roger White: Looking for grants. Do you know anybody else that gives out grants? No, no, you know, you didn't ask them, do you know anybody else that gives out money or other kinds of help? And, for example, direct payments. Direct payment is not a grant.
+Roger White: It's…
+Roger White: It's, if you qualify and they give it to you, for example, direct payment to replace your roof. You need your roof replaced, you got bids, you know, they're in the…
+Roger White: The $10,000 range, or whatever it is.
+Roger White: And if they do direct payments, they may not have a grant, but they might do direct payments to give you a new roof. And the direct payment means they don't give you the money. You tell them the bids that you got, they pick one, they contact the contractor, they pay, the direct payment goes to the contractor and they put on your roof. So you get a $10,000 roof.
+Roger White: But you don't get the $10,000 to buy it, you know. That's 1 type of help.
+Robert Tee - Atlanta: Okay.
+Roger White: It's like money, but it's not money. Or it could be a forgiveness loan. It could be a loan that you make, but the conditions of the loan are if you do everything that they say on their end and hold up your end of the deal, then you don't have to pay it back. That's a forgiveness loan. And that's like
+Roger White: A grant… ish.
+Roger White: But it's not a grant, so if you ask for grants, or if you ask for money, you may be shooting yourself in the foot, so if you ask for help.
+Roger White: Then they can say, oh yeah, we might be able to help you. Well, what kinds of help? Well, we have financial assistance. Okay, I like that. I like that. We have direct payments. Okay. You just don't want to shoot yourself in the foot. And the easiest way is to just say, I need help. And then they find out what.
+Roger White: what your problem is, and if they can help you, and a lot of places that give out money, that's the way they… well, would $15,000 help? Yeah.
+Robert Tee - Atlanta: Let me get back to you on that.
+Roger White: It'll go toward it, it'll go toward it, you know, in a lot, a lot of these places you end up having
+Roger White: To do…
+Roger White: you have to apply to several places. Let's say that you're finding places that'll give you $1,500, and you need $15,000. Well, you may have to contact
+Roger White: You know.
+Roger White: 20 places, and some of them will give you 500, some will give you 1,000, some 1,500 maybe, but you can't get… you can't seem to be finding more than
+Roger White: then 1500, and you're in in the thing you need to solve costs.
+Roger White: 15,000. Well, you have to apply to a lot of places successfully. But people do it. People do it, and and part of the part of doing it is finding the places that have the funds.
+Roger White: To do it, so, you know, that's why we…
+Robert Tee - Atlanta: Roger, one one question. I I've I've
+Robert Tee - Atlanta: I, I, you know, obviously anybody looking for help and assistance, you know, we're, we're, we've, if we're not behind a rock, you know, we're under the rock, we're, you know, trying to, to get out and everything. So I've, I've kind of unfolded coming to the, to the Lesco website over the last month or so.
+Robert Tee - Atlanta: And I've heard some really good stuff. But the numbers that you're saying
+Robert Tee - Atlanta: you know, literally 500, 1,000, I mean, are those… are those real numbers? Like, are those out there for… for groups to be able to give you that kind of, financial assistance? I mean…
+Roger White: Well, yes, and one way to one way to to get a feel for that. I can't. I don't have a feel for it right now, but one way to get a feel for it is to use Matthew's AI tools. You know we got those, you know.
+Roger White: Lescolovesai.com slash.
+Roger White: Pay your bills, or something. Or, and they have, they have, looking over here.
+Roger White: Where is the the AI? Let's go AI research tool.
+Robert Tee - Atlanta: Okay.
+Roger White: Research research tool and you'd fill this out.
+Roger White: This one is for business, do they have the other ones yet?
+Roger White: Yeah, I don't know.
+Roger White: you know. Pay your pay your bills, whatever it is. Zip code and city and state. I'm not sure how well all of these work right now. It's in a in a.
+Robert Tee - Atlanta: This is just a growing… Growing part of the site.
+Roger White: thing and they're fixing, they're fixing problems on them. But what happens is you'll get a list back.
+Roger White: And when you get the list back, and you open it up, you can open up individual
+Roger White: offices that it finds, and if in in the AI
+Roger White: tool, it's asking it to tell you if it can find the answer. What
+Roger White: What range of dollar value of assistance, even if it's not money that they give you, if they give you counseling, do they give you $1,500 worth of counseling, you know, that kind of thing.
+Roger White: Or if they give you money, you know, what's the maximum that you could get if you qualify, that kind of thing. So some of those numbers appear in these searches, and you can see what different offices
+Roger White: with Matthew's canned AI search. What what kind of numbers pop up there? Some Sometimes,
+Roger White: It's in the tens of thousands, depending on the problem.
+Roger White: You know, because different offices are given
+Roger White: are funded differently and according to the problem. If it's a very high ticket item that you need to replace, like your roof, for example, and they only give you out like $150.
+Roger White: Well…
+Roger White: You've got a lot of places to call in order to get enough money to do your roof, so they should have a higher
+Roger White: Yeah, level.
+Roger White: Now, if your roof only costs… if your roof repair only costs, like.
+Roger White: $500, then you're only going to get $500 from them. But they may have a limit of like $20,000 and your bids are coming in at 15. It looks like you'll be able to cover it from that one place alone.
+Roger White: But if they only go up to, like.
+Roger White: 1500 for the office. It's not. It doesn't cater to roof problems. It caters to construction problems which that is, you might have to go to several, because, you know, you might not find one roofing
+Roger White: facility that can cover that kind of stuff, you know, so you just have to keep looking. But it's still a tree worth barking up.
+Robert Tee - Atlanta: I, A friend of mine who does a lot of AI, he said.
+Robert Tee - Atlanta: you know, there's a lot of power in writing a prompt, you know, which is exactly… and boy, have I taken notes, what you've been saying, but… write a prompt, and then you… then you respond to its response.
+Roger White: Yes, yes, you do that all the time.
+Roger White: Yeah, well, yeah, and if you don't write a prompt, if you do some decent prompt engineering, and I'm going to go over this prompt and show you kind of what's in it.
+Roger White: which you can steal for other prompts that you want to use, or you can modify this one. It shows you some of the type of hoops you have to jump through to get AI to give you what you want.
+Roger White: Like it'll lie to you. So there's a no fabrication policy in my prompt.
+Robert Tee - Atlanta: They don't, you know, don'.
+Roger White: If you can't find the answer, don't make one up just to please me. That's just going to piss me off, you know. Yeah, yeah. But it's been known to do that kind of thing. So if you know that it has a proclivity to do something that screws you up, you want to put that in the prompt so it doesn't.
+Roger White: Do it. And it'll still do it sometimes. It'll still, like, say, oh, he didn't really mean it for this situation. Yes, I did. You know, so you still have to follow up after him, but it reduces the the likelihood that it's going to steer you wrong. So, you know.
+Robert Tee - Atlanta: I see it here. I searched it. No fabrication policy. Strictly enforced. Never invent, guess, or fabricate any of the following.
+Roger White: Yes.
+Robert Tee - Atlanta: That's beautiful.
+Roger White: And that works not only for this, but any other kind of research.
+Robert Tee - Atlanta: Right.
+Roger White: or stuff you're going to do using AI, realizing that.
+Robert Tee - Atlanta: Sure.
+Roger White: Possibly do those sort of things. You may want to put that in there and modify it according to what you want it to help you with, but knowing that it fabricates stuff, if you don't know, you'll learn fast enough, and then you'll realize that it pays to have that in there. Let's take a look at the
+Roger White: Prompt again, okay, so…
+Roger White: There's my city and state issues. You know, because I'm telling it, you know, to to concentrate on the area closest to where you live and then expand outward.
+Roger White: Let's see.
+Roger White: Search rules, some search rules, what to exclude…
+Roger White: Location expansion, so you start with it with.
+Robert Tee - Atlanta: There is.
+Roger White: Nearest to the user, and then… Oh.
+Roger White: If if if it can't find 25 in that area, just keep expanding outward, outward, outward.
+Roger White: Anti-repeat rule. This is a good one. If you're doing lists. If you're doing lists.
+Roger White: And you ask for…
+Roger White: 25, which this does because it puts less stress on the system, and it's easier to do, especially if you don't have a big subscription and a lot of a huge token limit.
+Roger White: This would help people that have a free version. They're on the free tier of any AI like Chatgpt free.
+Roger White: Uhm…
+Roger White: you would have a tendency to get the 25, and then you would say, okay, give me another 25. Well, give me another 25. Well, if you don't tell it.
+Roger White: would have a tendency to start to search all over again. You know you'll get different ones, because when it starts to search all over again, it doesn't go to the exact same place. It just like jumps into the ocean wherever it happens to be at that time. But if it's jumping off at the same place, you may get
+Roger White: Repeats of what it just gave you.
+Roger White: and and and 5 min ago.
+Roger White: This anti-repeat rule tells it not to do that, so that when it gives… when you ask for another 25, it's not the same 25, or any of the same 25.
+Roger White: Coming back, you wouldn't necessarily know that you would need to put something like that in there unless you started getting the same offices, you know, or sometimes it's a similar office, same address, you know, a lot of different… anyway.
+Roger White: I'm cutting down on, and it doesn't mean it won't repeat any, because sometimes it's difficult for it to tell, difficult for you to tell, but when you call them, you find out, oh yeah, it's the same office. But the anti-repeat rule keeps that to a minimum, let's say.
+Roger White: Here I've got priority levels. I think Matthew has priority levels in his. How his are defined
+Roger White: I have no idea.
+Roger White: That's all behind the scenes. I gave some suggestions months and months ago.
+Roger White: What he does, I don't know, but here's, here's how it, when it gives you results, it's going to give each one a priority level of 1, 2, or 3, you know, high, medium, or low. And, and this tells you what, basically, what high means, and it's basically, you know.
+Roger White: more evidence in the listing that it applies to whatever your problem is, and and
+Roger White: Priority two, it seems to be relevant, but there may be
+Roger White: you know, less advantages of calling it next, that kind of thing. And low…
+Roger White: It's in… it is in the ballpark, but you may not want to bother going down that route, you know, and the reason it's in there is because that just happened to be one that was… that… that got included because it… it satisfied the inclusion
+Roger White: Specs, but…
+Roger White: it's not high up on the list because it lacks this, that and the other thing. So anyway, so it's and the results that come out have been sorted into
+Roger White: High, medium, and low, so the first ones you get are high, you know. And, you know, when you go through, if you do 25, 25, 25, 25, and so on, you… for each 25, you look at the top ones, and you might look at the next ones, and, you know, it's up to you.
+Roger White: But just keep in mind that even if it's a low
+Roger White: one. It may be the one that actually provides you with the funding that you're looking for. You know you don't know why it got rated low. Well, you do know, because these limitations were put on it. But you know.
+Roger White: the low, the low rated priority ones might be the ones that help you the most. You don't know. But anyway, they're sorted because logically, you'd want to go to ones 1st that
+Roger White: Sort of seemed like they were.
+Roger White: more applicable to your problem in assisting you.
+Roger White: No, there's the no fabrication problem.
+Roger White: Policy, which we said… Oh.
+Roger White: No self override.
+Roger White: A lot of times, AI will…
+Roger White: Make a decision on its own.
+Roger White: and override something that you told it to.
+Roger White: And then the.
+Robert Tee - Atlanta: Roger, I just wanted to add one little thing in the chat. People, a few people asked about the where the two prompts were and I put the links in the chat and they work.
+Roger White: Thanks.
+Roger White: Thanks. I can't see any of that because I'm sharing my screen right now.
+Robert Tee - Atlanta: No problem, but it's, it's out for everybody else.
+Roger White: Let me stop and tell people, if you want to get my attention.
+Roger White: Then you need to raise your hand.
+Roger White: When I leave… when I share my screen, I can still see the…
+Roger White: Thumbnails, the first… the top thumbnails, right?
+Roger White: And the thumbnails go… I see 1, 2, 3, 4, 5. I see 5 thumbnails, and then if I hit this arrow, I can see the next ones, and then the next ones, and so on. Hey, Benny?
+Roger White: Didn't even know Benny was And I saw Persephone earlier. She's she's back.
+Roger White: And and others.
+Roger White: But anyway, if there are
+Roger White: Multiple hand raises, they're in order of who put their hands up first. Right now.
+Roger White: Contractors Unlimited. Is that you?
+Roger White: Oh.
+Roger White: Or is that a different person? Contractors Unlimited. I guess I have to go back and find out. We'll get to Contractors Unlimited momentarily.
+Roger White: But these line up in order here in in the chat. Since I don't have assistance. I used to have Tammy Larson as my assistant, but they they
+Roger White: They started wanting us to not have assistance.
+Roger White: I don't know why, because assistants are very helpful. The assistant The co-host follows the chat.
+Roger White: She can interrupt me, because I can't see the chat.
+Roger White: I can see it now, but it's hard to pay attention to. It's just, like, off to the side, and it's just…
+Roger White: Usually, if you're by yourself, you know, chat is not a good place to ask a question. You raise your hand, and to do that, you go to the taskbar.
+Roger White: of Zoom, the Zoom taskbar, where you can… it's the same taskbar where you would mute yourself, or unmute yourself, or turn on your video, or turn it off.
+Roger White: in a different section. It's called react.
+Roger White: And if you hit the react button, Then… You'll see…
+Roger White: a place there that says, raise hand. And so, when you click on that, I'm going to raise my hand right now. Boom!
+Roger White: There it is. Oops, wrong way.
+Roger White: There we go.
+Roger White: Up there. Raise hand, and then…
+Roger White: That once you raised your hand, that button turns into a lower hand.
+Roger White: And so you click that to turn it off.
+Roger White: And that way, it shows up.
+Roger White: In the, on the thumbnails.
+Roger White: And so I can see that there's thumbnails with questions on. Now, if I go to share my screen…
+Roger White: which I will go back here. I still have a window that has the thumbnails of people on it, and so I can see the the top people that
+Roger White: that have their hands raised, and once once you've got your question answered, or whatever like that, and you turn off your raised hand. Well, then, you get bumped down to below wherever anybody else has their hand raised, and you know, so the people get pushed up. So I'm always have visible at least.
+Roger White: the next person with a hand raised.
+Roger White: So raise your hands if you need to. Anyway, back to the this this template here.
+Roger White: Here is the the output that I'm expecting from each of the
+Roger White: The listings that it sends me, you know, it's going to list its number.
+Roger White: The priority that it achieved.
+Roger White: Name… phone number…
+Roger White: And a lot of times it pays to repeat. I already gave instructions on non-fabrication to, in the event it's a phone issued, put not available if there's no phone number, you know, but here I'm telling it again.
+Roger White: Oh.
+Roger White: Direct line, if available, which usually there isn't. Contact name, usually there isn't.
+Roger White: Email address…
+Roger White: sometimes there's an email address associated with the office. Sometimes they don't, but they have a web form. If AI detects that it's got a web form, then it can put
+Roger White: web form there.
+Roger White: The URL of the… of that… Website.
+Roger White: And.
+Roger White: And then there, you know, different aspects of what I want returned for each listing.
+Roger White: And then, that's it. This is the… this is the next…
+Roger White: The next copy of that prompt. So that's the extent of the prompt. So you can take that prompt and you can pick it apart and use it to do your own bidding.
+Roger White: You know, it doesn't have to be searching for a list.
+Roger White: You can give it different types of instructions. Some of this stuff you may want to keep for whatever prompt that you're using.
+Roger White: Oh.
+Roger White: It's just part of engineering a a prompt that will work for you more than shoot you in the foot.
+Roger White: Okay, does anybody have any questions about… The prompt.
+Roger White: how to fill it out.
+Roger White: We could use it. Robert, were you saying that you that you wanted to do a test run.
+Roger White: We could do a test run for you if you want.
+Roger White: Are you still here?
+Roger White: Anyway.
+Roger White: Yes, ma'am.
+Roger White: Okay.
+Roger White: Well, guess what we've come to.
+Roger White: Contractors unlimited Ll.
+Roger White: C.
+Roger White: What can I do for you?
+Roger White: I guess we have to wake you up.
+Roger White: I know, we put people to sleep here all the time.
+Roger White: Get a wake, wake some people up. Let's see who's in the participants today.
+Roger White: Olida Clark.
+Roger White: David, is Matthew's program over yet? Oh yeah, I guess his program's over. He cuts out, doesn't he?
+Roger White: You could have 6 hands raised. Oh, well, I gotta go.
+Roger White: And off he goes.
+Roger White: Let's see… Sharing.
+Roger White: Okay, well, contractors unlimited. We're still waiting on you.
+Roger White: If you have a question.
+Roger White: Oh, Daryl B. Is back. Daryl, Daryl, Daryl B. Is is somebody who saved our butts.
+Roger White: Because we got a bunch of documents delivered.
+Darell-B: Oh, yeah, yeah. Yeah, it's all good.
+Roger White: He saved him.
+Darell-B: Don't worry about it. My system just kicked me off.
+Darell-B: And, what I wanna know…
+Darell-B: the person that you was speaking with. He had mentioned a website that
+Darell-B: That he was exposed to. I, I guess one of the people.
+Darell-B: Mention a…
+Darell-B: because a lot of emails I get say, this one website, you have 15 people calling like that, or whatever.
+Darell-B: Are you familiar with anything like that?
+Roger White: I'm not sure what the… Who is who and what is who?
+Darell-B: I didn't I didn't get his I didn't get his name. And like I said.
+Roger White: Was it on… it wasn't here, it was someplace else.
+Darell-B: Yeah, yeah, no, you were speaking with him.
+Roger White: Oh, I was.
+Darell-B: You were just speaking with him.
+Roger White: Okay.
+Darell-B: And yeah, he had mentioned… but I wanted to ask about those websites, because I get the emails all the time.
+Darell-B: But I…
+Roger White: Okay, well, he was talking about a dental-related website that Matthew…
+Darell-B: Nothing. Okay.
+Roger White: gave him, I don't know.
+Roger White: what that was. And if you go, if you go to Matthew's Oh,
+Roger White: utilities, Yeah. Let's see… You know the the the.
+Roger White: the ones where you use AI. But you're not using it yourself. It's the lesser system that's running the AI and or searching the AI. It's they use.
+Roger White: They use Chat Gpt. Well, I'm not sure if they they're using Chat Gpt, or Or or.
+Darell-B: Well, what, yeah.
+Roger White: But anyway.
+Darell-B: Yes.
+Roger White: There's it may be in their dental section. Also, when you use any of those sections down at the bottom, there's usually some other
+Roger White: references.
+Darell-B: And it.
+Roger White: Maybe there, maybe there.
+Darell-B: What I'm… Yeah, what I… I'll just have to get a list and then ask them while I'm on the…
+Darell-B: On the,
+Roger White: Oh.
+Darell-B: Call.
+Roger White: Well, one of the, one of the members, not members, one of the, well, maybe they're a member, but they, they are possibly an investor in, in Lesco. Anyway, it's called Dental All Smiles.
+Roger White: and they are a dental office that if you have dental issues, you may want.
+Darell-B: Oh, that's what… that's what he was… that's what he was talking.
+Roger White: Now, we mentioned that, and he said that he'd gone there, and he's gonna.
+Darell-B: Yes.
+Roger White: Continue doing stuff there.
+Roger White: That may not be… the link that he was talking about. That may be just one.
+Darell-B: That's.
+Roger White: the.
+Darell-B: How many gentlem.
+Roger White: Offices that were included. They just have to be related to LESCO.
+Darell-B: Yeah, I haven't done it yet. I'll make a list and just ask them.
+Roger White: And you can also just use this particular template and ask for, you know, list as your problem dental, whatever kind of you can get more specific. And if you get more specific.
+Roger White: It'll look up offices that deal with that particular
+Roger White: Area of dentistry, rather than just general dentistry.
+Darell-B: Okay, that's that's good. Appreciate it. Thanks.
+Roger White: No, you're welcome. Do we have.
+Roger White: Contractors Unlimited back yet.
+Roger White: Okay, well, see me next week, Marcella. I hope, well, maybe you're already gone.
+Roger White: I might have missed your note, just like, oh, no, she's still here. Okay, well…
+Roger White: Looking for you next week.
+Roger White: Oh, people for next week. If you're some, if you haven't are, you know how you on the let's go platform. You Rsvp a particular
+Roger White: class that you go to, and then you're listed for notifications and crap like that. Well, if you're Rsvp to this one, it's going to be wiped out.
+Roger White: Probably on Friday.
+Roger White: because it's I'm I'm changing over to another aspect of the system where I have more control in the on the platform, and in order to do that it wipes out any Rsvps that you have. So you have to do it again. So
+Roger White: So, next week, you may have to RSVP again.
+Roger White: because there there will be no Rsvps as possibly as of Friday.
+Roger White: or as of Saturday, because it's Friday, part of Friday it will happen.
+Roger White: Umm.
+Roger White: Let's see…
+Roger White: Well, does everybody knows where the template is right now, and you know I have. I have to encourage people to make
+Roger White: AI.
+Benny Arce: Roger.
+Roger White: Your friend. Yeah.
+Benny Arce: So, Joey, which is, Contractors Unlimited, he's having issues with his, mute button. Oh. And that's the reason why he's lying.
+Roger White: Okay, so in this particular case, Let's…
+Roger White: Have you type your your issue in the chat.
+Roger White: Then I'll actually know to look for it.
+Roger White: And see if we can figure out what you need.
+Roger White: There.
+Roger White: Thanks, Benny. Wouldn't have known otherwise.
+Benny Arce: Yeah, no problem. You also have a question in the chat by Ms. Clark.
+Roger White: Mute button isn't working.
+Benny Arce: to.
+Roger White: Joey.
+Roger White: Oh, did he put the… did he put the problem in here?
+Benny Arce: No, he didn't. But you do have to put it in the chat by somebody else.
+Benny Arce: Okay.
+Benny Arce: Sweet.
+Roger White: Okay.
+Angel-AK-907-570-7748: Linda has a question.
+Benny Arce: Yes.
+Roger White: Who's talking now?
+Angel-AK-907-570-7748: This is Angel. Awinda has a question in the chat.
+Angel-AK-907-570-7748: Do you want me to read it to.
+Roger White: Oh, Linda? Okay, let's see. I need an assistance.
+Roger White: Grant money to pay for training to get a better job.
+Roger White: What would be… What would be better under government assistance.
+Roger White: I'm not sure what that means. I would look in both places. It's hard to second guess who helps you more government offices or nonprofits.
+Roger White: Because whoever you're guessing, By Murphy's Law, it's the other one that helps
+Roger White: Now, technically, there's more government offices than there are nonprofits.
+Roger White: out of the pie chart.
+Roger White: a little over 50% like close to 60% is the
+Roger White: The capitalist society, which means that they're only going to help you. They can help you, but they're only going to help you if you pay them.
+Roger White: and they don't guarantee that they will be able to help you. They'll just try their best because you're paying them, and if after you could pay them, who knows how much, and they could still not be successful in helping you. And then now you're out whatever you paid them in addition to the problem you already have.
+Roger White: So you want free stuff and free stuff is government offices, nonprofit organizations and government offices are probably
+Roger White: 7 times more of them than there are nonprofits.
+Roger White: So just but they're both big numbers.
+Roger White: you know. So you know, it's really hard to second guess.
+Roger White: Which to try for.
+Roger White: So it pays to do both.
+Roger White: And see, you know, How it shakes out.
+Roger White: As far as getting a job, if we go back to the template here… oops, I better share my screen again…
+Roger White: share my screen. Go back to the template. Okay.
+Roger White: here in the template. You would say everything. Just you know, it's the type of help you need. You you need.
+Roger White: Free training!
+Roger White: to get a better job. That's what you put in the description to help you need free training to get a better job. If you have a particular area of expertise, because if you don't tell it an expertise, it's just going to find you free training, and it may be free training to get your
+Roger White: commercial driver's license, so you can drive a tractor trailer across country. If that's not your cup of tea, then you may want to give it the kind of idea, some kind of ideas on
+Roger White: on what you might need.
+Roger White: Oh.
+Roger White: and and the type of help you need. But the the number one a thing is to say, Okay.
+Roger White: You may want to tell it what kind of job you have or what kind of job you did have if you got laid off of it. And if you don't want to have anything to do with that kind of work anyway. Forget that. Just say, you know, I'm currently unemployed. I need free training. To get a better job.
+Roger White: Or to get a job at all.
+Roger White: you know, and and then you could give it areas where you have some expertise.
+Roger White: you know, and you can say you're open to anything that you would qualify for. But these are areas that I'm
+Roger White: I'm I'm currently looking at That could…
+Roger White: be helpful or not helpful, because it may give you leads. It may not, like, ignore the fact that you
+Roger White: that you're looking for, that you don't mind looking for something other than what you just told them, that you have experience in, or know how to do, or have an interest in, and it may bypass something that you would be interested in if you hadn't said that.
+Roger White: So you may want to try searches without saying… getting specific on what you can do, and then after you've done that.
+Roger White: you can. You don't have to do the whole thing over again. You could just say in the script, but
+Roger White: I do have experience in these areas, and then you can modify its search going forward to include places that are more sensitive to that kind of thing, because you're chatting with it the whole time you can modify and react to whatever it's told you. If it gives you a whole bunch of stuff that seemed to be not right.
+Roger White: You have to decide whether or not you want to change the prompt or just tell it in this particular chat.
+Roger White: that… to to to change its search criteria based upon
+Roger White: Yeah, your assessment of what it just gave you.
+Roger White: And and if it's if it's.
+Roger White: If it's significant enough, then you're going to want to go back and change how you describe the help you need.
+Roger White: so that it does a better job in the future. You may want to have on a notepad, especially if you're searching for different things. Just
+Roger White: different ways to describe the help that you need for different things, so that you know what to just plug in here. You may want to do another search
+Roger White: in a few days, and you don't want to. Maybe you want 500, a list of 500, and you can only stick around and deal with 100 a day. So you do 100. The only problem of splitting it up like that.
+Roger White: is you. You want to come back to the same search you did before.
+Roger White: to avoid having it repeat if you like. Let's say you've got you want 500, but you you've got a hundred, and then you're going to go off and do something else when you come back. Don't start a new search necessarily.
+Roger White: continue it. So you find it in the left hand side. Let me go look for my
+Roger White: Chat Gpt. You see, on the left hand side, recent things that you've done. These are searches that you've done. So you find the search that you did
+Roger White: To get that list, And then you open it.
+Roger White: This is my… one of my arguments with…
+Roger White: with the Chat Gpt. So I'm opening what I already did, and then you add to it. So it remembers all the crap that that you you don't have to.
+Roger White: reinvent the wheel. You might have spent like a half an hour going back and forth with it to hone it down to a particular understanding. You want to go back to that same understanding by opening this up and then
+Roger White: continuing your search from there. So you got 100 and say, Okay, now give me another 25. Give me another 25 and keep and continue it from there that way. It has the no repeat
+Roger White: instruction.
+Roger White: so it should not be giving you stuff that it already gave you, whereas if you start a new new one and try to to continue your your 100 to 500. So you think you're starting on on the beginning of 200.
+Roger White: Well, it's going to be starting over from scratch if you start a new chat. So you want to continue your chat, not start a new chat.
+Roger White: Okay,
+Roger White: Does that help you? Do you know where to find the template to copy that? And then, you know.
+Roger White: You're looking for offices there.
+Roger White: Umm.
+Roger White: Let's see, 5, 28. Okay, so we're here for an hour and a half, but we can go to 2 h if we have to. There's a calling tip.
+Roger White: That might help some people.
+Roger White: The phone systems have changed.
+Roger White: since I was in property management ages ago.
+Roger White: After property management, I went into Graphic design and desktop publishing.
+Roger White: And so… Whole different career after property management, but a lot of this stuff still applies.
+Roger White: I used to, in property management especially.
+Roger White: I used to have to try to call people that.
+Roger White: We're quote unquote unavailable.
+Roger White: or I'd be on hold someplace, and let's say I have to call a company, and I need to talk to somebody about something now, and I'm on hold, or I'm on the main switchboard, and there's nobody available right now.
+Roger White: try to get behind the switchboard.
+Roger White: not to help them run the switchboard. But if their number is a big enough company, and they have their main numbers like
+Roger White: Some area code, some exchange 1,200, or 9,000, or whatever it is, you know, you've seen them, you know.
+Roger White: Or even if it's just 60, you know, they usually like to end in a zero, and if they're bigger, they like to end in two zeros, like 1200, and if they're really big, they like to end in three zeros, 9000, or whatever it is.
+Roger White: So,
+Benny Arce: It was…
+Roger White: Yeah.
+Benny Arce: Yeah, it looks like, though, you'll be able to fix the mute button.
+Roger White: Excuse me. Oh, I need to use mute button. Okay.
+Roger White: Oh.
+Benny Arce: before.
+Roger White: Bam, is that it?
+Roger White: Okay.
+Roger White: Oh, I know who the culprit was.
+Roger White: But anyway, that's okay.
+Roger White: No.
+Roger White: In fact, That's who I was helping.
+Roger White: Oh.
+Roger White: Oida, is that how you pronounce your name? Did you tell me last week, and I forgot already Oida.
+Roger White: Oita.
+Roger White: Ouida.
+Roger White: One of those, maybe.
+Roger White: Umm.
+Angel-AK-907-570-7748: Her mute button wasn't working either.
+Roger White: Oh, well, oh, well, she couldn't turn it off, because that's where the mutes. That's where the sound was coming from. I had to just mute.
+Angel-AK-907-570-7748: Gotcha, sorry.
+Roger White: That's all right, anyway.
+Roger White: What was I saying?
+Roger White: What was I saying?
+Roger White: Oh, yeah, the tip, the calling tip.
+Roger White: So this is, if if you're calling a number that doesn't end in an odd number or something like that, it's like something 9,000 or something 1,200, or even even if it says 50, you know, sometimes small companies, you know their their main switchboard number is the 0 1.
+Roger White: Well… Usually, they have numbers related to that.
+Roger White: Yeah.
+Roger White: That, instead of…
+Roger White: something 1,200. There's a 1,201, 1,202, 1,203, and so on and so forth. A lot of times. The low numbers are administrative ones. Sometimes it's just an alternate to the main switchboard, and it gets rolled back in in the same place you just came from. But
+Roger White: A lot of times, if you just pick a number, and let's say the main switchboard ends in 1200, you would say 12…
+Roger White: 25.
+Roger White: And see if…
+Roger White: Now, 1225 could go to a completely other company, especially if they don't have that many offices or phone numbers dedicated to that company, but a lot of times they do so. 25 might still be in the same company, and usually
+Roger White: If you have enough offices in that same company, they will… whoever… everybody in the company will get a new extension list
+Roger White: every month.
+Roger White: because of new employees, people that left people that came in, you know. So there's new people on the list, and you might need to contact. So there's a contact sheet.
+Roger White: that most employees have, so they can look up. So you call somebody in the same organization that you're trying to contact their
+Roger White: their grant person for lack of knowing exactly what they help with. They're finding their their person that helps you get the free help.
+Roger White: So you sort of need to know what kind of office that you're looking for the free help, but you get somebody in the company behind the curtain.
+Roger White: and they and you say, Hi, and then you ask them if you're if they're the office that helps you with this, and they say, No, I said, I'm sorry I got the wrong number. Can you give me? Can you transfer me or give me their extension or their direct line? So I can call them. Sorry. Sorry about that.
+Roger White: Oh!
+Roger White: You know, at least this used to work for me a lot.
+Roger White: And I, I could… Find the person that didn't want to hear from me.
+Roger White: or they may. They may have wanted to hear from me. They just didn't know about it, and they were blocked very well, but whether they wanted to hear from me or not, I could still get through using that method. So if you get stuck on hold, or you get
+Roger White: shoved off to an office where they say, well, and every time you call well, I can't come to the phone right now. I'm out of the office, and you know, going all right. Well, see if you can find out why. But you you get somebody else.
+Roger White: to call and and and try that in a few different places, you know.
+Roger White: Anyway, that's a tip I usually pass on. I'm glad I coughed it up right now. Has anybody heard from Contractors Unlimited yet?
+Contractors Unlimited LLC: I'm right here.
+Roger White: Oh, oh, there you are. We called on you earlier, but I guess you were.
+Contractors Unlimited LLC: I know, I couldn't get the m.
+Roger White: Trying to wake you up. I didn't talk loud enough to w.
+Contractors Unlimited LLC: No, no, I was, I was, I was inter intrigued by you, but I just couldn't get the mute button to work. So I had, I'm not, can, I'm not techn.
+Roger White: Oh, okay.
+Roger White: Oh.
+Roger White: He's my cousin.
+Contractors Unlimited LLC: from the South Douglas.
+Roger White: Savvy families.
+Contractors Unlimited LLC: I'm a Se.
+Roger White: Techno is just his nickname. Techno
+Roger White: But anyway, is there anything we can help you with?
+Contractors Unlimited LLC: Yeah, I'm looking for information on my daughter. She's looking to buy a house, and I need information on that regarding possibly getting her. She's got $20,000 right now, but she needs more money.
+Contractors Unlimited LLC: you know, obviously you can't buy a house for $20,000. I mean, you can't put a down payment, it's not enough money. So I'm looking for maybe help, you know.
+Contractors Unlimited LLC: Basically, from the government, or…
+Roger White: If you were, if you were, if you were,
+Roger White: If you were talking to Matthew.
+Roger White: He may have a section of the.
+Roger White: of the platform that deals with that kind of thing and has links to it. But you can do a search. You don't even need, you know. What do you need Matthew for? If you got AI right?
+Roger White: You didn't need me for it, you got AI. So, going back to the… to the template…
+Roger White: See if we pull that up again.
+Roger White: going back to. No, that's not the template. That's that's the platform. Here's the template. Okay? you know, you say the same thing about where you are.
+Roger White: if it matters. Usually it matters where you are. Sometimes it doesn't matter. But you know, usually it does.
+Roger White: Then when you describe the help you need, then you would say.
+Roger White: Looking to buy a house.
+Roger White: Oh.
+Roger White: Have…
+Roger White: Some money, but not enough for a down payment. You don't wanna, you don't wanna make too many paragraphs out of it, you know, a couple sentences at most.
+Contractors Unlimited LLC: Right, sure.
+Roger White: But that's where you would put it, and then it would look for offices that help you do that, and probably a lot of them would be HUD offices.
+Roger White: You know, and and if if you were using the at least the old resources we had on the website.
+Roger White: on the on the Lesco site there would be offices for well, let's see.
+Roger White: Bills, homes, and cars. Well, I don't want to look up in there, because I don't want to navigate the platform.
+Contractors Unlimited LLC: I know, I don't.
+Roger White: I just use AI.
+Roger White: I just use AI, and they keep changing the platform anyway.
+Roger White: half the time I can't find my own stuff because they moved it, or today I tried to do something, and I had to call somebody. Oh, they told me to look in in community something, and I said, Well, there's no community something. She's looking. Oh, now it's called announcements.
+Roger White: She didn't even know it was… she's an admin, and she didn't even know they changed it.
+Contractors Unlimited LLC: So.
+Roger White: Anyway, you can do almost anything with AI to help you, and this is just you're looking. This is designed for you to find
+Roger White: Places that can help you, and then you just call them and see if they can.
+Roger White: But you're using AI to narrow down.
+Roger White: You know, you know, you need funding.
+Roger White: funding and other help.
+Roger White: For…
+Roger White: to try to buy a house, have some resources, but not enough. You know, you don't want to tell them.
+Contractors Unlimited LLC: Okay.
+Roger White: You don't need to get specific, but that's where you put it, and then it's going to give you offices that do that kind of thing.
+Contractors Unlimited LLC: Oh, okay.
+Roger White: You know.
+Contractors Unlimited LLC: All right.
+Roger White: That's it for now. And I highly encourage everybody to become
+Roger White: somewhat proficient in using… just using AI as a search engine for whatever, or… or answering
+Roger White: any kind of problem that they have. If they use it a lot to answer any kind of problem they have, you're going to get an idea of the scope
+Roger White: that AI has is because they they know more about medicine than your doctor.
+Roger White: Your doctor can't follow up on every medical journal that gets published.
+Roger White: At least not on a daily basis, and…
+Roger White: and if it was published 10 min ago, AI probably knows about it. So and and and
+Roger White: while it's telling you about it is reading it already knows everything there is in the article, or whatever, and can explain it, because it understands all the jargon that you don't, you know. So anytime it ever tells you something, and you don't understand. You say, look.
+Roger White: I'm not that
+Roger White: Tech savvy.
+Roger White: My cousin.
+Roger White: Can you explain to me what you're talking about, and it'll just do it again, you know. Just keep doing it, you know, until you get what you want. I used to
+Roger White: I have tons… I still have problems in my computer right now, because there's a… there's a problem I tried to get fixed.
+Roger White: that I have to re-fix because they didn't, because what AI asked me to contact
+Roger White: tech support, since I'm still paying for it, for them to do something for me. And I asked them to do it, and they didn't do it right, so I have to go through that again, but…
+Roger White: The thing is, I've had this computer for 3 years, or something like that, and since since about the 1st month that I've had it. I've had these problems with it, and I've contacted the paid tech support.
+Roger White: to fix it, and each time paid tech support fiddles around with it and says, Okay, I think you got it. Call us back if it doesn't work well, it doesn't work. I could call them back like 10 min later. It doesn't work.
+Roger White: but if I ask AI, I tell AI what my computer is, you know the model.
+Roger White: everything it needs to know about the operating system. I don't know my operating system. AI will tell you where to look for it and say, Okay, we'll go to such and such. Go to go to settings. Click this, click that. If it knows what you're running.
+Roger White: And sometimes it's a little off, and you say, and you say, well, I can't find that.
+Roger White: If you know how to take a screenshot, you just take a screenshot of those sections.
+Roger White: Okay.
+Roger White: I have to.
+Roger White: I'll have to call her back then. The person that used to be my assistant here, my co-host, is just calling me. She's not…
+Roger White: Anyway,
+Roger White: you can take a screenshot of what you were talking about and what you couldn't find, and you paste that in instead of text, and it'll look at it and it'll go, oh, I see, you don't have this. That means that your version of Windows 11
+Roger White: It isn't the current one, or whatever it is, you know.
+Roger White: You can use screenshots.
+Roger White: Text.
+Roger White: and it will walk you through any problem that you have with your computer. You do not need
+Roger White: premium tech support. You don't need… and they'll tell you about premium tech support will… the 1st level
+Roger White: will take. They have a script, and they'll work you with the script, and when you get beyond that script they have to escalate you.
+Roger White: And so that drags the problem on even further. And so then they'll try to escalate you right then. And maybe you have to make an appointment because it took so long you don't have time to deal with the problem anymore. I need to be escalated, but we have to pick this back up tomorrow and all that kind of crap.
+Roger White: whereas you can use AI as your tech support. It will look up
+Roger White: everything there is to know about your computer, including all the problems that have been reported on Reddit and everything like that, and there are tips and stuff, and so it'll report back to you. Okay, this, the problem that you're talking about is very common.
+Roger White: And this is how you fix it.
+Roger White: Or it could be one of several things. This… we'll troubleshoot it by this. Start with this, you know, and then when you get to a certain point, and it's not going there, you tell it, and you show them something, and they'll say, okay, we can rule out this. Now we have to concentrate on this.
+Roger White: Because you already told them what the symptom was, right? So it's looking on different avenues on how to fix it. And it's got to start from someplace. It starts someplace and you work on that.
+Roger White: that becomes something they can rule out. So they rule that out. And as you go along the way, you end up giving it information that accelerates how it can find where your problem lies, and I had tons of them, and it found every single one.
+Roger White: did not need tech support. In one afternoon I was able to find stuff that tech support failed to do.
+Roger White: Over the course of 3 years.
+Roger White: and that is, include escalations up to senior Check, you know, so.
+Roger White: You can rely on AI to do many different things. If you are a chef.
+Roger White: and you're testing out recipes for your restaurant, or whatever or whatever. Maybe you're a hobby chef. You just want to do something at home. Okay? Or maybe you want a surprise. You just go through, and you can take pictures of
+Roger White: Of your… Inside your pantry.
+Roger White: And then upload those pictures.
+Roger White: And you're taking pictures inside your refrigerator. Upload those pictures. Give those pictures to AI. Say, okay, this is my pantry.
+Roger White: Oh.
+Roger White: got any ideas on what I can make, you know, and then it'll see stuff, and it may say, well, if you could add, if you had like
+Roger White: A pound and a half of ground beef.
+Roger White: You could make this with all this other stuff, you know, and you say, well, I can get that, you know. So there you go. Now you can. It's something that you've never made before. Give you the recipe for it to walk you through how to do it.
+Roger White: Yeah, it's just
+Roger White: You should experiment with this and find out how useful AI is. A lot of people think AI is going to be taking their jobs. AI
+Roger White: AI sort of is.
+Roger White: And and AI can can.
+Roger White: Do tasks.
+Roger White: that you you and you. If you work someplace, you have certain tasks that you have to do in AI.
+Roger White: Yeah.
+Roger White: If you do white collar work mainly, then your job's more threatened than if you do blue collar work, because they haven't gotten robots coordinated with the AI enough to really threaten blue collar jobs yet. But then they're coming, and you've got to hope the sooner that they come, the better in a way, because
+Roger White: especially once employers understand how to use AI right now, employers
+Roger White: are tending to think that AI is going to just
+Roger White: AI and letting go employees is, like, almost
+Roger White: equivalent. If I… if I, turn…
+Roger White: spend all this money on AI integration. I should be able to eliminate this many employees which and employees are a problem. Employees
+Roger White: have days off sick days. They have
+Roger White: Problems with their their co-workers HR problems they had
+Roger White: they take vacations, they only work for 8 hours, or maybe more, but not 24 hours a day, 7 days a week, 365 days a year, which AI does for a much smaller cost than anybody's job.
+Roger White: The cheapest job of the worst job, lowest paid job.
+Roger White: In the country.
+Roger White: Oh.
+Roger White: If you have… Whatever that employee costs you.
+Roger White: And it costs you so much because you have to, if in that company they offer certain benefits to the executives, they have to offer those same benefits to the employees. And so they have to have benefits package ready. So the cost of having any kind of employee, there's a certain amount of cost of that.
+Roger White: Whatever that cost is, Usually AI is cheaper.
+Roger White: and it doesn't quit doesn't take breaks. It doesn't. It doesn't have to hit the restroom, you know any of that stuff, and it works 24 h a day, and it doesn't complain.
+Roger White: So there's all sorts of reasons that employers want to have AI, and they think.
+Roger White: Or they have thought so far that that sort of equates to.
+Roger White: letting staff go, and you hear about these big companies letting
+Roger White: 1500 employees go 4,000 employees go and things like that. Well, those those companies are being monitored by groups asking them how that how all that's working out. And what happens is.
+Roger White: It's not.
+Roger White: They make… equal or less money by letting people go and and and and getting on board with AI.
+Roger White: Then they then they did.
+Roger White: Without…
+Roger White: changing their strategy in the 1st place, because they don't know how to use AI, and as it turns out, the ones that succeed are the ones that use AI to enhance their business, not to replace
+Roger White: personnel.
+Roger White: There's a certain human element that can't be replaced, and when you get rid of them, everything goes down. Stocks go down, too. As soon as you do a big replacement.
+Roger White: Stocks drop for the company, and it's hard to recover from those things. So they're learning now, and there's big percentages showing this, that the likelihood of if you, if you
+Roger White: Bring AI into your company and you're doing it with the intention of.
+Roger White: of removing employees, reducing the employees.
+Roger White: it's it's it's more true for a bigger business than a smaller business, small business where there's only 10 people to begin with. You know, you could reduce that down to 5 or 2, 3 people, and and it would work. But I mean, we're talking in general in a big company. And they're going. Okay, well, we could get rid of
+Roger White: 5,000 people, we just bring in AI. No, that's going to cause the stock to drop.
+Roger White: You're gonna get, more complaints about your company, a lot of negative things, negative, negative, negative. If you use AI in those companies to enhance.
+Roger White: those people's capabilities. Well, then, the company grows. The company makes more money. So the strategy for these companies should not be to eliminate jobs. It should be to keep jobs, but eliminate
+Roger White: Crap on everybody's desk.
+Roger White: And let AI take care of the junk that it can do that's dragging everybody else down so that they can be better.
+Roger White: Those companies… They're soaring, they're just… Taken off.
+Roger White: So, not everybody knows that yet, so a lot of people have to…
+Roger White: fail in the stock market and and other places before they finally realize that their approach to AI is wrong.
+Roger White: But they don't know that yet. So they're they're in danger of losing losing jobs to short-sighted employers.
+Roger White: And among the short-sighted employers, Google.
+Roger White: They laid off. I can't remember. I had a report that said how many people let's see if I can see it here.
+Roger White: If I have it handy.
+Roger White: This was. This is a while ago, but
+Roger White: I may not be able to find it, anyway.
+Roger White: I may not be able to find.
+Roger White: the Jones. That's not it.
+Roger White: That's not yet. Oh, yeah, here we go. Here's some Meta.
+Roger White: This, I forget when I did this. It was a few months ago.
+Roger White: Meta, Facebook, 8,000 jobs. These are not like these are people that are supposed to know about AI and what it does and how it affects people.
+Roger White: Nope. Microsoft, 6,000 jobs.
+Roger White: Oracle, thousands of jobs.
+Roger White: Amazon Snap, 1,000 jobs. Well, that's a particular… Salesforce, 4,000 jobs.
+Roger White: Oh!
+Roger White: Disney, 1,000 jobs, mostly marketing. Nike, 1,000 jobs, mostly tech.
+Roger White: Oh.
+Roger White: There's something… You know, combined big companies, Hundreds of thousands of jobs.
+Roger White: only to find out that it doesn't save them. It causes them to lose money by getting rid of people when they should have been incorporating AI to enhance their business, to take stuff off of everybody's plates that could have been done by AI.
+Roger White: and having those same people in there doing a better job at what they were supposed to be doing. In the 1st place, you know, we for AI is one of those things that is is
+Roger White: bringing humanity back to humanity. When we 1st appeared on this earth as humans.
+Roger White: we were doing jobs that… machine jobs that humans were doing. We've been doing machine jobs that humans should not have been doing.
+Roger White: For.
+Roger White: Since the beginning, you know.
+Roger White: Hunters and gatherers, you know.
+Roger White: We were, and the better, the better the hunter you were, and the more stuff you could gather, the the
+Roger White: The more highly you ranked in the tribe.
+Roger White: You know, so you were defined by What you produce.
+Roger White: Excuse me.
+Roger White: No, that wasn't as violent as they get. Sometimes, like, you know, it's a… on the Richter scale, my sneezes can get
+Roger White: But anyway, the…
+Roger White: Forever, we have been defined by our productivity. Even our names, you know, for a long time, we didn't have names.
+Roger White: we… maybe we had first names, we didn't have last names. And, like, in England.
+Roger White: When did that start? Last names started in the… And the, yeah.
+Roger White: 1100s? No, earlier than that. But basically.
+Roger White: We ended up getting names based upon what we did. Fletcher.
+Roger White: That's a name that means, arrow maker.
+Roger White: Oh!
+Roger White: Cooper.
+Roger White: They made barrels.
+Roger White: Baker. I wonder what they did.
+Roger White: But a lot of names were just based on what you did.
+Roger White: And the naming has changed and shifted around, but basically, the value of a person was not on their human
+Roger White: Contribution, what they… because they were not allowed to do human stuff, they were just doing machine stuff.
+Roger White: Why should I make a barrel?
+Roger White: And I could have a machine make the barrel for me, no? Did not… we didn't have the technology to do that, so we had to do it, because a lot of times when you need something and you don't have the technology to do it.
+Roger White: You become the machine.
+Roger White: rather than the human that you're supposed to be. So AI is tending to… Free people up.
+Roger White: to become human. And that's a problem, because we don't. We don't know how to do that.
+Roger White: We don't know what we should be doing as a human, you know, if you look back as a child, a young child, when your imagination is running wild, that's probably when you had better idea what you should be doing.
+Roger White: because you didn't have the constraints of doing a job. You tell your parents that you, oh, I want to do this and that. Well, don't even think about that. You're never going to get a job.
+Roger White: doing that, you know. So you're stifled from even your imagination on how to be human.
+Roger White: They were stifled long before that, so this is why they kept you from doing it.
+Roger White: Anyway, AI is a tool that is going to help free us to be humans. We just, we're not ready for it. We don't know how to do that, and more and more we're learning.
+Roger White: How to be human.
+Roger White: because we have. We don't have to be the machine any longer. AI is taking over that kind of stuff, but we still have to monitor AI, and it's not there yet. It's but it's getting it.
+Roger White: I don't want to say it's getting close because it's close. It's always closer than it seems when you when you predict that. Oh, this is going to happen in 2035, and then next year we find out. Oh, no, it's going to happen in 2028.
+Roger White: You know, our predictions are wrong.
+Roger White: Most of the time, and usually they're wrong, but we predict too far out into the future.
+Roger White: It's happening sooner, you know, a lot of stuff is happening right now.
+Roger White: So, you want to get accustomed to using AI.
+Roger White: And ChatGPT is a good place to start. They're pioneers in it, but there' Yeah, Claude is like.
+Roger White: Pretty much overtaking Chat Gbt, as far as a an AI tool.
+Roger White: I use Claude a lot, and there's other things that like. If you like perplexity, that's good. A lot of people that are most people that do. AI do have subscriptions to multiple tools like I subscribe to Chat Gpt to
+Roger White: perplexity to a thing called another.
+Roger White: a tool run by Abacus AI. That's called Chat Llm. But alternatively, it has an agent called Deep Agent. So if it, if you're working in Chat Llm.
+Roger White: And you give it a task that just exceeds its ability. It asks, can we hand this off to Deep Agent? Because it's beyond my capability. But at least it has the option to do that. And you go, oh yeah, let's do that. And then Deep Agent will
+Roger White: Pick it up.
+Roger White: it's in the same. It's part of the same subscription. So you can do that. Anyway, that all different kinds of tools that you can get.
+Roger White: Umm.
+Roger White: And they each have their own little nuance of expertise.
+Roger White: Oh.
+Roger White: that, you know, if that jives with what you're using it for, you might pick favorites based upon that. But standard ones that you'd probably want to get in a regardless of Chat Gpt and Claude. You might want Gemini. A lot of people like Gemini. That's a Google product.
+Roger White: Oh.
+Roger White: But,
+Roger White: it pays to have to be consulting with AI on a daily basis, basically getting used to it. And if your company starts to to
+Roger White: Get rid of people.
+Roger White: And and and.
+Roger White: in favor of AI. It pays to be among the humans that is well versed in AI, even if it's only doing searches and helping yourself
+Roger White: answer questions and and getting it to do little tasks for you. If if they, if company sees that you can do that, and so many people don't.
+Roger White: You might be… Designated as one of the employees that they keep and they train.
+Roger White: in the AI that they're that they're using because they can see. Oh, well, this person uses AI. So they're from. They're they're already on their own doing AI stuff. Let's see if they can handle
+Roger White: this aspect, this new aspect of the job.
+Roger White: A lot of people are being called upon to supervise AI agents and other personnel.
+Roger White: You know, so that instead of supervising a staff of… or department, let's say, of 15 people.
+Roger White: They might have… Agents… 10 agents, or 5 agents, and they supervised 5 people.
+Roger White: you know, and you might, you could get moved from the lowest one on the totem pole to the supervisor of the rest of them because of your familiarity with AI. So it really helps in so many cases, and it's the industrial revolution where
+Roger White: a new industrial revolution. The industry is AI and quantum mechanics, quantum computing.
+Roger White: They're related.
+Roger White: So it's best if you go in that direction. Any other questions right now we're getting to. Oh.
+Roger White: We're at our time when we're gonna have to bail out soon.
+Roger White: I hope I've answered…
+Roger White: people's questions. Let me check to see. Are there any, Benny? Have you noticed any questions that I've ignored.
+Roger White: Anyway,
+Benny Arce: I've been, you know, seeing the, questions aside from
+Benny Arce: It's always bad on your end, that's smart.
+Benny Arce: It should be temporary level.
+Roger White: Angel. I hear angels. I see Angel's name popped up. Was it? Was Angel asking anything? Angel? Is that Alaska?
+Roger White: Angel, how are you?
+Benny Arce: It was,
+Angel-AK-907-570-7748: I'm.
+Benny Arce: Communicate on the job.
+Roger White: Huh?
+Roger White: Oh, well, did you… did you have a question or something?
+Angel-AK-907-570-7748: I don't think so.
+Roger White: You don't think you did I'm just making it up. That's what I should do. I should make up.
+Roger White: We'll get to your question now. I didn't have any question.
+Angel-AK-907-570-7748: I, I was, I needed to get a hold of that, the.
+Angel-AK-907-570-7748: The person that helps out a lot, you think, is an investor of Matt's, the dental place?
+Roger White: Oh, oh,
+Roger White: Diddle All Smiles? Yeah, yeah, yeah. Diddle All Smiles?
+Angel-AK-907-570-7748: Yes.
+Roger White: Okay.
+Roger White: Well, you could use AI to find dental also.
+Angel-AK-907-570-7748: Yeah, I don't really need it, it's not really a question, so,
+Roger White: Oh, okay.
+Angel-AK-907-570-7748: The website, so… I don't think I have.
+Roger White: No, and also, I think if you go, if you go to just the platform and you want to send a message of some sort.
+Angel-AK-907-570-7748: Yes.
+Roger White: I think you you now have. They changed. They've changed where you do these things. But member corner, say, Hi.
+Roger White: Maybe you could, because you can. You're allowed to post something here.
+Roger White: Share post.
+Roger White: Add.
+Roger White: Next.
+Roger White: D… Dental…
+Angel-AK-907-570-7748: There it is.
+Roger White: There's general all smiles. If you if you go to say hi in the members corner and you could say.
+Roger White: app… you have to… if you want to tag somebody, they have to be in the system.
+Angel-AK-907-570-7748: And so.
+Roger White: So you go at and you start typing dental and this comes up and then when you click on that then it gets routed to their notifications and so you can say you know.
+Roger White: Whatever you want to say.
+Angel-AK-907-570-7748: Okay.
+Roger White: Okay.
+Angel-AK-907-570-7748: Okay.
+Roger White: No.
+Roger White: Alrighty, let's see.
+Angel-AK-907-570-7748: Hello.
+Roger White: Anything else from anybody before we go today? Here's another thing. Benny's put a lot of links in
+Roger White: The chair.
+Roger White: But maybe you haven't written them all down.
+Roger White: Maybe you haven't written any of them down. One thing that you can always do is you… in the chat section, you'll see, right up above it, where it has the title.
+Roger White: It says, AI user skills in a pipe.
+Roger White: Practical AI tips with R dot dot dot. That's where mine ends.
+Roger White: But right to the right of that, there's all… there's a more menu, another
+Roger White: Dot dot dot by itself, but it's a button, right?
+Roger White: and it says more if you mouse over it. If you click that.
+Roger White: On mine, it's the top option, but it's an option on everybody's thing, should be. It says, save chat.
+Roger White: And if you save the chat, it's going to open up A new…
+Roger White: explorer window. If you're in windows.
+Roger White: And it's going to put a file in a text file.
+Roger White: TXT file in there of whatever chat.
+Roger White: is is in there with all its links and crap.
+Roger White: That's what I do when I'm in a lecture, and I don't feel like writing down all the links that I need to follow up on. I just wait toward the end of the entire lecture, and make sure that before the
+Roger White: close, I've saved the chat, and then boom! I can go back into that text, and I can scroll down, find any of the links I needed.
+Roger White: Okie dokie. Well, thanks for coming, everybody.
+Roger White: next week, same time, same station, although don't forget to re Rsvp. If you've already Rsvp'd that I should be wiping that out on Friday when I change the status of
+Roger White: my status in the Lesco system, and when I change that status.
+Roger White: Or whatever it is the hell I do, maybe I don't change the status, but I change the status of something.
+Roger White: And it wipes out all the RSVPs that are in here. So…
+Roger White: You're gonna have to Rsvp all over again.
+Roger White: And that might… if you… if you go in there and there's tons of RSVPs, it probably hasn't been done yet, but theoretically, Friday afternoon.
+Roger White: have a meeting, a staff meeting, it's not a staff meeting, it's sort of like a staff meeting, but part of the staff, they call it something else.
+Roger White: But anyway, during that meeting.
+Roger White: Theoretically, my…
+Roger White: arrangement in the system is going to be changed, and when that happens, I lose all the RSVPs, so you don't get automatically notified, like you would
+Roger White: of stuff like you would if you're Rsvp. Okay, well.
+Roger White: Save your questions for next week, let me know how things went. Hopefully you know everything about getting the
+Roger White: The template, and how to use it.
+Roger White: And so, I guess, you can all unmute and say.
+Roger White: Sayonara.
+Roger White: Hasta la vista.
+Isabel C: I don't know, I'll.
+Roger White: Choose.
+Benny Arce: I'm aware of it.
+David Martin Graff: Take care, everybody.
+Angel-AK-907-570-7748: La wiggle Okay.
+Sharron E: Need addiction.
+Roger White: Okay, let's.
