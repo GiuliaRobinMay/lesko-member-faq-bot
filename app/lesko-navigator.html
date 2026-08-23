@@ -102,6 +102,23 @@ table.k a{color:var(--accent);font-weight:600}
 .rel button:hover{background:var(--yellow);color:#2a2100;border-color:var(--yellow-warm)}
 .rel button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
+
+/* feedback + typing */
+.fb{margin-top:15px;padding-top:13px;border-top:1px solid var(--line-soft);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.fb span{font-size:13px;color:var(--ink-mid);font-weight:600}
+.fb span.thanks{font-size:14px;color:var(--ink-soft)}
+.fb button{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--cream);
+  border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.fb button:hover{background:var(--yellow);color:#2a2100;border-color:var(--yellow-warm)}
+.fb button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bubble.dots{display:flex;gap:6px;align-items:center;padding:20px 22px}
+.bubble.dots span{width:8px;height:8px;border-radius:50%;background:var(--ink-mid);opacity:.45;
+  animation:blink 1.2s infinite ease-in-out}
+.bubble.dots span:nth-child(2){animation-delay:.18s}
+.bubble.dots span:nth-child(3){animation-delay:.36s}
+@keyframes blink{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:.9;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.bubble.dots span{animation:none;opacity:.5}}
+
 /* ---- composer ---- */
 .composer{margin-top:18px;position:sticky;bottom:0;background:var(--paper);padding-top:12px}
 .cwrap{display:flex;gap:10px}
@@ -246,8 +263,62 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     });
   }
 
+
+  /* ---------- feedback ---------- */
+  function logFeedback(q, helpful) {
+    try {
+      var k = "lesko-feedback";
+      var all = JSON.parse(localStorage.getItem(k) || "[]");
+      all.push({ q: q, helpful: helpful, at: new Date().toISOString() });
+      localStorage.setItem(k, JSON.stringify(all.slice(-500)));
+    } catch (e) {}
+  }
+  function qaRescue() {
+    return card({
+      title: "Let's get you to a person",
+      lead: "Sorry that did not help. The fastest fix is asking a coach directly — they run Q&A sessions six days a week, and the Thursday clinic is open all day with no appointment.",
+      sections: [{ steps: [
+        "<b>Join a Q&amp;A session</b> — ask live and get an answer there and then.",
+        "<b>Or post in the Questions Channel</b> — the team replies under your post.",
+        "<b>Thursday Drop-In Clinic</b> — 10:00–18:00 ET, hop in any time." ] }],
+      buttons: [ { label: "See Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "📅" },
+                 { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "💬" } ],
+      source: "Group Coaching · Questions Channel"
+    });
+  }
+  function attachFeedback(el, q) {
+    var box = document.createElement("div");
+    box.className = "fb";
+    box.innerHTML = '<span>Did this help?</span>' +
+      '<button type="button" data-v="1" aria-label="Yes, this helped">👍 Yes</button>' +
+      '<button type="button" data-v="0" aria-label="No, this did not help">👎 No</button>';
+    el.appendChild(box);
+    [].forEach.call(box.querySelectorAll("button"), function (b) {
+      b.addEventListener("click", function () {
+        var yes = b.dataset.v === "1";
+        logFeedback(q, yes);
+        box.innerHTML = yes
+          ? "<span class='thanks'>Thanks — glad that helped. 💛</span>"
+          : "<span class='thanks'>Thanks for telling me.</span>";
+        if (!yes) setTimeout(function () { bubble("bot", qaRescue()); }, 500);
+      });
+    });
+  }
+
+  /* ---------- typing indicator ---------- */
+  function typing() {
+    var d = document.createElement("div");
+    d.className = "msg bot typing";
+    d.innerHTML = '<div class="who"><img src="' + MATTHEW + '" alt="Matthew Lesko"></div>' +
+      '<div class="bubble dots"><span></span><span></span><span></span></div>';
+    thread.appendChild(d);
+    d.scrollIntoView({ behavior: "smooth", block: "center" });
+    return d;
+  }
+
   /* ---------- rendering ---------- */
-  function bubble(role, inner) {
+  var lastQ = "";
+  function bubble(role, inner, withFeedback) {
     var d = document.createElement("div");
     d.className = "msg " + (role === "me" ? "me" : "bot");
     d.innerHTML = '<div class="who">' + (role === "me" ? "You" : '<img src="' + MATTHEW + '" alt="Matthew Lesko">') + "</div>" +
@@ -256,6 +327,8 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     [].forEach.call(d.querySelectorAll(".rel button"), function (b) {
       b.addEventListener("click", function () { ask(b.textContent); });
     });
+    if (role === "bot" && withFeedback) attachFeedback(d.querySelector(".bubble"), lastQ);
+    return d;
     d.scrollIntoView({ behavior: "smooth", block: "center" });
   }
   function linkRow(links) {
@@ -351,6 +424,69 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     /* instruction sheets (your Netlify apps, per each repo's EMBED.md) */
     callSheetGuide:   "https://lesko-callsheet.netlify.app/",
     afterYouApply:    "https://lesko-help-application-follow-up.netlify.app/"
+  };
+
+  /* ---------- where someone is in the journey ----------
+     The same words mean different things depending on stage.
+     "How do I create a call sheet" and "I created my call sheets, what next?"
+     share every keyword — only the tense and the ask differ. */
+  var DONE = /\b(i(?:'ve| have)?\s+(?:already\s+)?(?:created|made|built|finished|completed|attended|joined|watched|submitted|applied)|i(?:'ve| have)\s+(?:already\s+)?(?:done|got)\b|already (?:created|made|done|attended|joined|applied|used)|(?:created|made|built|finished|completed) (?:all )?(?:my|the|them)|(?:my|the) [^.?!]{0,24}(?:is|are) (?:ready|done|finished|created|built))/i;
+  var NEXTQ = /\b(what(?:'s| is)? next|what now|next step|what do i do (?:next|now)|where (?:do i go|to) (?:next|now)|then what|after (?:that|this))\b/i;
+
+  var STAGES = [
+    { id: "onboarding",  match: /profile|notification|download the app|welcome tour|set ?up/i },
+    { id: "callsheet",   match: /call ?sheet|callsheet|ai researcher|research tool/i },
+    { id: "application", match: /appl(y|ied|ication)|application class/i },
+    { id: "followup",    match: /follow ?up|sent it|submitted/i }
+  ];
+
+  function stageOf(q) {
+    for (var i = 0; i < STAGES.length; i++) if (STAGES[i].match.test(q)) return STAGES[i].id;
+    return null;
+  }
+
+  var NEXT_AFTER = {
+    onboarding: function () { return card({
+      title: "Next: build your call sheet",
+      lead: "Your account is set up — so the next step on the roadmap is your call sheet. Without one there is nobody to call.",
+      sections: [{ steps: [
+        "<b>Go to a Call Sheet Class</b> — read the instruction sheet in that space first.",
+        "<b>Use the AI Researcher</b> — it builds your list in minutes.",
+        "<b>Ask in the Questions Channel</b> — the team replies under your post." ] },
+        { call: "<b>One problem = one call sheet.</b> Keep “help paying rent” and “car repair help” as separate sheets.", kind: "key" }],
+      buttons: [ { label: "Call Sheet Classes", url: SPACE.callSheetClasses, kind: "primary", icon: "🎓" },
+                 { label: "Open the AI Researcher", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" } ],
+      source: "Roadmap step 2 · Call sheet guide",
+      related: ["How do I create my call sheet?", "What classes are on this week?"] }); },
+
+    callsheet: function () { return card({
+      title: "Next: go to an Application Class",
+      lead: "Your call sheet is done — now you learn how to actually apply. Read the instructions in the Application Classes space, then join a class.",
+      sections: [{ steps: [
+        "<b>Read the instructions</b> in the Application Classes space.",
+        "<b>Join an Application Class</b> — apply step by step with Megan, live.",
+        "<b>Then keep going</b> in Group Coaching, or bring questions to a Meetup with Matthew." ] },
+        { call: "After you send an application, keep <b>one folder per application</b> and follow up at the right moment.", kind: "key" }],
+      buttons: [ { label: "Application Classes", url: SPACE.applicationClass, kind: "primary", icon: "📝" },
+                 { label: "Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" },
+                 { label: "Ask Matthew Live", url: SPACE.askMatthew, kind: "ghost", icon: "❤️" } ],
+      source: "Roadmap steps 5–7 · Application Classes",
+      related: ["What do I do after I apply?", "What classes are on this week?", "Can I talk to a real person?"] }); },
+
+    application: function () { return card({
+      title: "Next: apply, then stay organised",
+      lead: "You have been to an Application Class — now apply, and keep track of what you sent.",
+      sections: [{ bullets: [
+        "Apply to the organisations on your call sheet, one at a time.",
+        "Keep <b>one folder per application</b>, named for the organisation.",
+        "Write down every date and every name.",
+        "Check your messages every single day — and if they ask for more, drop everything and send it." ] }],
+      buttons: [ { label: "After You Apply guide", url: SPACE.afterYouApply, kind: "primary", icon: "📁" },
+                 { label: "Bring it to Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
+      source: "After You Apply guide",
+      related: ["What do I do after I apply?", "Can I talk to a real person?"] }); },
+
+    followup: function () { return INTENTS.filter(function (x) { return x.id === "after_apply"; })[0].render(); }
   };
 
   var INTENTS = [
@@ -520,10 +656,15 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
   }
 
   function answer(q) {
+    /* Stage first: "I've done X, what next?" must never be read as "how do I do X". */
+    if (!SITU.trouble.test(q) && (DONE.test(q) || NEXTQ.test(q))) {
+      var st = stageOf(q);
+      if (st && NEXT_AFTER[st]) return bubble("bot", NEXT_AFTER[st](), true);
+    }
     for (var i = 0; i < INTENTS.length; i++) {
       var t = INTENTS[i].test;
       var hit = (typeof t === "function") ? t(q) : t.test(q);
-      if (hit) return bubble("bot", INTENTS[i].render());
+      if (hit) return bubble("bot", INTENTS[i].render(), true);
     }
     /* Account/how-to topics and subject guides compete on score; the stronger wins. */
     var best = D.topics.map(function (t) { return { t: t, s: scoreTopic(t, q) }; })
@@ -533,12 +674,12 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     var guideScore = gh.length ? gh[0].s : 0;
 
     if (guideScore >= 4 && guideScore >= topScore) {
-      return bubble("bot", guideCard(gh.slice(0, 2)));
+      return bubble("bot", guideCard(gh.slice(0, 2)), true);
     }
-    if (best && topScore >= 4) return bubble("bot", answerTopic(best.t));
+    if (best && topScore >= 4) return bubble("bot", answerTopic(best.t), true);
     bubble("bot", "<h3>I'm not sure what you need yet</h3>" +
       "<p>I can help you find your way around the community. Try naming the thing you're after — for example <i>call sheet</i>, <i>rent help</i>, <i>car repair</i>, <i>this week's classes</i>, or <i>cancel my subscription</i>.</p>" +
-      linkRow([{ n: "Or ask the team in the Questions Channel", u: "https://lesko-help-2.mn.co/spaces/11054387" }]));
+      linkRow([{ n: "Or ask the team in the Questions Channel", u: "https://lesko-help-2.mn.co/spaces/11054387" }]), true);
   }
 
   /* ---------- wiring ---------- */
@@ -614,9 +755,14 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
   function ask(q) {
     q = String(q || "").trim();
     if (!q) return;
+    lastQ = q;
     bubble("me", "<p>" + esc(q) + "</p>");
-    answer(q);
     input.value = "";
+    var t = typing();
+    setTimeout(function () {
+      t.parentNode && t.parentNode.removeChild(t);
+      answer(q);
+    }, 650 + Math.min(q.length * 8, 500));
   }
   form.addEventListener("submit", function (e) { e.preventDefault(); ask(input.value); });
   /* theme */
