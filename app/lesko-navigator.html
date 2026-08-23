@@ -263,7 +263,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       lead: "These quick guides list the organisations that do exactly this, with what to ask for.",
       sections: secs, buttons: btns,
       source: "Lesko Quick Guide Library",
-      related: ["How do I create my call sheet?", "What classes are on this week?", "Where do I start?"]
+      related: ["How do I create my call sheet?"]
     });
   }
 
@@ -470,7 +470,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       buttons: [ { label: "Call Sheet Classes", url: SPACE.callSheetClasses, kind: "primary", icon: "🎓" },
                  { label: "Open the AI Researcher", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" } ],
       source: "Roadmap step 2 · Call sheet guide",
-      related: ["How do I create my call sheet?", "What classes are on this week?"] }); },
+      related: ["How do I create my call sheet?"] }); },
 
     callsheet: function () { return card({
       title: "Next: go to an Application Class",
@@ -484,7 +484,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
                  { label: "Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" },
                  { label: "Ask Matthew Live", url: SPACE.askMatthew, kind: "ghost", icon: "❤️" } ],
       source: "Roadmap steps 5–7 · Application Classes",
-      related: ["What do I do after I apply?", "What classes are on this week?", "Can I talk to a real person?"] }); },
+      related: ["What do I do after I apply?"] }); },
 
     application: function () { return card({
       title: "Next: apply, then stay organised",
@@ -497,7 +497,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       buttons: [ { label: "After You Apply guide", url: SPACE.afterYouApply, kind: "primary", icon: "📁" },
                  { label: "Bring it to Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
       source: "After You Apply guide",
-      related: ["What do I do after I apply?", "Can I talk to a real person?"] }); },
+      related: ["What do I do after I apply?"] }); },
 
     followup: function () { return INTENTS.filter(function (x) { return x.id === "after_apply"; })[0].render(); }
   };
@@ -533,6 +533,29 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
   }
 
   var INTENTS = [
+    { id: "talk_to_matthew",
+      test: function (q) {
+        /* "when is the matthew meetup" is a scheduling question — let the single
+           event answer handle that. \bmeet\b so "meetup" does not match here. */
+        if (/\bwhen\b|what time|what day|schedule/i.test(q)) return false;
+        return /matthew|lesko himself/i.test(q) &&
+               /\btalk\b|\bspeak\b|\bask\b|\bmeet\b|contact|reach|question|one on one|1 on 1/i.test(q);
+      },
+      render: function () { return card({
+        title: "You can ask Matthew directly",
+        lead: "Matthew answers member questions live &mdash; there is no need to write to him.",
+        sections: [
+          { steps: [
+            "<b>Join the Matthew Meetup</b> &mdash; every <b>Tuesday at 16:00 ET</b>, a live meetup for member questions.",
+            "<b>Watch for his go-lives.</b> Matthew also goes live in the community at other times. You get a notification when he does &mdash; check your bell.",
+            "<b>Ask in the chat.</b> Type your question into the Zoom chat during the session and he takes them one by one." ] },
+          { call: "He is very hands-on, especially if your situation is urgent &mdash; he will tell you what to do first, then next.", kind: "key" }
+        ],
+        buttons: [ { label: "Ask Matthew Live", url: SPACE.askMatthew, kind: "primary", icon: "❤️" } ],
+        source: "Ask Matthew Live",
+        related: ["What classes are on this week?", "Can I talk to a real person?"]
+      }); } },
+
     /* A named event returns only that event, never the whole week. */
     { id: "one_event",
       test: function (q) { return !!matchEvent(q); },
@@ -573,7 +596,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
           { label: "Email us", url: "mailto:leskohelp@gmail.com", kind: "primary", icon: "✉️" },
           { label: "Manage card payment", url: "https://leskohelp.recurly.com", kind: "ghost", icon: "💳" } ],
         source: "Lesko Help customer service",
-        related: ["How do I stop the emails?", "How do I get a refund?", "Can I talk to a real person?"]
+        related: ["How do I get a refund?", "How do I stop the emails?"]
       }); } },
 
     { id: "local_vs_federal",
@@ -590,7 +613,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
         buttons: [ { label: "Quick Guide Library", url: "https://lesko-help-2.mn.co/collections/2517908", kind: "primary", icon: "📚" },
                    { label: "Build a call sheet", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" } ],
         source: "Welcome Tour",
-        related: ["How do I create my call sheet?", "Where do I start?"] }); } },
+        related: ["How do I create my call sheet?"] }); } },
 
     { id: "login_password",
       test: function (q) { return /(can'?t|cannot|unable to|trouble).{0,24}(log ?in|sign ?in)|forgot.{0,12}password|reset.{0,12}password|no account found|locked out|lost my (login|password)|what.{0,12}(email|password).{0,12}(do i|should i) use/i.test(q) && !/computer|laptop|desktop|pc\b/i.test(q); },
@@ -625,7 +648,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
         ],
         buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "💻" } ],
         source: "Welcome Tour",
-        related: ["How do I download the app?", "Where do I start?"] }); } },
+        related: ["How do I download the app?", "I can't log in"] }); } },
 
     { id: "bookmarks",
       test: function (q) { return /bookmark|keep track of (my )?(question|post)|find my (question|post)s?|where are my questions/i.test(q); },
@@ -641,7 +664,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
         ],
         buttons: [ { label: "Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" } ],
         source: "Welcome Tour",
-        related: ["How do I ask a good question?", "How do I create my call sheet?"] }); } },
+        related: ["How do I ask a good question?"] }); } },
 
     { id: "ask_question_how",
       test: function (q) { return /how (do i|to) (ask|post)|ask a (good )?question|where (do i|to) (ask|post)|post a question/i.test(q); },
@@ -659,7 +682,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
         ],
         buttons: [ { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" } ],
         source: "Welcome Tour · Questions Channel instructions",
-        related: ["How do I keep track of my questions?", "How do I create my call sheet?"] }); } },
+        related: ["How do I keep track of my questions?"] }); } },
 
     { id: "twenty_calls",
       test: function (q) { return /20 (phone )?calls?|twenty calls?|how many calls|call rule|no (luck|results?)|nobody (is )?help|keep getting (the same|no)/i.test(q); },
@@ -775,7 +798,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
           { label: "After You Apply guide", url: SPACE.afterYouApply, kind: "solid", icon: "📁" },
           { label: "Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
         source: "Application Classes · After You Apply guide",
-        related: ["What do I do after I apply?", "How do I create my call sheet?", "What classes are on this week?"]
+        related: ["What do I do after I apply?", "How do I create my call sheet?"]
       }); } },
 
     { id: "after_apply",
@@ -800,7 +823,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
           { label: "Read the full follow-up guide", url: SPACE.afterYouApply, kind: "primary", icon: "📖" },
           { label: "Bring it to Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
         source: "After You Apply guide §1–3",
-        related: ["How do I apply for a grant?", "Can I talk to a real person?", "What classes are on this week?"]
+        related: ["How do I apply for a grant?", "The 20 phone call rule"]
       }); } },
 
     { id: "roadmap",
@@ -840,7 +863,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
                   '<a href="' + esc(e.url) + '" target="_blank" rel="noopener"><b>' + esc(e.name) + "</b></a><br>" + esc(e.about)];
         }) } }],
         source: "Community events calendar",
-        related: ["Where do I find the replays?", "Can I talk to a real person?", "How do I create my call sheet?"]
+        related: ["Where do I find the replays?", "How do I join the Zoom?"]
       }); } }
   ];
 
@@ -859,12 +882,10 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       mine.forEach(function (w) { if (hay.indexOf(" " + w) !== -1) s += 1; });
       return { x: x, s: s };
     }).sort(function (a, b) { return b.s - a.s; });
-    var out = scored.filter(function (r) { return r.s > 0; }).slice(0, 3).map(function (r) { return r.x.title; });
-    var staples = ["How do I create my call sheet?", "What classes are on this week?", "Where do I start?"];
-    for (var i = 0; out.length < 3 && i < staples.length; i++) {
-      if (out.indexOf(staples[i]) === -1) out.push(staples[i]);
-    }
-    return out.slice(0, 3);
+    /* Only genuinely related questions. One is fine. None is fine. Padding the
+       list with popular-but-unrelated questions is worse than a short list. */
+    return scored.filter(function (r) { return r.s > 1; }).slice(0, 3)
+                 .map(function (r) { return r.x.title; });
   }
 
   function answerTopic(t) {

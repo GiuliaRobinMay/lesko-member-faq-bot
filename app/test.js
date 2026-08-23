@@ -124,3 +124,30 @@ console.log('\n--- one event only ---');
 out.length=0; window.__answer("What classes are on this week?");
 var wk=(out.join(' ').match(/<tr>/g)||[]).length;
 console.log((wk>10?'PASS':'FAIL'),'| full week still lists everything (rows:',wk+')');
+
+console.log('\n--- related must actually relate ---');
+var UNRELATED = {
+  "Where do I find the replays?": /call sheet|log ?in|refund|cancel|email/i,
+  "When is the Welcome Tour?":    /call sheet|refund|cancel|real person/i,
+  "I can't log in":               /call sheet|classes this week|replay/i,
+  "How do I get a refund?":       /call sheet|classes this week|replay/i
+};
+Object.keys(UNRELATED).forEach(function(q){
+  out.length=0; window.__answer(q);
+  var html=out.join(' ');
+  var rel=(html.match(/<div class="rel">[\s\S]*$/)||[''])[0];
+  var bad=UNRELATED[q].test(rel);
+  var n=(rel.match(/<button/g)||[]).length;
+  console.log((bad?'FAIL':'PASS'),'|',q.padEnd(30),'related:',n);
+});
+
+console.log('\n--- talking to Matthew ---');
+[["Can I talk to Matthew?","ask Matthew directly"],
+ ["can I speak to matthew lesko","Tuesday"],
+ ["how do I ask Matthew a question","chat"],
+ ["when is the matthew meetup","Matthew Meetup"]].forEach(function(p){
+  out.length=0; window.__answer(p[0]);
+  var html=out.join(' ');
+  var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'?'])[1].replace(/<[^>]+>/g,'');
+  console.log((new RegExp(p[1],'i').test(html)?'PASS':'FAIL'),'|',p[0].padEnd(32),'=>',h3.slice(0,32));
+});
