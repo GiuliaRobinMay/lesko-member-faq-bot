@@ -90,3 +90,17 @@ console.log('\n--- from the welcome tour transcripts ---');
   var ok=new RegExp(p[1],'i').test(html);
   console.log((ok?'PASS':'FAIL'),'|',p[0].slice(0,46).padEnd(48),'=>',h3.slice(0,40));
 });
+
+console.log('\n--- login (current onboarding) ---');
+[["I can't log in","email address you used when you bought"],
+ ["I forgot my password","Forgot password"],
+ ["It says no account found","paid with"],
+ ["How do I sign in on my computer?","computer"]].forEach(function(p){
+  out.length=0; window.__answer(p[0]);
+  var html=out.join(' ');
+  var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'(none)'])[1].replace(/<[^>]+>/g,'');
+  var ok=new RegExp(p[1],'i').test(html);
+  console.log((ok?'PASS':'FAIL'),'|',p[0].padEnd(34),'=>',h3.slice(0,34));
+});
+var all=out.join(' ');
+console.log((/google|facebook/i.test(all)?'FAIL':'PASS'),'| no Google/Facebook sign-in claim');

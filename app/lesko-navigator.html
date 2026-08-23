@@ -554,6 +554,24 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
         source: "Welcome Tour",
         related: ["How do I create my call sheet?", "Where do I start?"] }); } },
 
+    { id: "login_password",
+      test: function (q) { return /(can'?t|cannot|unable to|trouble).{0,24}(log ?in|sign ?in)|forgot.{0,12}password|reset.{0,12}password|no account found|locked out|lost my (login|password)|what.{0,12}(email|password).{0,12}(do i|should i) use/i.test(q) && !/computer|laptop|desktop|pc\b/i.test(q); },
+      render: function () { return card({
+        title: "Signing in",
+        lead: "You always sign in with the <b>same email address you used when you bought your membership</b>. That is the one that matters.",
+        sections: [
+          { h: "Your password", p: "When you created your account you were asked to add a password. That step <b>is</b> what created your password &mdash; there is no separate one." },
+          { h: "If it will not let you in", steps: [
+            "Check you are using the email you <b>paid with</b>. A different address will say no account found.",
+            'Click <b>Forgot password?</b> on the login page and follow the emailed link &mdash; check spam if it does not arrive.',
+            "Still stuck? Email <a href=\"mailto:leskohelp@gmail.com\">leskohelp@gmail.com</a> with the email you signed up with." ] },
+          { call: "Paying and creating your account are <b>two separate steps</b>. If you paid but never set a password, your account was never finished &mdash; use the link in your welcome email, or email us and we will send it again.", kind: "key" }
+        ],
+        buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "🔑" },
+                   { label: "Email us", url: "mailto:leskohelp@gmail.com", kind: "ghost", icon: "✉️" } ],
+        source: "Confirmed by Giulia — current onboarding",
+        related: ["How do I sign in on my computer?", "How do I download the app?"] }); } },
+
     { id: "login_computer",
       test: function (q) { return /(log ?in|sign ?in|get in).{0,30}(computer|laptop|desktop|pc)|computer.{0,20}(log ?in|sign ?in)|sign ?in with a code|only on my phone/i.test(q); },
       render: function () { return card({
@@ -564,7 +582,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
             'Go to <a href="https://lesko-help-2.mn.co" target="_blank" rel="noopener">lesko-help-2.mn.co</a>.',
             "Click <b>Sign in</b> at the top right.",
             "It will offer to <b>sign in with a code</b>. You do not have to. Look <b>three buttons below</b> that &mdash; there is an option to sign in with your password.",
-            "Use the <b>same email address and password</b> you use on your phone &mdash; or however you signed up. If you joined with <b>Google</b> or <b>Facebook</b>, use that button instead." ] },
+            "Sign in with the <b>email address you used when you bought your membership</b>, and the password you set when you created your account." ] },
           { call: "The community runs on a platform called <b>Mighty Networks</b>. That is why the sign-in screen looks the way it does &mdash; and why the phone app is called Mighty Networks, not Lesko.", kind: "key" }
         ],
         buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "💻" } ],
