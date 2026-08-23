@@ -502,7 +502,58 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     followup: function () { return INTENTS.filter(function (x) { return x.id === "after_apply"; })[0].render(); }
   };
 
+  /* Find one named event in the question. Longer names win, so
+     "Mid Mondays Member Q&A" beats a bare "Member Q&A". */
+  var EVENT_ALIASES = {
+    "Welcome Tour": ["welcome tour", "welcome meeting", "community tour", "the tour"],
+    "Matthew Meetup": ["matthew meetup", "meetup with matthew", "matthew live", "ask matthew"],
+    "Drop-In Clinic": ["drop in clinic", "drop-in", "dropin", "clinic", "grant clinic"],
+    "AI Workshop": ["ai workshop"],
+    "AI User Skills with Roger": ["ai user skills", "roger"],
+    "Open Office with Tony": ["open office"],
+    "Mid Mondays Member Q&A": ["mid monday", "mid mondays", "monday q", "monday member q"],
+    "Pay My Debt & Bills": ["pay my debt", "debt and bills", "debt & bills", "bills class"],
+    "Business Growth with Amber": ["business growth", "amber"],
+    "Start a Nonprofit with Megan": ["start a nonprofit", "nonprofit class"],
+    "Grant Application Workshop with Megan": ["application workshop", "grant application workshop"],
+    "Starting & Re-Starting a Business": ["starting a business", "re-starting", "restarting a business"],
+    "Business Series Saturdays": ["business series"],
+    "Member Q&A with Tony": ["member q&a", "member qa", "q&a with tony", "qa with tony", "tony q"]
+  };
+  function matchEvent(q) {
+    var s = norm(q), best = null, bestLen = 0;
+    Object.keys(EVENT_ALIASES).forEach(function (name) {
+      EVENT_ALIASES[name].forEach(function (a) {
+        if (s.indexOf(a) !== -1 && a.length > bestLen) { bestLen = a.length; best = name; }
+      });
+    });
+    if (!best) return null;
+    var hits = D.events.filter(function (e) { return e.name === best; });
+    return hits.length ? hits[0] : null;
+  }
+
   var INTENTS = [
+    /* A named event returns only that event, never the whole week. */
+    { id: "one_event",
+      test: function (q) { return !!matchEvent(q); },
+      render: function (q) {
+        var e = matchEvent(q);
+        return card({
+          title: e.name,
+          lead: esc(e.about),
+          sections: [
+            { table: { head: ["When", "Time", "Where"], rows: [[
+                "<b>" + esc(e.day) + "</b>",
+                '<b style="color:var(--red)">' + esc(e.time) + "</b>",
+                esc(e.space) ]] } },
+            { call: "Open the event, then click the pink <b>Zoom Meeting</b> link &mdash; or <b>Join Zoom from Browser</b> if you do not have Zoom installed.", kind: "key" }
+          ],
+          buttons: [ { label: "Open " + e.name, url: e.url, kind: "primary", icon: "📅" } ],
+          source: e.space,
+          related: ["What classes are on this week?", "Where do I find the replays?"]
+        });
+      } },
+
     { id: "cancel",
       test: function (q) { return /\bcancel|unsubscrib(e|ing)|stop (my |the )?(membership|subscription|payment|billing)|end (my )?(membership|subscription)|quit\b/i.test(q) && !/email|notification/i.test(q); },
       render: function () { return card({
@@ -839,7 +890,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     for (var i = 0; i < INTENTS.length; i++) {
       var t = INTENTS[i].test;
       var hit = (typeof t === "function") ? t(q) : t.test(q);
-      if (hit) return bubble("bot", INTENTS[i].render(), true);
+      if (hit) return bubble("bot", INTENTS[i].render(q), true);
     }
     /* Account/how-to topics and subject guides compete on score; the stronger wins. */
     var best = D.topics.map(function (t) { return { t: t, s: scoreTopic(t, q) }; })

@@ -107,3 +107,20 @@ console.log('\n--- login (current onboarding) ---');
 });
 var all=out.join(' ');
 console.log((/google|facebook/i.test(all)?'FAIL':'PASS'),'| no Google/Facebook sign-in claim');
+
+console.log('\n--- one event only ---');
+[["When is the Welcome Tour?","Welcome Tour","Every day"],
+ ["what time is the matthew meetup","Matthew Meetup","Tuesday"],
+ ["when is the drop-in clinic","Drop-In Clinic","Thursday"],
+ ["when is the AI workshop","AI Workshop","Friday"],
+ ["when is open office","Open Office","Monday"]].forEach(function(p){
+  out.length=0; window.__answer(p[0]);
+  var html=out.join(' ');
+  var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'?'])[1].replace(/<[^>]+>/g,'');
+  var rows=(html.match(/<tr>/g)||[]).length;
+  var ok=new RegExp(p[1],'i').test(h3) && new RegExp(p[2],'i').test(html) && rows<=2;
+  console.log((ok?'PASS':'FAIL'),'|',p[0].padEnd(32),'=>',h3.slice(0,30),'| rows:',rows);
+});
+out.length=0; window.__answer("What classes are on this week?");
+var wk=(out.join(' ').match(/<tr>/g)||[]).length;
+console.log((wk>10?'PASS':'FAIL'),'| full week still lists everything (rows:',wk+')');
