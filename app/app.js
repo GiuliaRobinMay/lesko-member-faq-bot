@@ -728,6 +728,7 @@
     q = String(q || "").trim();
     if (!q) return;
     lastQ = q;
+    if (document.body.classList.contains("nav-open")) setNav(false);
     bubble("me", "<p>" + esc(q) + "</p>");
     input.value = "";
     var t = typing();
@@ -737,23 +738,6 @@
     }, 650 + Math.min(q.length * 8, 500));
   }
   form.addEventListener("submit", function (e) { e.preventDefault(); ask(input.value); });
-  /* theme */
-  var tbtn = document.getElementById("theme");
-  function setTheme(t) {
-    document.documentElement.setAttribute("data-theme", t);
-    tbtn.textContent = t === "dark" ? "☀️" : "🌙";
-    try { localStorage.setItem("lesko-theme", t); } catch (e) {}
-  }
-  var saved = null;
-  try { saved = localStorage.getItem("lesko-theme"); } catch (e) {}
-  if (saved) setTheme(saved);
-  else tbtn.textContent = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "☀️" : "🌙";
-  tbtn.addEventListener("click", function () {
-    var cur = document.documentElement.getAttribute("data-theme");
-    if (!cur) cur = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    setTheme(cur === "dark" ? "light" : "dark");
-  });
-
   bubble("bot", card({
     title: "Hi \u2014 what do you need?",
     lead: "Pick a category on the right, or type your question below. I will point you to the exact class, guide or page \u2014 and show you what is in it.",
@@ -764,6 +748,21 @@
       "<b>Help by topic</b> \u2014 rent, cars, medical bills, business and more" ] }],
     related: ["Where do I start?", "How do I create my call sheet?", "What classes are on this week?"]
   }));
+
+  /* menu drawer (narrow frames) */
+  var burger = document.getElementById("burger");
+  var scrim  = document.getElementById("scrim");
+  function setNav(open) {
+    document.body.classList.toggle("nav-open", open);
+    if (burger) burger.setAttribute("aria-expanded", String(open));
+  }
+  if (burger) burger.addEventListener("click", function () {
+    setNav(!document.body.classList.contains("nav-open"));
+  });
+  if (scrim) scrim.addEventListener("click", function () { setNav(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") setNav(false);
+  });
 
   renderCats();
 })();

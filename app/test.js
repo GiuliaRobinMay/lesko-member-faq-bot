@@ -4,6 +4,9 @@ var out = [];
 global.document = {
   getElementById: function(){ return {innerHTML:'', appendChild:function(){}, addEventListener:function(){}, textContent:'', value:'', querySelectorAll:function(){return[]}}; },
   querySelectorAll: function(){ return []; },
+  addEventListener: function(){},
+  body: { classList: { toggle:function(){}, contains:function(){return false} } },
+  documentElement: { setAttribute:function(){}, getAttribute:function(){return null} },
   createElement: function(){ return {className:'', scrollIntoView:function(){}, querySelectorAll:function(){return[]}, querySelector:function(){return{appendChild:function(){}}}, appendChild:function(){}, set innerHTML(v){ this._h=v; out.push(v); }, get innerHTML(){return this._h||''} }; }
 };
 var src = require('fs').readFileSync(process.cwd() + '/app.js','utf8')
