@@ -53,32 +53,24 @@
      guide, the right class and the AI Search - never to read a guide out loud
      in the chat, and never to send anyone to an outside number or website. */
   function guideCard(hits, q) {
-    var first = hits[0];
-    var secs = [
-      { h: "The quick guide that covers this",
-        bullets: hits.map(function (h) {
-          return "<b>" + esc(h.g.title) + "</b> &mdash; in <b>" + esc(h.cat) + "</b>. " +
-                 "Open it there and download the PDF; it lists who to contact and what to ask for.";
-        }) },
-      { h: "Then build your call sheet",
-        p: "Put the same thing into the <b>AI Search</b>. It builds you a call sheet of who to ring in your own area, so you are not working from a general list." }
-    ];
+    var cat = hits[0].cat, space = D.catspace[cat];
+    var cats = [cat], spaces = space ? [space] : [];
+    hits.slice(1).forEach(function (h) {          // a second category if it is a real match
+      if (cats.indexOf(h.cat) === -1 && h.s >= hits[0].s - 2) cats.push(h.cat);
+    });
+    var secs = resourceSections(q, cats, spaces, { lessons: 6, guides: 8 });
     var cls = classesFor(q);
     if (cls.length) secs.push({ h: "The class for this", table: evTable(cls) });
-    secs.push({ h: "If you get stuck",
-      p: "Bring it to a <b>Member Q&amp;A</b>, or drop into the <b>Thursday Drop-In Clinic</b> &mdash; 10:00&ndash;18:00 ET, all day, no appointment. You can also post it in the <b>Questions Channel</b>." });
-
-    var space = D.spaces[first.cat];
-    var btns = [];
-    if (space) btns.push({ label: "Open " + first.cat, url: space, kind: "primary", icon: "\ud83d\udcc2" });
-    btns.push({ label: "Build your call sheet", url: SPACE.aiResearcher, kind: "solid", icon: "\ud83e\udd16" });
-    btns.push({ label: "Q&A times", url: SPACE.groupCoaching, kind: "ghost", icon: "\ud83d\udcc5" });
-    btns.push({ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "\ud83d\udcac" });
+    var top = guideHits(q, cats).sort(function (a, b) { return b.s - a.s; })[0];
+    var subject = (top && top.s > 0) ? "<b>" + esc(top.g.title.toLowerCase()) + "</b>"
+                                     : "what you need";
+    secs.push(callListThenQA(subject));
     return card({
-      title: "Where this is covered in the community",
-      lead: "Everything you need for this is inside Lesko Help. Here is where it lives.",
-      sections: secs, buttons: btns,
-      source: "Quick Guide Library \u00b7 community events"
+      title: "Here is everything we have on this",
+      lead: "It is all inside the community &mdash; the lessons, the quick guides and the classes. Work through them in that order.",
+      sections: secs,
+      buttons: resourceButtons(cat),
+      source: "Quick Guide Library · community lessons · events calendar"
     });
   }
 
@@ -321,16 +313,34 @@
     "Business Series Saturdays": ["business series"],
     "Member Q&A with Tony": ["member q&a", "member qa", "q&a with tony", "qa with tony", "tony q"]
   };
-  function matchEvent(q) {
-    var s = norm(q), best = null, bestLen = 0;
+  /* Some aliases are also plain subjects. "Start a nonprofit" is the name of
+     Megan's class AND the thing a member wants to do, so on its own it must
+     bring back the lessons and the quick guides too - only a question about
+     timing should collapse to the single event card. */
+  var SUBJECT_ALIAS = { "start a nonprofit": 1, "starting a business": 1, "restarting a business": 1,
+                        "re-starting": 1, "pay my debt": 1, "debt and bills": 1, "debt & bills": 1,
+                        "business growth": 1, "business series": 1, "clinic": 1 };
+  var SCHED = /\bwhen\b|what time|what day|which day|schedule|next one|is there a|how do i (join|attend|get (in)?to)|zoom link/i;
+
+  function eventMatch(q) {
+    var s = norm(q), best = null, bestLen = 0, alias = "";
     Object.keys(EVENT_ALIASES).forEach(function (name) {
       EVENT_ALIASES[name].forEach(function (a) {
-        if (s.indexOf(a) !== -1 && a.length > bestLen) { bestLen = a.length; best = name; }
+        if (s.indexOf(a) !== -1 && a.length > bestLen) { bestLen = a.length; best = name; alias = a; }
       });
     });
     if (!best) return null;
     var hits = D.events.filter(function (e) { return e.name === best; });
-    return hits.length ? hits[0] : null;
+    return hits.length ? { e: hits[0], alias: alias } : null;
+  }
+  function matchEvent(q) {
+    var m = eventMatch(q);
+    if (!m) return null;
+    /* A subject alias only collapses to the single event card when the member
+       is actually asking about timing. Otherwise they get the full answer,
+       which names the class anyway. */
+    if (SUBJECT_ALIAS[m.alias] && !SCHED.test(q)) return null;
+    return m.e;
   }
 
   var INTENTS = [
@@ -697,6 +707,131 @@
     return { label: e.name, url: e.url, kind: kind || "ghost", icon: "📅" };
   }
 
+  /* ---------- lessons and quick guides ----------
+     A subject answer names three things, never one: the classes to attend, the
+     lessons to read and the quick guides to download. Giving only the classes
+     leaves most of the community on the shelf. */
+
+  /* Whole words only. A loose prefix match put "Help for Caregivers" under a
+     question about dental CARE, which is exactly the kind of near-miss that
+     makes an answer look careless. A short suffix (dental/dentals) still counts. */
+  function wordHit(hw, w) {
+    if (hw === w) return true;
+    var a = hw.length > w.length ? hw : w, b = hw.length > w.length ? w : hw;
+    return a.length - b.length <= 2 && a.indexOf(b) === 0;
+  }
+  function score(hay, qw) {
+    var hws = norm(hay).trim().split(" "), n = 0;
+    qw.forEach(function (w) {
+      for (var i = 0; i < hws.length; i++) if (wordHit(hws[i], w)) { n += 2; return; }
+    });
+    return n;
+  }
+  /* Scored hits first; if nothing scores, hand back the top of the list anyway
+     so a broad question ("start a business") still gets real material. */
+  function pick(items, cap, strict) {
+    var scored = items.filter(function (x) { return x.s > 0; })
+                      .sort(function (a, b) { return b.s - a.s; });
+    /* strict: a narrow subject (AI, nonprofit) must never pad itself out with
+       whatever else happens to sit in the same space. */
+    var list = scored.length || strict ? scored : items;
+    return { shown: list.slice(0, cap), total: list.length, matched: scored.length > 0 };
+  }
+  function lessonHits(q, spaces, not, only) {
+    var qw = words(q), out = [];
+    spaces.forEach(function (sp) {
+      (D.lessons[sp] || []).forEach(function (l) {
+        if (not && not.test(l.t)) return;
+        if (only && !only.test(l.t)) return;
+        out.push({ l: l, sp: sp, s: score(l.t, qw) });
+      });
+    });
+    return out;
+  }
+  function guideHits(q, cats, only) {
+    var qw = words(q), out = [];
+    cats.forEach(function (c) {
+      (D.library[c] || []).forEach(function (g) {
+        if (only && !only.test(g.title)) return;
+        out.push({ g: g, cat: c, s: score(g.title + " " + c, qw) });
+      });
+    });
+    return out;
+  }
+  /* Several quick guide categories are not spaces in their own right - they
+     live inside a bigger one. Fall back through the category -> space map so a
+     "see the rest" link never comes out dead. */
+  function spaceUrl(name) {
+    return D.spaces[name] || D.spaces[D.catspace[name]] || null;
+  }
+  function moreLine(n, label, url) {
+    if (n <= 0) return "";
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' +
+           "and " + n + " more in " + esc(label) + " &rarr;</a>";
+  }
+  function lessonSection(q, spaces, cap, not, only, strict) {
+    var r = pick(lessonHits(q, spaces, not, only), cap || 6, strict);
+    if (!r.shown.length) return null;
+    var bullets = r.shown.map(function (h) {
+      var b = '<a href="' + esc(h.l.u) + '" target="_blank" rel="noopener"><b>' + esc(h.l.t) + "</b></a>";
+      if (h.l.p) b += ' &middot; <a href="' + esc(h.l.p) + '" target="_blank" rel="noopener">download the PDF</a>';
+      return b;
+    });
+    var rest = r.total - r.shown.length, sp = spaces[0], url = spaceUrl(sp);
+    var titles = r.shown.map(function (h) { return h.l.t; });
+    if (rest > 0 && url) bullets.push(moreLine(rest, sp, url));
+    return { h: "Lessons to read", bullets: bullets, titles: titles };
+  }
+  function guideSection(q, cats, cap, seen, only, strict) {
+    var hits = guideHits(q, cats, only).filter(function (h) {
+      return !(seen && seen[norm(h.g.title)]);
+    });
+    var r = pick(hits, cap || 8, strict);
+    if (!r.shown.length) return null;
+    var bullets = r.shown.map(function (h) {
+      if (h.g.pdf) {
+        return '<a href="' + esc(h.g.pdf) + '" target="_blank" rel="noopener"><b>' + esc(h.g.title) + "</b> &middot; download the PDF</a>";
+      }
+      var url = spaceUrl(h.cat);
+      return "<b>" + esc(h.g.title) + "</b> &mdash; in " +
+             (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(h.cat) + "</a>" : esc(h.cat));
+    });
+    var rest = r.total - r.shown.length, url = spaceUrl(cats[0]);
+    if (rest > 0 && url) bullets.push(moreLine(rest, cats[0], url));
+    return { h: "Quick guides to download", bullets: bullets };
+  }
+  /* Both blocks, in the order a member uses them: read, then download. */
+  function resourceSections(q, cats, spaces, caps) {
+    caps = caps || {};
+    var out = [];
+    var ls = spaces && spaces.length
+      ? lessonSection(q, spaces, caps.lessons, caps.not, caps.only, caps.strict) : null;
+    /* A lesson row already offers its own PDF, so listing the same guide again
+       below it is just noise. */
+    var seen = {};
+    if (ls) ls.titles.forEach(function (t) { seen[norm(t)] = 1; });
+    var gs = cats && cats.length
+      ? guideSection(q, cats, caps.guides, seen, caps.only, caps.strict) : null;
+    if (ls) out.push(ls);
+    if (gs) out.push(gs);
+    return out;
+  }
+  /* Build a call list, then take it to a coach. The same two steps every time. */
+  function callListThenQA(what) {
+    return { h: "Then do these two things",
+      steps: [
+        "<b>Build your call list.</b> Put " + what + " into the <b>AI Search</b>. It gives you who to ring in your own area, not a general list.",
+        "<b>Take it to a Q&amp;A.</b> Bring the list to a <b>Member Q&amp;A</b>, or drop into the <b>Thursday Drop-In Clinic</b> &mdash; 10:00&ndash;18:00 ET, all day, no appointment." ] };
+  }
+  function resourceButtons(catOrSpace) {
+    var btns = [];
+    var url = spaceUrl(catOrSpace);
+    if (url) btns.push({ label: "Open " + catOrSpace, url: url, kind: "primary", icon: "📂" });
+    btns.push({ label: "Build your call list", url: SPACE.aiResearcher, kind: "solid", icon: "🤖" });
+    btns.push({ label: "Q&A times", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" });
+    return btns;
+  }
+
   var QA_CLASSES    = ["Member Q&A with Tony", "Mid Mondays Member Q&A"];
   var CLINIC        = "Drop-In Clinic";
   var BUSINESS      = ["Starting & Re-Starting a Business", "Business Series Saturdays", "Business Growth with Amber"];
@@ -805,8 +940,13 @@
         title: "Roger teaches the AI side",
         lead: "Roger runs the AI classes. He shares the prompts he uses and shows you what he is doing on screen, live.",
         events: AI_CLASSES,
-        after: [{ call: "Start with <b>AI User Skills with Roger</b> on Wednesday. The Friday workshop is the hands-on one where you build your call sheet with him.", kind: "key" }],
-        buttons: [{ label: "Open Call Sheet Classes", url: SPACE.callSheetClasses, kind: "primary", icon: "🤖" }],
+        after: [{ call: "Start with <b>AI User Skills with Roger</b> on Wednesday. The Friday workshop is the hands-on one where you build your call sheet with him.", kind: "key" }]
+          .concat(resourceSections("ai grant prospecting template prompt research tools",
+                                   ["Start A Business"],
+                                   ["Call Sheet Classes", "Group Coaching"],
+                                   { lessons: 5, guides: 4, only: /\bai\b|prompt|prospecting/i, strict: true })),
+        buttons: [{ label: "Open Call Sheet Classes", url: SPACE.callSheetClasses, kind: "primary", icon: "🤖" },
+                  { label: "Open the AI Grant Researcher", url: SPACE.aiResearcher, kind: "solid", icon: "🔎" }],
         related: ["How do I create my call sheet?"] }); } },
 
     /* Nonprofit -> Megan's class. */
@@ -816,7 +956,13 @@
         title: "Start a Nonprofit is a class of its own",
         lead: "Megan runs it live every Sunday. That is the place to bring this &mdash; she takes you through it step by step.",
         events: ["Start a Nonprofit with Megan"],
-        after: [{ call: "Bring your questions to the class. If you cannot make Sunday, ask in a <b>Member Q&amp;A</b> or the <b>Thursday Drop-In Clinic</b>.", kind: "key" }],
+        after: [{ call: "Bring your questions to the class. If you cannot make Sunday, ask in a <b>Member Q&amp;A</b> or the <b>Thursday Drop-In Clinic</b>.", kind: "key" }]
+          .concat(resourceSections("nonprofit registration funding grants 501c3 checklist",
+                                   ["Launch A Nonprofit"],
+                                   ["Business - Nonprofits & Career"],
+                                   { lessons: 8, guides: 8, only: /nonprofit|501/i, strict: true }))
+          .concat([callListThenQA("<b>your nonprofit</b>")]),
+        buttons: resourceButtons("Launch A Nonprofit"),
         related: ["What classes are on this week?", "Where do I find the replays?"] }); } },
 
     /* Business -> the business classes. */
@@ -826,7 +972,12 @@
         title: "We have three business classes",
         lead: "This is taught live, week in week out. Pick the one that matches where you are.",
         events: BUSINESS,
-        after: [{ call: "New to it? Start with <b>Starting &amp; Re-Starting a Business</b> on Friday. Already trading? <b>Business Series Saturdays</b> and <b>Business Growth with Amber</b> go further.", kind: "key" }],
+        after: [{ call: "New to it? Start with <b>Starting &amp; Re-Starting a Business</b> on Friday. Already trading? <b>Business Series Saturdays</b> and <b>Business Growth with Amber</b> go further.", kind: "key" }]
+          .concat(resourceSections("business start legal steps funding grants loans mentor",
+                                   ["Start A Business", "Boost Your Career"],
+                                   ["Business - Nonprofits & Career"], { lessons: 8, guides: 10, not: /nonprofit/i }))
+          .concat([callListThenQA("<b>your kind of business</b>")]),
+        buttons: resourceButtons("Start A Business"),
         related: ["What classes are on this week?", "Where do I find the replays?"] }); } }
   ];
 

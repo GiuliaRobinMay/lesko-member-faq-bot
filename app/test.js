@@ -21,7 +21,7 @@ var Qs = [
  ["Where do I start?","roadmap"],
  ["What classes are on this week?","Live this week"],
  ["Where do I find the replays?","Class Replays"],
- ["I need help with car repair","Where this is covered in the community"],
+ ["I need help with car repair","Here is everything we have on this"],
  ["How do I cancel my subscription?","cancel"],
  ["banana","Bring it to Matthew"]
 ];
@@ -209,3 +209,41 @@ console.log('\n--- routes must not steal answered questions ---');
   var html = out.join(' ');
   console.log((html.indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(34), '=>', p[1]);
 });
+
+/* ---------------------------------------------------------------
+   Every subject answer names all three: classes, lessons, guides. */
+console.log('\n--- three kinds of resource on every subject answer ---');
+[["Start a business", true], ["how do I start a nonprofit", true],
+ ["I need to find things for dental care", false], ["help with rent", false],
+ ["I need help with car repair", false], ["help with medical bills", false],
+ ["I have a question about AI", true]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var h = out.join(' ');
+  var lessons = h.indexOf('Lessons to read') !== -1;
+  var guides  = h.indexOf('Quick guides to download') !== -1;
+  var classes = h.indexOf('<table') !== -1;
+  var calllist = h.indexOf('Build your call list') !== -1;
+  var ok = lessons && guides && (p[1] ? classes : calllist);
+  console.log((ok ? 'PASS' : 'FAIL'), '|', p[0].padEnd(36),
+    'lessons:' + (lessons ? 'y' : 'n'), 'guides:' + (guides ? 'y' : 'n'),
+    'classes:' + (classes ? 'y' : 'n'), 'calllist:' + (calllist ? 'y' : 'n'));
+});
+
+console.log('\n--- every link points inside the community ---');
+var ALLOWED = /^(lesko-help-2\.mn\.co|[a-z0-9-]*\.?mightynetworks\.com|lesko[a-z-]*\.netlify\.app)$/;
+var ALLQ = SUBJECT_QS.concat(["Start a business", "how do I start a nonprofit",
+  "where can I ask a question", "how do I orient myself in the community",
+  "what classes are on this week", "banana"]);
+var badlinks = [];
+ALLQ.forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  (out.join(' ').match(/href="([^"]+)"/g) || []).forEach(function (h) {
+    var u = h.slice(6, -1);
+    var m = u.match(/^https?:\/\/([^\/]+)/);
+    if (!m || !ALLOWED.test(m[1])) badlinks.push(q + ' -> ' + u);
+  });
+});
+badlinks.forEach(function (b) { console.log('FAIL |', b); });
+console.log(badlinks.length === 0 ? 'PASS | every link is a community link'
+                                  : 'FAIL | ' + badlinks.length + ' links point outside');

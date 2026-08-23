@@ -23,8 +23,26 @@ Routing (`ROUTES` in `app.js`, confirmed by Giulia):
 | Nonprofit | Start a Nonprofit with Megan |
 | Anything general / unplaceable | Matthew Meetup |
 
+## Every subject answer names three things
+Classes, **lessons** and **quick guides** — never just one of the three.
+
+- **Classes** — from the events calendar, per the routing table above.
+- **Lessons** — 88 community lessons across 9 spaces, 46 with a PDF attached,
+  generated from `kb/structure/content-index.json` by `app/make-data.py`.
+- **Quick guides** — 81 guides in 12 categories; 27 are wired to the exact
+  hosted PDF, the rest link to the space they live in.
+
+For a specific need ("I need to find things for dental care") the answer is:
+the lessons and guides for it → **build your call list** in the AI Search →
+**take it to a Q&A** or the Thursday clinic.
+
+Regenerate the lesson index after a structure re-scrape:
+`python3 app/make-data.py && node app/build.js` (build.js runs from `app/`).
+
 `node test.js` enforces this — the "no outside contacts" suite fails the build
-if any subject answer leaks a `.gov`/`.org` address, a phone number or a mailto.
+if any subject answer leaks a `.gov`/`.org` address, a phone number or a mailto,
+if any rendered link points outside `mn.co`/`mightynetworks.com`, or if a subject
+answer comes back without lessons and quick guides on it.
 
 ## Files
 - `index.html` + `data.js` + `app.js` — the working app (dev version)
