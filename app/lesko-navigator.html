@@ -639,6 +639,29 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       }); } }
   ];
 
+  /* Never suggest a way out of the community as a "related" question.
+     Cancelling and refunds are answered when asked for, never proposed. */
+  var NEVER_SUGGEST = ["cancel_subscription", "refunds_billing", "switch_plan", "membership_status_renew"];
+  function relatedFor(t) {
+    var pool = D.topics.filter(function (x) {
+      return x.id !== t.id && NEVER_SUGGEST.indexOf(x.id) === -1;
+    });
+    /* prefer topics sharing words with this one, then fall back to helpful staples */
+    var mine = words(t.title);
+    var scored = pool.map(function (x) {
+      var hay = norm(x.title + " " + x.asked.join(" "));
+      var s = 0;
+      mine.forEach(function (w) { if (hay.indexOf(" " + w) !== -1) s += 1; });
+      return { x: x, s: s };
+    }).sort(function (a, b) { return b.s - a.s; });
+    var out = scored.filter(function (r) { return r.s > 0; }).slice(0, 3).map(function (r) { return r.x.title; });
+    var staples = ["How do I create my call sheet?", "What classes are on this week?", "Where do I start?"];
+    for (var i = 0; out.length < 3 && i < staples.length; i++) {
+      if (out.indexOf(staples[i]) === -1) out.push(staples[i]);
+    }
+    return out.slice(0, 3);
+  }
+
   function answerTopic(t) {
     var steps = (aud === "public" && t.variant) ? t.variant : t.steps;
     var secs = [];
@@ -649,9 +672,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       lead: t.short ? esc(t.short) : "",
       sections: secs,
       source: t.status === "needs_check" ? "Draft — not yet confirmed by the team" : "Lesko Help support team",
-      related: D.topics.filter(function (x) {
-        return x.id !== t.id && (aud !== "public" || x.audience !== "inside");
-      }).slice(0, 3).map(function (x) { return x.title; })
+      related: relatedFor(t)
     });
   }
 

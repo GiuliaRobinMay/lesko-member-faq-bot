@@ -47,3 +47,18 @@ console.log('\n--- stage awareness ---');
   var ok=new RegExp(p[1],'i').test(html);
   console.log((ok?'PASS':'FAIL'),'|',p[0].padEnd(44),'=>',h3.slice(0,44));
 });
+
+// no exit-route suggestions
+console.log('\n--- related-topic safety ---');
+var EXIT=/cancel|refund|unsubscrib/i, bad=0;
+["Where do I find the replays?","How do I join the Zoom?","What classes are on this week?",
+ "Can I talk to a real person?","I can't log in","How do I stop the emails?",
+ "How do I create my call sheet?","Where do I start?","help with rent"].forEach(function(q){
+  out.length=0; window.__answer(q);
+  var html=out.join(' ');
+  var rel=(html.match(/<div class="rel">[\s\S]*?<\/div>\s*<\/div>/)||[''])[0];
+  var hit=EXIT.test(rel);
+  if(hit) bad++;
+  console.log((hit?'FAIL':'PASS'),'|',q);
+});
+console.log(bad===0 ? '\nNo exit routes suggested anywhere.' : '\n'+bad+' leaks!');
