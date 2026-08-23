@@ -31,8 +31,12 @@
   --head:#0a1120; --headText:#ffd45e; --accent:var(--yellow);
 }
 *{box-sizing:border-box}
+/* Fill the iframe exactly. Only the message thread scrolls, so an embed never
+   produces a second scrollbar inside the host page. */
+html,body{height:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  height:100%;overflow:hidden;display:flex;flex-direction:column}
 
 /* ---- header ---- */
 header.bar{background:var(--head);color:var(--headText);padding:12px 22px;display:flex;align-items:center;gap:13px}
@@ -46,13 +50,15 @@ header.bar{background:var(--head);color:var(--headText);padding:12px 22px;displa
 .themebtn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
 
 /* ---- shell ---- */
-.shell{flex:1;width:100%;max-width:1180px;margin:0 auto;padding:20px;display:grid;
-  grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}
-@media(max-width:900px){.shell{grid-template-columns:1fr}}
+.shell{flex:1;min-height:0;width:100%;max-width:1180px;margin:0 auto;padding:20px;display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:stretch;overflow:hidden}
 
 /* ---- chat column ---- */
-.chat{display:flex;flex-direction:column;min-height:64vh}
-.thread{display:grid;gap:16px}
+.chat{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.thread{display:grid;gap:16px;flex:1;min-height:0;overflow-y:auto;padding-right:4px;
+  scrollbar-width:thin}
+.thread::-webkit-scrollbar{width:9px}
+.thread::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
 .msg{display:flex;gap:12px;align-items:flex-start}
 .msg .who{width:38px;height:38px;border-radius:10px;flex:none;display:grid;place-items:center;overflow:hidden;
   font-size:12px;font-weight:700;background:var(--yellow);color:var(--blue-deep)}
@@ -120,7 +126,8 @@ table.k a{color:var(--accent);font-weight:600}
 @media(prefers-reduced-motion:reduce){.bubble.dots span{animation:none;opacity:.5}}
 
 /* ---- composer ---- */
-.composer{margin-top:18px;position:sticky;bottom:0;background:var(--paper);padding-top:12px}
+.composer{margin-top:14px;flex:none;background:var(--paper);padding-top:12px;
+  border-top:1px solid var(--line-soft)}
 .cwrap{display:flex;gap:10px}
 .cwrap input{flex:1;font:inherit;font-size:16.5px;padding:14px 17px;border-radius:11px;border:2px solid var(--line);
   background:var(--surface);color:var(--ink)}
@@ -132,9 +139,28 @@ table.k a{color:var(--accent);font-weight:600}
 .cwrap button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 
 /* ---- sidebar ---- */
-aside{position:sticky;top:20px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
-  border-top:5px solid var(--yellow);padding:20px 18px}
-@media(max-width:900px){aside{position:static}}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  border-top:5px solid var(--yellow);padding:20px 18px;min-height:0;overflow-y:auto;
+  scrollbar-width:thin}
+aside::-webkit-scrollbar{width:9px}
+aside::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+
+/* Narrow frames: stack, and let the whole shell scroll as one instead of two panes */
+@media(max-width:900px){
+  body{overflow:auto}
+  .shell{grid-template-columns:1fr;overflow:visible;align-items:start}
+  .chat{overflow:visible}
+  .thread{overflow:visible;flex:none}
+  aside{overflow:visible;order:-1}
+  .composer{position:sticky;bottom:0}
+}
+/* Very short frames: trim the chrome so the thread keeps its room */
+@media(max-height:560px){
+  header.bar{padding:8px 16px}
+  .mark{width:34px;height:34px}
+  .brand strong{font-size:18px}
+  .shell{padding:12px}
+}
 aside .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);font-weight:700;margin:0 0 8px}
 aside h2{font-family:var(--display);font-weight:600;font-size:1.28rem;line-height:1.2;margin:0 0 9px;letter-spacing:-.01em}
 aside p.intro{margin:0 0 16px;font-size:14.5px;color:var(--ink-mid);line-height:1.5}

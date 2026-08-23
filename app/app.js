@@ -362,7 +362,7 @@
         lead: "Bookmark every question you post &mdash; then they all sit in one place.",
         sections: [
           { steps: [
-            "On your post, click the <b>three dots</b>, then <b>Bookmark Post</b>.",
+            "On your post, click the <b>bookmark icon</b>. (You can also use the <b>three dots</b> menu &rarr; <b>Bookmark Post</b>.)",
             "Click your <b>profile picture</b>, then open <b>Bookmarks</b>.",
             "Every question you bookmarked is there &mdash; easy to follow up when a coach answers." ] },
           { call: "Answers usually come within a few hours, and at the latest within 12 to 24 hours depending on when you posted." }
