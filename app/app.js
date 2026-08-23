@@ -108,7 +108,10 @@
     roadmap:          "https://lesko-help-2.mn.co/spaces/24365840",
     welcomeTour:      "https://lesko-help-2.mn.co/spaces/24366161/events",
     askMatthew:       "https://lesko-help-2.mn.co/spaces/21948411/events",
-    replays:          "https://lesko-help-2.mn.co/spaces/24487516"
+    replays:          "https://lesko-help-2.mn.co/spaces/24487516",
+    /* instruction sheets (your Netlify apps, per each repo's EMBED.md) */
+    callSheetGuide:   "https://lesko-callsheet.netlify.app/",
+    afterYouApply:    "https://lesko-help-application-follow-up.netlify.app/"
   };
 
   var INTENTS = [
@@ -127,7 +130,7 @@
           '<li><b>Ask a question in the Questions Channel</b> — the team replies under your post. <a href="' + SPACE.questions + '" target="_blank" rel="noopener">Questions Channel</a></li>' +
           '<li><b>Join a Q&A session</b> — ask a coach live. <a href="' + SPACE.groupCoaching + '" target="_blank" rel="noopener">See Q&A times</a></li>' +
           '<li><b>Join a Call Sheet Class</b> — go through it together. <a href="' + SPACE.callSheetClasses + '" target="_blank" rel="noopener">Call Sheet Classes</a></li>' +
-          "</ol>";
+          "</ol>" + linkRow([L("Read the call sheet guide", SPACE.callSheetGuide)]);
       } },
     { id: "call_sheet_make",
       test: function (q) { return /call ?sheet|callsheet/i.test(q); },
@@ -136,7 +139,11 @@
           '<li><b>Go to a Call Sheet Class</b> — and read the instruction sheet in that space first. <a href="' + SPACE.callSheetClasses + '" target="_blank" rel="noopener">Call Sheet Classes</a></li>' +
           '<li><b>Use the AI Researcher.</b> <a href="' + SPACE.aiResearcher + '" target="_blank" rel="noopener">AI Grant Researcher</a></li>' +
           '<li><b>Ask a question in the Questions Channel.</b> <a href="' + SPACE.questions + '" target="_blank" rel="noopener">Questions Channel</a></li>' +
-          "</ol><p>Keep to one call sheet.</p>";
+          "</ol>" +
+          '<div class="sub"><h4>Before you ask, from the call sheet guide</h4>' +
+          "<p>Your call sheet is built from <b>two things</b>: where you live (your ZIP code, state or city) and <b>one</b> problem you need help with.</p>" +
+          "<p><b>One problem = one call sheet.</b> Keep them separate — \"help paying rent\", \"car repair help\", \"help with medical bills\". Combining problems gives you a thin, general list. More than one problem is fine — just ask for more than one sheet.</p>" +
+          linkRow([L("Read the full call sheet guide", SPACE.callSheetGuide)]) + "</div>";
       } },
 
     /* ---- applying ---- */
@@ -145,7 +152,25 @@
       render: function () {
         return "<h3>Once your call sheet is ready, go to an Application Class</h3>" +
           "<p>Read the instructions in that space first, then join a class. After that you can keep going with Group Coaching or a Meetup with Matthew.</p>" +
-          linkRow([L("Application Classes", SPACE.applicationClass), L("Group Coaching", SPACE.groupCoaching), L("Ask Matthew Live", SPACE.askMatthew)]);
+          linkRow([L("Application Classes", SPACE.applicationClass), L("Group Coaching", SPACE.groupCoaching), L("Ask Matthew Live", SPACE.askMatthew)]) +
+          '<div class="sub"><h4>After you send it</h4><p>Keep one folder per application and follow up at the right moment — that is what separates the members who get the money.</p>' +
+          linkRow([L("After You Apply guide", SPACE.afterYouApply)]) + "</div>";
+      } },
+
+    { id: "after_apply",
+      test: function (q) { return /follow ?up|after (i )?appl|applied|heard back|no answer|waiting|how long|still nothing|rejected|turned down|denied/i.test(q); },
+      render: function () {
+        return "<h3>You've applied — here's what wins</h3>" +
+          "<ul>" +
+          "<li><b>Stay calm, this part is slow.</b> Most decisions take 30–60 days. Silence in week two means nothing.</li>" +
+          "<li><b>Keep one folder per application</b>, named for the organization — your application as sent, every document, proof you sent it, and their replies.</li>" +
+          "<li><b>Never send your only copy.</b> Photograph or scan every page first.</li>" +
+          "<li><b>Write down every date and name</b>, and check your messages every single day.</li>" +
+          "<li><b>If they ask for more — drop everything</b> and send it.</li>" +
+          "<li><b>Keep hunting while you wait.</b></li>" +
+          "</ul>" +
+          "<p>A \"no\" is usually about their budget, not about you — and most refusals come from missing paperwork, which you can control.</p>" +
+          linkRow([L("Read the full follow-up guide", SPACE.afterYouApply), L("Bring it to Group Coaching", SPACE.groupCoaching)]);
       } },
 
     /* ---- roadmap / getting started ---- */
