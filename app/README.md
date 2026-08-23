@@ -32,6 +32,16 @@ Classes, **lessons** and **quick guides** — never just one of the three.
 - **Quick guides** — 81 guides in 12 categories; 27 are wired to the exact
   hosted PDF, the rest link to the space they live in.
 
+**Precise, or nothing.** Only the best-matching resources are shown. If that is
+one lesson, the answer is one lesson. Nothing loosely related is ever added to
+pad the reply out — a pet guide under a dental question makes the whole answer
+look careless. A short member word is translated first (`SYN` in `app.js`:
+dentist → dental, landlord → rent, dog → pet), and short words never match on a
+prefix, so "car" no longer matches "care".
+
+**When the bot cannot place a question it says so and sends the member to a
+Q&A.** It never guesses at a class.
+
 For a specific need ("I need to find things for dental care") the answer is:
 the lessons and guides for it → **build your call list** in the AI Search →
 **take it to a Q&A** or the Thursday clinic.

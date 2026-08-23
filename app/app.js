@@ -14,8 +14,61 @@
   }
   function norm(s) { return " " + String(s).toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ") + " "; }
   var STOP = (" the a an i my me is are do does how to what where when can could you your for of in on it and or that this with " +
-              "need needs help please want wants would like looking look find get getting got have has any some there here about ").split(" ");
-  function words(s) { return norm(s).trim().split(" ").filter(function (w) { return w.length > 2 && STOP.indexOf(w) === -1; }); }
+              "need needs help please want wants would like looking look find get getting got have has any some there here about " +
+              /* Generic nouns that appear in half the titles in the library. On
+                 their own they are not a subject, and letting one of them match
+                 turned "what about the thing" into a veterans answer. */
+              "thing things stuff something anything know best first free new one two day days week today " +
+              "people person way ways place places tip tips more much many other others every everything ").split(" ");
+  /* Members do not use the words the community filed things under. Someone
+     types "dentist"; the lesson is called "Free & Low-Cost Dental Care". Each
+     entry adds a word, it never replaces one, so nothing that matched before
+     stops matching. */
+  var SYN = {
+    dentist: "dental", dentists: "dental", teeth: "dental", tooth: "dental",
+    dentures: "dental", braces: "dental",
+    doctor: "health", doctors: "health", physician: "health", hospital: "medical",
+    surgery: "medical", healthcare: "health", clinic: "health",
+    meds: "prescription", medication: "prescription", medicine: "prescription",
+    pills: "prescription", pharmacy: "prescription", drugs: "prescription",
+    glasses: "vision", eyeglasses: "vision", eyesight: "vision", eye: "vision",
+    eyes: "vision", optician: "vision", deaf: "hearing", hearingaid: "hearing",
+    therapy: "mental", counselling: "mental", counseling: "mental",
+    depression: "mental", anxiety: "mental", addiction: "addiction",
+    landlord: "rent", eviction: "rent", evicted: "rent", rental: "rent",
+    homeless: "housing", mortgage: "home", foreclosure: "foreclosure",
+    heating: "utility", heat: "utility", electricity: "utility",
+    electric: "utility", power: "utility", gas: "utility", water: "utility",
+    groceries: "food", grocery: "food", hungry: "food", meals: "food",
+    veterinary: "pet", veterinarian: "pet", dog: "pet", dogs: "pet",
+    cat: "pet", cats: "pet", puppy: "pet", kitten: "pet",
+    daycare: "childcare", babysitting: "childcare", nursery: "childcare",
+    lawyer: "legal", attorney: "legal", court: "legal", sued: "legal",
+    job: "career", jobs: "career", employment: "career", resume: "career",
+    interview: "career", hired: "career", unemployed: "career",
+    college: "scholarships", university: "scholarships", tuition: "scholarships",
+    student: "student", loans: "loan", collections: "debt", creditors: "debt",
+    bankrupt: "debt", bankruptcy: "debt",
+    automobile: "car", vehicle: "car", truck: "car", transportation: "car",
+    elderly: "seniors", elder: "seniors", senior: "seniors", retirement: "seniors",
+    disabled: "disability", handicapped: "disability",
+    veteran: "veterans", army: "veterans", navy: "veterans", military: "veterans",
+    smoking: "smoking", vaping: "smoking", cancer: "illness", diabetes: "illness",
+    pregnant: "pregnancy", baby: "pregnancy", newborn: "pregnancy",
+    adoption: "adoption", fostering: "foster", iep: "education",
+    caregiver: "caregivers", caring: "caregivers"
+  };
+  function words(s) {
+    var base = norm(s).trim().split(" ").filter(function (w) {
+      return w.length > 2 && STOP.indexOf(w) === -1;
+    });
+    var out = base.slice();
+    base.forEach(function (w) {
+      var syn = SYN[w];
+      if (syn && out.indexOf(syn) === -1) out.push(syn);
+    });
+    return out;
+  }
 
   /* ---------- matching ---------- */
   function scoreTopic(t, q) {
@@ -31,20 +84,24 @@
     return s;
   }
   function findGuides(q) {
-    var out = [];
+    var out = [], qw = words(q);
     Object.keys(D.library).forEach(function (cat) {
       D.library[cat].forEach(function (g) {
-        var title = norm(cat + " " + g.title);
-        var body = norm(g.resources.map(function (r) { return r.n; }).join(" "));
+        var title = norm(cat + " " + g.title).trim().split(" ");
+        var body = norm(g.resources.map(function (r) { return r.n; }).join(" ")).trim().split(" ");
         var s = 0;
-        words(q).forEach(function (w) {
-          if (title.indexOf(" " + w) !== -1) s += 4;      // title/category match counts
-          else if (body.indexOf(" " + w) !== -1) s += 1;  // a resource name barely counts
+        qw.forEach(function (w) {
+          if (anyHit(title, w)) s += 4;       // title/category match counts
+          else if (anyHit(body, w)) s += 1;   // a resource name barely counts
         });
         if (s > 0) out.push({ cat: cat, g: g, s: s });
       });
     });
     return out.sort(function (a, b) { return b.s - a.s; }).slice(0, 3);
+  }
+  function anyHit(hws, w) {
+    for (var i = 0; i < hws.length; i++) if (wordHit(hws[i], w)) return true;
+    return false;
   }
 
 
@@ -58,7 +115,7 @@
     hits.slice(1).forEach(function (h) {          // a second category if it is a real match
       if (cats.indexOf(h.cat) === -1 && h.s >= hits[0].s - 2) cats.push(h.cat);
     });
-    var secs = resourceSections(q, cats, spaces, { lessons: 6, guides: 8 });
+    var secs = resourceSections(q, cats, spaces, { lessons: 6, guides: 8, topTier: true });
     var cls = classesFor(q);
     if (cls.length) secs.push({ h: "The class for this", table: evTable(cls) });
     var top = guideHits(q, cats).sort(function (a, b) { return b.s - a.s; })[0];
@@ -715,23 +772,35 @@
   /* Whole words only. A loose prefix match put "Help for Caregivers" under a
      question about dental CARE, which is exactly the kind of near-miss that
      makes an answer look careless. A short suffix (dental/dentals) still counts. */
+  function stem(w) { return w.length > 3 ? w.replace(/(ies|es|s)$/, "") : w; }
   function wordHit(hw, w) {
     if (hw === w) return true;
-    var a = hw.length > w.length ? hw : w, b = hw.length > w.length ? w : hw;
-    return a.length - b.length <= 2 && a.indexOf(b) === 0;
+    var a = stem(hw), b = stem(w);
+    if (a === b) return true;
+    /* A loose prefix is only safe on a long word. Allowing it on short ones
+       matched "car" against "care", which sent someone asking about their car
+       to the dental and pet guides. */
+    var lo = a.length < b.length ? a : b, hi = a.length < b.length ? b : a;
+    return lo.length >= 5 && hi.length - lo.length <= 2 && hi.indexOf(lo) === 0;
   }
   function score(hay, qw) {
     var hws = norm(hay).trim().split(" "), n = 0;
-    qw.forEach(function (w) {
-      for (var i = 0; i < hws.length; i++) if (wordHit(hws[i], w)) { n += 2; return; }
-    });
+    qw.forEach(function (w) { if (anyHit(hws, w)) n += 2; });
     return n;
   }
   /* Scored hits first; if nothing scores, hand back the top of the list anyway
      so a broad question ("start a business") still gets real material. */
-  function pick(items, cap, strict) {
+  function pick(items, cap, strict, topTier) {
     var scored = items.filter(function (x) { return x.s > 0; })
                       .sort(function (a, b) { return b.s - a.s; });
+    /* topTier: keep ONLY the best-matching resources. Someone asking about
+       dental care is not asking about their cat or a hearing aid, and a weaker
+       match sitting underneath the right answer makes the whole reply look
+       careless. One resource is a fine answer. */
+    if (topTier && scored.length) {
+      var best = scored[0].s;
+      scored = scored.filter(function (x) { return x.s === best; });
+    }
     /* strict: a narrow subject (AI, nonprofit) must never pad itself out with
        whatever else happens to sit in the same space. */
     var list = scored.length || strict ? scored : items;
@@ -753,7 +822,10 @@
     cats.forEach(function (c) {
       (D.library[c] || []).forEach(function (g) {
         if (only && !only.test(g.title)) return;
-        out.push({ g: g, cat: c, s: score(g.title + " " + c, qw) });
+        /* Score the guide's own title only. Folding the category name in made
+           every guide in a category tie, so "car" pulled up Government
+           Auctions alongside Car Repair. The category is already chosen. */
+        out.push({ g: g, cat: c, s: score(g.title, qw) });
       });
     });
     return out;
@@ -769,8 +841,8 @@
     return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' +
            "and " + n + " more in " + esc(label) + " &rarr;</a>";
   }
-  function lessonSection(q, spaces, cap, not, only, strict) {
-    var r = pick(lessonHits(q, spaces, not, only), cap || 6, strict);
+  function lessonSection(q, spaces, cap, not, only, strict, topTier) {
+    var r = pick(lessonHits(q, spaces, not, only), cap || 6, strict, topTier);
     if (!r.shown.length) return null;
     var bullets = r.shown.map(function (h) {
       var b = '<a href="' + esc(h.l.u) + '" target="_blank" rel="noopener"><b>' + esc(h.l.t) + "</b></a>";
@@ -782,13 +854,15 @@
     if (rest > 0 && url) bullets.push(moreLine(rest, sp, url));
     return { h: "Lessons to read", bullets: bullets, titles: titles };
   }
-  function guideSection(q, cats, cap, seen, only, strict) {
-    var hits = guideHits(q, cats, only).filter(function (h) {
-      return !(seen && seen[norm(h.g.title)]);
-    });
-    var r = pick(hits, cap || 8, strict);
-    if (!r.shown.length) return null;
-    var bullets = r.shown.map(function (h) {
+  function guideSection(q, cats, cap, seen, only, strict, topTier) {
+    /* Rank first, THEN drop the ones the lesson list already covers. Doing it
+       the other way round threw away the best match and promoted whatever was
+       underneath it - which is how a question about dental care came back with
+       a pet guide. */
+    var r = pick(guideHits(q, cats, only), cap || 8, strict || topTier, topTier);
+    var shown = r.shown.filter(function (h) { return !(seen && seen[norm(h.g.title)]); });
+    if (!shown.length) return null;                 // nothing left to add is a fine answer
+    var bullets = shown.map(function (h) {
       if (h.g.pdf) {
         return '<a href="' + esc(h.g.pdf) + '" target="_blank" rel="noopener"><b>' + esc(h.g.title) + "</b> &middot; download the PDF</a>";
       }
@@ -800,18 +874,19 @@
     if (rest > 0 && url) bullets.push(moreLine(rest, cats[0], url));
     return { h: "Quick guides to download", bullets: bullets };
   }
+
   /* Both blocks, in the order a member uses them: read, then download. */
   function resourceSections(q, cats, spaces, caps) {
     caps = caps || {};
     var out = [];
     var ls = spaces && spaces.length
-      ? lessonSection(q, spaces, caps.lessons, caps.not, caps.only, caps.strict) : null;
+      ? lessonSection(q, spaces, caps.lessons, caps.not, caps.only, caps.strict, caps.topTier) : null;
     /* A lesson row already offers its own PDF, so listing the same guide again
        below it is just noise. */
     var seen = {};
     if (ls) ls.titles.forEach(function (t) { seen[norm(t)] = 1; });
     var gs = cats && cats.length
-      ? guideSection(q, cats, caps.guides, seen, caps.only, caps.strict) : null;
+      ? guideSection(q, cats, caps.guides, seen, caps.only, caps.strict, caps.topTier) : null;
     if (ls) out.push(ls);
     if (gs) out.push(gs);
     return out;
@@ -1043,13 +1118,14 @@
       return bubble("bot", guideCard(gh.slice(0, 2), q), true);
     }
     if (best && topScore >= 4) return bubble("bot", answerTopic(best.t), true);
-    /* A general question we cannot place goes to Matthew's own class. */
+    /* If we cannot place a question, a coach can. Never guess at a class. */
     bubble("bot", routeCard({
-      title: "Bring it to Matthew",
-      lead: "I could not place that one. For a general question the best place is Matthew's own live session \u2014 ask him in the chat and he answers on the call.",
-      events: ["Matthew Meetup"],
-      after: [{ call: "Or post it in the <b>Questions Channel</b> and the team will reply under your post. It also helps to name the thing you are after \u2014 for example <i>call sheet</i>, <i>rent help</i>, <i>this week\u2019s classes</i>.", kind: "key" }],
-      buttons: [{ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "\ud83d\udcac" }]
+      title: "Ask this at a Q&A",
+      lead: "I could not place that one, and I would rather not guess. Put it to a coach \u2014 they answer live, six days a week, and Thursday is open all day.",
+      events: QA_CLASSES.concat([CLINIC]),
+      after: [{ call: "Or post it in the <b>Questions Channel</b> and the team will reply under your post.", kind: "key" }],
+      buttons: [{ label: "See all Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "\ud83d\udcc5" },
+                { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "ghost", icon: "\ud83d\udcac" }]
     }), true);
   }
 

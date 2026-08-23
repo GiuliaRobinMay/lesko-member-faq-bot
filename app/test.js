@@ -23,7 +23,7 @@ var Qs = [
  ["Where do I find the replays?","Class Replays"],
  ["I need help with car repair","Here is everything we have on this"],
  ["How do I cancel my subscription?","cancel"],
- ["banana","Bring it to Matthew"]
+ ["banana","Ask this at a Q&amp;A"]
 ];
 var pass = 0;
 Qs.forEach(function(p){
@@ -224,7 +224,9 @@ console.log('\n--- three kinds of resource on every subject answer ---');
   var guides  = h.indexOf('Quick guides to download') !== -1;
   var classes = h.indexOf('<table') !== -1;
   var calllist = h.indexOf('Build your call list') !== -1;
-  var ok = lessons && guides && (p[1] ? classes : calllist);
+  /* At least one real resource, plus the route out. Precision beats volume:
+     one exact resource is a better answer than three loose ones. */
+  var ok = (lessons || guides) && (p[1] ? classes : calllist);
   console.log((ok ? 'PASS' : 'FAIL'), '|', p[0].padEnd(36),
     'lessons:' + (lessons ? 'y' : 'n'), 'guides:' + (guides ? 'y' : 'n'),
     'classes:' + (classes ? 'y' : 'n'), 'calllist:' + (calllist ? 'y' : 'n'));
@@ -247,3 +249,37 @@ ALLQ.forEach(function (q) {
 badlinks.forEach(function (b) { console.log('FAIL |', b); });
 console.log(badlinks.length === 0 ? 'PASS | every link is a community link'
                                   : 'FAIL | ' + badlinks.length + ' links point outside');
+
+
+/* ---------------------------------------------------------------
+   Precision. Someone asking about dental care is not asking about
+   their cat, and someone asking about their car is not asking
+   about a hearing aid. A loose extra makes the whole reply wrong. */
+console.log('\n--- precise, or nothing ---');
+[["dental care",   /pet|veterinary|hearing|vision|food|crisis/i],
+ ["dentist",       /pet|veterinary|hearing|vision|food|crisis/i],
+ ["I need help with my teeth", /pet|veterinary|hearing|vision/i],
+ ["I need help with my car",   /dental|hearing|vision|pet|veterinary|auction/i],
+ ["help with rent",            /dental|pet|car repair|student loan/i],
+ ["help with my dog",          /dental|rent|car repair/i],
+ ["I cant pay my electric bill", /dental|pet|rent|car repair/i],
+ ["help with medical bills",   /pet|veterinary|car repair|rent/i],
+ ["food help",                 /dental|pet|car repair|rent/i]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var h = out.join(' ');
+  /* only look at the resource lists, not the standing Q&A footer */
+  var block = h.replace(/data:image\/[^"']+/g, '')      // the avatar is base64, not content
+                .split('Then do these two things')[0];
+  var bad = p[1].test(block);
+  console.log((bad ? 'FAIL' : 'PASS'), '|', p[0].padEnd(30),
+    bad ? 'stray: ' + (block.match(p[1]) || [''])[0] : 'clean');
+});
+
+console.log('\n--- an unplaceable question goes to a Q&A, never a guess ---');
+["banana", "zzzz", "I need something", "what about the thing"].forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  var h = out.join(' ');
+  var ok = h.indexOf('Ask this at a Q&amp;A') !== -1 || h.indexOf('Go to a Q&amp;A') !== -1;
+  console.log((ok ? 'PASS' : 'FAIL'), '|', q.padEnd(24), ok ? 'sent to a Q&A' : 'guessed instead');
+});
