@@ -57,17 +57,33 @@ def parse(raw, fname):
                     break
             break
 
-    def section(start, stops):
-        m = re.search(start, flat, re.I)
-        if not m:
-            return None
-        rest = flat[m.end():]
-        pos = [p for p in (rest.find(s) for s in stops) if p > 0]
-        return tidy(rest[:min(pos)] if pos else rest[:800])
+    # Headers are letter-spaced ("B E F O R E YO U S TA R T"), so match with
+    # all whitespace removed and map the hit back to the spaced text.
+    squash, idx = [], []
+    for i, ch in enumerate(flat):
+        if not ch.isspace():
+            squash.append(ch.upper()); idx.append(i)
+    squash = "".join(squash)
 
-    before = section(r"BEFORE YOU START", ["WATCH OUT", "A TIP THAT"])
-    watch  = section(r"WATCH OUT FOR",    ["A TIP THAT", "NEED HELP WHERE", "MY NOTES"])
-    tip    = section(r"A TIP THAT HELPS", ["NEED HELP WHERE", "MY NOTES", "WATCH OUT"])
+    def find(label):
+        p = squash.find(label.replace(" ", "").upper())
+        return idx[p] if p != -1 else -1
+
+    def find_end(label):
+        lab = label.replace(" ", "").upper()
+        p = squash.find(lab)
+        return idx[p + len(lab) - 1] + 1 if p != -1 else -1
+
+    def section(label, stops):
+        start = find_end(label)
+        if start == -1:
+            return None
+        ends = [e for e in (find(s) for s in stops) if e > start]
+        return tidy(flat[start:min(ends)] if ends else flat[start:start + 800])
+
+    before = section("BEFORE YOU START", ["WATCH OUT", "A TIP THAT", "NEED HELP WHERE"])
+    watch  = section("WATCH OUT FOR",    ["A TIP THAT", "NEED HELP WHERE", "MY NOTES"])
+    tip    = section("A TIP THAT HELPS", ["NEED HELP WHERE", "MY NOTES", "WATCH OUT"])
 
     # A resource is the text between the end of the previous link and this link.
     res = []
@@ -96,7 +112,7 @@ def parse(raw, fname):
 
     return {"file": fname, "category": category, "title": title,
             "before_you_start": before, "watch_out": watch, "tip": tip,
-            "resources": res, "text": t}
+            "resources": res, "text": flat}
 
 if __name__ == "__main__":
     out = {}
