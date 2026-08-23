@@ -122,11 +122,20 @@
     d.innerHTML = '<div class="who"><img src="' + MATTHEW + '" alt="Matthew Lesko"></div>' +
       '<div class="bubble dots"><span></span><span></span><span></span></div>';
     thread.appendChild(d);
-    d.scrollIntoView({ behavior: "smooth", block: "center" });
+    scrollThread();
     return d;
   }
 
   /* ---------- rendering ---------- */
+  /* Scroll ONLY the thread. scrollIntoView bubbles to the nearest scrollable
+     ancestor, which inside an iframe is the host page — that is what made the
+     community page jump every time an answer arrived. */
+  function scrollThread() {
+    if (!thread) return;
+    var go = function () { thread.scrollTop = thread.scrollHeight; };
+    if (window.requestAnimationFrame) window.requestAnimationFrame(go); else go();
+  }
+
   var lastQ = "";
   function bubble(role, inner, withFeedback) {
     var d = document.createElement("div");
@@ -138,8 +147,8 @@
       b.addEventListener("click", function () { ask(b.textContent); });
     });
     if (role === "bot" && withFeedback) attachFeedback(d.querySelector(".bubble"), lastQ);
+    scrollThread();
     return d;
-    d.scrollIntoView({ behavior: "smooth", block: "center" });
   }
   function linkRow(links) {
     if (!links.length) return "";
