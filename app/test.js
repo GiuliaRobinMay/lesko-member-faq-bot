@@ -62,3 +62,17 @@ var EXIT=/cancel|refund|unsubscrib/i, bad=0;
   console.log((hit?'FAIL':'PASS'),'|',q);
 });
 console.log(bad===0 ? '\nNo exit routes suggested anywhere.' : '\n'+bad+' leaks!');
+
+console.log('\n--- cancel answer ---');
+out.length=0; window.__answer("How do I cancel my subscription?");
+var c=out.join(' ');
+[["plain heading",/How to cancel/],["recurly link",/href="https:\/\/leskohelp\.recurly\.com"/],
+ ["paypal link",/href="https:\/\/www\.paypal\.com"/],["clickbank link",/clkbank\.com/],
+ ["mailto",/href="mailto:leskohelp@gmail\.com"/],
+ ["no 'last resort'",/last resort/i],["no trial line",/5 days|19\.95/],
+ ["no login in related",/log ?in|which .{0,12}site/i],["no call sheet in related",/call sheet/i]
+].forEach(function(p){
+  var found=p[1].test(c);
+  var want=p[0].indexOf('no ')===0 ? !found : found;
+  console.log((want?'PASS':'FAIL'),'|',p[0]);
+});

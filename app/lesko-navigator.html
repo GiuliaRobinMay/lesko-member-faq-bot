@@ -490,6 +490,28 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
   };
 
   var INTENTS = [
+    { id: "cancel",
+      test: function (q) { return /\bcancel|unsubscrib(e|ing)|stop (my |the )?(membership|subscription|payment|billing)|end (my )?(membership|subscription)|quit\b/i.test(q) && !/email|notification/i.test(q); },
+      render: function () { return card({
+        title: "How to cancel",
+        lead: "Cancel inside the community. That is all you need to do &mdash; we stop your payment for you, wherever you signed up.",
+        sections: [
+          { h: "The one step", steps: [
+            "In the community, open your account settings and cancel your membership. Your payment stops automatically." ] },
+          { h: "Or cancel where you pay", p: "If you would rather do it yourself, use the one that matches how you pay:",
+            bullets: [
+              'Paid by <b>card</b> &mdash; <a href="https://leskohelp.recurly.com" target="_blank" rel="noopener">leskohelp.recurly.com</a>',
+              'Paid by <b>PayPal</b> &mdash; <a href="https://www.paypal.com" target="_blank" rel="noopener">paypal.com</a>, then Settings &rsaquo; Payments &rsaquo; Manage Automatic Payments',
+              'Your bank statement says <b>CLKBANK</b> or <b>CBKT</b> &mdash; <a href="https://www.clkbank.com/#!/orderLookup" target="_blank" rel="noopener">clkbank.com</a>' ] },
+          { call: 'Any other questions? Email us at <a href="mailto:leskohelp@gmail.com">leskohelp@gmail.com</a> and we will help you.', kind: "key" }
+        ],
+        buttons: [
+          { label: "Email us", url: "mailto:leskohelp@gmail.com", kind: "primary", icon: "✉️" },
+          { label: "Manage card payment", url: "https://leskohelp.recurly.com", kind: "ghost", icon: "💳" } ],
+        source: "Lesko Help customer service",
+        related: ["How do I stop the emails?", "How do I get a refund?", "Can I talk to a real person?"]
+      }); } },
+
     { id: "call_sheet_locate",
       test: function (q) { return /call ?sheet|callsheet/i.test(q) && SITU.locate.test(q) && !SITU.make.test(q); },
       render: function () { return card({
