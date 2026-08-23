@@ -4,7 +4,7 @@ var out = [];
 global.document = {
   getElementById: function(){ return {innerHTML:'', appendChild:function(){}, addEventListener:function(){}, textContent:'', value:'', querySelectorAll:function(){return[]}}; },
   querySelectorAll: function(){ return []; },
-  createElement: function(){ return {className:'', scrollIntoView:function(){}, set innerHTML(v){ this._h=v; out.push(v); }, get innerHTML(){return this._h||''} }; }
+  createElement: function(){ return {className:'', scrollIntoView:function(){}, querySelectorAll:function(){return[]}, set innerHTML(v){ this._h=v; out.push(v); }, get innerHTML(){return this._h||''} }; }
 };
 var src = require('fs').readFileSync(process.cwd() + '/app.js','utf8')
           .replace('})();', 'window.__answer = answer; })();');

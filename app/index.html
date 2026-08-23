@@ -110,6 +110,64 @@ main{flex:1;width:100%;max-width:960px;margin:0 auto;padding:24px 20px 130px}
 .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   padding:3px 9px;border-radius:5px;background:var(--cream);color:var(--ink-mid);border:1px solid var(--line-soft);margin-left:8px;vertical-align:middle}
 
+
+/* theme button */
+.themebtn{margin-left:auto;font-size:19px;line-height:1;background:rgba(255,255,255,.14);border:0;color:#fff;
+  width:42px;height:42px;border-radius:11px;cursor:pointer}
+.themebtn:hover{background:rgba(255,255,255,.24)}
+.themebtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.aud{margin-left:12px}
+
+/* Matthew avatar */
+.bot .who{background:var(--yellow);padding:0;overflow:hidden}
+.bot .who img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* structured answer card */
+.bubble{max-width:760px}
+.bubble h3{color:var(--blue);font-size:1.35rem;margin:0 0 14px}
+:root[data-theme="dark"] .bubble h3,
+:root:not([data-theme="light"]) .bubble h3{color:var(--yellow)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]) .bubble h3{color:var(--blue)}}
+.bubble h4{font-size:16.5px;font-weight:700;color:var(--ink);margin:20px 0 9px}
+.bubble h4:first-of-type{margin-top:0}
+.bubble .lead{color:var(--ink-soft);margin:0 0 6px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 6px;display:grid;gap:10px}
+.steps li{counter-increment:s;padding-left:34px;position:relative;font-size:16.5px}
+.steps li::before{content:counter(s) ".";position:absolute;left:0;top:0;color:var(--red);font-weight:700}
+.bul{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:9px}
+.bul li{padding-left:26px;position:relative;font-size:16.5px}
+.bul li::before{content:"✔";position:absolute;left:0;top:0;color:var(--green-deep);font-weight:700}
+:root[data-theme="dark"] .bul li::before{color:var(--green)}
+table.k{width:100%;border-collapse:collapse;margin:4px 0 8px;font-size:15.5px}
+table.k th{text-align:left;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);
+  background:var(--cream);padding:10px 12px;border-bottom:1px solid var(--line)}
+table.k td{padding:11px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+table.k tr:last-child td{border-bottom:0}
+.tw{overflow-x:auto}
+.call{border-left:4px solid var(--red);background:rgba(230,57,70,.08);padding:13px 16px;border-radius:0 9px 9px 0;margin:6px 0 12px;font-size:16px}
+.call.key{border-color:var(--blue);background:rgba(44,63,160,.08)}
+:root[data-theme="dark"] .call.key{background:rgba(143,162,255,.12)}
+.call b{font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
+.btns a{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;text-decoration:none;
+  padding:11px 18px;border-radius:10px;border:2px solid transparent}
+.btns a.primary{background:var(--red);color:#fff}
+.btns a.primary:hover{background:var(--red-deep)}
+.btns a.ghost{background:transparent;color:var(--blue);border-color:var(--line)}
+.btns a.ghost:hover{border-color:var(--blue);background:var(--cream)}
+:root[data-theme="dark"] .btns a.ghost{color:var(--blue)}
+.btns a.solid{background:var(--blue);color:#fff}
+.btns a.solid:hover{background:var(--blue-deep)}
+.btns a:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.src{margin:14px 0 0;font-size:12.5px;color:var(--ink-mid);font-weight:600}
+.rel{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.rel h5{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-mid);margin:0 0 9px;font-weight:700}
+.rel .chips2{display:flex;flex-wrap:wrap;gap:8px}
+.rel button{font:inherit;font-size:14.5px;font-weight:600;color:var(--blue);background:var(--cream);
+  border:1px solid var(--line-soft);border-radius:999px;padding:8px 15px;cursor:pointer}
+.rel button:hover{background:var(--yellow);color:var(--blue-deep);border-color:var(--yellow-warm)}
+.rel button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
 /* composer */
 .composer{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:14px 20px}
 .cwrap{max-width:960px;margin:0 auto;display:flex;gap:11px}
@@ -126,6 +184,7 @@ main{flex:1;width:100%;max-width:960px;margin:0 auto;padding:24px 20px 130px}
 <header class="bar">
   <div class="mark">?</div>
   <div class="brand"><small>Lesko Help · Member Support</small><strong>Navigator</strong></div>
+  <button id="theme" class="themebtn" type="button" aria-label="Switch between light and dark">🌙</button>
   <div class="aud" role="group" aria-label="Who is asking">
     <button data-aud="member" aria-pressed="true">I'm a member</button>
     <button data-aud="public" aria-pressed="false">I can't get in</button>
