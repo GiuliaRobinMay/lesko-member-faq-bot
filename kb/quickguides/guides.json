@@ -147,6 +147,62 @@
   ],
   "text": "Q U I C K G U I D E \u00b7 L A U N C H A N O N P R O F I T\n\nNonprofit Registration Checklist\nWant to start a nonprofit? The path to official 501(c)(3) status is a clear set of steps \u2014 and you can do\nmost of it yourself. Below is the checklist with official resources. Tick the box once you\u2019ve done each\none.\n\n\u26a0 B E F O R E YO U S TA R T\n\nYou do NOT need to pay a company thousands to start a nonprofit \u2014 the IRS and your state let you do it\ndirectly. If your group is small, a \u201cfiscal sponsor\u201d can even let you operate under another nonprofit\u2019s\nstatus first.\n\n1 Build the Foundation\n\nSet up the legal bones of your nonprofit.\n\nDefine Mission & Recruit a Board\nWrite a clear mission and recruit a board of directors (most states require at least 3).\n\u2192 www.councilofnonprofits.org/running-nonprofit/governance-leadership/board-roles-and-\nresponsibilities\n\nIncorporate in Your State\nFile articles of incorporation with your state, and create bylaws. SBA links to your state office.\n\u2192 www.sba.gov/business-guide/launch-your-business/register-your-business\n\n2 Get Your Federal IDs\n\nYou need an EIN and then tax-exempt status from the IRS.\n\nGet an EIN \u2014 Free From the IRS\nYour nonprofit\u2019s federal tax ID. Always free at IRS.gov.\n\u2192 www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-\nnumber-ein-online\n\nApply for 501(c)(3) Status\nFile IRS Form 1023 (or the shorter, cheaper 1023-EZ if you qualify) to become tax-exempt.\n\u2192 www.irs.gov/charities-non-profits/applying-for-tax-exempt-status\n\n3 Register to Operate & Fundraise\n\nA few more registrations keep you legal and able to raise money.\n\nRegister for Charitable Solicitation\nMost states require nonprofits to register before fundraising. Check your state\u2019s rules.\n\u2192 www.councilofnonprofits.org/running-nonprofit/fundraising-and-resource-development/\ncharitable-solicitation-registration\n\nOpen a Nonprofit Bank Account\nOnce incorporated with an EIN, open a dedicated bank account to keep finances clean.\n\u2192 Open after incorporation & EIN\n\n4 Get Free Help\n\nExperienced advisors guide you through the whole process.\n\nSCORE \u2014 Nonprofit Mentoring\nFree mentors who\u2019ve started nonprofits before.\n\u2192 www.score.org\n\nNational Council of Nonprofits\nFree, trusted guidance for every step of starting and running a nonprofit.\n\u2192 www.councilofnonprofits.org\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nCompanies charge $1,000\u2013$3,000 to do paperwork\nyou can file yourself for under $300 in fees. The IRS\nForm 1023-EZ is short and inexpensive if you qualify\n\u2014 check before paying anyone.\n\nIf you\u2019re testing an idea, consider a \u201cfiscal sponsor\u201d\n\u2014 an existing 501(c)(3) that lets you operate under\ntheir status. It\u2019s faster and cheaper than full\nincorporation while you get started.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national steps. For your state\u2019s exact incorporation and fundraising rules, use the\npersonalized AI search or ask in the Questions area, and we\u2019ll point you to the right offices.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
+ "Lesko_Help_FC_A1_Families_Children_Quick_Guide": {
+  "file": "Lesko_Help_FC_A1_Families_Children_Quick_Guide",
+  "category": "Family & Children",
+  "title": "Help for Families & Children",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Never pay a website to \u201capply for benefits\u201d \u2014 TANF,\nSNAP, Medicaid, and the rest are free to apply for\nthrough your official state agency. Be wary of sites\nthat mimic .gov pages and charge a fee.\n\nApply at your state benefits office (online or in\nperson) \u2014 one application often screens you for\ncash, food, and health coverage together, so you\ndon\u2019t have to chase each program separately.",
+  "resources": [
+   {
+    "name": "Raising a family on a tight budget is hard \u2014 and there\u2019s real help for",
+    "description": "Raising a family on a tight budget is hard \u2014 and there\u2019s real help for food, cash, health coverage, and more. Single parents qualify for many of these too. Below are the main national starting points. Tick the box once you\u2019ve checked each one. Many families who qualify never apply because they don\u2019t know these exist or assume they earn too much. Applying is free, and one application (like at your state benefits office) often covers several programs at once. 1 Cash & Food Help Core programs that put money and food within reach each month. TANF \u2014 Temporary Cash Assistance Monthly cash for families with children (and pregnant women) with little income. Apply through your state.",
+    "link": "www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf"
+   },
+   {
+    "name": "SNAP \u2014 Food Benefits",
+    "description": "Money for groceries each month. Many working families qualify. See the Food & Grocery guide.",
+    "link": "www.fns.usda.gov/snap/recipient/eligibility"
+   },
+   {
+    "name": "211 \u2014 Local Family Help",
+    "description": "Call or search for local cash, food, and emergency help fast.",
+    "link": "www.211.org or dial 211"
+   },
+   {
+    "name": "Health Coverage for Kids & Parents",
+    "description": "Free or low-cost coverage for your whole family. Medicaid & CHIP Free or low-cost health coverage for children and many parents. Apply any time of year.",
+    "link": "www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip/index.html"
+   },
+   {
+    "name": "Find a Community Health Center",
+    "description": "Care for the whole family on a sliding scale, regardless of insurance.",
+    "link": "findahealthcenter.hrsa.gov"
+   },
+   {
+    "name": "Help for Single & Working Parents",
+    "description": "Support that makes working and raising kids possible. Child Care Assistance Help paying for child care so you can work or study. See the Child Care guide.",
+    "link": "childcare.gov/consumer-education/get-help-paying-for-child-care"
+   },
+   {
+    "name": "Child Support Services",
+    "description": "Free state help establishing and collecting child support.",
+    "link": "www.acf.hhs.gov/css/parents"
+   },
+   {
+    "name": "Head Start",
+    "description": "Free early education and care for young children in eligible families.",
+    "link": "www.acf.hhs.gov/ohs/about/head-start"
+   },
+   {
+    "name": "Local Hands-On Help",
+    "description": "Agencies that bundle many services and help you apply. Community Action Agency Local help with utilities, Head Start, emergency aid, and applying for benefits.",
+    "link": "communityactionpartnership.com/find-a-cap"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 FA M I LY & C H I L D R E N\n\nHelp for Families & Children\nRaising a family on a tight budget is hard \u2014 and there\u2019s real help for food, cash, health coverage, and\nmore. Single parents qualify for many of these too. Below are the main national starting points. Tick\nthe box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nMany families who qualify never apply because they don\u2019t know these exist or assume they earn too\nmuch. Applying is free, and one application (like at your state benefits office) often covers several\nprograms at once.\n\n1 Cash & Food Help\n\nCore programs that put money and food within reach each month.\n\nTANF \u2014 Temporary Cash Assistance\nMonthly cash for families with children (and pregnant women) with little income. Apply through your state.\n\u2192 www.acf.hhs.gov/ofa/programs/temporary-assistance-needy-families-tanf\n\nSNAP \u2014 Food Benefits\nMoney for groceries each month. Many working families qualify. See the Food & Grocery guide.\n\u2192 www.fns.usda.gov/snap/recipient/eligibility\n\n211 \u2014 Local Family Help\nCall or search for local cash, food, and emergency help fast.\n\u2192 www.211.org or dial 211\n\n2 Health Coverage for Kids & Parents\n\nFree or low-cost coverage for your whole family.\n\nMedicaid & CHIP\nFree or low-cost health coverage for children and many parents. Apply any time of year.\n\u2192 www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip/index.html\n\nFind a Community Health Center\nCare for the whole family on a sliding scale, regardless of insurance.\n\u2192 findahealthcenter.hrsa.gov\n\n3 Help for Single & Working Parents\n\nSupport that makes working and raising kids possible.\n\nChild Care Assistance\nHelp paying for child care so you can work or study. See the Child Care guide.\n\u2192 childcare.gov/consumer-education/get-help-paying-for-child-care\n\nChild Support Services\nFree state help establishing and collecting child support.\n\u2192 www.acf.hhs.gov/css/parents\n\nHead Start\nFree early education and care for young children in eligible families.\n\u2192 www.acf.hhs.gov/ohs/about/head-start\n\n4 Local Hands-On Help\n\nAgencies that bundle many services and help you apply.\n\nCommunity Action Agency\nLocal help with utilities, Head Start, emergency aid, and applying for benefits.\n\u2192 communityactionpartnership.com/find-a-cap\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nNever pay a website to \u201capply for benefits\u201d \u2014 TANF,\nSNAP, Medicaid, and the rest are free to apply for\nthrough your official state agency. Be wary of sites\nthat mimic .gov pages and charge a fee.\n\nApply at your state benefits office (online or in\nperson) \u2014 one application often screens you for\ncash, food, and health coverage together, so you\ndon\u2019t have to chase each program separately.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For your state\u2019s benefits office and local family help, use the\npersonalized AI search or ask in the Questions area, and we\u2019ll help you find the closest options.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
  "Lesko_Help_CB_A18_AI_Tools_Grant_Research_Quick_Guide": {
   "file": "Lesko_Help_CB_A18_AI_Tools_Grant_Research_Quick_Guide",
   "category": "Start A Business",
@@ -437,6 +493,62 @@
    }
   ],
   "text": "Q U I C K G U I D E \u00b7 H E A LT H C A R E A S S I S TA N C E\n\nMedical Debt Relief\nAlready have medical debt \u2014 maybe in collections? You have rights and real options to reduce or\nerase it. Below are trusted national starting points. Tick the box once you\u2019ve contacted each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nMedical debt is treated differently from other debt, and you have strong protections. Don\u2019t rush to pay a\ncollector before checking whether the bill qualifies for charity care or whether it\u2019s even valid.\n\n1 Try to Erase the Debt First\n\nEven debt in collections may still qualify for hospital charity care, which can wipe it out.\n\nDollar For \u2014 Charity Care\nFree help applying for hospital financial assistance \u2014 it can forgive bills you already owe.\n\u2192 dollarfor.org\n\nUndue Medical Debt\nA nonprofit that buys and erases medical debt \u2014 you can\u2019t apply directly, but learn how it works and who\nit helps.\n\u2192 unduemedicaldebt.org\n\n2 Know Your Rights\n\nFederal protections limit what collectors can do and keep most medical debt off your credit report.\n\nCFPB \u2014 Medical Debt Rights\nLearn your rights, including new rules keeping most medical bills off credit reports. File a complaint if a\ncollector breaks the rules.\n\u2192 www.consumerfinance.gov/consumer-tools/medical-debt\n\nDispute Errors & Validate the Debt\nYou can demand a collector prove a medical debt is yours and correct. Many medical debts have errors.\n\u2192 www.consumerfinance.gov/ask-cfpb/what-is-a-debt-validation-letter-en-2113\n\n3 Get Free Advice\n\nFree, trustworthy counseling and legal help for dealing with medical debt.\n\nNonprofit Credit Counseling (NFCC)\nFree or low-cost counseling to build a plan for medical and other debt.\n\u2192 www.nfcc.org\n\nFree Legal Aid\nIf a collector is suing you or garnishing wages, free legal aid may help.\n\u2192 www.lawhelp.org\n\n4 Negotiate What You Owe\n\nMedical debt is often negotiable, especially if you can offer a one-time payment.\n\nNegotiate a Lower Amount\nCollectors often accept far less than the full balance. Offer a lump sum and get any agreement in writing\nbefore paying.\n\u2192 Get any settlement in writing first\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nDon\u2019t pay a medical collector before checking your\nrights \u2014 many medical debts are wrong, already off\nyour credit report, or eligible for charity care. Never\ngive a collector bank access; pay only with a written\nagreement.\n\nAlways get debt settlements in writing before you\npay a cent. And apply for the hospital\u2019s charity care\neven on old debt \u2014 getting the original bill forgiven is\nbetter than negotiating with a collector.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help with your debt?\n\nThis guide covers national starting points. For help with a specific collector, lawsuit, or your state\u2019s\nprotections, use the personalized AI search or ask in the Questions area, and we\u2019ll point you to the right help.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
+ "Lesko_Help_FC_C2_Disability_Support_Services_Quick_Guide": {
+  "file": "Lesko_Help_FC_C2_Disability_Support_Services_Quick_Guide",
+  "category": "Seniors & Disabilities",
+  "title": "Disability Support & Services",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Be cautious of anyone charging fees for \u201cdisability\nservices\u201d that are free through Centers for\nIndependent Living, Vocational Rehabilitation, and\nyour state programs. Assistive-tech programs often\nlend devices free to try.\n\nContact your local Center for Independent Living\nfirst \u2014 they\u2019re free, run by people who understand\ndisability firsthand, and can connect you to nearly\neverything else in this guide.",
+  "resources": [
+   {
+    "name": "Beyond income, there\u2019s real help for daily living, independence, work,",
+    "description": "Beyond income, there\u2019s real help for daily living, independence, work, and rights \u2014 for people with disabilities and their families. Below are the main national starting points. Tick the box once you\u2019ve checked each one. Free organizations help you live independently, get assistive technology, find work, and protect your rights. Start with a Center for Independent Living \u2014 they\u2019re run by and for people with disabilities. Independent Living & Daily Support Local, peer-run help to live independently. Centers for Independent Living Free local help with daily living, housing, benefits, and advocacy, run by people with disabilities.",
+    "link": "www.ilru.org/projects/cil-net/cil-center-and-association-directory"
+   },
+   {
+    "name": "Eldercare/ADRC \u2014 Aging & Disability Resource Centers",
+    "description": "One-stop local help for long-term services and support.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   },
+   {
+    "name": "Care & In-Home Help",
+    "description": "Programs that provide and pay for personal support. Medicaid Home & Community-Based Services In-home care and support so you can live in your community, not an institution.",
+    "link": "www.medicaid.gov/medicaid/long-term-services-supports/home-community-based-services/"
+   },
+   {
+    "name": "index.html",
+    "description": "Get Paid to Care for Family Medicaid self-directed care may pay a family caregiver. See the Caregivers guide.",
+    "link": "www.medicaid.gov/medicaid/long-term-services-supports/self-directed-services"
+   },
+   {
+    "name": "Work, Tech & Training",
+    "description": "Support to work and live more independently. Vocational Rehabilitation Free state help to train for, find, and keep a job, including equipment and accommodations.",
+    "link": "rsa.ed.gov/about/states"
+   },
+   {
+    "name": "Assistive Technology Programs",
+    "description": "Each state has a program to help you get devices like wheelchairs and communication tools.",
+    "link": "www.at3center.net/state-at-programs"
+   },
+   {
+    "name": "Job Accommodation Network (JAN)",
+    "description": "Free expert advice on workplace accommodations and disability employment.",
+    "link": "askjan.org"
+   },
+   {
+    "name": "Know & Protect Your Rights",
+    "description": "Free help enforcing your rights. ADA Information Line Free answers about your rights under the Americans with Disabilities Act.",
+    "link": "www.ada.gov 1-800-514-0301"
+   },
+   {
+    "name": "Protection & Advocacy (P&A)",
+    "description": "Each state has a free legal agency protecting the rights of people with disabilities.",
+    "link": "www.ndrn.org/about/ndrn-member-agencies"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 S E N I O R S & D I S A B I L I T I E S\n\nDisability Support & Services\nBeyond income, there\u2019s real help for daily living, independence, work, and rights \u2014 for people with\ndisabilities and their families. Below are the main national starting points. Tick the box once you\u2019ve\nchecked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nFree organizations help you live independently, get assistive technology, find work, and protect your\nrights. Start with a Center for Independent Living \u2014 they\u2019re run by and for people with disabilities.\n\n1\n\nIndependent Living & Daily Support\n\nLocal, peer-run help to live independently.\n\nCenters for Independent Living\nFree local help with daily living, housing, benefits, and advocacy, run by people with disabilities.\n\u2192 www.ilru.org/projects/cil-net/cil-center-and-association-directory\n\nEldercare/ADRC \u2014 Aging & Disability Resource Centers\nOne-stop local help for long-term services and support.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\n2 Care & In-Home Help\n\nPrograms that provide and pay for personal support.\n\nMedicaid Home & Community-Based Services\nIn-home care and support so you can live in your community, not an institution.\n\u2192 www.medicaid.gov/medicaid/long-term-services-supports/home-community-based-services/\nindex.html\n\nGet Paid to Care for Family\nMedicaid self-directed care may pay a family caregiver. See the Caregivers guide.\n\u2192 www.medicaid.gov/medicaid/long-term-services-supports/self-directed-services\n\n3 Work, Tech & Training\n\nSupport to work and live more independently.\n\nVocational Rehabilitation\nFree state help to train for, find, and keep a job, including equipment and accommodations.\n\u2192 rsa.ed.gov/about/states\n\nAssistive Technology Programs\nEach state has a program to help you get devices like wheelchairs and communication tools.\n\u2192 www.at3center.net/state-at-programs\n\nJob Accommodation Network (JAN)\nFree expert advice on workplace accommodations and disability employment.\n\u2192 askjan.org\n\n4 Know & Protect Your Rights\n\nFree help enforcing your rights.\n\nADA Information Line\nFree answers about your rights under the Americans with Disabilities Act.\n\u2192 www.ada.gov 1-800-514-0301\n\nProtection & Advocacy (P&A)\nEach state has a free legal agency protecting the rights of people with disabilities.\n\u2192 www.ndrn.org/about/ndrn-member-agencies\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nBe cautious of anyone charging fees for \u201cdisability\nservices\u201d that are free through Centers for\nIndependent Living, Vocational Rehabilitation, and\nyour state programs. Assistive-tech programs often\nlend devices free to try.\n\nContact your local Center for Independent Living\nfirst \u2014 they\u2019re free, run by people who understand\ndisability firsthand, and can connect you to nearly\neverything else in this guide.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For your local Center for Independent Living and disability services, use\nthe personalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
  "Lesko_Help_09_Foreclosure_Help_Homes_For_1_Quick_Guide": {
   "file": "Lesko_Help_09_Foreclosure_Help_Homes_For_1_Quick_Guide",
@@ -999,6 +1111,103 @@
   ],
   "text": "Q U I C K G U I D E \u00b7 H E A LT H C A R E A S S I S TA N C E\n\nHelp for Caregivers\nCaring for a loved one is a huge job \u2014 and you deserve support too. There\u2019s free help, a break\n(respite), and even ways to get paid for caregiving. Below are trusted national starting points. Tick the\nbox once you\u2019ve contacted each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nYou can\u2019t pour from an empty cup. The resources below help you find support, take breaks, and in some\ncases get paid for the care you provide. Start with the Eldercare Locator \u2014 it opens many doors.\n\n1 Start Here \u2014 Find Local Support\n\nOne call connects you to local caregiver services, respite, and guidance.\n\nEldercare Locator\nConnects you to local Area Agencies on Aging, caregiver support, and respite services.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\nCaregiver Action Network\nFree education, a help desk, and peer support for family caregivers.\n\u2192 www.caregiveraction.org 1-855-227-3640\n\n2 Get Paid for Caregiving\n\nIn many cases, family caregivers can receive payment through Medicaid or the VA.\n\nMedicaid Self-Directed Care\nMany states let people on Medicaid hire and pay a family member as their caregiver. Ask your state\nMedicaid office.\n\u2192 www.medicaid.gov/medicaid/long-term-services-supports/self-directed-services\n\nVA Caregiver Support\nThe VA offers stipends, training, and support for those caring for eligible veterans.\n\u2192 www.caregiver.va.gov 1-855-260-3274\n\nPaid Family Leave (Your State)\nA growing number of states offer paid leave to care for a seriously ill family member. Check your state\u2019s\nprogram.\n\u2192 www.dol.gov/agencies/whd/fmla\n\n3 Take a Break (Respite Care)\n\nRespite gives you time to rest while your loved one is cared for safely.\n\nARCH Respite Locator\nFind respite-care services that give caregivers a much-needed break.\n\u2192 archrespite.org/caregiver-resources/respitelocator\n\n4 Support for You\n\nCaregiving is emotionally hard \u2014 these offer connection and guidance.\n\nFamily Caregiver Alliance\nEducation, support, and state-by-state resource navigation.\n\u2192 www.caregiver.org\n\nCondition-Specific Caregiver Help\nGroups like the Alzheimer\u2019s Association (1-800-272-3900) offer free 24/7 caregiver support.\n\u2192 www.alz.org/help-support\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nDon\u2019t fall for \u201ccaregiver grant\u201d offers that charge a\nfee \u2014 real programs are free. And don\u2019t wait until\nyou\u2019re burned out to ask for respite; taking breaks\nhelps both you and the person you care for.\n\nAsk your state Medicaid office specifically about\n\u201cself-directed\u201d or \u201cconsumer-directed\u201d care \u2014 it\u2019s\nhow many family members get paid to provide care\nthey\u2019re already giving.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed local caregiver help?\n\nThis guide covers national starting points. For respite, paid-caregiver programs, and support groups near\nyou, use the personalized AI search or ask in the Questions area, and we\u2019ll help you find the closest options.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
+ "Lesko_Help_FC_A2_Child_Care_Assistance_Quick_Guide": {
+  "file": "Lesko_Help_FC_A2_Child_Care_Assistance_Quick_Guide",
+  "category": "Family & Children",
+  "title": "Child Care Assistance",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Be cautious of unlicensed care and of anyone\ncharging a fee to \u201capply\u201d for child care assistance \u2014\nthe programs above are free to apply for through\nofficial state agencies.\n\nCall your local Child Care Resource & Referral agency\nfirst \u2014 they know every assistance program and\nopen slot in your area, and the help is free.",
+  "resources": [
+   {
+    "name": "Quality child care is expensive \u2014 but help exists so you can afford it",
+    "description": "Quality child care is expensive \u2014 but help exists so you can afford it and keep working or studying. Below are the main national starting points. Tick the box once you\u2019ve checked each one. Even families who think they earn too much often qualify for at least partial help, especially with more than one child. Free local experts (Child Care Resource & Referral) help you find care and assistance you qualify for. 1 Help Paying for Care Government programs lower or cover your child care costs. Child Care Financial Assistance (CCDF) Your state can help pay for child care if you work or attend school. Find your state\u2019s program.",
+    "link": "childcare.gov/consumer-education/get-help-paying-for-child-care"
+   },
+   {
+    "name": "Head Start & Early Head Start",
+    "description": "Free, high-quality early education and care for eligible families with kids under 5.",
+    "link": "www.acf.hhs.gov/ohs/about/head-start"
+   },
+   {
+    "name": "Find & Compare Care",
+    "description": "Tools to find safe, licensed child care. Childcare.gov \u2014 Find Care Find and compare licensed providers and learn what quality care looks like.",
+    "link": "childcare.gov/state-resources"
+   },
+   {
+    "name": "Child Care Resource & Referral (CCR&R)",
+    "description": "Free local experts who help you find care and the assistance you qualify for.",
+    "link": "childcare.gov/state-resources"
+   },
+   {
+    "name": "Money Back at Tax Time",
+    "description": "Tax credits return some of what you spend on care. Child & Dependent Care Tax Credit A credit for child care costs that lets you work. See the Tax Credits guide.",
+    "link": "www.irs.gov/credits-deductions/individuals/child-and-dependent-care-credit-information"
+   },
+   {
+    "name": "More Affordable Options",
+    "description": "Other ways to lower the cost of care. Military Child Care Fee assistance and programs for military families.",
+    "link": "www.childcareaware.org/fee-assistancerespite"
+   },
+   {
+    "name": "Pre-K & School Programs",
+    "description": "Many states offer free or low-cost pre-K. Ask your school district or CCR&R.",
+    "link": "Ask your school district about pre-K"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 FA M I LY & C H I L D R E N\n\nChild Care Assistance\nQuality child care is expensive \u2014 but help exists so you can afford it and keep working or studying.\nBelow are the main national starting points. Tick the box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nEven families who think they earn too much often qualify for at least partial help, especially with more\nthan one child. Free local experts (Child Care Resource & Referral) help you find care and assistance you\nqualify for.\n\n1 Help Paying for Care\n\nGovernment programs lower or cover your child care costs.\n\nChild Care Financial Assistance (CCDF)\nYour state can help pay for child care if you work or attend school. Find your state\u2019s program.\n\u2192 childcare.gov/consumer-education/get-help-paying-for-child-care\n\nHead Start & Early Head Start\nFree, high-quality early education and care for eligible families with kids under 5.\n\u2192 www.acf.hhs.gov/ohs/about/head-start\n\n2 Find & Compare Care\n\nTools to find safe, licensed child care.\n\nChildcare.gov \u2014 Find Care\nFind and compare licensed providers and learn what quality care looks like.\n\u2192 childcare.gov/state-resources\n\nChild Care Resource & Referral (CCR&R)\nFree local experts who help you find care and the assistance you qualify for.\n\u2192 childcare.gov/state-resources\n\n3 Money Back at Tax Time\n\nTax credits return some of what you spend on care.\n\nChild & Dependent Care Tax Credit\nA credit for child care costs that lets you work. See the Tax Credits guide.\n\u2192 www.irs.gov/credits-deductions/individuals/child-and-dependent-care-credit-information\n\n4 More Affordable Options\n\nOther ways to lower the cost of care.\n\nMilitary Child Care\nFee assistance and programs for military families.\n\u2192 www.childcareaware.org/fee-assistancerespite\n\nPre-K & School Programs\nMany states offer free or low-cost pre-K. Ask your school district or CCR&R.\n\u2192 Ask your school district about pre-K\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nBe cautious of unlicensed care and of anyone\ncharging a fee to \u201capply\u201d for child care assistance \u2014\nthe programs above are free to apply for through\nofficial state agencies.\n\nCall your local Child Care Resource & Referral agency\nfirst \u2014 they know every assistance program and\nopen slot in your area, and the help is free.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For your state\u2019s child care assistance and local providers, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
+ "Lesko_Help_FC_B2_Senior_Benefits_Eldercare_Quick_Guide": {
+  "file": "Lesko_Help_FC_B2_Senior_Benefits_Eldercare_Quick_Guide",
+  "category": "Seniors & Disabilities",
+  "title": "Senior Benefits & Eldercare",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Avoid \u201csenior benefit\u201d or \u201cVA pension\u201d consultants\nwho charge fees \u2014 applying for these is free, and\npaying for help can even disqualify you. Use the free\nEldercare Locator and SHIP counselors instead.\n\nAsk specifically about Medicaid \u201cHome and\nCommunity-Based Services (HCBS) waivers\u201d \u2014 they\ncan pay for in-home care so a senior can stay home\ninstead of entering a nursing facility.",
+  "resources": [
+   {
+    "name": "From in-home care to help paying for it, older adults and their famili",
+    "description": "From in-home care to help paying for it, older adults and their families have real options. Below are the main national starting points for benefits and care. Tick the box once you\u2019ve checked each one. You don\u2019t have to navigate aging alone. Free counselors help you find benefits and care, and programs exist to pay for in-home help so seniors can stay at home longer. Applying is free. Find Benefits You\u2019re Owed Free tools to uncover money and help you qualify for. BenefitsCheckUp Free screening for 2,000+ benefit programs for older adults.",
+    "link": "www.benefitscheckup.org"
+   },
+   {
+    "name": "Eldercare Locator",
+    "description": "Free connection to your local Area Agency on Aging and services.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   },
+   {
+    "name": "Help Paying for Care",
+    "description": "Programs that cover in-home and long-term care. Medicaid & Home-Based Care Waivers Medicaid can cover nursing homes and in-home care; HCBS waivers help seniors stay at home.",
+    "link": "www.medicaid.gov/medicaid/long-term-services-supports/home-community-based-services/"
+   },
+   {
+    "name": "index.html",
+    "description": "PACE \u2014 All-Inclusive Care for the Elderly A program combining medical and in-home support to help you stay in your community.",
+    "link": "www.medicare.gov/health-drug-plans/health-plans/your-coverage-options/PACE"
+   },
+   {
+    "name": "VA Aid & Attendance",
+    "description": "Extra pension for veterans (and surviving spouses) who need help with daily activities. VA help is free \u2014 never pay a consultant.",
+    "link": "www.va.gov/pension/aid-attendance-housebound 1-877-222-8387"
+   },
+   {
+    "name": "Stay at Home Safely",
+    "description": "Support and services for daily living. In-Home Support & Meals Home-delivered meals, personal care, and homemaker services through your Area Agency on Aging.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   },
+   {
+    "name": "Get Paid as a Family Caregiver",
+    "description": "Medicaid self-directed care may pay a family member to provide care. See the Caregivers guide.",
+    "link": "www.medicaid.gov/medicaid/long-term-services-supports/self-directed-services"
+   },
+   {
+    "name": "Plan Ahead",
+    "description": "Free help with decisions and paperwork. Long-Term Care Planning Free, unbiased guidance on care options and how to pay. Ask your Area Agency on Aging or SHIP.",
+    "link": "acl.gov/ltc"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 S E N I O R S & D I S A B I L I T I E S\n\nSenior Benefits & Eldercare\nFrom in-home care to help paying for it, older adults and their families have real options. Below are\nthe main national starting points for benefits and care. Tick the box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nYou don\u2019t have to navigate aging alone. Free counselors help you find benefits and care, and programs\nexist to pay for in-home help so seniors can stay at home longer. Applying is free.\n\n1\n\nFind Benefits You\u2019re Owed\n\nFree tools to uncover money and help you qualify for.\n\nBenefitsCheckUp\nFree screening for 2,000+ benefit programs for older adults.\n\u2192 www.benefitscheckup.org\n\nEldercare Locator\nFree connection to your local Area Agency on Aging and services.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\n2 Help Paying for Care\n\nPrograms that cover in-home and long-term care.\n\nMedicaid & Home-Based Care Waivers\nMedicaid can cover nursing homes and in-home care; HCBS waivers help seniors stay at home.\n\u2192 www.medicaid.gov/medicaid/long-term-services-supports/home-community-based-services/\nindex.html\n\nPACE \u2014 All-Inclusive Care for the Elderly\nA program combining medical and in-home support to help you stay in your community.\n\u2192 www.medicare.gov/health-drug-plans/health-plans/your-coverage-options/PACE\n\nVA Aid & Attendance\nExtra pension for veterans (and surviving spouses) who need help with daily activities. VA help is free \u2014\nnever pay a consultant.\n\u2192 www.va.gov/pension/aid-attendance-housebound 1-877-222-8387\n\n3 Stay at Home Safely\n\nSupport and services for daily living.\n\nIn-Home Support & Meals\nHome-delivered meals, personal care, and homemaker services through your Area Agency on Aging.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\nGet Paid as a Family Caregiver\nMedicaid self-directed care may pay a family member to provide care. See the Caregivers guide.\n\u2192 www.medicaid.gov/medicaid/long-term-services-supports/self-directed-services\n\n4 Plan Ahead\n\nFree help with decisions and paperwork.\n\nLong-Term Care Planning\nFree, unbiased guidance on care options and how to pay. Ask your Area Agency on Aging or SHIP.\n\u2192 acl.gov/ltc\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nAvoid \u201csenior benefit\u201d or \u201cVA pension\u201d consultants\nwho charge fees \u2014 applying for these is free, and\npaying for help can even disqualify you. Use the free\nEldercare Locator and SHIP counselors instead.\n\nAsk specifically about Medicaid \u201cHome and\nCommunity-Based Services (HCBS) waivers\u201d \u2014 they\ncan pay for in-home care so a senior can stay home\ninstead of entering a nursing facility.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For your local Area Agency on Aging and care options, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
  "Lesko_Help_CB_A14_Industry_Specific_Quick_Guide": {
   "file": "Lesko_Help_CB_A14_Industry_Specific_Quick_Guide",
   "category": "Start A Business",
@@ -1044,6 +1253,52 @@
    }
   ],
   "text": "Q U I C K G U I D E \u00b7 S TA R T A B U S I N E S S\n\nIndustry-Specific Resources\nAlmost every industry has its own grants, associations, and support programs. Below is how to find\nthe ones for your field. Tick the box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nYour industry likely has a trade association and targeted funding most people never find. The tools\nbelow help you uncover them \u2014 all free to search.\n\n1\n\nFind Industry Grants\n\nSearch by your specific field for targeted funding.\n\nGrants.gov \u2014 Search by Category\nFilter federal grants by industry and category.\n\u2192 www.grants.gov/search-grants\n\nSBA \u2014 Industry-Specific Guidance\nSBA help tailored to fields like manufacturing, agriculture, and tech.\n\u2192 www.sba.gov/business-guide/grow-your-business\n\n2 Join Your Trade Association\n\nIndustry groups offer grants, training, discounts, and connections.\n\nFind Your Trade Association\nNearly every industry has a national association with member resources and sometimes grants. Search\nyour industry + \u201cassociation.\u201d\n\u2192 Search your industry + 'national association'\n\n3 Sector-Specific Federal Programs\n\nDifferent agencies fund different industries.\n\nUSDA \u2014 Food, Farm & Rural\nFunding for agriculture, food, and rural businesses.\n\u2192 www.rd.usda.gov/programs-services/all-programs\n\nDOE & EPA \u2014 Energy/Green\nGrants for energy, clean tech, and environmental businesses.\n\u2192 www.energy.gov/eere/funding/funding-opportunities\n\nNEA \u2014 Arts & Creative\nFunding for arts and creative enterprises.\n\u2192 www.arts.gov/grants\n\n4 Get Tailored Help\n\nAdvisors who know your specific industry.\n\nSCORE / SBDC Industry Mentors\nFree mentors, often with experience in your exact field.\n\u2192 www.score.org\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nWatch for \u201cindustry grant\u201d lists that charge a\nsubscription \u2014 Grants.gov and trade associations\ngive you the real information free. Verify any program\non its official site.\n\nJoining your industry\u2019s trade association is often\nworth it \u2014 members get early word on grants, plus\ndiscounts and training that quickly pay back the\ndues.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers how to find industry resources. For grants and associations specific to your field and area,\nuse the personalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
+ "Lesko_Help_FC_A3_Pregnancy_New_Baby_Quick_Guide": {
+  "file": "Lesko_Help_FC_A3_Pregnancy_New_Baby_Quick_Guide",
+  "category": "Family & Children",
+  "title": "Pregnancy & New Baby Help",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Be cautious of \u201cfree baby stuff\u201d sites that ask for\npayment or lots of personal data \u2014 real help comes\nthrough WIC, diaper banks, and 211. Also be wary of\ncrisis-pregnancy centers that aren\u2019t medical\nproviders if you need actual prenatal care.\n\nApply for Medicaid and WIC as soon as you know\nyou\u2019re pregnant \u2014 early prenatal care matters, and\nthese programs also connect you to other support\nfor you and your baby.",
+  "resources": [
+   {
+    "name": "Expecting or just had a baby? There\u2019s free help with health care, heal",
+    "description": "Expecting or just had a baby? There\u2019s free help with health care, healthy food, baby supplies, and support \u2014 for moms and babies. Below are the main national starting points. Tick the box once you\u2019ve checked each one. Pregnancy makes you eligible for programs you may not have qualified for before \u2014 including Medicaid and WIC. Sign up early to get prenatal care and support from the start. Applying is free. 1 Health Coverage for Mom & Baby Free or low-cost coverage through pregnancy and after. Medicaid for Pregnancy Free coverage for prenatal care, delivery, and (in most states) a full year after birth.",
+    "link": "www.medicaid.gov/medicaid/eligibility/index.html"
+   },
+   {
+    "name": "CHIP \u2014 Coverage for Kids",
+    "description": "Low-cost coverage for your baby and children, and in many states for pregnant women.",
+    "link": "www.insurekidsnow.gov"
+   },
+   {
+    "name": "Healthy Food for Your Family",
+    "description": "Free nutritious food and feeding support. WIC \u2014 Women, Infants & Children Free healthy food, formula, breastfeeding support, and nutrition help through your child\u2019s 5th birthday.",
+    "link": "www.fns.usda.gov/wic"
+   },
+   {
+    "name": "Support & Home Visits",
+    "description": "Free guidance and a helping hand for new parents. Free Home-Visiting Programs Trained nurses or educators visit to support healthy pregnancy and a new baby, free in many areas.",
+    "link": "mchb.hrsa.gov/programs-impact/programs/home-visiting"
+   },
+   {
+    "name": "Text4baby & Maternal Health Line",
+    "description": "Free health texts during pregnancy; call the maternal mental health line for support.",
+    "link": "mchb.hrsa.gov/national-maternal-mental-health-hotline Maternal Mental Health:"
+   },
+   {
+    "name": "1-833-852-6262",
+    "description": "4 Baby Supplies & Essentials Help with diapers, clothes, and gear. Diaper Banks Free diapers through the National Diaper Bank Network. Find one near you.",
+    "link": "nationaldiaperbanknetwork.org/get-help"
+   },
+   {
+    "name": "211 \u2014 Local Baby Help",
+    "description": "Call or search for baby supplies, cribs, car seats, and new-parent programs nearby.",
+    "link": "www.211.org or dial 211"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 FA M I LY & C H I L D R E N\n\nPregnancy & New Baby Help\nExpecting or just had a baby? There\u2019s free help with health care, healthy food, baby supplies, and\nsupport \u2014 for moms and babies. Below are the main national starting points. Tick the box once you\u2019ve\nchecked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nPregnancy makes you eligible for programs you may not have qualified for before \u2014 including Medicaid\nand WIC. Sign up early to get prenatal care and support from the start. Applying is free.\n\n1 Health Coverage for Mom & Baby\n\nFree or low-cost coverage through pregnancy and after.\n\nMedicaid for Pregnancy\nFree coverage for prenatal care, delivery, and (in most states) a full year after birth.\n\u2192 www.medicaid.gov/medicaid/eligibility/index.html\n\nCHIP \u2014 Coverage for Kids\nLow-cost coverage for your baby and children, and in many states for pregnant women.\n\u2192 www.insurekidsnow.gov\n\n2 Healthy Food for Your Family\n\nFree nutritious food and feeding support.\n\nWIC \u2014 Women, Infants & Children\nFree healthy food, formula, breastfeeding support, and nutrition help through your child\u2019s 5th birthday.\n\u2192 www.fns.usda.gov/wic\n\n3 Support & Home Visits\n\nFree guidance and a helping hand for new parents.\n\nFree Home-Visiting Programs\nTrained nurses or educators visit to support healthy pregnancy and a new baby, free in many areas.\n\u2192 mchb.hrsa.gov/programs-impact/programs/home-visiting\n\nText4baby & Maternal Health Line\nFree health texts during pregnancy; call the maternal mental health line for support.\n\u2192 mchb.hrsa.gov/national-maternal-mental-health-hotline Maternal Mental Health:\n1-833-852-6262\n\n4 Baby Supplies & Essentials\n\nHelp with diapers, clothes, and gear.\n\nDiaper Banks\nFree diapers through the National Diaper Bank Network. Find one near you.\n\u2192 nationaldiaperbanknetwork.org/get-help\n\n211 \u2014 Local Baby Help\nCall or search for baby supplies, cribs, car seats, and new-parent programs nearby.\n\u2192 www.211.org or dial 211\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nBe cautious of \u201cfree baby stuff\u201d sites that ask for\npayment or lots of personal data \u2014 real help comes\nthrough WIC, diaper banks, and 211. Also be wary of\ncrisis-pregnancy centers that aren\u2019t medical\nproviders if you need actual prenatal care.\n\nApply for Medicaid and WIC as soon as you know\nyou\u2019re pregnant \u2014 early prenatal care matters, and\nthese programs also connect you to other support\nfor you and your baby.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For local prenatal care, WIC clinics, and baby help near you, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
  "Lesko_Help_HC12_Medical_Bill_Assistance_Quick_Guide": {
   "file": "Lesko_Help_HC12_Medical_Bill_Assistance_Quick_Guide",
@@ -2050,6 +2305,52 @@
   ],
   "text": "Q U I C K G U I D E \u00b7 F I N D L E G A L H E L P\n\nKnow Your Consumer Rights\nBeing treated unfairly by a company, debt collector, or scammer? You have powerful federal rights \u2014\nand free ways to fight back. Below are the official resources. Tick the box once you\u2019ve checked each\none.\n\n\u26a0 B E F O R E YO U S TA R T\n\nFederal agencies exist to protect you, and complaining to them is free and often effective. Companies\nfrequently fix problems fast once a regulator is involved. Never pay anyone who promises to \u201crecover\u201d\nscam money for a fee.\n\n1 Money & Debt Protections\n\nYour rights with banks, lenders, and debt collectors.\n\nCFPB \u2014 File a Complaint\nThe Consumer Financial Protection Bureau helps with banks, loans, credit, and debt collectors. Companies\nusually must respond.\n\u2192 www.consumerfinance.gov/complaint\n\nDebt Collector Rules (FDCPA)\nCollectors can\u2019t harass you, call at all hours, or lie. Know your rights and report violations.\n\u2192 www.consumerfinance.gov/consumer-tools/debt-collection\n\n2 Scams & Unfair Business\n\nReport fraud and unfair practices to the nation\u2019s consumer watchdog.\n\nFTC \u2014 Report Fraud\nReport scams, identity theft, and unfair business practices, and get a recovery plan.\n\u2192 reportfraud.ftc.gov\n\nIdentityTheft.gov\nIf your identity was stolen, get a free step-by-step recovery plan.\n\u2192 www.identitytheft.gov\n\n3 Your Credit Rights\n\nCheck and fix your credit for free.\n\nFree Credit Reports\nGet your credit reports free every week from all three bureaus.\n\u2192 www.annualcreditreport.com\n\nDispute Credit Errors\nYou have the right to dispute and fix errors on your credit report for free.\n\u2192 www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314\n\n4 More Help\n\nOther trusted places to resolve consumer problems.\n\nState Attorney General & Consumer Protection\nYour state AG handles many consumer complaints. Search your state + \u201cattorney general consumer\ncomplaint.\u201d\n\u2192 Search your state + 'attorney general consumer protection'\n\nUSA.gov \u2014 Consumer Help\nThe government\u2019s hub for consumer complaints and your rights.\n\u2192 www.usa.gov/consumer-complaints\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nIf someone contacts you promising to recover\nmoney you lost to a scam \u2014 for a fee \u2014 that\u2019s a\nsecond scam. Real government help (FTC, CFPB) is\nalways free. Never pay to file a complaint.\n\nPut complaints in writing and keep records of every\ncall and letter. A complaint to the CFPB or FTC\ncreates a paper trail that often gets results when\ncalling the company didn\u2019t.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers federal protections. For your state\u2019s consumer agencies and local help, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
+ "Lesko_Help_FC_A4_Domestic_Violence_Safety_Quick_Guide": {
+  "file": "Lesko_Help_FC_A4_Domestic_Violence_Safety_Quick_Guide",
+  "category": "Family & Children",
+  "title": "Domestic Violence & Safety Help",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "If you think someone may be monitoring your\ndevices, use a safer phone or computer (like a\nlibrary\u2019s) to reach out, and consider clearing your\nbrowsing history. The hotline can guide you on\nstaying safe online.\n\nYou don\u2019t have to have decided anything to call \u2014\nadvocates can simply listen, help you think through a\nsafety plan, and tell you what options exist,\ncompletely confidentially and free.",
+  "resources": [
+   {
+    "name": "If you or your children don\u2019t feel safe at home, help is free, confide",
+    "description": "If you or your children don\u2019t feel safe at home, help is free, confidential, and available 24/7. You deserve support and you are not alone. Below are trusted national resources. If you are in immediate danger, call 911. The hotlines below are free, confidential, and open 24/7 \u2014 they can help you make a safety plan, find shelter, and understand your options, with no pressure. 1 Talk to Someone Now (24/7) Free, confidential support any hour of the day. National Domestic Violence Hotline Call, text, or chat 24/7 for support, safety planning, and local referrals.",
+    "link": "www.thehotline.org Call 1-800-799-7233 / Text START to 88788"
+   },
+   {
+    "name": "StrongHearts Native Helpline",
+    "description": "Confidential support for Native Americans affected by domestic and dating violence.",
+    "link": "strongheartshelpline.org 1-844-762-8483"
+   },
+   {
+    "name": "For Specific Situations",
+    "description": "Specialized confidential help. National Sexual Assault Hotline (RAINN) Free, confidential 24/7 support for survivors of sexual assault.",
+    "link": "www.rainn.org 1-800-656-4673"
+   },
+   {
+    "name": "Childhelp \u2014 Child Abuse Hotline",
+    "description": "24/7 help if a child is being abused or you fear for a child\u2019s safety.",
+    "link": "www.childhelphotline.org 1-800-422-4453"
+   },
+   {
+    "name": "Find Shelter & Local Help",
+    "description": "Safe places and local advocates near you. Find a Local Shelter & Advocate The hotline can connect you to emergency shelter and a local advocate. You can also search confidentially.",
+    "link": "www.domesticshelters.org"
+   },
+   {
+    "name": "211 \u2014 Local Safety Help",
+    "description": "Call or search for shelters, counseling, and emergency help nearby.",
+    "link": "www.211.org or dial 211"
+   },
+   {
+    "name": "Legal Protection",
+    "description": "Free legal help to keep you and your children safe. Free Legal Help \u2014 Protective Orders Legal aid can help with protective orders, custody, and divorce \u2014 regardless of immigration status.",
+    "link": "www.womenslaw.org"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 FA M I LY & C H I L D R E N\n\nDomestic Violence & Safety Help\nIf you or your children don\u2019t feel safe at home, help is free, confidential, and available 24/7. You\ndeserve support and you are not alone. Below are trusted national resources.\n\n\u26a0 B E F O R E YO U S TA R T\n\nIf you are in immediate danger, call 911. The hotlines below are free, confidential, and open 24/7 \u2014 they\ncan help you make a safety plan, find shelter, and understand your options, with no pressure.\n\n1 Talk to Someone Now (24/7)\n\nFree, confidential support any hour of the day.\n\nNational Domestic Violence Hotline\nCall, text, or chat 24/7 for support, safety planning, and local referrals.\n\u2192 www.thehotline.org Call 1-800-799-7233 / Text START to 88788\n\nStrongHearts Native Helpline\nConfidential support for Native Americans affected by domestic and dating violence.\n\u2192 strongheartshelpline.org 1-844-762-8483\n\n2 For Specific Situations\n\nSpecialized confidential help.\n\nNational Sexual Assault Hotline (RAINN)\nFree, confidential 24/7 support for survivors of sexual assault.\n\u2192 www.rainn.org 1-800-656-4673\n\nChildhelp \u2014 Child Abuse Hotline\n24/7 help if a child is being abused or you fear for a child\u2019s safety.\n\u2192 www.childhelphotline.org 1-800-422-4453\n\n3 Find Shelter & Local Help\n\nSafe places and local advocates near you.\n\nFind a Local Shelter & Advocate\nThe hotline can connect you to emergency shelter and a local advocate. You can also search\nconfidentially.\n\u2192 www.domesticshelters.org\n\n211 \u2014 Local Safety Help\nCall or search for shelters, counseling, and emergency help nearby.\n\u2192 www.211.org or dial 211\n\n4 Legal Protection\n\nFree legal help to keep you and your children safe.\n\nFree Legal Help \u2014 Protective Orders\nLegal aid can help with protective orders, custody, and divorce \u2014 regardless of immigration status.\n\u2192 www.womenslaw.org\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nIf you think someone may be monitoring your\ndevices, use a safer phone or computer (like a\nlibrary\u2019s) to reach out, and consider clearing your\nbrowsing history. The hotline can guide you on\nstaying safe online.\n\nYou don\u2019t have to have decided anything to call \u2014\nadvocates can simply listen, help you think through a\nsafety plan, and tell you what options exist,\ncompletely confidentially and free.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national hotlines. For shelters, counseling, and legal help specific to your area, use the\npersonalized AI search or ask in the Questions area \u2014 and reach out from a safe device.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
  "Lesko_Help_CB_C06_Resume_Interview_Job_Search_Quick_Guide": {
   "file": "Lesko_Help_CB_C06_Resume_Interview_Job_Search_Quick_Guide",
   "category": "Boost Your Career",
@@ -2596,6 +2897,52 @@
   ],
   "text": "Q U I C K G U I D E \u00b7 S TA R T A B U S I N E S S\n\nGeneral Business Grants & Funding\nFree money for your business is rare but real \u2014 and there are many low-cost loans and funding paths\ntoo. Below are the main national starting points. Tick the box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nTrue \u201cfree grant\u201d money is competitive and limited \u2014 and the SBA itself does NOT give grants to start a\ntypical business. Be very skeptical of anyone guaranteeing you a government grant for a fee; that\u2019s the\n#1 small-business scam.\n\n1 Search Real Federal Grants\n\nThe official hub for all federal grant programs \u2014 mostly for research, nonprofits, and specific sectors.\n\nGrants.gov\nThe official database of 1,000+ federal grant programs. Search and apply for free.\n\u2192 www.grants.gov\n\nSBA \u2014 Funding Programs\nSBA\u2019s honest overview of grants, loans, and investment \u2014 and who actually qualifies.\n\u2192 www.sba.gov/funding-programs\n\n2 Research & Innovation Grants\n\nThe biggest federal grants go to businesses developing new technology.\n\nSBIR / STTR\nFederal R&D grants for innovative small businesses. Note: authorization was pending renewal in early 2026\n\u2014 check the site for current status.\n\u2192 www.sbir.gov\n\n3 Low-Cost Loans Instead of Grants\n\nIf grants don\u2019t fit, these affordable loans often do.\n\nSBA Microloans (up to $50,000)\nSmall loans through nonprofit lenders, designed for startups and underserved owners.\n\u2192 www.sba.gov/funding-programs/loans/microloans\n\nSBA Loan Finder (Lender Match)\nGet matched with SBA-approved lenders for larger loans.\n\u2192 www.sba.gov/funding-programs/loans/lender-match\n\nCDFIs \u2014 Community Lenders\nMission-driven lenders with flexible terms for underserved entrepreneurs.\n\u2192 www.cdfifund.gov/programs-training/certification/cdfi\n\n4 Private & Corporate Grants\n\nCompanies and foundations run grant programs too \u2014 smaller but real.\n\nCorporate Small Business Grants\nPrograms from companies and foundations (amounts and deadlines vary). See the Foundations &\nCorporate Grants guide for specifics.\n\u2192 See: Foundations & Corporate Grants guide\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nIf anyone \u201cguarantees\u201d a government grant, asks for\na fee to apply, or says you\u2019ve been \u201cpre-approved\u201d\nfor free government money \u2014 it\u2019s a scam. Real\nfederal grants are applied for free at Grants.gov.\n\nDon\u2019t overlook SBA microloans and CDFIs \u2014 for most\nnew businesses, an affordable loan is far more\nrealistic than a grant, and the application help is free.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national starting points. For grants and lenders specific to your state, industry, or situation,\nuse the personalized AI search or ask in the Questions area, and we\u2019ll help you find them.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
+ "Lesko_Help_FC_C1_Disability_Benefits_Income_Quick_Guide": {
+  "file": "Lesko_Help_FC_C1_Disability_Benefits_Income_Quick_Guide",
+  "category": "Seniors & Disabilities",
+  "title": "Disability Benefits & Income",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Never pay a large upfront fee to \u201cget approved\u201d for\ndisability \u2014 reputable disability attorneys are only\npaid a capped amount if you win. Be wary of anyone\nguaranteeing approval.\n\nApply as soon as your condition prevents work, and\nkeep detailed medical records \u2014 they\u2019re the heart of\na strong claim. If denied, appeal; many people are\napproved only after appealing with help.",
+  "resources": [
+   {
+    "name": "Living with a disability that limits work? Federal programs provide mo",
+    "description": "Living with a disability that limits work? Federal programs provide monthly income and health coverage \u2014 and you can save without losing benefits. Below are the main national starting points. Tick the box once you\u2019ve checked each one. The two main programs are SSDI (based on work history) and SSI (based on low income). Applying is free \u2014 never pay upfront to file. If you\u2019re denied at first (many are), you can appeal, and free help exists. 1 Monthly Income Benefits The two main federal disability income programs. SSDI \u2014 Social Security Disability Insurance Monthly benefits if you worked and paid Social Security but can no longer work due to disability.",
+    "link": "www.ssa.gov/benefits/disability 1-800-772-1213"
+   },
+   {
+    "name": "SSI \u2014 Supplemental Security Income",
+    "description": "Monthly payments for people with disabilities (and seniors) who have little income or resources.",
+    "link": "www.ssa.gov/ssi"
+   },
+   {
+    "name": "Health Coverage",
+    "description": "Disability benefits open the door to health coverage. Medicaid & Medicare SSI usually brings Medicaid; SSDI brings Medicare after a waiting period. Check your eligibility.",
+    "link": "www.medicaid.gov/medicaid/eligibility/index.html"
+   },
+   {
+    "name": "Apply & Appeal",
+    "description": "How to file \u2014 and what todoif you\u2019re denied. Apply for Disability Apply online, by phone, or in person. Gather medical records to support your claim.",
+    "link": "www.ssa.gov/applyfordisability"
+   },
+   {
+    "name": "Free Help & Appeals",
+    "description": "Many are denied first time. Free legal aid and disability advocates can help you appeal; most lawyers only get paid if you win.",
+    "link": "www.lawhelp.org"
+   },
+   {
+    "name": "Save Without Losing Benefits",
+    "description": "Special accounts let you build savings safely. ABLE Accounts Tax-advantaged savings that don\u2019t count against SSI/Medicaid limits, for people disabled before age 46.",
+    "link": "www.ablenrc.org"
+   },
+   {
+    "name": "Work Incentives (Ticket to Work)",
+    "description": "Try working without immediately losing benefits, through free SSA work programs.",
+    "link": "choosework.ssa.gov 1-866-968-7842"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 S E N I O R S & D I S A B I L I T I E S\n\nDisability Benefits & Income\nLiving with a disability that limits work? Federal programs provide monthly income and health\ncoverage \u2014 and you can save without losing benefits. Below are the main national starting points. Tick\nthe box once you\u2019ve checked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nThe two main programs are SSDI (based on work history) and SSI (based on low income). Applying is\nfree \u2014 never pay upfront to file. If you\u2019re denied at first (many are), you can appeal, and free help exists.\n\n1 Monthly Income Benefits\n\nThe two main federal disability income programs.\n\nSSDI \u2014 Social Security Disability Insurance\nMonthly benefits if you worked and paid Social Security but can no longer work due to disability.\n\u2192 www.ssa.gov/benefits/disability 1-800-772-1213\n\nSSI \u2014 Supplemental Security Income\nMonthly payments for people with disabilities (and seniors) who have little income or resources.\n\u2192 www.ssa.gov/ssi\n\n2 Health Coverage\n\nDisability benefits open the door to health coverage.\n\nMedicaid & Medicare\nSSI usually brings Medicaid; SSDI brings Medicare after a waiting period. Check your eligibility.\n\u2192 www.medicaid.gov/medicaid/eligibility/index.html\n\n3 Apply & Appeal\n\nHow to file \u2014 and what to do if you\u2019re denied.\n\nApply for Disability\nApply online, by phone, or in person. Gather medical records to support your claim.\n\u2192 www.ssa.gov/applyfordisability\n\nFree Help & Appeals\nMany are denied first time. Free legal aid and disability advocates can help you appeal; most lawyers only\nget paid if you win.\n\u2192 www.lawhelp.org\n\n4 Save Without Losing Benefits\n\nSpecial accounts let you build savings safely.\n\nABLE Accounts\nTax-advantaged savings that don\u2019t count against SSI/Medicaid limits, for people disabled before age 46.\n\u2192 www.ablenrc.org\n\nWork Incentives (Ticket to Work)\nTry working without immediately losing benefits, through free SSA work programs.\n\u2192 choosework.ssa.gov 1-866-968-7842\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nNever pay a large upfront fee to \u201cget approved\u201d for\ndisability \u2014 reputable disability attorneys are only\npaid a capped amount if you win. Be wary of anyone\nguaranteeing approval.\n\nApply as soon as your condition prevents work, and\nkeep detailed medical records \u2014 they\u2019re the heart of\na strong claim. If denied, appeal; many people are\napproved only after appealing with help.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For local disability advocates and help applying or appealing, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
  "Lesko_Help_TL_B3_Specific_Legal_Needs_Quick_Guide": {
   "file": "Lesko_Help_TL_B3_Specific_Legal_Needs_Quick_Guide",
   "category": "Find Legal Help",
@@ -2804,6 +3151,57 @@
    }
   ],
   "text": "Q U I C K G U I D E \u00b7 H E A LT H C A R E A S S I S TA N C E\n\nVision & Hearing Care\nNeed glasses, an eye exam, or hearing aids but can\u2019t afford them? Nonprofits and programs provide\nfree or low-cost vision and hearing care. Below are trusted national starting points. Tick the box once\nyou\u2019ve contacted each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nHearing aids and eye care are expensive, but real help exists \u2014 including free eyeglasses and low-cost\nhearing aids. Note: many basic hearing aids can now be bought over the counter without an exam.\n\n1\n\nFree & Low-Cost Eye Care\n\nPrograms that provide free eye exams and glasses for people who qualify.\n\nEyeCare America\nFree eye exams for eligible seniors and those at risk of eye disease, through volunteer ophthalmologists.\n\u2192 www.aao.org/eyecare-america\n\nVSP \u2014 Eyes of Hope\nFree eye exam and glasses gift certificates for people in need.\n\u2192 eyesofhope.vsp.com\n\nNew Eyes\nHelps people get free new eyeglasses through a voucher program.\n\u2192 new-eyes.org\n\n2 Low-Cost Glasses\n\nAffordable ways to get glasses if you have a prescription.\n\nLow-Cost Online Eyeglasses\nSites like Zenni and EyeBuyDirect sell glasses from around $10\u2013$20 with your prescription.\n\u2192 www.zennioptical.com\n\nLions Club \u2014 Eyeglass Help\nLocal Lions Clubs collect and provide eyeglasses to people in need. Ask 211 or your local club.\n\u2192 Ask 211 or your local Lions Club\n\n3 Hearing Care & Aids\n\nFree and low-cost help for hearing tests and hearing aids.\n\nOver-the-Counter Hearing Aids\nBasic hearing aids are now sold over the counter for mild-to-moderate loss \u2014 far cheaper than\nprescription ones. Available at pharmacies and online.\n\u2192 www.fda.gov/medical-devices/hearing-aids/otc-hearing-aids-what-you-should-know\n\nHearing Charities of America\nHelps provide hearing aids to people who can\u2019t afford them.\n\u2192 www.hearingcharities.org\n\nLions Club \u2014 Hearing Aid Help\nMany local Lions Clubs help with hearing aids. Ask 211 or your local club.\n\u2192 Ask 211 or your local Lions Club\n\n4 For Seniors, Veterans & Kids\n\nTargeted help through public programs.\n\nMedicaid & Medicare Vision/Hearing\nMedicaid often covers eye and hearing care; Medicare covers some. Check your benefits.\n\u2192 www.medicare.gov/coverage/eye-exams\n\nVA Vision & Hearing \u2014 Veterans\nEligible veterans can receive eye and hearing care, including hearing aids, through the VA.\n\u2192 www.va.gov/health-care/about-va-health-benefits\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nBe cautious of high-pressure sales for expensive\nhearing aids \u2014 for many people, the new over-the-\ncounter options work well at a fraction of the price.\nAlways get a written eyeglass prescription so you\ncan shop around.\n\nAsk your eye doctor for a copy of your prescription\n\u2014 they\u2019re required to give it to you \u2014 then buy\nglasses cheaply online. For hearing, try over-the-\ncounter aids before spending thousands.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed local vision or hearing help?\n\nThis guide covers national programs. For local clinics, Lions Clubs, and vision/hearing help near you, use the\npersonalized AI search or ask in the Questions area, and we\u2019ll help you find the closest options.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
+ "Lesko_Help_FC_B3_Free_Low_Cost_Seniors_Quick_Guide": {
+  "file": "Lesko_Help_FC_B3_Free_Low_Cost_Seniors_Quick_Guide",
+  "category": "Seniors & Disabilities",
+  "title": "Free & Low-Cost Help for Seniors",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "You usually have to ask for senior discounts \u2014\nthey\u2019re rarely automatic. And avoid \u201csenior discount\u201d\nsites that charge a membership; legitimate\ndiscounts are free just for being your age.\n\nAlways ask \u201cIs there a senior discount?\u201d \u2014 transit,\npharmacies, stores, and entertainment often have\nthem. Combined with benefit programs, the savings\nadd up fast on a fixed income.",
+  "resources": [
+   {
+    "name": "Stretching a fixed income? Seniors qualify for discounts and free prog",
+    "description": "Stretching a fixed income? Seniors qualify for discounts and free programs on phones, transport, fitness, taxes, and more. Below are the main national starting points. Tick the box once you\u2019ve checked each one. Lots of everyday savings go unclaimed simply because people don\u2019t ask. The programs below are free or low-cost \u2014 and many you qualify for just by being 60 or 65+. 1 Phone, Internet & Utilities Lower your monthly bills. Lifeline \u2014 Phone/Internet Discount Monthly discount on phone or internet. See the Phone & Internet guide.",
+    "link": "www.lifelinesupport.org"
+   },
+   {
+    "name": "LIHEAP \u2014 Energy Help",
+    "description": "Help paying heating and cooling bills.",
+    "link": "www.acf.hhs.gov/ocs/programs/liheap 1-866-674-6327"
+   },
+   {
+    "name": "Food & Health Savings",
+    "description": "Free food programs and ways to cut health costs. Senior Food & Farmers Market Coupons Free groceries and produce coupons for older adults. See the Healthy Food guide.",
+    "link": "www.fns.usda.gov/sfmnp"
+   },
+   {
+    "name": "Prescription Savings",
+    "description": "Cut drug costs with Extra Help and discount tools. See the Prescription guide.",
+    "link": "www.ssa.gov/medicare/part-d-extra-help"
+   },
+   {
+    "name": "Get Around & Stay Active",
+    "description": "Affordable transport and free fitness. Senior Transportation Free or low-cost rides to appointments and errands via the Eldercare Locator.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   },
+   {
+    "name": "Free Senior Fitness (SilverSneakers)",
+    "description": "Many Medicare plans include free gym membership. Ask your plan.",
+    "link": "www.silversneakers.com"
+   },
+   {
+    "name": "Free Taxes, Discounts & Fun",
+    "description": "More everyday savings. Free Tax Help (AARP Tax-Aide / TCE) Free tax prep focused on seniors. See the Free Tax Filing guide.",
+    "link": "www.aarp.org/money/taxes/aarp_taxaide"
+   },
+   {
+    "name": "Senior & Park Discounts",
+    "description": "Many businesses, transit, and the lifetime National Parks Senior Pass offer big senior discounts.",
+    "link": "www.nps.gov/planyourvisit/passes.htm"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 S E N I O R S & D I S A B I L I T I E S\n\nFree & Low-Cost Help for Seniors\nStretching a fixed income? Seniors qualify for discounts and free programs on phones, transport,\nfitness, taxes, and more. Below are the main national starting points. Tick the box once you\u2019ve checked\neach one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nLots of everyday savings go unclaimed simply because people don\u2019t ask. The programs below are free or\nlow-cost \u2014 and many you qualify for just by being 60 or 65+.\n\n1 Phone, Internet & Utilities\n\nLower your monthly bills.\n\nLifeline \u2014 Phone/Internet Discount\nMonthly discount on phone or internet. See the Phone & Internet guide.\n\u2192 www.lifelinesupport.org\n\nLIHEAP \u2014 Energy Help\nHelp paying heating and cooling bills.\n\u2192 www.acf.hhs.gov/ocs/programs/liheap 1-866-674-6327\n\n2 Food & Health Savings\n\nFree food programs and ways to cut health costs.\n\nSenior Food & Farmers Market Coupons\nFree groceries and produce coupons for older adults. See the Healthy Food guide.\n\u2192 www.fns.usda.gov/sfmnp\n\nPrescription Savings\nCut drug costs with Extra Help and discount tools. See the Prescription guide.\n\u2192 www.ssa.gov/medicare/part-d-extra-help\n\n3 Get Around & Stay Active\n\nAffordable transport and free fitness.\n\nSenior Transportation\nFree or low-cost rides to appointments and errands via the Eldercare Locator.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\nFree Senior Fitness (SilverSneakers)\nMany Medicare plans include free gym membership. Ask your plan.\n\u2192 www.silversneakers.com\n\n4 Free Taxes, Discounts & Fun\n\nMore everyday savings.\n\nFree Tax Help (AARP Tax-Aide / TCE)\nFree tax prep focused on seniors. See the Free Tax Filing guide.\n\u2192 www.aarp.org/money/taxes/aarp_taxaide\n\nSenior & Park Discounts\nMany businesses, transit, and the lifetime National Parks Senior Pass offer big senior discounts.\n\u2192 www.nps.gov/planyourvisit/passes.htm\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nYou usually have to ask for senior discounts \u2014\nthey\u2019re rarely automatic. And avoid \u201csenior discount\u201d\nsites that charge a membership; legitimate\ndiscounts are free just for being your age.\n\nAlways ask \u201cIs there a senior discount?\u201d \u2014 transit,\npharmacies, stores, and entertainment often have\nthem. Combined with benefit programs, the savings\nadd up fast on a fixed income.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For local senior discounts, transport, and programs, use the\npersonalized AI search or ask in the Questions area.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  },
  "Lesko_Help_CB_A11_Government_Contracting_Quick_Guide": {
   "file": "Lesko_Help_CB_A11_Government_Contracting_Quick_Guide",
@@ -3192,5 +3590,61 @@
    }
   ],
   "text": "Q U I C K G U I D E \u00b7 B O O S T Y O U R C A R E E R\n\nFinancial Aid Basics \u2014 Federal & State\nGoing back to school or training? Federal and state financial aid can cover much of the cost \u2014 and a\nlot of it is free money you never repay. Below are the official starting points. Tick the box once you\u2019ve\ndone each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nThe single most important step is filing the FAFSA \u2014 it\u2019s free and unlocks grants, work-study, and loans.\nNever pay a service to file it for you; the official site is free.\n\n1 Start With the FAFSA\n\nOne free form unlocks most financial aid, including free grants.\n\nFile the FAFSA \u2014 Free\nThe key to federal and state aid. \u201cFAFSA\u201d literally means FREE Application \u2014 never pay to file it.\n\u2192 studentaid.gov/h/apply-for-aid/fafsa\n\nStudentAid.gov \u2014 Aid Overview\nUnderstand grants, work-study, and loans before you borrow.\n\u2192 studentaid.gov/understand-aid/types\n\n2 Free Money: Grants\n\nGrants don\u2019t have to be repaid \u2014 always max these out first.\n\nFederal Pell Grant\nUp to about $7,395/year for students with financial need. A new \u201cWorkforce Pell\u201d (starting July 2026) also\ncovers shorter job-training programs.\n\u2192 studentaid.gov/understand-aid/types/grants/pell\n\nState Grant Programs\nYour state likely has its own grants. Filing the FAFSA often applies for these automatically.\n\u2192 studentaid.gov/resources/state-contacts\n\n3 Work-Study & Smart Borrowing\n\nEarn while you learn, and borrow wisely if you must.\n\nFederal Work-Study\nPart-time jobs to help pay for school, arranged through your college.\n\u2192 studentaid.gov/understand-aid/types/work-study\n\nFederal Loans (Borrow Last)\nIf you must borrow, federal loans have better terms than private ones. See the Student Loan Help guide.\n\u2192 See: Student Loan Help guide\n\n4 Get Free Help Applying\n\nFree, trustworthy help with the FAFSA and aid.\n\nFederal Student Aid Help\nFree help by phone or chat with your FAFSA and aid questions.\n\u2192 studentaid.gov/help-center/contact 1-800-433-3243\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nNever pay to file the FAFSA \u2014 the real site is\nstudentaid.gov and it\u2019s free. Avoid \u201cscholarship\u201d or\n\u201caid\u201d services that charge fees or guarantee money;\nlegitimate aid never works that way.\n\nFile the FAFSA as early as you can each year \u2014 some\naid is first-come, first-served, and filing early can\nmean more free grant money.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers federal aid. For your state\u2019s grants and deadlines, use the personalized AI search or ask in\nthe Questions area, and we\u2019ll help you find them.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
+ },
+ "Lesko_Help_FC_B1_18_Things_Seniors_Quick_Guide": {
+  "file": "Lesko_Help_FC_B1_18_Things_Seniors_Quick_Guide",
+  "category": "Seniors & Disabilities",
+  "title": "18 Things Every Senior Should Know",
+  "before_you_start": null,
+  "watch_out": null,
+  "tip": "Seniors are the #1 target for scams. Medicare, Social\nSecurity, and the IRS will never call to demand\npayment or your number \u2014 hang up and call the\nofficial line yourself. Never pay to \u201cclaim\u201d free\nbenefits.\n\nStart with one call to the Eldercare Locator or a\nBenefitsCheckUp online \u2014 either can reveal\nthousands of dollars in benefits you may be missing,\nthen point you to free local help to apply.",
+  "resources": [
+   {
+    "name": "Things Every Senior Should Know",
+    "description": "There\u2019s a huge amount of help for older adults \u2014 money, health, food, home, and more \u2014 that many seniors never claim. Below are the key starting points, all free to explore. Tick the box once you\u2019ve checked each one. One free call to the Eldercare Locator (1-800-677-1110) can connect you to most of what\u2019s below in your area. Programs are free to apply for \u2014 never pay a \u201cbenefits consultant\u201d for what you can get directly. 1 Start With One Free Call The single best entry point to senior help nationwide. Eldercare Locator Free connection to local services: meals, transport, caregiver help, and more.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   },
+   {
+    "name": "BenefitsCheckUp",
+    "description": "Free tool that finds benefits you may qualify for, from medicine to food to utilities.",
+    "link": "www.benefitscheckup.org"
+   },
+   {
+    "name": "Money & Health Coverage",
+    "description": "Income support and help with health costs. Social Security & SSI Retirement, disability, and SSI for those with low income. Check what you\u2019re owed.",
+    "link": "www.ssa.gov 1-800-772-1213"
+   },
+   {
+    "name": "Medicare & Free SHIP Counseling",
+    "description": "Free, unbiased Medicare help to cut costs. See the Medicare guide.",
+    "link": "www.shiphelp.org SHIP: 1-877-839-2675"
+   },
+   {
+    "name": "Medicare Savings & Extra Help",
+    "description": "Programs that pay premiums and drug costs for limited incomes.",
+    "link": "www.medicare.gov/basics/costs/help/medicare-savings-programs"
+   },
+   {
+    "name": "Food, Home & Utilities",
+    "description": "Everyday essentials made affordable. Senior Meals & SNAP Home-delivered/community meals and food benefits (easier rules for those 60+).",
+    "link": "www.nutrition.gov/topics/food-assistance-programs/meals-seniors"
+   },
+   {
+    "name": "LIHEAP & Weatherization",
+    "description": "Help with energy bills and free home energy upgrades. See the Utility guide.",
+    "link": "www.acf.hhs.gov/ocs/programs/liheap 1-866-674-6327"
+   },
+   {
+    "name": "Protect Yourself",
+    "description": "Stay safe from fraud and know where to turn. Report Elder Fraud Free help if you\u2019re targeted by a scam (seniors are common targets).",
+    "link": "ovc.ojp.gov/program/stop-elder-fraud DOJ Elder Fraud: 1-833-372-8311"
+   },
+   {
+    "name": "Free Legal Help for Seniors",
+    "description": "Legal aid for benefits, housing, and elder-law issues via the Eldercare Locator.",
+    "link": "eldercare.acl.gov 1-800-677-1110"
+   }
+  ],
+  "text": "Q U I C K G U I D E \u00b7 S E N I O R S & D I S A B I L I T I E S\n\n18 Things Every Senior Should Know\nThere\u2019s a huge amount of help for older adults \u2014 money, health, food, home, and more \u2014 that many\nseniors never claim. Below are the key starting points, all free to explore. Tick the box once you\u2019ve\nchecked each one.\n\n\u26a0 B E F O R E YO U S TA R T\n\nOne free call to the Eldercare Locator (1-800-677-1110) can connect you to most of what\u2019s below in your\narea. Programs are free to apply for \u2014 never pay a \u201cbenefits consultant\u201d for what you can get directly.\n\n1 Start With One Free Call\n\nThe single best entry point to senior help nationwide.\n\nEldercare Locator\nFree connection to local services: meals, transport, caregiver help, and more.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\nBenefitsCheckUp\nFree tool that finds benefits you may qualify for, from medicine to food to utilities.\n\u2192 www.benefitscheckup.org\n\n2 Money & Health Coverage\n\nIncome support and help with health costs.\n\nSocial Security & SSI\nRetirement, disability, and SSI for those with low income. Check what you\u2019re owed.\n\u2192 www.ssa.gov 1-800-772-1213\n\nMedicare & Free SHIP Counseling\nFree, unbiased Medicare help to cut costs. See the Medicare guide.\n\u2192 www.shiphelp.org SHIP: 1-877-839-2675\n\nMedicare Savings & Extra Help\nPrograms that pay premiums and drug costs for limited incomes.\n\u2192 www.medicare.gov/basics/costs/help/medicare-savings-programs\n\n3 Food, Home & Utilities\n\nEveryday essentials made affordable.\n\nSenior Meals & SNAP\nHome-delivered/community meals and food benefits (easier rules for those 60+).\n\u2192 www.nutrition.gov/topics/food-assistance-programs/meals-seniors\n\nLIHEAP & Weatherization\nHelp with energy bills and free home energy upgrades. See the Utility guide.\n\u2192 www.acf.hhs.gov/ocs/programs/liheap 1-866-674-6327\n\n4 Protect Yourself\n\nStay safe from fraud and know where to turn.\n\nReport Elder Fraud\nFree help if you\u2019re targeted by a scam (seniors are common targets).\n\u2192 ovc.ojp.gov/program/stop-elder-fraud DOJ Elder Fraud: 1-833-372-8311\n\nFree Legal Help for Seniors\nLegal aid for benefits, housing, and elder-law issues via the Eldercare Locator.\n\u2192 eldercare.acl.gov 1-800-677-1110\n\n\u26a0 WATC H O U T F O R\n\n\u2605 A T I P T H AT H E L P S\n\nSeniors are the #1 target for scams. Medicare, Social\nSecurity, and the IRS will never call to demand\npayment or your number \u2014 hang up and call the\nofficial line yourself. Never pay to \u201cclaim\u201d free\nbenefits.\n\nStart with one call to the Eldercare Locator or a\nBenefitsCheckUp online \u2014 either can reveal\nthousands of dollars in benefits you may be missing,\nthen point you to free local help to apply.\n\nN E E D H E L P W H E R E YO U L I V E ?\n\nNeed help where you live?\n\nThis guide covers national programs. For your local Area Agency on Aging and senior services, use the\npersonalized AI search or ask in the Questions area, and we\u2019ll connect you.\n\nM Y N OT E S \u2014 W H O I C A L L E D, W H E N , A N D W H AT T H E Y S A I D"
  }
 }
