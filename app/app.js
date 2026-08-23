@@ -1,16 +1,10 @@
 (function () {
   var D = window.LESKO, aud = "member";
   var thread = document.getElementById("thread");
-  var chipBox = document.getElementById("chips");
+  var catBox = document.getElementById("cats");
   var form = document.getElementById("form");
   var input = document.getElementById("q");
 
-  var SUGGEST = {
-    member: ["How do I cancel my subscription?", "Where do I start?",
-             "What classes are on this week?", "Where are the quick guides?"],
-    public: ["How do I cancel my subscription?", "I can't log in",
-             "How do I get a refund?", "Which site do I log into?"]
-  };
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -94,37 +88,89 @@
   /* One question -> exactly ONE answer. Nothing is ever appended "just in case".
      Explicit intents are checked first and win outright. */
 
+  /* An intent = one subject + one SITUATION. "Create my call sheet",
+     "where is my call sheet" and "problem with my call sheet" are three
+     different intents, because they need three different answers. */
+  var SITU = {
+    make:    /\b(create|creating|make|making|build|building|start|starting|set ?up|new)\b/i,
+    locate:  /\b(where|find|finding|locate|get to|access|see|receive|received|sent|copy)\b/i,
+    trouble: /\b(problem|problems|issue|issues|wrong|not work|doesn'?t work|won'?t|can'?t|cannot|stuck|help with|trouble|error|missing|lost|didn'?t get|never got)\b/i
+  };
+
+  function L(n, u) { return { n: n, u: u }; }
+  var SPACE = {
+    callSheetClasses: "https://lesko-help-2.mn.co/spaces/24440881",
+    aiResearcher:     "https://lesko-help-2.mn.co/spaces/24461105",
+    questions:        "https://lesko-help-2.mn.co/spaces/11054387",
+    personalAnswers:  "https://lesko-help-2.mn.co/spaces/22542848",
+    groupCoaching:    "https://lesko-help-2.mn.co/spaces/7159013/events",
+    applicationClass: "https://lesko-help-2.mn.co/spaces/24366189/events",
+    roadmap:          "https://lesko-help-2.mn.co/spaces/24365840",
+    welcomeTour:      "https://lesko-help-2.mn.co/spaces/24366161/events",
+    askMatthew:       "https://lesko-help-2.mn.co/spaces/21948411/events",
+    replays:          "https://lesko-help-2.mn.co/spaces/24487516"
+  };
+
   var INTENTS = [
-    { id: "call_sheet",
-      test: /call ?sheet|callsheet/i,
+    /* ---- call sheet: three situations ---- */
+    { id: "call_sheet_locate",
+      test: function (q) { return /call ?sheet|callsheet/i.test(q) && SITU.locate.test(q) && !SITU.make.test(q); },
       render: function () {
-        return "<h3>There are three ways to create your call sheet</h3>" +
-          "<p>We recommend doing all three.</p><ol>" +
-          '<li><b>Go to a Call Sheet Class</b> — and read the instruction sheet in that space first. ' +
-          '<a href="https://lesko-help-2.mn.co/spaces/24440881" target="_blank" rel="noopener">Call Sheet Classes</a></li>' +
-          '<li><b>Use the AI Researcher.</b> ' +
-          '<a href="https://lesko-help-2.mn.co/spaces/24461105" target="_blank" rel="noopener">AI Grant Researcher</a></li>' +
-          '<li><b>Ask a question in the Questions Channel.</b> ' +
-          '<a href="https://lesko-help-2.mn.co/spaces/11054387" target="_blank" rel="noopener">Questions Channel</a></li>' +
+        return "<h3>Your call sheet is in Personalized Class Answers</h3>" +
+          "<p>When the team builds a call sheet for you, they post it there under your name. Check your notification bell too — you get a notice when it's posted.</p>" +
+          linkRow([L("Personalized Class Answers", SPACE.personalAnswers)]);
+      } },
+    { id: "call_sheet_trouble",
+      test: function (q) { return /call ?sheet|callsheet/i.test(q) && SITU.trouble.test(q); },
+      render: function () {
+        return "<h3>Let's get your call sheet sorted</h3><p>Three ways to get help with it:</p><ol>" +
+          '<li><b>Ask a question in the Questions Channel</b> — the team replies under your post. <a href="' + SPACE.questions + '" target="_blank" rel="noopener">Questions Channel</a></li>' +
+          '<li><b>Join a Q&A session</b> — ask a coach live. <a href="' + SPACE.groupCoaching + '" target="_blank" rel="noopener">See Q&A times</a></li>' +
+          '<li><b>Join a Call Sheet Class</b> — go through it together. <a href="' + SPACE.callSheetClasses + '" target="_blank" rel="noopener">Call Sheet Classes</a></li>' +
+          "</ol>";
+      } },
+    { id: "call_sheet_make",
+      test: function (q) { return /call ?sheet|callsheet/i.test(q); },
+      render: function () {
+        return "<h3>There are three ways to create your call sheet</h3><p>We recommend doing all three.</p><ol>" +
+          '<li><b>Go to a Call Sheet Class</b> — and read the instruction sheet in that space first. <a href="' + SPACE.callSheetClasses + '" target="_blank" rel="noopener">Call Sheet Classes</a></li>' +
+          '<li><b>Use the AI Researcher.</b> <a href="' + SPACE.aiResearcher + '" target="_blank" rel="noopener">AI Grant Researcher</a></li>' +
+          '<li><b>Ask a question in the Questions Channel.</b> <a href="' + SPACE.questions + '" target="_blank" rel="noopener">Questions Channel</a></li>' +
           "</ol><p>Keep to one call sheet.</p>";
       } },
-    { id: "roadmap",
-      test: /roadmap|where do i start|where to start|just joined|i'?m new|new here|get started|getting started|first step|what do i do (next|now|first)|next step/i,
+
+    /* ---- applying ---- */
+    { id: "apply",
+      test: function (q) { return /appl(y|ying|ication)/i.test(q) && !/call ?sheet/i.test(q); },
       render: function () {
-        return "<h3>Start with the roadmap</h3>" +
-          "<p><b>First, three setup steps:</b></p><ol>" +
+        return "<h3>Once your call sheet is ready, go to an Application Class</h3>" +
+          "<p>Read the instructions in that space first, then join a class. After that you can keep going with Group Coaching or a Meetup with Matthew.</p>" +
+          linkRow([L("Application Classes", SPACE.applicationClass), L("Group Coaching", SPACE.groupCoaching), L("Ask Matthew Live", SPACE.askMatthew)]);
+      } },
+
+    /* ---- roadmap / getting started ---- */
+    { id: "roadmap",
+      test: function (q) { return /roadmap|where do i start|where to start|just joined|i'?m new|new here|get started|getting started|first step|what do i do (next|now|first)|next step/i.test(q); },
+      render: function () {
+        return "<h3>Start with the roadmap</h3><p><b>First, three setup steps:</b></p><ol>" +
           D.onboarding.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ol>" +
           "<p><b>Then the roadmap:</b></p><ol>" +
           D.roadmap.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ol>" +
           "<p>Finish every step to earn your first badge.</p>" +
-          linkRow([{ n: "Explore the Roadmap", u: "https://lesko-help-2.mn.co/spaces/24365840" }]);
+          linkRow([L("Explore the Roadmap", SPACE.roadmap), L("Join today's Welcome Tour", SPACE.welcomeTour)]);
+      } },
+
+    /* ---- schedule / replays ---- */
+    { id: "replays",
+      test: function (q) { return /replay|recording|missed|catch up|watch again/i.test(q); },
+      render: function () {
+        return "<h3>Replays are in Class Replays</h3><p>Every class is recorded and posted there.</p>" +
+          linkRow([L("Class Replays", SPACE.replays)]);
       } },
     { id: "schedule",
-      test: /what.*(class|event|call|live).*(week|today|on|schedule)|when is|what time|schedule|classes this week|events this week|upcoming/i,
+      test: function (q) { return /what.*(class|event|call|live).*(week|today|on|schedule)|when is|what time|schedule|classes this week|events this week|upcoming|whats on/i.test(q); },
       render: function () {
-        return "<h3>Live this week</h3>" +
-          "<p>Open the event, then click the pink <b>Zoom Meeting</b> link — or <b>Join Zoom from Browser</b> if you don't have Zoom.</p>" +
-          eventBlock();
+        return "<h3>Live this week</h3><p>Open the event, then click the pink <b>Zoom Meeting</b> link — or <b>Join Zoom from Browser</b> if you don't have Zoom.</p>" + eventBlock();
       } }
   ];
 
@@ -139,7 +185,9 @@
 
   function answer(q) {
     for (var i = 0; i < INTENTS.length; i++) {
-      if (INTENTS[i].test.test(q)) return bubble("bot", INTENTS[i].render());
+      var t = INTENTS[i].test;
+      var hit = (typeof t === "function") ? t(q) : t.test(q);
+      if (hit) return bubble("bot", INTENTS[i].render());
     }
     /* Account/how-to topics and subject guides compete on score; the stronger wins. */
     var best = D.topics.map(function (t) { return { t: t, s: scoreTopic(t, q) }; })
@@ -158,12 +206,73 @@
   }
 
   /* ---------- wiring ---------- */
-  function renderChips() {
-    chipBox.innerHTML = SUGGEST[aud].map(function (s) {
-      return '<button class="chip" type="button">' + esc(s) + "</button>";
+/* Four categories, account questions last. Sub-items are the questions the
+     research showed members actually ask. */
+  var CATS = {
+    member: [
+      { name: "Getting started", colour: "var(--green)", qs: [
+        "Where do I start?",
+        "What are the roadmap steps?",
+        "When is the Welcome Tour?",
+        "How do I find my way around the site?" ] },
+      { name: "Your call sheet & applying", colour: "var(--blue)", qs: [
+        "How do I create my call sheet?",
+        "Where do I find my call sheet?",
+        "I have a problem with my call sheet",
+        "How do I apply for a grant?" ] },
+      { name: "Classes & live help", colour: "var(--yellow-warm)", qs: [
+        "What classes are on this week?",
+        "Where do I find the replays?",
+        "How do I join the Zoom?",
+        "Can I talk to a real person?" ] },
+      { name: "Find help by topic", colour: "var(--red)", qs: [
+        "Help with rent",
+        "Help with car repair",
+        "Help with medical bills",
+        "How do I start a business?" ] },
+      { name: "Your account", colour: "var(--ink-mid)", qs: [
+        "How do I cancel my subscription?",
+        "How do I get a refund?",
+        "I can't log in",
+        "How do I stop the emails?" ] }
+    ],
+    public: [
+      { name: "Getting back in", colour: "var(--blue)", qs: [
+        "I can't log in",
+        "Which Lesko site do I log into?",
+        "I paid but I have no account",
+        "Am I still a member?" ] },
+      { name: "Payments & cancelling", colour: "var(--red)", qs: [
+        "How do I cancel my subscription?",
+        "How do I get a refund?",
+        "I was charged and I don't know why",
+        "How do I change my card?" ] },
+      { name: "Getting help", colour: "var(--green)", qs: [
+        "How do I contact support?",
+        "How do I stop the emails?",
+        "What does the membership cost?" ] }
+    ]
+  };
+
+  function renderCats() {
+    catBox.innerHTML = CATS[aud].map(function (c, i) {
+      return '<div class="cat" open-state="' + (i === 0 ? "1" : "0") + '">' +
+        '<button type="button" aria-expanded="' + (i === 0) + '">' +
+        '<span class="dot" style="background:' + c.colour + '"></span>' + esc(c.name) +
+        '<span class="arrow">&#9656;</span></button><ul>' +
+        c.qs.map(function (q) { return "<li><button type='button'>" + esc(q) + "</button></li>"; }).join("") +
+        "</ul></div>";
     }).join("");
-    [].forEach.call(chipBox.querySelectorAll(".chip"), function (b) {
-      b.addEventListener("click", function () { ask(b.textContent); });
+    [].forEach.call(catBox.querySelectorAll(".cat"), function (cat) {
+      var head = cat.querySelector("button");
+      head.addEventListener("click", function () {
+        var open = cat.getAttribute("open-state") === "1";
+        cat.setAttribute("open-state", open ? "0" : "1");
+        head.setAttribute("aria-expanded", String(!open));
+      });
+      [].forEach.call(cat.querySelectorAll("ul button"), function (b) {
+        b.addEventListener("click", function () { ask(b.textContent); });
+      });
     });
   }
   function ask(q) {
@@ -183,9 +292,9 @@
       document.getElementById("blurb").textContent = aud === "public"
         ? "Locked out, or sorting out a payment? Ask me about cancelling, refunds, logging back in, or which Lesko site to use. I'll give you the exact steps."
         : "Ask me anything about the community — where to find a class, a quick guide, or a PDF, how to get started, or anything about your account. I'll point you to the exact place and show you what's in it.";
-      renderChips();
+      renderCats();
       thread.innerHTML = "";
     });
   });
-  renderChips();
+  renderCats();
 })();
