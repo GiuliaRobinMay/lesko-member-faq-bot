@@ -34,9 +34,9 @@
     glasses: "vision", eyeglasses: "vision", eyesight: "vision", eye: "vision",
     eyes: "vision", optician: "vision", deaf: "hearing", hearingaid: "hearing",
     therapy: "mental", counselling: "mental", counseling: "mental",
-    depression: "mental", anxiety: "mental", addiction: "addiction",
+    depression: "mental", anxiety: "mental",
     landlord: "rent", eviction: "rent", evicted: "rent", rental: "rent",
-    homeless: "housing", mortgage: "home", foreclosure: "foreclosure",
+    homeless: "housing", mortgage: "home",
     heating: "utility", heat: "utility", electricity: "utility",
     electric: "utility", power: "utility", gas: "utility", water: "utility",
     groceries: "food", grocery: "food", hungry: "food", meals: "food",
@@ -47,15 +47,15 @@
     job: "career", jobs: "career", employment: "career", resume: "career",
     interview: "career", hired: "career", unemployed: "career",
     college: "scholarships", university: "scholarships", tuition: "scholarships",
-    student: "student", loans: "loan", collections: "debt", creditors: "debt",
+    loans: "loan", collections: "debt", creditors: "debt",
     bankrupt: "debt", bankruptcy: "debt",
     automobile: "car", vehicle: "car", truck: "car", transportation: "car",
     elderly: "seniors", elder: "seniors", senior: "seniors", retirement: "seniors",
     disabled: "disability", handicapped: "disability",
     veteran: "veterans", army: "veterans", navy: "veterans", military: "veterans",
-    smoking: "smoking", vaping: "smoking", cancer: "illness", diabetes: "illness",
+    vaping: "smoking", cancer: "illness", diabetes: "illness",
     pregnant: "pregnancy", baby: "pregnancy", newborn: "pregnancy",
-    adoption: "adoption", fostering: "foster", iep: "education",
+    fostering: "foster", iep: "education",
     caregiver: "caregivers", caring: "caregivers"
   };
   function words(s) {
@@ -74,13 +74,17 @@
   function scoreTopic(t, q) {
     /* Score on the question itself (title + the ways members phrase it).
        Step text is prose full of generic words and must NOT drive matching. */
-    var hay = norm(t.title + " " + t.asked.join(" "));
+    var hay = norm(t.title + " " + t.asked.join(" ")).trim().split(" ");
     var s = 0;
-    words(q).forEach(function (w) { if (hay.indexOf(" " + w) !== -1) s += 2; });
+    words(q).forEach(function (w) { if (anyHit(hay, w)) s += 2; });
     t.asked.forEach(function (a) { if (norm(a).indexOf(norm(q).trim()) !== -1) s += 6; });
     if (norm(t.title).indexOf(norm(q).trim()) !== -1) s += 5;
     if (aud === "public" && t.audience === "inside") s -= 100;
-    s += (18 - t.rank) * 0.12;                       // volume tiebreak
+    /* A tiny tiebreak only. At 0.12 per rank this bonus alone was worth 2
+       points, which let the cancel answer beat the pricing answer on a
+       pricing question - one shared word plus popularity cleared the
+       threshold. Popularity must never outweigh an actual word match. */
+    if (s > 0) s += (18 - t.rank) * 0.01;
     return s;
   }
   function findGuides(q) {
@@ -197,7 +201,9 @@
   function bubble(role, inner, withFeedback) {
     var d = document.createElement("div");
     d.className = "msg " + (role === "me" ? "me" : "bot");
-    d.innerHTML = '<div class="who">' + (role === "me" ? "You" : '<img src="' + MATTHEW + '" alt="Matthew Lesko">') + "</div>" +
+    d.innerHTML = '<div class="who">' + (role === "me"
+                    ? '<span class="me-ico" role="img" aria-label="You">\ud83d\udc9b</span>'
+                    : '<img src="' + MATTHEW + '" alt="Matthew Lesko">') + "</div>" +
                   '<div class="bubble">' + inner + "</div>";
     thread.appendChild(d);
     [].forEach.call(d.querySelectorAll(".rel button"), function (b) {
@@ -207,22 +213,6 @@
     scrollThread();
     return d;
   }
-  function linkRow(links) {
-    if (!links.length) return "";
-    return '<div class="linkrow">' + links.map(function (l) {
-      return '<a href="' + esc(l.u) + '" target="_blank" rel="noopener">' + esc(l.n) + " →</a>";
-    }).join("") + "</div>";
-  }
-  function eventBlock() {
-    var evs = D.events;
-    return '<div class="sub"><h4>Live this week — all times ET</h4>' +
-      evs.map(function (e) {
-        return '<div class="ev"><b>' + esc(e.day) + '</b><span class="t">' + esc(e.time) + "</span>" +
-               '<span><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.name) + "</a> — " +
-               esc(e.about) + "</span></div>";
-      }).join("") + "</div>";
-  }
-
   /* ---------- answers ---------- */
   /* One question -> exactly ONE answer. Nothing is ever appended "just in case".
      Explicit intents are checked first and win outright. */
@@ -380,10 +370,14 @@
   var SCHED = /\bwhen\b|what time|what day|which day|schedule|next one|is there a|how do i (join|attend|get (in)?to)|zoom link/i;
 
   function eventMatch(q) {
+    /* Compare normalised text with normalised aliases. The question is
+       stripped of punctuation before matching, so an alias written with
+       "&" or "-" ("member q&a", "drop-in") could never match raw. */
     var s = norm(q), best = null, bestLen = 0, alias = "";
     Object.keys(EVENT_ALIASES).forEach(function (name) {
       EVENT_ALIASES[name].forEach(function (a) {
-        if (s.indexOf(a) !== -1 && a.length > bestLen) { bestLen = a.length; best = name; alias = a; }
+        var na = norm(a).slice(1, -1);   /* keep inner spaces, drop the pads */
+        if (s.indexOf(na) !== -1 && na.length > bestLen) { bestLen = na.length; best = name; alias = a; }
       });
     });
     if (!best) return null;
@@ -401,6 +395,21 @@
   }
 
   var INTENTS = [
+    /* A greeting or a thank-you is not a question. Answering it with
+       "I could not place that one" reads as cold and broken. */
+    { id: "smalltalk",
+      test: function (q) {
+        var w = norm(q).trim();
+        if (w.split(" ").length > 4) return false;
+        return /^(hi|hiya|hello|hey|good (morning|afternoon|evening)|thanks|thank you|thank you so much|thanks a lot|ty|great|perfect|awesome|wonderful|ok|okay|got it|bye|goodbye|see you)( .*)?$/.test(w);
+      },
+      render: function (q) {
+        var w = norm(q);
+        if (/thank|great|perfect|awesome|wonderful|got it/.test(w)) return "<p>You're very welcome! \ud83d\udc9b If anything else comes up, just ask.</p>";
+        if (/bye|see you/.test(w)) return "<p>Bye for now \ud83d\udc9b &mdash; you know where to find me.</p>";
+        return "<p>Hi! \ud83d\udc4b What do you need help with today? Pick a category on the right or just type your question.</p>";
+      } },
+
     { id: "talk_to_matthew",
       test: function (q) {
         /* "when is the matthew meetup" is a scheduling question — let the single
@@ -758,12 +767,6 @@
     });
     return { head: ["Class", "Day", "Time (ET)", "What it is for"], rows: rows };
   }
-  function evButton(name, kind) {
-    var e = evAll(name)[0];
-    if (!e) return null;
-    return { label: e.name, url: e.url, kind: kind || "ghost", icon: "📅" };
-  }
-
   /* ---------- lessons and quick guides ----------
      A subject answer names three things, never one: the classes to attend, the
      lessons to read and the quick guides to download. Giving only the classes
@@ -978,7 +981,7 @@
       test: function (q) {
         if (/\bcancel|refund|charge|charged|billing|card\b/i.test(q)) return false;   // answered outright
         return /\b(subscription|membership|my account|my plan)\b/i.test(q) &&
-               (/\bproblem|issue|trouble|question|wrong|help|who do i|where do i|talk|ask\b/i.test(q));
+               /\b(problem|issue|trouble|question|wrong|help|who do i|where do i|talk|ask)\b/i.test(q);
       },
       render: function () { return routeCard({
         title: "Bring subscription questions here",
@@ -989,21 +992,6 @@
         events: ["Open Office with Tony"],
         buttons: [{ label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" }],
         related: ["Am I still a member?"] }); } },
-
-    /* Questions about grants themselves -> Q&A or the Thursday clinic. */
-    { id: "route_grants",
-      test: function (q) {
-        if (!/\bgrant|grants|funding|free money\b/i.test(q)) return false;
-        return !SUBJECT.test(q);
-      },
-      render: function () { return routeCard({
-        title: "Take your grant question to a coach",
-        lead: "Grant questions are answered live. Two ways in, and neither needs an appointment.",
-        events: QA_CLASSES.concat([CLINIC]),
-        after: [{ call: "The <b>Thursday Drop-In Clinic runs all day</b>, 10:00&ndash;18:00 ET. Hop in whenever you are free, ask, and leave.", kind: "key" }],
-        buttons: [{ label: "See all Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "📅" },
-                  { label: "Questions Channel", url: SPACE.questions, kind: "ghost", icon: "💬" }],
-        related: ["How do I create my call sheet?", "How do I ask a good question?"] }); } },
 
     /* Anything about AI -> Roger's class. */
     { id: "route_ai",
@@ -1053,35 +1041,67 @@
                                    ["Business - Nonprofits & Career"], { lessons: 8, guides: 10, not: /nonprofit/i }))
           .concat([callListThenQA("<b>your kind of business</b>")]),
         buttons: resourceButtons("Start A Business"),
-        related: ["What classes are on this week?", "Where do I find the replays?"] }); } }
+        related: ["What classes are on this week?", "Where do I find the replays?"] }); } },
+
+    /* Questions about grants themselves -> Q&A or the Thursday clinic. */
+    { id: "route_grants",
+      test: function (q) {
+        if (!/\bgrant|grants|funding|free money\b/i.test(q)) return false;
+        return !SUBJECT.test(q);
+      },
+      render: function () { return routeCard({
+        title: "Take your grant question to a coach",
+        lead: "Grant questions are answered live. Two ways in, and neither needs an appointment.",
+        events: QA_CLASSES.concat([CLINIC]),
+        after: [{ call: "The <b>Thursday Drop-In Clinic runs all day</b>, 10:00&ndash;18:00 ET. Hop in whenever you are free, ask, and leave.", kind: "key" }],
+        buttons: [{ label: "See all Q&A times", url: SPACE.groupCoaching, kind: "primary", icon: "📅" },
+                  { label: "Questions Channel", url: SPACE.questions, kind: "ghost", icon: "💬" }],
+        related: ["How do I create my call sheet?", "How do I ask a good question?"] }); } },
+
   ];
 
-  /* Never suggest a way out of the community as a "related" question.
-     Cancelling and refunds are answered when asked for, never proposed. */
-  var NEVER_SUGGEST = ["cancel_subscription", "refunds_billing", "switch_plan", "membership_status_renew"];
-  function relatedFor(t) {
-    var pool = D.topics.filter(function (x) {
-      return x.id !== t.id && NEVER_SUGGEST.indexOf(x.id) === -1;
-    });
-    /* prefer topics sharing words with this one, then fall back to helpful staples */
-    var mine = words(t.title);
-    var scored = pool.map(function (x) {
-      var hay = norm(x.title + " " + x.asked.join(" "));
-      var s = 0;
-      mine.forEach(function (w) { if (hay.indexOf(" " + w) !== -1) s += 1; });
-      return { x: x, s: s };
-    }).sort(function (a, b) { return b.s - a.s; });
-    /* Only genuinely related questions. One is fine. None is fine. Padding the
-       list with popular-but-unrelated questions is worse than a short list. */
-    return scored.filter(function (r) { return r.s > 1; }).slice(0, 3)
-                 .map(function (r) { return r.x.title; });
-  }
+  /* Related questions are CURATED, never computed. Word overlap kept
+     suggesting things that merely sounded similar, and one bad suggestion
+     makes the whole answer look careless. A topic not in this map gets no
+     related questions at all - none is a fine answer. Cancelling is never
+     suggested from anywhere; refunds only from the cancel answer itself. */
+  var RELATED = {
+    cancel_subscription:    ["How do I get a refund?"],
+    refunds_billing:        ["What does the membership cost?"],
+    calls_zoom_replays:     ["Can I talk to a real person?"],
+    call_sheet_and_reports: ["How do I create my call sheet?"],
+    navigation:             ["Where do I start?"],
+    getting_started:        ["How do I find my way around the site?"],
+    human_support:          ["What classes are on this week?"],
+    ai_grant_researcher:    ["How do I create my call sheet?"],
+    login_password:         ["Which Lesko site do I log into?"],
+    app_and_devices:        ["I can't log in"],
+    broken_links_errors:    ["Can I talk to a real person?"],
+    profile_account:        ["How do I stop the emails?"],
+    notifications_emails:   ["How do I change my profile details?"],
+    pricing_and_plan:       ["Can I switch from monthly to annual?"],
+    membership_status_renew:["I can't log in"],
+    which_site_to_use:      ["I can't log in"],
+    switch_plan:            ["What does the membership cost?"]
+  };
+  function relatedFor(t) { return RELATED[t.id] || []; }
 
+  /* Topic steps are written as plain text, but several name a URL. A member
+     cannot click plain text - and every link in an answer must be clickable. */
+  var OWN_HOSTS = /(^|[\s(])((?:leskohelp\.recurly\.com|leskosupport\.com|clkbank\.com|lesko-help-2\.mn\.co)[^\s<,;)]*)/g;
+  function linkify(t) {
+    return esc(t)
+      .replace(/(https?:\/\/[^\s<]*[^\s<.,;)])/g,
+               '<a href="$1" target="_blank" rel="noopener">$1</a>')
+      .replace(OWN_HOSTS, function (m, pre, dom) {
+        return pre + '<a href="https://' + dom + '" target="_blank" rel="noopener">' + dom + "</a>";
+      });
+  }
   function answerTopic(t) {
     var steps = (aud === "public" && t.variant) ? t.variant : t.steps;
     var secs = [];
-    if (steps && steps.length) secs.push({ steps: steps.map(esc) });
-    if (t.important) secs.push({ call: "<b>Watch out.</b> " + esc(t.important) });
+    if (steps && steps.length) secs.push({ steps: steps.map(linkify) });
+    if (t.important) secs.push({ call: "<b>Watch out.</b> " + linkify(t.important) });
     return card({
       title: t.title,
       lead: t.short ? esc(t.short) : "",
@@ -1210,7 +1230,7 @@
     setTimeout(function () {
       t.parentNode && t.parentNode.removeChild(t);
       answer(q);
-    }, 650 + Math.min(q.length * 8, 500));
+    }, 1200 + Math.min(q.length * 12, 800));   /* 1.2s floor, 2s cap - a believable pause */
   }
   form.addEventListener("submit", function (e) { e.preventDefault(); ask(input.value); });
   bubble("bot", card({

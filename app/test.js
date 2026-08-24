@@ -233,22 +233,28 @@ console.log('\n--- three kinds of resource on every subject answer ---');
 });
 
 console.log('\n--- every link points inside the community ---');
-var ALLOWED = /^(lesko-help-2\.mn\.co|[a-z0-9-]*\.?mightynetworks\.com|lesko[a-z-]*\.netlify\.app)$/;
-var ALLQ = SUBJECT_QS.concat(["Start a business", "how do I start a nonprofit",
-  "where can I ask a question", "how do I orient myself in the community",
-  "what classes are on this week", "banana"]);
-var badlinks = [];
-ALLQ.forEach(function (q) {
-  out.length = 0; window.__answer(q);
-  (out.join(' ').match(/href="([^"]+)"/g) || []).forEach(function (h) {
-    var u = h.slice(6, -1);
-    var m = u.match(/^https?:\/\/([^\/]+)/);
-    if (!m || !ALLOWED.test(m[1])) badlinks.push(q + ' -> ' + u);
+/* Community hosts, plus the sanctioned account/billing destinations
+   (the member's own payment processors and the Lesko support site).
+   Nothing else - no agency, no .gov, no directory service. */
+var ALLOWED = /^(lesko-help-2\.mn\.co|[a-z0-9-]*\.?mightynetworks\.com|lesko[a-z-]*\.netlify\.app|leskosupport\.com|leskohelp\.recurly\.com|www\.paypal\.com|www\.clkbank\.com|clkbank\.com)$/;
+function auditLinks(qs, label) {
+  var badlinks = [];
+  qs.forEach(function (q) {
+    out.length = 0; window.__answer(q);
+    (out.join(' ').match(/href="([^"]+)"/g) || []).forEach(function (h) {
+      var u = h.slice(6, -1);
+      if (u === 'mailto:leskohelp@gmail.com') return;   // the sanctioned support address
+      var m = u.match(/^https?:\/\/([^\/]+)/);
+      if (!m || !ALLOWED.test(m[1])) badlinks.push(q + ' -> ' + u);
+    });
   });
-});
-badlinks.forEach(function (b) { console.log('FAIL |', b); });
-console.log(badlinks.length === 0 ? 'PASS | every link is a community link'
-                                  : 'FAIL | ' + badlinks.length + ' links point outside');
+  badlinks.forEach(function (b) { console.log('FAIL |', b); });
+  console.log(badlinks.length === 0 ? 'PASS | ' + label
+                                    : 'FAIL | ' + badlinks.length + ' links point outside (' + label + ')');
+}
+auditLinks(SUBJECT_QS.concat(["Start a business", "how do I start a nonprofit",
+  "where can I ask a question", "how do I orient myself in the community",
+  "what classes are on this week", "banana"]), 'every subject-answer link is a community link');
 
 
 /* ---------------------------------------------------------------
@@ -283,3 +289,142 @@ console.log('\n--- an unplaceable question goes to a Q&A, never a guess ---');
   var ok = h.indexOf('Ask this at a Q&amp;A') !== -1 || h.indexOf('Go to a Q&amp;A') !== -1;
   console.log((ok ? 'PASS' : 'FAIL'), '|', q.padEnd(24), ok ? 'sent to a Q&A' : 'guessed instead');
 });
+
+/* ---------------------------------------------------------------
+   Related chips are curated by hand. Every chip anywhere in the app
+   must land on a real answer when clicked - never on the fallback -
+   and no chip may ever suggest cancelling or refunds from an
+   unrelated answer (refunds may appear only under cancel itself). */
+console.log('\n--- every related chip lands on a real answer ---');
+var CRAWL = ["Where do I start?", "How do I create my call sheet?", "Where do I find my call sheet?",
+  "I have a problem with my call sheet", "How do I apply for a grant?", "What classes are on this week?",
+  "Where do I find the replays?", "How do I join the Zoom?", "Can I talk to a real person?",
+  "Help with rent", "How do I start a business?", "how do I start a nonprofit",
+  "How do I cancel my subscription?", "How do I get a refund?", "I can't log in", "How do I stop the emails?",
+  "When is the Welcome Tour?", "Can I talk to Matthew?", "How do I ask a good question?",
+  "I keep calling and getting no results", "I am overwhelmed", "What do I do after I apply?",
+  "How do I keep track of my questions?", "How do I sign in on my computer?", "I have a question about AI",
+  "where can I ask a question", "how do I orient myself in the community",
+  "where do I talk about my subscription problems", "I have a question about my grant",
+  "Am I still a member?", "What does the membership cost?", "Can I switch from monthly to annual?",
+  "How do I download the app?", "Which Lesko site do I log into?", "How do I change my profile details?",
+  "A link is not working", "How do I use the AI Grant Researcher?", "I paid but I have no account"];
+var chips = {};
+CRAWL.forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  var h = out.join(' ');
+  var rel = (h.match(/<div class="rel">[\s\S]*?<\/div><\/div>/) || [''])[0];
+  (rel.match(/<button type='button'>([^<]+)<\/button>/g) || []).forEach(function (c) {
+    var label = c.replace(/<[^>]+>/g, '').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+    (chips[label] = chips[label] || []).push(q);
+  });
+});
+var chipFails = 0;
+Object.keys(chips).forEach(function (label) {
+  out.length = 0; window.__answer(label);
+  var h = out.join(' ');
+  var fallback = h.indexOf('Ask this at a Q&amp;A') !== -1;
+  if (fallback) { chipFails++; console.log('FAIL | chip "' + label + '" (under: ' + chips[label][0] + ') hits the fallback'); }
+});
+var badCancel = 0;
+Object.keys(chips).forEach(function (label) {
+  if (/cancel/i.test(label)) { badCancel++; console.log('FAIL | a chip suggests cancelling: "' + label + '"'); }
+  if (/refund/i.test(label)) chips[label].forEach(function (src) {
+    if (!/cancel/i.test(src)) { badCancel++; console.log('FAIL | refund chip under "' + src + '"'); }
+  });
+});
+console.log((chipFails + badCancel === 0 ? 'PASS' : 'FAIL') + ' | ' + Object.keys(chips).length +
+            ' distinct chips crawled, all land on real answers, none suggest leaving');
+
+/* ---------------------------------------------------------------
+   Every synonym must point at a word that actually exists in some
+   lesson, guide, topic or category - otherwise it maps to nothing. */
+console.log('\n--- synonyms all point at real content ---');
+var HAY = [];
+Object.keys(window.LESKO.lessons).forEach(function (sp) {
+  window.LESKO.lessons[sp].forEach(function (l) { HAY.push(l.t); });
+});
+Object.keys(window.LESKO.library).forEach(function (c) {
+  HAY.push(c);
+  window.LESKO.library[c].forEach(function (g) { HAY.push(g.title); });
+});
+window.LESKO.topics.forEach(function (t) { HAY.push(t.title + ' ' + t.asked.join(' ')); });
+var hayNorm = (' ' + HAY.join(' ').toLowerCase().replace(/[^a-z0-9 ]/g, ' ') + ' ');
+var SYNSRC = require('fs').readFileSync(process.cwd() + '/app.js', 'utf8');
+var synBody = SYNSRC.split('var SYN = {')[1].split('};')[0];
+var targets = {};
+(synBody.match(/: "([a-z]+)"/g) || []).forEach(function (m) { targets[m.slice(3, -1)] = 1; });
+var deadSyn = 0;
+Object.keys(targets).forEach(function (t) {
+  var root = t.length > 4 ? t.slice(0, t.length - 1) : t;   // crude stem: match plural/singular
+  if (hayNorm.indexOf(' ' + root) === -1) { deadSyn++; console.log('FAIL | synonym target "' + t + '" matches no content'); }
+});
+console.log((deadSyn === 0 ? 'PASS' : 'FAIL') + ' | ' + Object.keys(targets).length + ' synonym targets checked');
+
+/* ---------------------------------------------------------------
+   Aliases with & or - used to be dead: the question is normalised
+   before matching but the aliases were not. */
+console.log('\n--- punctuated event names still match ---');
+[["when is the member q&a", "Member Q&A with Tony"],
+ ["when is the member q & a", "Member Q&A with Tony"],
+ ["when is pay my debt & bills", "Pay My Debt & Bills"],
+ ["when is the drop-in clinic", "Drop-In Clinic"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var h = out.join(' ');
+  var single = h.indexOf('Live this week') === -1 && h.indexOf(p[1].replace(/&/g, '&amp;')) !== -1;
+  console.log((single ? 'PASS' : 'FAIL'), '|', p[0].padEnd(32), '=>', p[1]);
+});
+
+/* ---------------------------------------------------------------
+   A business/nonprofit/AI question that mentions grants must go to
+   its subject route, not the generic grants route. */
+console.log('\n--- subject routes beat the generic grants route ---');
+[["grants to start a business", "three business classes"],
+ ["business grants", "three business classes"],
+ ["grants for my nonprofit", "Nonprofit"],
+ ["how do I use ai to find grants", "Roger teaches the AI side"],
+ ["I have a question about my grant", "Take your grant question to a coach"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  console.log((out.join(' ').indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(32), '=>', p[1]);
+});
+
+/* ---------------------------------------------------------------
+   Greetings and thanks get a human reply, not a routing card. */
+console.log('\n--- smalltalk ---');
+[["hi", "Hi!"], ["hello", "Hi!"], ["thank you", "welcome"], ["thanks so much", "welcome"],
+ ["great", "welcome"], ["bye", "Bye for now"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  console.log((out.join(' ').indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(16), '=>', p[1]);
+});
+[["hi how do I cancel my subscription", "How to cancel"],
+ ["ok but where are the replays", "replays"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  console.log((out.join(' ').indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(36), '=> not smalltalk');
+});
+
+
+/* The wide sweep: every crawled question, chips included. */
+console.log('\n--- link audit over the full crawl ---');
+auditLinks(CRAWL.concat(Object.keys(chips)), 'every link everywhere is community or sanctioned billing');
+
+/* ---------------------------------------------------------------
+   Fuzz: odd input must never throw, and typed HTML must never
+   execute - it has to come back escaped. */
+console.log('\n--- fuzz: nothing throws, nothing injects ---');
+var FUZZ = ["", " ", "?", "!!!", "....", "a", "no", "yes please", "HELP",
+  "¿dónde está la clase?", "我需要帮助", "🙏🙏🙏", "rent rent rent rent rent",
+  "<script>alert(1)</script>", "<img src=x onerror=alert(1)>", "\"'`",
+  "how do i".repeat(60), "CANCEL!!!", "i can't-log-in", "q&a", "drop-in",
+  "null", "undefined", "constructor", "__proto__", "hasOwnProperty"];
+var fuzzFails = 0;
+FUZZ.forEach(function (q) {
+  out.length = 0;
+  try { window.__answer(q); } catch (e) { fuzzFails++; console.log('FAIL | threw on ' + JSON.stringify(q) + ': ' + e.message); return; }
+  var h = out.join(' ');
+  if (/<script>|onerror=/.test(h)) { fuzzFails++; console.log('FAIL | unescaped HTML echoed for ' + JSON.stringify(q)); }
+});
+console.log(fuzzFails === 0 ? 'PASS | ' + FUZZ.length + ' fuzz inputs, no throws, no injection' : 'FAIL | fuzz');

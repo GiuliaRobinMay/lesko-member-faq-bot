@@ -42,6 +42,17 @@ prefix, so "car" no longer matches "care".
 **When the bot cannot place a question it says so and sends the member to a
 Q&A.** It never guesses at a class.
 
+**Related questions are curated by hand** (`RELATED` in `app.js`), never
+computed from word overlap — one bad suggestion makes the whole answer look
+careless. Most answers carry one; none is a fine answer. Cancelling is never
+suggested from anywhere. A test crawls every chip in the app and fails if one
+lands on the fallback or suggests leaving.
+
+**Member words are translated in the app itself** (`SYN` in `app.js`) — no
+hashtags needed in the community posts. dentist/teeth → dental, landlord →
+rent, dog → pet, and ~80 more; a test fails the build if a synonym points at
+a word that exists in no lesson, guide or topic.
+
 For a specific need ("I need to find things for dental care") the answer is:
 the lessons and guides for it → **build your call list** in the AI Search →
 **take it to a Q&A** or the Thursday clinic.
