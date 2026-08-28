@@ -152,6 +152,8 @@
   .chip.fix{color:var(--red-ink)}
   .chip.fold{color:var(--navy-ink)}
   .chip.skip{color:var(--ink-3)}
+  .chip.live{color:var(--green-ink);background:color-mix(in srgb, var(--green) 12%, transparent)}
+  .chip.held{color:var(--red-ink);background:color-mix(in srgb, var(--red) 10%, transparent)}
 
   .split{display:grid;grid-template-columns:1fr 1fr;gap:0}
   @media(max-width:680px){.split{grid-template-columns:1fr}}
@@ -231,6 +233,7 @@
     <p class="kicker">Lesko Help · support bot · candidate answers</p>
     <h1>Mighty Networks answers worth stealing</h1>
     <p class="standfirst">Fourteen member questions that Mighty Networks documents, checked one by one against what is actually true for Lesko Help members. Five of their articles would send your members to the wrong place.</p>
+    <p class="standfirst" style="margin-top:14px;font-size:16px;color:var(--ink-3)">Ten are now written into the bot in our own words, with no links to their pages. Two are held back waiting on your answer, two are skipped.</p>
   </header>
 
   <div class="thesis">
@@ -251,6 +254,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">01</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">How do I change my email address?</h3>
         <span class="chip add">Add</span>
       </div>
@@ -270,6 +274,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">02</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">How do I get to my personal settings?</h3>
         <span class="chip add">Add</span>
       </div>
@@ -289,6 +294,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">03</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">What browser or device do I need?</h3>
         <span class="chip add">Add</span>
       </div>
@@ -308,6 +314,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">04</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">How do I permanently delete my account?</h3>
         <span class="chip add">Add</span>
       </div>
@@ -336,6 +343,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">05</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">How do I change my credit card?</h3>
         <span class="chip fix">Correct it</span>
       </div>
@@ -359,6 +367,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">06</span>
+        <span class="chip held">Held for you</span>
         <h3 class="q">What happens if I leave the community?</h3>
         <span class="chip fix">Correct it</span>
       </div>
@@ -379,6 +388,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">07</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">Do I contact Lesko Help or Mighty Networks?</h3>
         <span class="chip fix">Correct it</span>
       </div>
@@ -400,6 +410,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">08</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">There is no cancel button on my plan</h3>
         <span class="chip fix">Correct it</span>
       </div>
@@ -419,6 +430,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">09</span>
+        <span class="chip held">Held for you</span>
         <h3 class="q">I paid through the Apple app — can I get a refund?</h3>
         <span class="chip fix">Correct it</span>
       </div>
@@ -447,6 +459,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">10</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">I forgot my password</h3>
         <span class="chip fold">Fold in</span>
       </div>
@@ -467,6 +480,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">11</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">Why can't I log in?</h3>
         <span class="chip fold">Fold in</span>
       </div>
@@ -486,6 +500,7 @@
     <article class="item">
       <div class="item-head">
         <span class="num">12</span>
+        <span class="chip live">In the bot</span>
         <h3 class="q">How do I stop the emails?</h3>
         <span class="chip fold">Fold in</span>
       </div>
@@ -553,6 +568,7 @@
   <!-- ============ ASKS ============ -->
   <div class="asks">
     <h2>Four things only you can answer</h2>
+    <p class="group-note" style="margin-bottom:6px"><b>Items 6 and 9 are held back until you answer 1 and 4 below.</b> Everything else on this list is already live in the bot.</p>
     <p class="group-note">Per the source rules we set: your word outranks Mighty Networks' documentation, so I have changed nothing on the strength of their pages alone.</p>
     <ol class="asks-list">
       <li>

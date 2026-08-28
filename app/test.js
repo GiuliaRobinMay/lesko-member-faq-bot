@@ -428,3 +428,68 @@ FUZZ.forEach(function (q) {
   if (/<script>|onerror=/.test(h)) { fuzzFails++; console.log('FAIL | unescaped HTML echoed for ' + JSON.stringify(q)); }
 });
 console.log(fuzzFails === 0 ? 'PASS | ' + FUZZ.length + ' fuzz inputs, no throws, no injection' : 'FAIL | fuzz');
+
+/* ---------------------------------------------------------------
+   Card titles are rendered as plain text, so an HTML entity in one
+   shows up literally as "&mdash;" on screen. */
+console.log('\n--- no HTML entities in card titles ---');
+var titleBad = 0;
+CRAWL.concat(["how do I change my credit card", "how do I delete my account",
+              "how do I change my email address", "who do I contact for support",
+              "where are my personal settings"]).forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  var m = out.join(' ').match(/<h3>([^<]*)<\/h3>/);
+  if (m && /&amp;(amp|mdash|ndash|rsaquo|middot|nbsp);/.test(m[1])) {
+    titleBad++; console.log('FAIL | "' + q + '" title renders as: ' + m[1]);
+  }
+});
+console.log(titleBad === 0 ? 'PASS | every card title renders as clean text' : 'FAIL | ' + titleBad + ' titles show raw entities');
+
+/* ---------------------------------------------------------------
+   The answers lifted from the platform docs. */
+console.log('\n--- account answers from the platform docs ---');
+[["how do I change my credit card",     "not held in the community"],
+ ["my card expired",                    "Changing the card you pay with"],
+ ["I need to update my payment method", "Changing the card you pay with"],
+ ["how do I change my email address",   "payment record"],
+ ["I want a different email on my account", "Changing your email address"],
+ ["where are my personal settings",     "Where your settings live"],
+ ["how do I delete my account",         "same as cancelling"],
+ ["I want to remove my account completely", "Deleting your account"],
+ ["who do I contact for support",       "Who to bring it to"],
+ ["how do I contact support",           "Who to bring it to"],
+ ["I forgot my password",               "phone app"],
+ ["I forgot my password",               "expires after an hour"],
+ ["how do I cancel my subscription",    "No cancel option on your screen"],
+ ["how do I stop the emails",           "five separate ways"],
+ ["a link is not working",              "browser is up to date"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  console.log((out.join(' ').indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(38), '=>', p[1]);
+});
+
+console.log('\n--- new answers must not steal the old ones ---');
+[["how do I get a refund",        "Refunds"],
+ ["I can't log in",               "Signing in"],
+ ["how do I cancel my subscription", "How to cancel"],
+ ["how do I stop the emails",     "emails"],
+ ["how do I change my profile details", "profile"],
+ ["can I talk to a real person",  "Go to a Q&amp;A"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  console.log((out.join(' ').indexOf(p[1]) !== -1 ? 'PASS' : 'FAIL'), '|', p[0].padEnd(38), '=>', p[1]);
+});
+
+/* No links to the platform's own help pages anywhere. */
+console.log('\n--- we never link out to the platform docs ---');
+var docLeak = 0;
+CRAWL.concat(["how do I change my credit card", "how do I delete my account",
+              "how do I change my email address", "who do I contact for support",
+              "where are my personal settings", "I forgot my password",
+              "how do I stop the emails", "a link is not working"]).forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  if (/docs\.mightynetworks|help\.mightynetworks|@mightynetworks\.com|mightynetworks\.com\/(help|support|hc)/i.test(out.join(' '))) {
+    docLeak++; console.log('FAIL | "' + q + '" links to the platform docs');
+  }
+});
+console.log(docLeak === 0 ? 'PASS | no platform help-page links anywhere' : 'FAIL | ' + docLeak + ' answers link out');

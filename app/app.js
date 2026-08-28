@@ -454,6 +454,117 @@
         });
       } },
 
+    /* ---- account mechanics ----
+       The platform documents these; we answer them in our own words, and
+       correct the parts that are wrong for us. Members pay OUTSIDE the
+       community, so every "manage your billing here" instruction the
+       platform gives points at a panel that is empty for our members. */
+
+    { id: "change_card",
+      test: function (q) {
+        if (!/\b(card|credit card|debit card|payment method|bank details?)\b/i.test(q)) return false;
+        return /\b(change|update|new|replace|edit|expired|expiring|declined|switch)\b/i.test(q);
+      },
+      render: function () { return card({
+        title: "Changing the card you pay with",
+        lead: "Your card is <b>not held in the community</b> &mdash; so there is nothing to change in your settings there. It sits with whoever took your payment.",
+        sections: [
+          { h: "Find the one that matches your statement", table: { head: ["How you paid", "Where to change the card"], rows: [
+            ["<b>Card</b>", '<a href="https://leskohelp.recurly.com" target="_blank" rel="noopener">leskohelp.recurly.com</a>'],
+            ["<b>PayPal</b>", '<a href="https://www.paypal.com" target="_blank" rel="noopener">paypal.com</a> &rsaquo; Settings &rsaquo; Payments &rsaquo; Manage Automatic Payments'],
+            ["<b>CLKBANK</b> or <b>CBKT</b> on your statement", '<a href="https://www.clkbank.com/#!/orderLookup" target="_blank" rel="noopener">clkbank.com</a> order lookup'] ] } },
+          { call: 'Not sure which one you used? Email <a href="mailto:leskohelp@gmail.com">leskohelp@gmail.com</a> with the email on your account and we will look it up and tell you.', kind: "key" }
+        ],
+        buttons: [ { label: "Email us", url: "mailto:leskohelp@gmail.com", kind: "primary", icon: "✉️" },
+                   { label: "Manage card payment", url: "https://leskohelp.recurly.com", kind: "ghost", icon: "💳" } ],
+        source: "Lesko Help customer service",
+        related: ["How do I get a refund?"] }); } },
+
+    { id: "change_email",
+      test: function (q) {
+        if (!/\bemail( address)?\b/i.test(q)) return false;
+        if (/stop|unsubscrib|too many|notification/i.test(q)) return false;   /* that is the emails answer */
+        return /\b(change|update|new|different|switch|wrong|edit|move)\b/i.test(q);
+      },
+      render: function () { return card({
+        title: "Changing your email address",
+        lead: "You change it yourself in your settings &mdash; but there is a second step most people miss.",
+        sections: [
+          { steps: [
+            "Click your <b>profile picture</b> &mdash; top right on a computer, top or bottom right on the phone.",
+            "Open <b>Personal Settings</b>, then <b>Account</b>.",
+            "Use <b>Update Email &amp; Password</b> to put in the new address, and save." ] },
+          { call: 'Now the important bit: this changes your address <b>in the community only</b>. The email on your <b>payment record</b> does not change with it. If the two stop matching, we cannot find you when you write in. So send us a note at <a href="mailto:leskohelp@gmail.com">leskohelp@gmail.com</a> &mdash; old address and new address &mdash; and we will update it on the payment side too.', kind: "key" }
+        ],
+        buttons: [ { label: "Tell us your new address", url: "mailto:leskohelp@gmail.com", kind: "primary", icon: "✉️" } ],
+        source: "Lesko Help customer service",
+        related: ["How do I change my profile details?"] }); } },
+
+    { id: "personal_settings",
+      test: function (q) {
+        if (/notification|email|password|cancel|billing|card/i.test(q)) return false;
+        return /\b(personal settings|my settings|account settings)\b/i.test(q) ||
+               (/\bwhere\b/i.test(q) && /\b(settings|my account)\b/i.test(q));
+      },
+      render: function () { return card({
+        title: "Where your settings live",
+        lead: "Everything about your own account sits behind one door, and it is easy to miss.",
+        sections: [
+          { steps: [
+            "Click your <b>profile picture</b> &mdash; top right on a computer, top or bottom right on the phone.",
+            "Click <b>Personal Settings</b>." ] },
+          { h: "What you will find there", bullets: [
+            "<b>Account</b> &mdash; your email address and your password",
+            "<b>Notifications</b> &mdash; what you get told about, and how",
+            "<b>Plans and Access</b> &mdash; the membership you are on",
+            "<b>Edit Profile</b> &mdash; your name, photo and timezone" ] },
+          { call: "Your <b>card</b> is not in here. You pay outside the community, so the card lives with whoever took the payment.", kind: "key" }
+        ],
+        source: "Lesko Help support team",
+        related: ["How do I change my profile details?"] }); } },
+
+    { id: "delete_account",
+      test: function (q) { return /\b(delete|remove|erase|wipe|close)\b.{0,20}\b(account|profile|everything)\b|\bdelete my (account|profile)\b/i.test(q); },
+      render: function () { return card({
+        title: "Deleting your account — read this first",
+        lead: "Deleting is <b>not</b> the same as cancelling, and members mix them up.",
+        sections: [
+          { table: { head: ["What you want", "What to do"], rows: [
+            ["<b>Stop the payments</b>", "Cancel your membership. Your posts and comments stay, and you can come back later."],
+            ["<b>Remove yourself completely</b>", "Delete your account. Everything you have written is removed and it cannot be undone."] ] } },
+          { call: "<b>If you only want the charges to stop, do not delete.</b> Cancel instead &mdash; ask me <i>how do I cancel</i> and I will walk you through it.", kind: "key" },
+          { h: "If you are sure you want to delete", steps: [
+            "Sign in <b>on a computer, in a web browser</b>. This cannot be done in the phone app.",
+            "Click your <b>profile picture</b>, then <b>Personal Settings</b>.",
+            "Scroll to the very bottom of the page and use the <b>permanently delete your account</b> link." ] }
+        ],
+        source: "Lesko Help support team" }); } },
+
+    { id: "support_routing",
+      test: function (q) {
+        return /\b(who do i|who should i|where do i)\b.{0,30}\b(contact|email|write|report|ask for help)\b/i.test(q) ||
+               /\b(contact|reach) (support|customer service|the team|you)\b/i.test(q) ||
+               /\bhow do i (contact|reach) (support|you|customer service)\b/i.test(q);
+      },
+      render: function () { return card({
+        title: "Who to bring it to",
+        lead: "Almost everything comes to us. Only genuine platform faults are somebody else's job &mdash; and you still tell us, we take it from there.",
+        sections: [
+          { h: "Bring it to Lesko Help", bullets: [
+            "<b>Money</b> &mdash; payments, refunds, cancelling, changing your card",
+            "<b>Your membership</b> &mdash; what plan you are on, renewing, coming back",
+            "<b>Grants, call sheets, classes</b> &mdash; everything we actually teach" ] },
+          { h: "How to reach us", steps: [
+            "<b>Questions Channel</b> &mdash; post it and the team replies under your post. Best for grants, call sheets and how things work.",
+            "<b>Email <a href=\"mailto:leskohelp@gmail.com\">leskohelp@gmail.com</a></b> &mdash; anything about money or your account.",
+            "<b>A Member Q&amp;A or the Thursday Drop-In Clinic</b> &mdash; if you would rather just say it out loud." ] },
+          { call: "If the site itself is broken &mdash; a page will not load, the app keeps closing &mdash; post it in the <b>Questions Channel</b> with what you clicked and what you saw. We report platform faults for you.", kind: "key" }
+        ],
+        buttons: [ { label: "Ask in the Questions Channel", url: SPACE.questions, kind: "primary", icon: "💬" },
+                   { label: "See Q&A times", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
+        source: "Lesko Help support team",
+        related: ["Can I talk to a real person?"] }); } },
+
     { id: "cancel",
       test: function (q) { return /\bcancel|unsubscrib(e|ing)|stop (my |the )?(membership|subscription|payment|billing)|end (my )?(membership|subscription)|quit\b/i.test(q) && !/email|notification/i.test(q); },
       render: function () { return card({
@@ -467,6 +578,7 @@
               'Paid by <b>card</b> &mdash; <a href="https://leskohelp.recurly.com" target="_blank" rel="noopener">leskohelp.recurly.com</a>',
               'Paid by <b>PayPal</b> &mdash; <a href="https://www.paypal.com" target="_blank" rel="noopener">paypal.com</a>, then Settings &rsaquo; Payments &rsaquo; Manage Automatic Payments',
               'Your bank statement says <b>CLKBANK</b> or <b>CBKT</b> &mdash; <a href="https://www.clkbank.com/#!/orderLookup" target="_blank" rel="noopener">clkbank.com</a>' ] },
+          { h: "No cancel option on your screen?", p: "That happens, and it is not you doing it wrong &mdash; some memberships genuinely have no cancel button to press. <b>Email us and we will cancel it for you</b> and write back to confirm." },
           { call: 'Any other questions? Email us at <a href="mailto:leskohelp@gmail.com">leskohelp@gmail.com</a> and we will help you.', kind: "key" }
         ],
         buttons: [
@@ -501,8 +613,10 @@
           { h: "Your password", p: "When you created your account you were asked to add a password. That step <b>is</b> what created your password &mdash; there is no separate one." },
           { h: "If it will not let you in", steps: [
             "Check you are using the email you <b>paid with</b>. A different address will say no account found.",
-            'Click <b>Forgot password?</b> on the login page and follow the emailed link &mdash; check spam if it does not arrive.',
+            'Click <b>Forgot password?</b> on the login page and follow the emailed link &mdash; check spam if it does not arrive. The link <b>expires after an hour</b>, so if it has been sitting a while just ask for a fresh one. You can send yourself as many as you need.',
+            "Been away a long time? You may simply have been <b>signed out</b>. Nothing is wrong &mdash; sign in again.",
             "Still stuck? Email <a href=\"mailto:leskohelp@gmail.com\">leskohelp@gmail.com</a> with the email you signed up with." ] },
+          { call: "<b>Reset your password on a computer, not in the phone app.</b> Tapping <i>Forgot Password</i> in the app sends you a link that signs you straight in <b>without ever setting a password</b> &mdash; so you get locked out again next time. Use a web browser and you will be asked for a new password properly.", kind: "key" },
           { call: "Paying and creating your account are <b>two separate steps</b>. If you paid but never set a password, your account was never finished &mdash; use the link in your welcome email, or email us and we will send it again.", kind: "key" }
         ],
         buttons: [ { label: "Open the community", url: "https://lesko-help-2.mn.co", kind: "primary", icon: "🔑" },
