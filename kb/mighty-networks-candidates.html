@@ -1,0 +1,582 @@
+<title>Mighty Networks Answers Worth Stealing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#f2f4f8;
+    --panel:#ffffff;
+    --panel-2:#f7f5ec;
+    --ink:#101a2b;
+    --ink-2:#3d4a60;
+    --ink-3:#6b7789;
+    --rule:#dde2ea;
+    --rule-soft:#e9edf3;
+    --navy:#2c3fa0;
+    --navy-ink:#2c3fa0;
+    --yellow:#fdc830;
+    --yellow-deep:#8a6300;
+    --red:#e63946;
+    --red-ink:#c1121f;
+    --green:#3f8f47;
+    --green-ink:#2f6f36;
+    --shadow:0 1px 2px rgba(16,26,43,.06), 0 8px 24px -18px rgba(16,26,43,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0d1220;
+      --panel:#151c2c;
+      --panel-2:#1b2233;
+      --ink:#eef1f6;
+      --ink-2:#b6c0d0;
+      --ink-3:#8592a6;
+      --rule:#2a3346;
+      --rule-soft:#222a3b;
+      --navy:#8ea3ff;
+      --navy-ink:#a8b8ff;
+      --yellow:#fdc830;
+      --yellow-deep:#f0c04a;
+      --red:#ff6b73;
+      --red-ink:#ff8a90;
+      --green:#68c073;
+      --green-ink:#7ed189;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0d1220;
+    --panel:#151c2c;
+    --panel-2:#1b2233;
+    --ink:#eef1f6;
+    --ink-2:#b6c0d0;
+    --ink-3:#8592a6;
+    --rule:#2a3346;
+    --rule-soft:#222a3b;
+    --navy:#8ea3ff;
+    --navy-ink:#a8b8ff;
+    --yellow:#fdc830;
+    --yellow-deep:#f0c04a;
+    --red:#ff6b73;
+    --red-ink:#ff8a90;
+    --green:#68c073;
+    --green-ink:#7ed189;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:40px 22px 90px}
+
+  /* ---------- masthead ---------- */
+  .mast{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+  .kicker{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-3);margin:0 0 14px;
+  }
+  h1{
+    font-family:Newsreader,Georgia,serif;
+    font-weight:600;font-size:clamp(32px,5.2vw,50px);
+    line-height:1.08;letter-spacing:-.015em;text-wrap:balance;
+    margin:0 0 14px;
+  }
+  .standfirst{
+    font-family:Newsreader,Georgia,serif;
+    font-size:clamp(17px,2.1vw,20px);line-height:1.5;
+    color:var(--ink-2);max-width:63ch;margin:0;
+  }
+
+  /* ---------- thesis ---------- */
+  .thesis{
+    background:var(--panel);border:1px solid var(--rule);
+    border-left:5px solid var(--yellow);
+    border-radius:3px;padding:22px 24px;margin:0 0 40px;
+    box-shadow:var(--shadow);
+  }
+  .thesis h2{
+    font-family:"Public Sans",sans-serif;font-size:15px;font-weight:700;
+    letter-spacing:.01em;margin:0 0 10px;color:var(--ink);
+  }
+  .thesis p{margin:0 0 10px;color:var(--ink-2);max-width:70ch}
+  .thesis p:last-child{margin-bottom:0}
+  .thesis b{color:var(--ink)}
+
+  /* ---------- group headers ---------- */
+  .group{margin:0 0 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .group h2{
+    font-family:Newsreader,Georgia,serif;font-weight:600;
+    font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;
+    margin:0;color:var(--ink);
+  }
+  .group .count{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;
+    color:var(--ink-3);font-variant-numeric:tabular-nums;
+  }
+  .group-note{
+    color:var(--ink-2);margin:0 0 22px;max-width:68ch;font-size:15px;
+  }
+  section{margin:0 0 52px}
+
+  /* ---------- item cards ---------- */
+  .item{
+    background:var(--panel);border:1px solid var(--rule);
+    border-radius:4px;margin:0 0 16px;overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .item-head{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:16px 20px;border-bottom:1px solid var(--rule-soft);
+  }
+  .num{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+    color:var(--ink-3);padding-top:5px;font-variant-numeric:tabular-nums;
+    flex:none;min-width:22px;
+  }
+  .q{
+    font-family:Newsreader,Georgia,serif;font-size:20px;font-weight:600;
+    line-height:1.3;margin:0;color:var(--ink);flex:1;text-wrap:balance;
+  }
+  .chip{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;
+    padding:5px 9px;border-radius:3px;flex:none;margin-top:3px;
+    border:1px solid currentColor;white-space:nowrap;
+  }
+  .chip.add{color:var(--green-ink)}
+  .chip.fix{color:var(--red-ink)}
+  .chip.fold{color:var(--navy-ink)}
+  .chip.skip{color:var(--ink-3)}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  @media(max-width:680px){.split{grid-template-columns:1fr}}
+  .cell{padding:16px 20px}
+  .cell + .cell{border-left:1px solid var(--rule-soft)}
+  @media(max-width:680px){
+    .cell + .cell{border-left:0;border-top:1px solid var(--rule-soft)}
+  }
+  .cell h4{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+    margin:0 0 8px;
+  }
+  .cell.truth{background:var(--panel-2)}
+  .cell.truth h4{color:var(--yellow-deep)}
+  .cell p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.58}
+  .cell p + p{margin-top:8px}
+  .cell b{color:var(--ink)}
+  .cell code{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+    background:var(--ground);padding:1px 5px;border-radius:2px;
+    border:1px solid var(--rule-soft);color:var(--ink-2);
+  }
+  .verdict{
+    padding:13px 20px;border-top:1px solid var(--rule-soft);
+    font-size:14px;color:var(--ink-2);display:flex;gap:9px;align-items:baseline;
+  }
+  .verdict .lab{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);flex:none;
+  }
+  .verdict b{color:var(--ink)}
+
+  /* ---------- questions ---------- */
+  .asks{
+    background:var(--panel);border:1px solid var(--rule);
+    border-top:5px solid var(--red);border-radius:3px;
+    padding:26px 26px 8px;box-shadow:var(--shadow);
+  }
+  .asks h2{
+    font-family:Newsreader,Georgia,serif;font-weight:600;font-size:26px;
+    margin:0 0 8px;color:var(--ink);
+  }
+  .asks .group-note{margin-bottom:20px}
+  ol.asks-list{margin:0;padding:0 0 0 0;list-style:none;counter-reset:a}
+  ol.asks-list li{
+    counter-increment:a;padding:0 0 20px 42px;position:relative;
+    margin:0 0 18px;border-bottom:1px solid var(--rule-soft);
+  }
+  ol.asks-list li:last-child{border-bottom:0}
+  ol.asks-list li::before{
+    content:counter(a);position:absolute;left:0;top:1px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+    color:var(--ink);background:var(--yellow);
+    width:24px;height:24px;border-radius:50%;
+    display:grid;place-items:center;
+  }
+  ol.asks-list h3{
+    font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;
+    margin:0 0 6px;color:var(--ink);
+  }
+  ol.asks-list p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:66ch}
+
+  footer{
+    margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+    line-height:1.7;
+  }
+  footer a{color:var(--navy-ink)}
+  a{color:var(--navy-ink)}
+  a:focus-visible,li:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="kicker">Lesko Help · support bot · candidate answers</p>
+    <h1>Mighty Networks answers worth stealing</h1>
+    <p class="standfirst">Fourteen member questions that Mighty Networks documents, checked one by one against what is actually true for Lesko Help members. Five of their articles would send your members to the wrong place.</p>
+  </header>
+
+  <div class="thesis">
+    <h2>The thing that makes half of these dangerous</h2>
+    <p>Mighty Networks writes its help pages for communities that <b>take the money inside Mighty Networks</b>. Lesko Help does not — members pay through <b>ClickBank, Recurly or PayPal</b>, outside the platform entirely.</p>
+    <p>So every Mighty Networks article about money — cards, billing, cancelling, refunds — describes a screen that is <b>empty or missing</b> for your members. You spotted this with the credit card. It runs deeper: their own documentation says that in a community taking payment externally, a member who leaves <b>loses access immediately</b> rather than at the end of the billing period.</p>
+    <p>The list below separates the answers we can lift as-is from the ones that need a Lesko correction bolted on before they go anywhere near a member.</p>
+  </div>
+
+  <!-- ============ GROUP A ============ -->
+  <section>
+    <div class="group">
+      <h2>Lift these as they are</h2>
+      <span class="count">4 questions · not in the bot yet</span>
+    </div>
+    <p class="group-note">Platform mechanics that work the same for everyone. Nothing about money, so nothing to correct.</p>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">01</span>
+        <h3 class="q">How do I change my email address?</h3>
+        <span class="chip add">Add</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Profile picture, top right → <code>Personal Settings</code> → <code>Account</code> → <b>Update Email &amp; Password</b>. Same panel handles verifying the address.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Correct, and worth a warning of our own: changing it here does <b>not</b> change the email on the ClickBank or Recurly record. If those two stop matching, Customer Service cannot find them when they write in.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add it, and end with <b>"tell us at LeskoHelp@gmail.com so we change it on your payment record too."</b> — see question 2 below.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">02</span>
+        <h3 class="q">How do I get to my personal settings?</h3>
+        <span class="chip add">Add</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Profile picture, top right → <code>Personal Settings</code>. That one panel holds account, email, password, notifications, plans and access.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>True as written. This is the single door behind four of the questions in your research list — members who cannot find it cannot fix anything themselves.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Small answer, high leverage. It becomes the thing other answers point at.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">03</span>
+        <h3 class="q">What browser or device do I need?</h3>
+        <span class="chip add">Add</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>They publish a supported browser and device list, and recommend a current Chrome or Safari. Old browsers break video and uploads.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Fits what your members hit — the research found <b>4 posts about broken links, videos and pages</b>. A stale browser is a real cause and nobody currently asks about it.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Fold into the existing <b>"A link or video isn't working"</b> answer rather than making a new card.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">04</span>
+        <h3 class="q">How do I permanently delete my account?</h3>
+        <span class="chip add">Add</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>A <b>permanently delete your account</b> link sits at the bottom of Personal Settings — <b>web browser only</b>, not in the app. It removes posts and comments too.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>This is different from cancelling and members confuse the two. Deleting wipes their history; cancelling just stops the payment. Someone who deletes to stop a charge has done the wrong thing.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add it defensively — the answer's job is to say <b>"if you only want the payments to stop, do not do this."</b></span></div>
+    </article>
+  </section>
+
+  <!-- ============ GROUP B ============ -->
+  <section>
+    <div class="group">
+      <h2>Add — but their answer is wrong for us</h2>
+      <span class="count">5 questions · correction required</span>
+    </div>
+    <p class="group-note">Follow Mighty Networks here and a member ends up staring at a blank screen, or losing access they paid for. These are the ones worth the most, because nobody else can answer them.</p>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">05</span>
+        <h3 class="q">How do I change my credit card?</h3>
+        <span class="chip fix">Correct it</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Profile picture → <code>Personal Settings</code> → <code>Account</code> → <code>Billing</code>.</p>
+          <p><b>This is wrong for your members.</b> Their card was never given to Mighty Networks, so there is nothing in that panel to change.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>The card lives with whoever took the payment:</p>
+          <p><b>Card</b> → leskohelp.recurly.com<br>
+             <b>PayPal</b> → Settings ▸ Payments ▸ Manage Automatic Payments<br>
+             <b>CLKBANK / CBKT on the statement</b> → clkbank.com order lookup</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Your example, and the clearest win on this list. Lead with <b>"not in the community — your card is held where you paid."</b></span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">06</span>
+        <h3 class="q">What happens if I leave the community?</h3>
+        <span class="chip fix">Correct it</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Leaving normally cancels at the <b>end of the current billing period</b>. But their own page adds: where a community <b>takes payments externally</b>, the member loses access <b>the moment they deactivate</b> — not at the end of the cycle.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Lesko Help <em>is</em> an external-payment community, so the second rule is the one that applies. A member who leaves on day 3 of a paid month appears to forfeit the rest of it.</p>
+          <p><b>I have not changed the bot over this.</b> Your word outranks their documentation — see question 1 below.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Hold until you confirm. If it is true, it belongs in the cancel answer as a plain warning about <b>timing</b>.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">07</span>
+        <h3 class="q">Do I contact Lesko Help or Mighty Networks?</h3>
+        <span class="chip fix">Correct it</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Members can write to <b>chat@mightynetworks.com</b>, or use <code>Help Center</code> under the profile picture. On billing, they say: <b>contact your Host first.</b></p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Their own advice points back at you for anything about money. The clean split:</p>
+          <p><b>Mighty Networks</b> — the app is broken, a page will not load, sign-in is failing at the platform level.<br>
+             <b>Lesko Help</b> — payments, refunds, membership, call sheets, grants, classes. Everything that is actually Lesko.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add. It stops members writing to the wrong company and waiting days for the wrong answer.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">08</span>
+        <h3 class="q">There is no cancel button on my plan</h3>
+        <span class="chip fix">Correct it</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Members on a <b>free plan, an access plan, or a one-time payment</b> get no built-in cancel option. Their advice: ask the Host, or contact Mighty Networks Support.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>This explains a specific angry post in the research — <b>"it is next to impossible to cancel this subscription."</b> Some of those members were genuinely looking at a screen with no button on it.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add as a branch of the cancel answer: <b>"no cancel option on your screen? Then email us and we do it for you."</b></span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">09</span>
+        <h3 class="q">I paid through the Apple app — can I get a refund?</h3>
+        <span class="chip fix">Correct it</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>iOS purchases are refunded by Apple, not by the community: <code>reportaproblem.apple.com</code> → sign in → Report a Problem next to the purchase.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Only relevant <b>if</b> anyone actually bought through the iOS app rather than the sales page. I could not verify that from here — see question 4 below.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add only if iOS purchases exist. If nobody buys that way, adding it invents a route that confuses people.</span></div>
+    </article>
+  </section>
+
+  <!-- ============ GROUP C ============ -->
+  <section>
+    <div class="group">
+      <h2>Already answered — one detail worth adding</h2>
+      <span class="count">3 questions · in the bot</span>
+    </div>
+    <p class="group-note">The bot handles these. Mighty Networks documents one specific detail in each that we do not currently mention, and in the first case it is the reason members get stuck.</p>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">10</span>
+        <h3 class="q">I forgot my password</h3>
+        <span class="chip fold">Fold in</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>The detail we are missing</h4>
+          <p>The reset email is <b>valid for one hour</b>, and they can request as many as they need.</p>
+          <p>Bigger: tapping <b>Forgot Password</b> <b>in the phone app</b> sends a <em>magic link</em> that logs them straight in — it does <b>not</b> let them set a new password.</p>
+        </div>
+        <div class="cell truth">
+          <h4>Why it matters here</h4>
+          <p>That is a real trap. A member tries to reset from the app, gets logged in without ever setting a password, and is locked out again next time. <b>Password resets have to be done in a browser.</b></p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add both lines to the existing <b>Signing in</b> answer. This is the strongest single detail on the whole list.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">11</span>
+        <h3 class="q">Why can't I log in?</h3>
+        <span class="chip fold">Fold in</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>The detail we are missing</h4>
+          <p>Two causes we never mention: the <b>session simply timed out</b> after a long gap, and an account can be <b>disabled by a host or moderator</b>.</p>
+        </div>
+        <div class="cell truth">
+          <h4>Why it matters here</h4>
+          <p>Session timeout is reassuring — nothing is broken, just sign in again. The disabled case is rare but currently sends someone round in circles forever.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>One extra line each. Keeps the answer honest without lengthening it much.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">12</span>
+        <h3 class="q">How do I stop the emails?</h3>
+        <span class="chip fold">Fold in</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>The detail we are missing</h4>
+          <p>There are <b>five separate channels</b> — in-app, email, desktop, mobile push, pop-up — all controlled at <code>Personal Settings</code> → <code>Notifications</code>. Email is <b>on by default</b>, sent to the address they joined with.</p>
+        </div>
+        <div class="cell truth">
+          <h4>Why it matters here</h4>
+          <p>Members turn off one channel, still get buzzed by another, and conclude nothing worked. Naming all five is the difference between the answer working and not.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Add the five channels and the exact path to the notifications answer.</span></div>
+    </article>
+  </section>
+
+  <!-- ============ GROUP D ============ -->
+  <section>
+    <div class="group">
+      <h2>Leave these alone</h2>
+      <span class="count">2 questions</span>
+    </div>
+    <p class="group-note">Documented by Mighty Networks, irrelevant to your members. Adding them would only make the bot noisier.</p>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">13</span>
+        <h3 class="q">Token-gated plans, crypto and NFT access</h3>
+        <span class="chip skip">Skip</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>A full article on buying access with a crypto wallet or NFT.</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Nothing in Lesko Help is token-gated. A member who sees this answer would reasonably think they need a crypto wallet to get grant help.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Actively harmful. Skip.</span></div>
+    </article>
+
+    <article class="item">
+      <div class="item-head">
+        <span class="num">14</span>
+        <h3 class="q">Becoming a host, Zoom account settings, Tax ID</h3>
+        <span class="chip skip">Skip</span>
+      </div>
+      <div class="split">
+        <div class="cell">
+          <h4>Mighty Networks says</h4>
+          <p>Start a 14-day trial to become a host; connect a Zoom account; add a Tax ID for tax-exempt purchases (EU, UK, NZ, Australia).</p>
+        </div>
+        <div class="cell truth">
+          <h4>For Lesko Help</h4>
+          <p>Host tooling is your team's business, not a member's. Tax ID applies to countries outside your membership. Zoom connection is for people <em>running</em> calls.</p>
+        </div>
+      </div>
+      <div class="verdict"><span class="lab">Verdict</span><span>Skip all three.</span></div>
+    </article>
+  </section>
+
+  <!-- ============ ASKS ============ -->
+  <div class="asks">
+    <h2>Four things only you can answer</h2>
+    <p class="group-note">Per the source rules we set: your word outranks Mighty Networks' documentation, so I have changed nothing on the strength of their pages alone.</p>
+    <ol class="asks-list">
+      <li>
+        <h3>Does leaving really kill access immediately?</h3>
+        <p>Mighty Networks says an external-payment community cuts access the moment a member deactivates, not at the end of the paid period. If that is what actually happens, members should be warned <b>before</b> they click — and the current cancel answer needs a timing line. If your automatic pickup handles it differently, tell me and I will leave the answer as it stands.</p>
+      </li>
+      <li>
+        <h3>What should a member do after changing their email?</h3>
+        <p>If they change it in the community but the ClickBank or Recurly record still holds the old one, Customer Service cannot match them later. Should the answer tell them to email you so you update the payment record — and is that something Mary handles?</p>
+      </li>
+      <li>
+        <h3>Is there any Lesko route to change a card, other than emailing you?</h3>
+        <p>Right now the answer would be "go to Recurly, PayPal or ClickBank yourself, or write to us." If Customer Service can just do it, that is a much shorter and kinder answer.</p>
+      </li>
+      <li>
+        <h3>Can anyone buy the membership through the Apple app?</h3>
+        <p>This decides whether item 9 goes in at all. If every purchase comes through the sales page, I leave Apple refunds out entirely rather than inventing a route that does not exist.</p>
+      </li>
+    </ol>
+  </div>
+
+  <footer>
+    Sources — Mighty Networks member documentation, August 2026: leaving a network · managing membership and space purchases · updating billing information · personal settings · setting and resetting a password · why can't I log in · technical support for members · notifications · browser and device support · access from an app.<br><br>
+    Checked against the Lesko Help support bot's current 17 answers and the 1,600-post question research. Nothing in the bot has been changed on the strength of these pages — Giulia's confirmations still outrank them.
+  </footer>
+
+</div>
