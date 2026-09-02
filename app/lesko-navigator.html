@@ -317,10 +317,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     var secs = resourceSections(q, cats, spaces, { lessons: 6, guides: 8, topTier: true });
     var cls = classesFor(q);
     if (cls.length) secs.push({ h: "The class for this", table: evTable(cls) });
-    var top = guideHits(q, cats).sort(function (a, b) { return b.s - a.s; })[0];
-    var subject = (top && top.s > 0) ? "<b>" + esc(top.g.title.toLowerCase()) + "</b>"
-                                     : "what you need";
-    secs.push(callListThenQA(subject));
+    secs.push(callListThenQA("<b>" + esc(searchTopic(cat)) + "</b>"));
     return card({
       title: "Here is everything we have on this",
       lead: "It is all inside the community &mdash; the lessons, the quick guides and the classes. Work through them in that order.",
@@ -479,12 +476,25 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
      "How do I create a call sheet" and "I created my call sheets, what next?"
      share every keyword — only the tense and the ask differ. */
   var DONE = /\b(i(?:'ve| have)?\s+(?:already\s+)?(?:created|made|built|finished|completed|attended|joined|watched|submitted|applied)|i(?:'ve| have)\s+(?:already\s+)?(?:done|got)\b|already (?:created|made|done|attended|joined|applied|used)|(?:created|made|built|finished|completed) (?:all )?(?:my|the|them)|(?:my|the) [^.?!]{0,24}(?:is|are) (?:ready|done|finished|created|built))/i;
-  var NEXTQ = /\b(what(?:'s| is)? next|what now|next step|what do i do (?:next|now)|where (?:do i go|to) (?:next|now)|then what|after (?:that|this))\b/i;
+  /* Any way of saying "that part is behind me". Members do not write
+     "I have completed the welcome tour" - they write "I went to the welcome
+     meeting", "been to the welcome", "did my call sheet". */
+  var DONE_EXTRA = /\b(i\s+(?:just\s+|already\s+)?(?:went to|was at|been to|did|do?ne|sat (?:in|through)|took|saw|had)|i(?:'ve| have)\s+(?:just\s+|already\s+)?been (?:to|in)|been to (?:the|my)|went to (?:the|my))\b/i;
+  /* "After the welcome tour..." only means "what comes next" when the rest of
+     the sentence actually asks that. On its own it is just as likely to be
+     "after the welcome tour, is there a replay?" - a different question. */
+  var DONE_WEAK = /\bafter (?:the|my|a)\b/i;
+  var NEXTQ = /\b(what(?:'s| is)? next|what now|next step|what do i do(?: next| now)?|where (?:do i go|to) (?:next|now)|then what|after (?:that|this))\b/i;
 
+  /* The roadmap, in order. Whatever a member has just done, the answer is the
+     next thing along: welcome -> call sheet -> application class -> group
+     coaching. Order matters here - the first match wins, so the later stages
+     are listed first, otherwise "I applied after the welcome tour" would come
+     back with the welcome answer. */
   var STAGES = [
-    { id: "onboarding",  match: /profile|notification|download the app|welcome tour|set ?up/i },
-    { id: "callsheet",   match: /call ?sheet|callsheet|ai researcher|research tool/i },
-    { id: "application", match: /appl(y|ied|ication)|application class/i },
+    { id: "application", match: /application class|appl(y|ied|ication)/i },
+    { id: "callsheet",   match: /call ?sheet|callsheet|ai researcher|ai search|research tool/i },
+    { id: "onboarding",  match: /welcome (tour|meeting|class|session|call)|\bwelcome\b|orientation|onboarding|profile|notification|download the app|set ?up|just joined|joined today/i },
     { id: "followup",    match: /follow ?up|sent it|submitted/i }
   ];
 
@@ -522,16 +532,16 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
       related: ["What do I do after I apply?"] }); },
 
     application: function () { return card({
-      title: "Next: apply, then stay organised",
-      lead: "You have been to an Application Class — now apply, and keep track of what you sent.",
-      sections: [{ bullets: [
-        "Apply to the organisations on your call sheet, one at a time.",
-        "Keep <b>one folder per application</b>, named for the organisation.",
-        "Write down every date and every name.",
-        "Check your messages every single day — and if they ask for more, drop everything and send it." ] }],
-      buttons: [ { label: "After You Apply guide", url: SPACE.afterYouApply, kind: "primary", icon: "📁" },
-                 { label: "Bring it to Group Coaching", url: SPACE.groupCoaching, kind: "ghost", icon: "📅" } ],
-      source: "After You Apply guide",
+      title: "Next: Group Coaching",
+      lead: "You have been to an Application Class, so the next step on the roadmap is <b>Group Coaching</b>. That is where you keep going &mdash; you bring what you actually sent, and a coach works on it with you.",
+      sections: [{ steps: [
+        "<b>Join Group Coaching.</b> Q&amp;As run six days a week, and the Thursday Drop-In Clinic is open all day with no appointment.",
+        "<b>Bring your applications with you.</b> What you sent, who you sent it to, and what came back &mdash; that is what makes the session useful.",
+        "<b>Keep applying while you wait.</b> Work down your call sheet; do not stop at one." ] },
+        { call: "Keep <b>one folder per application</b> and check your messages every day. If they ask for more, drop everything and send it &mdash; that is what separates the members who get the money.", kind: "key" }],
+      buttons: [ { label: "See Group Coaching times", url: SPACE.groupCoaching, kind: "primary", icon: "\ud83d\udcc5" },
+                 { label: "After You Apply guide", url: SPACE.afterYouApply, kind: "ghost", icon: "\ud83d\udcc1" } ],
+      source: "Roadmap \u00b7 Group Coaching",
       related: ["What do I do after I apply?"] }); },
 
     followup: function () { return INTENTS.filter(function (x) { return x.id === "after_apply"; })[0].render(); }
@@ -1203,6 +1213,26 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
     if (gs) out.push(gs);
     return out;
   }
+  /* What to type into the AI Search. It works from a subject, not from the
+     title of a guide - "free & low-cost dental care" is the name of a lesson,
+     "Health" is the thing you search for. Every quick guide category has a
+     plain-words topic here, and that is what we tell the member to type. */
+  var SEARCH_TOPIC = {
+    "Healthcare Assistance":  "Health",
+    "Home & Housing Help":    "Housing",
+    "Cars & Car Repairs":     "Car repair",
+    "Pay Debt & Bills":       "Debt & bills",
+    "Boost Your Career":      "Education & career",
+    "Find Legal Help":        "Legal help",
+    "Family & Children":      "Family & children",
+    "Seniors & Disabilities": "Seniors & disabilities",
+    "Programs For Veterans":  "Veterans",
+    "Start A Business":       "Business",
+    "Launch A Nonprofit":     "Nonprofit",
+    "Taxes Help Guidance":    "Taxes"
+  };
+  function searchTopic(cat) { return SEARCH_TOPIC[cat] || cat; }
+
   /* Build a call list, then take it to a coach. The same two steps every time. */
   function callListThenQA(what) {
     return { h: "Then do these two things",
@@ -1333,7 +1363,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
                                    ["Launch A Nonprofit"],
                                    ["Business - Nonprofits & Career"],
                                    { lessons: 8, guides: 8, only: /nonprofit|501/i, strict: true }))
-          .concat([callListThenQA("<b>your nonprofit</b>")]),
+          .concat([callListThenQA("<b>Nonprofit</b>")]),
         buttons: resourceButtons("Launch A Nonprofit"),
         related: ["What classes are on this week?", "Where do I find the replays?"] }); } },
 
@@ -1348,7 +1378,7 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
           .concat(resourceSections("business start legal steps funding grants loans mentor",
                                    ["Start A Business", "Boost Your Career"],
                                    ["Business - Nonprofits & Career"], { lessons: 8, guides: 10, not: /nonprofit/i }))
-          .concat([callListThenQA("<b>your kind of business</b>")]),
+          .concat([callListThenQA("<b>Business</b>")]),
         buttons: resourceButtons("Start A Business"),
         related: ["What classes are on this week?", "Where do I find the replays?"] }); } },
 
@@ -1422,7 +1452,8 @@ window.LESKO={"topics": [{"id": "cancel_subscription", "rank": 1, "title": "How 
 
   function answer(q) {
     /* Stage first: "I've done X, what next?" must never be read as "how do I do X". */
-    if (!SITU.trouble.test(q) && (DONE.test(q) || NEXTQ.test(q))) {
+    var done = DONE.test(q) || DONE_EXTRA.test(q) || (DONE_WEAK.test(q) && NEXTQ.test(q));
+    if (!SITU.trouble.test(q) && (done || NEXTQ.test(q))) {
       var st = stageOf(q);
       if (st && NEXT_AFTER[st]) return bubble("bot", NEXT_AFTER[st](), true);
     }

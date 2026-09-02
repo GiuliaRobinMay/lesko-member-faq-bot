@@ -43,7 +43,7 @@ console.log('\n--- stage awareness ---');
  ["I've done my call sheet, what now?","Application Class"],
  ["How do I create my call sheet?","Three ways"],
  ["I finished the welcome tour, what next?","call sheet"],
- ["I applied already, what now?","stay organised"]].forEach(function(p){
+ ["I applied already, what now?","Next: Group Coaching"]].forEach(function(p){
   out.length=0; window.__answer(p[0]);
   var html=out.join(' ');
   var h3=(html.match(/<h3>(.*?)<\/h3>/)||[,'(none)'])[1].replace(/<[^>]+>/g,'');
@@ -493,3 +493,77 @@ CRAWL.concat(["how do I change my credit card", "how do I delete my account",
   }
 });
 console.log(docLeak === 0 ? 'PASS | no platform help-page links anywhere' : 'FAIL | ' + docLeak + ' answers link out');
+
+/* ---------------------------------------------------------------
+   The roadmap chain, however it gets phrased:
+     welcome -> call sheet -> application classes -> group coaching  */
+console.log('\n--- the roadmap chain, in members\' own words ---');
+[["I went to the welcome meeting, what do I do next?", "build your call sheet"],
+ ["I went to the welcome tour what now",               "build your call sheet"],
+ ["been to the welcome, what next",                    "build your call sheet"],
+ ["I did the welcome meeting",                         "build your call sheet"],
+ ["I just joined and finished the welcome tour",       "build your call sheet"],
+ ["after the welcome what do i do",                    "build your call sheet"],
+ ["I attended the welcome tour, what is next?",        "build your call sheet"],
+ ["I created all my call sheets. What do I do next?",  "Application Class"],
+ ["I did my call sheet what now",                      "Application Class"],
+ ["I've done my call sheet, what now?",                "Application Class"],
+ ["I went to the application class, what next?",       "Group Coaching"],
+ ["I did the application classes what do i do now",    "Group Coaching"],
+ ["been to the application class what next",           "Group Coaching"],
+ ["I applied already, what now?",                      "Group Coaching"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var h = out.join(' ');
+  var ok = h.indexOf(p[1]) !== -1;
+  var fell = h.indexOf('Ask this at a Q&amp;A') !== -1;
+  console.log((ok ? 'PASS' : 'FAIL'), '|', p[0].padEnd(48), '=>', ok ? p[1] : (fell ? 'FELL THROUGH to the Q&A card' : 'wrong answer'));
+});
+
+/* ---------------------------------------------------------------
+   The AI Search takes a subject, not the title of a lesson. */
+console.log('\n--- what we tell members to type into the AI Search ---');
+[["I need dental care",        "Put <b>Health</b>"],
+ ["dentist",                   "Put <b>Health</b>"],
+ ["help with medical bills",   "Put <b>Health</b>"],
+ ["I need scholarships",       "Put <b>Education &amp; career</b>"],
+ ["help with rent",            "Put <b>Housing</b>"],
+ ["I need help with my car",   "Put <b>Car repair</b>"],
+ ["I cant pay my electric bill", "Put <b>Debt &amp; bills</b>"],
+ ["how do I start a business", "Put <b>Business</b>"],
+ ["how do I start a nonprofit","Put <b>Nonprofit</b>"]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var h = out.join(' ');
+  var ok = h.indexOf(p[1]) !== -1;
+  var got = (h.match(/Put <b>([^<]*)<\/b> into the <b>AI Search/) || [, '(no call-list step)'])[1];
+  console.log((ok ? 'PASS' : 'FAIL'), '|', p[0].padEnd(30), '=>', got);
+});
+
+/* A lesson or guide title must never be what we tell them to type. */
+console.log('\n--- never a lesson title in the AI Search step ---');
+var titleAsTopic = 0;
+["I need dental care", "help with rent", "I need help with my car", "help with food",
+ "I need scholarships", "help for seniors", "help with childcare", "I am a veteran and need help"
+].forEach(function (q) {
+  out.length = 0; window.__answer(q);
+  var m = out.join(' ').match(/Put <b>([^<]*)<\/b> into the <b>AI Search/);
+  if (m && /low-cost|guide|help$|assistance|&amp; grants/i.test(m[1])) {
+    titleAsTopic++; console.log('FAIL | "' + q + '" tells them to type: ' + m[1]);
+  }
+});
+console.log(titleAsTopic === 0 ? 'PASS | always a subject, never a lesson title' : 'FAIL | ' + titleAsTopic + ' answers pass a title');
+
+/* "After the welcome tour..." is only a next-step question when the rest of
+   the sentence asks for the next step. */
+console.log('\n--- "after the X" is not always a next-step question ---');
+[["after the welcome tour is there a replay", false],
+ ["after the welcome what do i do",           true],
+ ["after the call sheet what is next",        true],
+ ["after the application class can I still ask questions", false]
+].forEach(function (p) {
+  out.length = 0; window.__answer(p[0]);
+  var isNext = /<h3>Next: /.test(out.join(' '));
+  console.log((isNext === p[1] ? 'PASS' : 'FAIL'), '|', p[0].padEnd(56),
+              isNext ? 'next-step card' : 'answered the actual question');
+});
